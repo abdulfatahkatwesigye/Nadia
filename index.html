@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nadia 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blush: #f7c5d0;
+    --blush-light: #fdf0f3;
+    --gold: #c9a96e;
+    --gold-light: #f5ecd7;
+    --beige: #faf5ef;
+    --text-dark: #2c1810;
+    --text-mid: #5c4a3a;
+    --text-soft: #8a7060;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--beige);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* PARTICLES */
+  #particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float linear infinite;
+    opacity: 0;
+  }
+  @keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* AUDIO BUTTON */
+  #audio-btn {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 1000;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  #audio-btn:hover { background: rgba(255,255,255,0.9); transform: scale(1.05); }
+  #audio-btn .icon { font-size: 1rem; }
+
+  /* SECTIONS */
+  .section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .section.visible { opacity: 1; transform: translateY(0); }
+
+  .section-inner {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* GLASS CARD */
+  .glass {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 8px 40px rgba(199,150,120,0.12);
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, .heading {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.3;
+    color: var(--text-dark);
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
+  h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 1.5rem; }
+
+  .body-text {
+    font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+    line-height: 2;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+  .body-text p { margin-bottom: 0.8rem; }
+
+  .line-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    display: block;
+  }
+  .line-fade.show { opacity: 1; transform: translateY(0); }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+  }
+
+  /* SECTION BACKGROUNDS */
+  #s1 { background: linear-gradient(135deg, #fff8f5, #fdf0f3, #faf5ef); }
+  #s2 { background: linear-gradient(135deg, #faf5ef, #fff8f5); }
+  #s3 { background: linear-gradient(135deg, #fdf0f3, #faf5ef, #fff8f5); }
+  #s4 { background: linear-gradient(135deg, #fff8f5, #faf5ef); }
+  #s5 { background: linear-gradient(135deg, #faf5ef, #fdf0f3); }
+  #s6 { background: linear-gradient(135deg, #fff8f5, #fdf0f3, #faf5ef); }
+  #s7 { background: linear-gradient(135deg, #fdf0f3, #fff8f5, #fdf0f3); }
+  #s-yes { background: linear-gradient(135deg, #fce4ec, #fff8f5, #fdf0f3); display: none; }
+  #s-think { background: linear-gradient(135deg, #faf5ef, #fff8f5); display: none; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.85rem 2.2rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: none;
+    letter-spacing: 0.03em;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #e8a0a8, var(--gold));
+    color: white;
+    box-shadow: 0 4px 20px rgba(201,169,110,0.35);
+    animation: pulse-btn 2.5s ease-in-out infinite;
+  }
+  .btn-primary:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,169,110,0.5);
+    animation: none;
+  }
+  .btn-secondary {
+    background: rgba(255,255,255,0.7);
+    color: var(--text-mid);
+    border: 1px solid rgba(201,169,110,0.35);
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.9);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  @keyframes pulse-btn {
+    0%, 100% { box-shadow: 0 4px 20px rgba(201,169,110,0.3); }
+    50% { box-shadow: 0 4px 35px rgba(201,169,110,0.6); }
+  }
+
+  /* BIG QUESTION */
+  .big-question {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 2.5rem;
+  }
+  .big-question em {
+    font-style: italic;
+    color: #c96a7a;
+  }
+
+  /* CARDS */
+  .trait-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .trait-card {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 16px;
+    padding: 1.2rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .trait-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(199,150,120,0.2);
+    border-color: var(--blush);
+    background: rgba(255,255,255,0.85);
+  }
+  .trait-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+  .trait-card .label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+  .trait-popup {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(247,197,208,0.95), rgba(245,236,215,0.95));
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .trait-card.open .trait-popup {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+  .trait-popup p {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* HEARTBEAT */
+  .heartbeat {
+    display: inline-block;
+    font-size: 2rem;
+    animation: hb 1.4s ease-in-out infinite;
+  }
+  @keyframes hb {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.25); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.2); }
+    56% { transform: scale(1); }
+  }
+
+  /* GLOW BG on final */
+  .glow-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: orb-drift 6s ease-in-out infinite alternate;
+  }
+  @keyframes orb-drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, -20px); }
+  }
+
+  /* CONFETTI */
+  .confetti-piece {
+    position: fixed;
+    top: -10px;
+    border-radius: 3px;
+    animation: confetti-fall linear forwards;
+    z-index: 999;
+    pointer-events: none;
+  }
+  @keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* YES PAGE SPECIAL */
+  .yes-glow {
+    animation: yes-pulse 2s ease-in-out infinite;
+  }
+  @keyframes yes-pulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(201,169,110,0.3); }
+    50% { text-shadow: 0 0 50px rgba(201,169,110,0.7), 0 0 80px rgba(247,197,208,0.5); }
+  }
+
+  /* PROGRESS DOTS */
+  #progress {
+    position: fixed;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .dot.active {
+    background: var(--gold);
+    transform: scale(1.5);
+  }
+
+  /* SCROLL HINT */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.5;
+    animation: bob 2s ease-in-out infinite;
+  }
+  .scroll-hint span { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.1em; }
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(5px); }
+  }
+
+  @media (max-width: 480px) {
+    .glass { padding: 2rem 1.5rem; }
+    .trait-cards { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+    #progress { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Particles -->
+<div id="particles"></div>
+
+<!-- Audio -->
+<button id="audio-btn" onclick="toggleAudio()">
+  <span class="icon">🎵</span>
+  <span id="audio-label">Enable sound</span>
+</button>
+<audio id="bg-music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Progress dots -->
+<div id="progress"></div>
+
+<!-- SECTION 1: LANDING -->
+<section class="section" id="s1">
+  <div class="glow-bg">
+    <div class="glow-orb" style="width:300px;height:300px;background:rgba(247,197,208,0.4);top:-50px;left:-80px;"></div>
+    <div class="glow-orb" style="width:250px;height:250px;background:rgba(245,236,215,0.4);bottom:0;right:-60px;animation-delay:-3s;"></div>
+  </div>
+  <div class="section-inner">
+    <div class="glass">
+      <div id="landing-text">
+        <span class="line-fade" style="font-size:0.8rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;display:block;margin-bottom:1rem;">✦ just for you ✦</span>
+        <h1 class="line-fade">Hey Nadia…</h1>
+        <div class="divider line-fade"></div>
+        <div class="body-text">
+          <p class="line-fade">I did something a little different this time.</p>
+          <p class="line-fade">Not because I had to…<br>But because you're not someone I can approach in an ordinary way.</p>
+          <p class="line-fade">So I put this together… slowly, intentionally…<br>thinking about you the entire time.</p>
+          <p class="line-fade" style="margin-top:1rem;">Before you continue, I just need one small promise from you 🤭</p>
+          <p class="line-fade" style="font-style:italic;color:var(--text-soft);">Go through everything…<br>Don't skip anything…<br>Let it unfold the way it's meant to.</p>
+        </div>
+        <div class="line-fade" style="margin-top:2rem;">
+          <button class="btn btn-primary" onclick="nextSection(1)">I promise 🤍</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section" id="s2">
+  <div class="section-inner">
+    <div class="glass">
+      <span style="font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;">Chapter One</span>
+      <div class="divider"></div>
+      <h2>The Beginning</h2>
+      <div class="body-text">
+        <p>I've replayed this in my mind more times than I can count…</p>
+        <p>Trying to figure out the exact moment you shifted from being just someone I knew… to someone I actually started paying attention to.</p>
+        <p>And the truth is… it wasn't one big moment.</p>
+        <p>It was subtle.</p>
+        <p style="font-style:italic;color:var(--text-soft);">A conversation here…<br>A laugh there…<br>The way you naturally carry yourself without trying too hard…</p>
+        <p>It all built up… quietly…<br>until I realized something about you felt different.</p>
+        <p>Not forced. Not exaggerated.<br>Just… real.</p>
+      </div>
+      <button class="btn btn-primary" style="margin-top:1.5rem;" onclick="nextSection(2)">Continue →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="section" id="s3">
+  <div class="section-inner">
+    <div class="glass">
+      <span style="font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;">Chapter Two</span>
+      <div class="divider"></div>
+      <h2>What Makes You Different</h2>
+      <div class="body-text">
+        <p>There's something about you that's hard to explain… but impossible to ignore.</p>
+        <p>You don't move like everyone else.<br>You don't think like everyone else.</p>
+        <p>There's a calm confidence in you… a natural energy that doesn't beg for attention, but somehow holds it anyway.</p>
+      </div>
+      <div class="trait-cards">
+        <div class="trait-card" onclick="toggleCard(this)">
+          <span class="icon">🧠</span>
+          <div class="label">Your mindset</div>
+          <div class="trait-popup"><p>The way you think is different. There's a depth to your perspective that you don't even realize you carry. It draws people in.</p></div>
+        </div>
+        <div class="trait-card" onclick="toggleCard(this)">
+          <span class="icon">✨</span>
+          <div class="label">Your energy</div>
+          <div class="trait-popup"><p>Your energy enters a room before you do. Calm, warm, and magnetic — completely effortless.</p></div>
+        </div>
+        <div class="trait-card" onclick="toggleCard(this)">
+          <span class="icon">🌸</span>
+          <div class="label">Your smile</div>
+          <div class="trait-popup"><p>Honest and real. It's the kind of smile that makes a moment feel lighter than it was before.</p></div>
+        </div>
+        <div class="trait-card" onclick="toggleCard(this)">
+          <span class="icon">💬</span>
+          <div class="label">The way you speak</div>
+          <div class="trait-popup"><p>Thoughtful. Intentional. You say things that stick. There's a rare kind of grace in that.</p></div>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text-soft);margin-bottom:1.5rem;">(tap each card)</p>
+      <button class="btn btn-primary" onclick="nextSection(3)">Continue →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="section" id="s4">
+  <div class="section-inner">
+    <div class="glass">
+      <span style="font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;">Chapter Three</span>
+      <div class="divider"></div>
+      <h2>The Little Things</h2>
+      <div class="body-text">
+        <p>It's funny how it's never the big things that matter the most…</p>
+        <p>It's the small, almost unnoticeable moments.</p>
+        <p style="font-style:italic;color:var(--text-soft);">The way our conversations just flow…<br>without effort… without pressure…</p>
+        <p>The fact that from the very beginning… we've never struggled to find something to talk about.</p>
+        <p>That kind of connection? It's rare.</p>
+        <p>And somewhere along the way… those small moments became something I started looking forward to more than I expected.</p>
+      </div>
+      <button class="btn btn-primary" style="margin-top:1.5rem;" onclick="nextSection(4)">Continue →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="section" id="s5">
+  <div class="section-inner">
+    <div class="glass">
+      <span style="font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;">Chapter Four</span>
+      <div class="divider"></div>
+      <h2>The Shift</h2>
+      <div class="body-text">
+        <p>And then… at some point…</p>
+        <p style="font-style:italic;color:var(--text-soft);">Without announcing itself…<br>Without asking for permission…</p>
+        <p>This stopped being just "vibes" for me.</p>
+        <p>It became something deeper.</p>
+        <p>I started thinking about you… randomly…<br>Smiling at things that reminded me of you…</p>
+        <p>And that's when I knew I had reached a point where I couldn't just ignore it anymore.</p>
+        <div style="margin:1.5rem 0;padding:1.2rem;background:rgba(247,197,208,0.2);border-radius:12px;border-left:3px solid var(--blush);">
+          <p style="font-style:italic;color:var(--text-soft);">Stay quiet… and pretend it's nothing…</p>
+          <p style="font-size:1.2rem;color:var(--text-dark);font-weight:500;margin:0.5rem 0;">Or be real with you… and take the risk.</p>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="nextSection(5)">Continue →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="section" id="s6">
+  <div class="section-inner">
+    <div class="glass">
+      <span style="font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);font-weight:500;">Chapter Five</span>
+      <div class="divider"></div>
+      <h2>The Intention</h2>
+      <div class="body-text">
+        <p>And if I was going to do this…</p>
+        <p>I knew one thing for sure.</p>
+        <p style="font-size:1.1rem;font-weight:500;color:var(--text-dark);">It couldn't be ordinary.</p>
+        <p>Because you're not someone I see in an ordinary way.</p>
+        <p>So this… right here…</p>
+        <p style="font-style:italic;color:var(--text-soft);">Is me taking my time…<br>Putting in effort…<br>And showing you, in the clearest way I can…</p>
+        <p style="font-size:1.1rem;font-weight:500;color:var(--text-dark);">That this actually means something to me.</p>
+      </div>
+      <button class="btn btn-primary" style="margin-top:1.5rem;" onclick="nextSection(6)">Almost there… →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: THE QUESTION -->
+<section class="section" id="s7">
+  <div class="glow-bg">
+    <div class="glow-orb" style="width:400px;height:400px;background:rgba(247,197,208,0.35);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  </div>
+  <div class="section-inner">
+    <div class="glass" style="padding:3.5rem 2.5rem;">
+      <div class="heartbeat" style="margin-bottom:1.5rem;">🌸</div>
+      <p class="big-question">
+        <em>Nadia Nampeera…</em><br><br>
+        Will you be my girlfriend?
+      </p>
+      <div class="divider"></div>
+      <div style="margin-top:2rem;">
+        <button class="btn btn-primary" onclick="handleYes()" style="font-size:1rem;padding:1rem 2.8rem;">YES 😄</button>
+        <button class="btn btn-secondary" onclick="handleThink()">Let me think 🤭</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YES PAGE -->
+<section class="section" id="s-yes">
+  <div class="glow-bg">
+    <div class="glow-orb" style="width:500px;height:500px;background:rgba(247,197,208,0.4);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  </div>
+  <div class="section-inner">
+    <div class="glass" style="padding:3rem 2.5rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;" id="yes-emoji">🥹</div>
+      <h1 class="yes-glow" style="color:#c96a7a;font-style:italic;">She said yes…</h1>
+      <div class="divider"></div>
+      <div class="body-text">
+        <p>I won't even pretend to be calm about this…</p>
+        <p>Because the truth is… I really wanted this.</p>
+        <p>And the fact that you said yes?<br>That just made everything worth it.</p>
+        <p style="font-size:1.1rem;font-weight:500;color:var(--text-dark);">You've just made me genuinely happy.</p>
+        <p>And I hope you're ready…</p>
+        <p style="font-style:italic;color:var(--text-soft);">Because I'm not here to do things halfway.</p>
+        <p style="font-size:1.1rem;font-weight:500;color:var(--text-dark);">This? I'm going to do it right. 🤍</p>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:rgba(247,197,208,0.25);border-radius:16px;border:1px dashed rgba(201,169,110,0.4);">
+        <p style="font-size:0.9rem;color:var(--text-mid);">Now do one more thing for me…</p>
+        <p style="font-size:1rem;font-weight:500;color:var(--text-dark);margin-top:0.5rem;">Take a screenshot of this page…<br>And send it to me 🤭❤️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINK PAGE -->
+<section class="section" id="s-think">
+  <div class="section-inner">
+    <div class="glass">
+      <div style="font-size:2.5rem;margin-bottom:1rem;">🤔</div>
+      <h2>I see you…</h2>
+      <div class="body-text">
+        <p>trying to be serious now 🤭</p>
+        <p>But let's be honest…</p>
+        <p>You made it all the way here.</p>
+        <p style="font-size:1.05rem;font-weight:500;color:var(--text-dark);">That already tells me more than enough.</p>
+        <p>I'll give you a little time…</p>
+        <p style="font-style:italic;color:var(--text-soft);">But don't take too long.</p>
+        <p>Something tells me I'll be asking you again 😉</p>
+      </div>
+      <button class="btn btn-primary" style="margin-top:1.5rem;" onclick="handleYes()">Actually… yes 😄</button>
+    </div>
+  </div>
+</section>
+
+<script>
+const sections = ['s1','s2','s3','s4','s5','s6','s7'];
+let currentSection = 0;
+let audioEnabled = false;
+const music = document.getElementById('bg-music');
+
+// Create particles
+function createParticles() {
+  const container = document.getElementById('particles');
+  const colors = ['#f7c5d0','#c9a96e','#fde8e8','#f5ecd7','#e8c5d4'];
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 8 + 4;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*15+10}s;
+      animation-delay:${Math.random()*15}s;
+    `;
+    container.appendChild(p);
+  }
+}
+
+// Progress dots
+function buildDots() {
+  const prog = document.getElementById('progress');
+  sections.forEach((id, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0?' active':'');
+    d.onclick = () => { if(i <= currentSection) goToSection(i); };
+    prog.appendChild(d);
+  });
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d,i) => {
+    d.classList.toggle('active', i===currentSection);
+  });
+}
+
+function showSection(index) {
+  const id = sections[index];
+  const el = document.getElementById(id);
+  el.style.display = 'flex';
+  setTimeout(() => {
+    el.classList.add('visible');
+    animateLines(el);
+  }, 50);
+}
+
+function animateLines(el) {
+  const lines = el.querySelectorAll('.line-fade');
+  lines.forEach((l,i) => {
+    setTimeout(() => l.classList.add('show'), i*180);
+  });
+}
+
+function goToSection(index) {
+  currentSection = index;
+  updateDots();
+  const id = sections[index];
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function nextSection(from) {
+  const next = from + 1;
+  if (next < sections.length) {
+    showSection(next);
+    setTimeout(() => goToSection(next), 100);
+  }
+}
+
+function toggleCard(el) {
+  el.classList.toggle('open');
+}
+
+function handleYes() {
+  const yes = document.getElementById('s-yes');
+  yes.style.display = 'flex';
+  setTimeout(() => {
+    yes.classList.add('visible');
+    yes.scrollIntoView({behavior:'smooth'});
+    launchConfetti();
+  }, 100);
+}
+
+function handleThink() {
+  const think = document.getElementById('s-think');
+  think.style.display = 'flex';
+  setTimeout(() => {
+    think.classList.add('visible');
+    think.scrollIntoView({behavior:'smooth'});
+  }, 100);
+}
+
+function launchConfetti() {
+  const colors = ['#f7c5d0','#c9a96e','#fce4ec','#f8bbd0','#fff8e1','#e8a0a8'];
+  for (let i = 0; i < 80; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'confetti-piece';
+      const size = Math.random()*8+4;
+      c.style.cssText = `
+        left:${Math.random()*100}%;
+        width:${size}px;height:${size}px;
+        background:${colors[Math.floor(Math.random()*colors.length)]};
+        animation-duration:${Math.random()*2+2.5}s;
+        animation-delay:${Math.random()*0.5}s;
+        border-radius:${Math.random()>0.5?'50%':'2px'};
+      `;
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 30);
+  }
+}
+
+function toggleAudio() {
+  if (!audioEnabled) {
+    music.volume = 0;
+    music.play().then(() => {
+      audioEnabled = true;
+      document.getElementById('audio-label').textContent = 'Sound on';
+      fadeAudio(0, 0.35);
+    }).catch(()=>{});
+  } else {
+    fadeAudio(music.volume, 0, () => { music.pause(); audioEnabled = false; });
+    document.getElementById('audio-label').textContent = 'Enable sound';
+  }
+}
+
+function fadeAudio(from, to, cb) {
+  let v = from;
+  const step = (to-from)/20;
+  const t = setInterval(() => {
+    v += step;
+    music.volume = Math.max(0, Math.min(1, v));
+    if ((step>0&&v>=to)||(step<0&&v<=to)) { clearInterval(t); if(cb)cb(); }
+  }, 50);
+}
+
+// Init
+createParticles();
+buildDots();
+showSection(0);
+
+// Intersection observer for subsequent sections
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const idx = sections.indexOf(e.target.id);
+      if (idx > -1) { currentSection = idx; updateDots(); }
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+</script>
+</body>
+</html>
