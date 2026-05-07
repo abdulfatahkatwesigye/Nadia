@@ -48,16 +48,16 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
   -webkit-overflow-scrolling:touch;display:flex;flex-direction:column;align-items:center;
   touch-action:pan-y;}
 .screen.on{opacity:1;pointer-events:all;}
-#s-universe,#s-ferris{overflow:hidden;touch-action:none;}
+#s-universe,
 
 /* BACKGROUNDS */
 #s-hub{background:linear-gradient(160deg,#fdf5ee 0%,#f9ede0 40%,#f5e8f0 100%);}
-#s-universe{background:linear-gradient(180deg,#0a0818 0%,#1a0e2e 50%,#0e1428 100%);}
-#s-carousel{background:linear-gradient(160deg,#fef9f0 0%,#fdf0e8 50%,#f8eef5 100%);}
-#s-bottle{background:linear-gradient(180deg,#e8f4f8 0%,#d0e8f4 40%,#c8dff0 100%);}
-#s-ferris{background:linear-gradient(160deg,#fef8f0 0%,#fde8d8 50%,#f8f0e8 100%);}
-#s-paint{background:#fdfaf6;}
-#s-petal{background:linear-gradient(160deg,#fef5f5 0%,#fde8e8 50%,#f8f0f8 100%);}
+
+
+
+
+
+
 
 /* INNER */
 .si{width:100%;max-width:560px;margin:0 auto;padding:4rem 1.6rem 5.5rem;
@@ -120,194 +120,106 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
 .hc-desc{font-size:0.65rem;color:rgba(60,40,30,0.45);line-height:1.55;letter-spacing:0.03em;}
 .hc1 .hc-desc{color:rgba(255,255,255,0.45);}
 
-/* CONFETTI */
-.cp{position:fixed;top:-10px;pointer-events:none;z-index:9990;animation:cf linear forwards;}
-@keyframes cf{0%{transform:translateY(0) rotate(0);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
-.spk{position:fixed;pointer-events:none;z-index:9991;animation:spka 0.7s ease forwards;}
-@keyframes spka{0%{transform:scale(0);opacity:1;}60%{transform:scale(1.6);opacity:0.8;}100%{transform:scale(0);opacity:0;}}
 
-/* ═══ UNIVERSE ═══ */
-#universe-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;}
-.universe-ui{position:relative;z-index:5;text-align:center;pointer-events:none;width:100%;}
-.universe-ui .big{color:rgba(255,255,255,0.9);}
-.universe-ui .eyebrow{color:rgba(255,255,255,0.35);}
-.universe-ui .sub{color:rgba(255,255,255,0.4);}
-.universe-ui .divline{background:linear-gradient(90deg,transparent,rgba(212,168,67,0.8),transparent);}
-/* Allow button clicks to pass through universe-ui but not canvas */
-.universe-ui button,.universe-ui a{pointer-events:all;}
-#star-tooltip{position:fixed;background:rgba(20,10,40,0.92);backdrop-filter:blur(14px);
-  border:1px solid rgba(212,168,67,0.4);border-radius:14px;
-  padding:0.7rem 1.2rem;max-width:220px;text-align:center;
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:0.92rem;color:rgba(255,255,255,0.88);line-height:1.7;
-  pointer-events:none;opacity:0;transition:opacity 0.3s;z-index:10;
-  box-shadow:0 8px 32px rgba(0,0,0,0.4);}
-#star-tooltip.on{opacity:1;}
-.star-name{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--lightgold);font-family:'Jost',sans-serif;font-style:normal;margin-bottom:0.3rem;display:block;}
-#universe-back{position:relative;z-index:6;margin-top:1.5rem;pointer-events:all;}
+.hc7{background:linear-gradient(145deg,#2a1010,#4a1a1a,#3a1020);}
+.hc7 .hc-title{color:rgba(255,180,150,0.95);}
+.hc7 .hc-desc{color:rgba(255,180,150,0.45);}
+.hc8{background:linear-gradient(145deg,#1a1030,#2a1a4a,#201028);}
+.hc8 .hc-title{color:rgba(200,170,255,0.95);}
+.hc8 .hc-desc{color:rgba(200,170,255,0.45);}
+.hc9{background:linear-gradient(145deg,#102010,#1a3a10,#102818);}
+.hc9 .hc-title{color:rgba(150,230,150,0.95);}
+.hc9 .hc-desc{color:rgba(150,230,150,0.45);}
+.hc10{background:linear-gradient(145deg,#0a1828,#102040,#0a1830);}
+.hc10 .hc-title{color:rgba(120,200,255,0.95);}
+.hc10 .hc-desc{color:rgba(120,200,255,0.45);}
 
-/* ═══ CAROUSEL ═══ */
-.carousel-stage{position:relative;width:100%;height:360px;perspective:900px;margin:1rem 0;}
-.carousel-track{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 0.9s cubic-bezier(0.4,0,0.2,1);}
-.carousel-card{
-  position:absolute;width:200px;height:280px;
-  left:50%;top:50%;margin-left:-100px;margin-top:-140px;
-  border-radius:20px;
-  background:linear-gradient(160deg,#fff9f5,#fef2e8);
-  box-shadow:0 20px 60px rgba(0,0,0,0.18),0 4px 16px rgba(0,0,0,0.1),inset 0 1px 0 rgba(255,255,255,0.9);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:1.4rem;cursor:pointer;border:1px solid rgba(232,160,160,0.2);
-  backface-visibility:hidden;
-}
-.carousel-card-icon{font-size:2.8rem;margin-bottom:0.8rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.12));}
-.carousel-card-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;
-  color:var(--text);margin-bottom:0.5rem;}
-.carousel-card-quote{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:0.85rem;color:var(--textsoft);line-height:1.7;}
-.carousel-nav{display:flex;gap:1rem;align-items:center;margin-top:1rem;}
-.cnav{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(201,112,112,0.3);
-  background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;color:var(--deeprose);transition:all 0.3s;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
-.cnav:hover{background:var(--deeprose);color:#fff;border-color:var(--deeprose);transform:scale(1.1);}
-.carousel-dots{display:flex;gap:0.5rem;align-items:center;}
-.cdot{width:7px;height:7px;border-radius:50%;background:rgba(201,112,112,0.2);
-  transition:all 0.3s;cursor:pointer;}
-.cdot.on{background:var(--deeprose);transform:scale(1.3);}
-/* Card popup overlay */
-#carousel-overlay{position:fixed;inset:0;background:rgba(60,30,20,0.45);z-index:8400;
-  display:none;backdrop-filter:blur(8px);align-items:center;justify-content:center;}
-#carousel-overlay.on{display:flex;}
-.carousel-popup{
-  background:linear-gradient(160deg,#fff9f5,#fef5ee);
-  border-radius:28px;padding:2.5rem 2rem;max-width:340px;width:90%;
-  text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.2);
-  border:1px solid rgba(232,160,160,0.25);
-  animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);
-}
-@keyframes popIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
-.popup-icon{font-size:3.5rem;margin-bottom:0.8rem;}
-.popup-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;
-  color:var(--text);margin-bottom:0.6rem;}
-.popup-text{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1rem;color:var(--textsoft);line-height:1.85;}
-.popup-close{margin-top:1.4rem;font-size:0.6rem;letter-spacing:0.25em;
-  text-transform:uppercase;color:var(--textvsoft);cursor:pointer;
-  font-family:'Jost',sans-serif;}
+/* ═══ SMASH ROOM ═══ */
+#s-smash{background:radial-gradient(ellipse at center,#2a0a0a 0%,#0d0000 100%);overflow:hidden;}
+#smash-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;cursor:crosshair;}
+#smash-score{position:fixed;top:4.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(255,140,80,0.95);
+  text-shadow:0 0 30px rgba(255,80,20,0.8);pointer-events:none;letter-spacing:0.1em;}
+#smash-hint{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,140,80,0.4);
+  pointer-events:none;transition:opacity 1s;}
+#smash-btns{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  display:flex;gap:0.8rem;}
+#smash-btns button{font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(255,80,20,0.1);border:1px solid rgba(255,80,20,0.25);color:rgba(255,140,80,0.7);
+  transition:all 0.3s;}
+#smash-btns button:hover{background:rgba(255,80,20,0.2);color:rgba(255,180,100,0.9);}
 
-/* ═══ BOTTLE ═══ */
-#bottle-canvas{position:absolute;inset:0;width:100%;height:100%;}
-.bottle-ui{position:relative;z-index:5;text-align:center;}
-.bottle-ui .big{color:var(--text);}
-#bottle-svg-wrap{width:140px;height:260px;margin:1rem auto;cursor:pointer;
-  filter:drop-shadow(0 12px 40px rgba(80,140,200,0.3));
-  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);}
-#bottle-svg-wrap:hover{transform:scale(1.06) rotate(-3deg);}
-#bottle-svg-wrap.shake{animation:bottleShake 0.6s ease;}
-@keyframes bottleShake{0%,100%{transform:rotate(0);}15%{transform:rotate(-12deg);}30%{transform:rotate(10deg);}45%{transform:rotate(-8deg);}60%{transform:rotate(6deg);}75%{transform:rotate(-4deg);}90%{transform:rotate(2deg);}}
-#letter-paper{
-  position:fixed;top:50%;left:50%;transform:translate(-50%,-60%) scale(0);
-  width:min(90vw,320px);background:linear-gradient(175deg,#fffef9,#fdf8ef);
-  border-radius:10px 10px 6px 6px;padding:2rem 1.8rem 1.6rem;
-  box-shadow:0 24px 70px rgba(0,0,0,0.18),0 4px 16px rgba(0,0,0,0.08);
-  z-index:8600;opacity:0;transition:all 0.7s cubic-bezier(0.34,1.56,0.64,1);
-  border-top:4px solid var(--rose);
-}
-#letter-paper.open{transform:translate(-50%,-50%) scale(1);opacity:1;}
-#letter-paper::before{content:'';position:absolute;left:18px;right:18px;top:28px;height:1px;
-  background:rgba(180,140,100,0.18);
-  box-shadow:0 22px 0 rgba(180,140,100,0.14),0 44px 0 rgba(180,140,100,0.11),0 66px 0 rgba(180,140,100,0.09),0 88px 0 rgba(180,140,100,0.07);}
-.letter-p-text{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.02rem;color:var(--text);line-height:2;text-align:left;position:relative;z-index:1;}
-.letter-p-text p{margin-bottom:0.8rem;}
-.letter-p-sig{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:0.95rem;color:var(--deeprose);text-align:right;margin-top:0.8rem;position:relative;z-index:1;}
-#letter-overlay{position:fixed;inset:0;background:rgba(60,30,20,0.35);z-index:8500;
-  display:none;backdrop-filter:blur(6px);}
-.bottle-hint{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--textvsoft);animation:pulse 2.5s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:0.5;}50%{opacity:1;}}
+/* ═══ SCREAM ═══ */
+#s-scream{background:radial-gradient(ellipse at center,#0c0418 0%,#040008 100%);overflow:hidden;}
+#scream-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.scream-ui{position:relative;z-index:5;text-align:center;}
+#scream-btn{width:180px;height:180px;border-radius:50%;
+  border:2px solid rgba(160,80,255,0.4);
+  background:radial-gradient(circle,rgba(80,20,160,0.4),rgba(20,0,60,0.8));
+  cursor:pointer;font-size:3.5rem;transition:all 0.15s;
+  box-shadow:0 0 50px rgba(100,20,255,0.25),inset 0 0 30px rgba(80,0,180,0.3);
+  margin:1.5rem auto;display:block;position:relative;z-index:10;}
+#scream-btn:active,#scream-btn.screaming{
+  border-color:rgba(255,60,220,0.9);
+  box-shadow:0 0 120px rgba(220,40,255,0.9),0 0 200px rgba(180,0,255,0.5),inset 0 0 60px rgba(200,0,255,0.4);
+  background:radial-gradient(circle,rgba(180,20,255,0.6),rgba(80,0,160,0.9));
+  transform:scale(1.05);}
+#scream-label{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;
+  color:rgba(180,120,255,0.6);letter-spacing:0.1em;margin-top:0.5rem;position:relative;z-index:10;}
+#scream-release{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;
+  color:rgba(220,180,255,0.95);margin-top:1.2rem;min-height:2.5rem;
+  text-shadow:0 0 25px rgba(200,80,255,0.6);transition:opacity 0.6s;position:relative;z-index:10;}
+#scream-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(140,40,255,0.1);border:1px solid rgba(140,40,255,0.2);color:rgba(180,120,255,0.6);
+  transition:all 0.3s;}
 
-/* ═══ FERRIS WHEEL ═══ */
-#ferris-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;}
-.ferris-ui{position:relative;z-index:5;text-align:center;pointer-events:none;width:100%;}
-#gondola-popup{position:fixed;z-index:8400;
-  background:linear-gradient(160deg,#fff9f5,#fef2e8);
-  border-radius:20px;padding:1.6rem 1.4rem;max-width:260px;width:min(260px,85vw);
-  text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);
-  border:1px solid rgba(232,160,160,0.3);
-  opacity:0;pointer-events:none;transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
-  transform:scale(0.8);}
-#gondola-popup.on{opacity:1;pointer-events:all;transform:scale(1);}
-.gp-icon{font-size:2rem;margin-bottom:0.5rem;}
-.gp-text{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:0.95rem;color:var(--textsoft);line-height:1.75;}
-.gp-close{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--textvsoft);cursor:pointer;margin-top:0.8rem;display:block;pointer-events:all;}
-#ferris-hint{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);
-  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--textsoft);z-index:6;animation:pulse 2.5s ease-in-out infinite;
-  pointer-events:none;white-space:nowrap;}
-#ferris-back{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:7;pointer-events:all;}
+/* ═══ RAGE DARTS ═══ */
+#s-darts{background:radial-gradient(ellipse at center,#0a1a06 0%,#020800 100%);overflow:hidden;}
+#darts-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;cursor:crosshair;}
+#darts-score{position:fixed;top:4.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(120,255,80,0.95);
+  text-shadow:0 0 30px rgba(60,200,20,0.8);pointer-events:none;letter-spacing:0.1em;}
+#darts-msg{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2rem;font-weight:300;
+  color:rgba(180,255,120,0.95);pointer-events:none;text-align:center;
+  text-shadow:0 0 30px rgba(100,255,60,0.7);transition:opacity 0.4s;opacity:0;}
+#darts-hint{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(120,255,80,0.35);
+  pointer-events:none;transition:opacity 1s;}
+#darts-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(60,180,20,0.1);border:1px solid rgba(60,180,20,0.2);color:rgba(120,220,80,0.6);
+  transition:all 0.3s;}
 
-/* ═══ PAINT ═══ */
-#paint-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;touch-action:none;}
-.paint-ui{position:fixed;bottom:0;left:0;right:0;z-index:5;
-  padding:1rem 1.2rem 1.4rem;text-align:center;
-  background:linear-gradient(0deg,rgba(253,250,246,0.97) 0%,rgba(253,250,246,0.85) 80%,transparent 100%);
-  backdrop-filter:blur(4px);}
-.paint-colors{display:flex;gap:0.55rem;justify-content:center;margin-bottom:0.7rem;flex-wrap:wrap;}
-.pc{width:30px;height:30px;border-radius:50%;cursor:pointer;border:3px solid transparent;
-  transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
-.pc.on{border-color:var(--text);transform:scale(1.2);}
-.paint-sizes{display:flex;gap:0.5rem;justify-content:center;margin-bottom:0.7rem;align-items:center;}
-.ps{border-radius:50%;background:var(--text);cursor:pointer;transition:transform 0.2s;
-  border:2px solid transparent;}
-.ps.on{border-color:var(--deeprose);transform:scale(1.15);}
-.paint-actions{display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;}
-#reveal-btn{background:linear-gradient(135deg,var(--deeprose),#c06060);color:#fff;
-  border:none;border-radius:50px;padding:0.6rem 1.5rem;
-  font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.12em;
-  text-transform:uppercase;cursor:pointer;transition:all 0.3s;
-  box-shadow:0 4px 16px rgba(201,112,112,0.3);}
-#reveal-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,112,112,0.45);}
-#clear-btn{background:rgba(180,140,120,0.12);border:1.5px solid rgba(180,140,120,0.25);
-  color:var(--textsoft);border-radius:50px;padding:0.6rem 1.3rem;
-  font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.12em;
-  text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
-#clear-btn:hover{background:rgba(180,140,120,0.2);}
-#paint-title{position:fixed;top:1.2rem;left:50%;transform:translateX(-50%);z-index:5;
-  text-align:center;pointer-events:none;white-space:nowrap;}
-#paint-progress{position:fixed;top:1rem;right:1rem;z-index:5;
-  font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--textvsoft);font-family:'Jost',sans-serif;}
-#reveal-overlay{position:fixed;inset:0;z-index:4;
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;opacity:0;transition:opacity 0.8s;}
-#reveal-overlay.on{opacity:1;}
-.reveal-message{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,7vw,3.5rem);
-  font-style:italic;font-weight:300;color:var(--deeprose);
-  text-shadow:0 0 60px rgba(232,160,160,0.6),0 4px 20px rgba(0,0,0,0.08);
-  text-align:center;line-height:1.3;padding:2rem;}
-
-/* ═══ PETAL ═══ */
-#petal-rose-wrap{position:relative;width:240px;height:240px;margin:1.2rem auto;cursor:pointer;}
-#petal-canvas{position:absolute;inset:0;width:100%;height:100%;}
-.petal-count{font-family:'Cormorant Garamond',serif;font-size:1.2rem;
-  color:var(--deeprose);font-style:italic;margin:0.5rem 0;}
-.petal-phrase{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;
-  color:var(--text);min-height:2rem;transition:all 0.5s;font-style:italic;}
-.petal-sub{font-size:0.88rem;color:var(--textvsoft);line-height:1.9;margin-top:0.4rem;
-  font-style:italic;font-family:'Cormorant Garamond',serif;}
-#petal-final{display:none;text-align:center;}
-#petal-final .big{color:var(--deeprose);}
-.falling-petal{position:fixed;pointer-events:none;z-index:9800;
-  font-size:1.4rem;animation:petalFall linear forwards;}
-@keyframes petalFall{
-  0%{transform:translateY(-20px) rotate(0deg) scale(1);opacity:1;}
-  100%{transform:translateY(110vh) rotate(720deg) scale(0.6);opacity:0;}
-}
+/* ═══ OCEAN DRIFT ═══ */
+#s-ocean{background:linear-gradient(180deg,#020c1a 0%,#040e20 100%);overflow:hidden;}
+#ocean-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.ocean-ui{position:relative;z-index:5;text-align:center;pointer-events:none;}
+.ocean-ui button{pointer-events:all;}
+#breath-ring{position:relative;z-index:10;width:130px;height:130px;border-radius:50%;
+  margin:1.5rem auto;pointer-events:none;
+  border:1.5px solid rgba(80,180,255,0.25);
+  box-shadow:0 0 0 0 rgba(80,180,255,0.4);
+  animation:breathe-ring 8s ease-in-out infinite;}
+@keyframes breathe-ring{
+  0%,100%{transform:scale(1);box-shadow:0 0 15px rgba(60,160,255,0.2),0 0 0 0 rgba(60,160,255,0.1);}
+  50%{transform:scale(1.35);box-shadow:0 0 50px rgba(80,200,255,0.5),0 0 80px rgba(40,140,255,0.2);}}
+#breath-inner{width:100%;height:100%;border-radius:50%;
+  background:radial-gradient(circle,rgba(60,160,255,0.15),rgba(20,80,180,0.05));
+  animation:breathe-inner 8s ease-in-out infinite;}
+@keyframes breathe-inner{0%,100%{opacity:0.4;}50%{opacity:1;}}
+#breath-word{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;
+  color:rgba(120,200,255,0.75);animation:breathe-word 8s ease-in-out infinite;
+  letter-spacing:0.08em;margin-top:0.3rem;}
+@keyframes breathe-word{0%,100%{opacity:0.5;}45%,55%{opacity:1;}}
+#breath-affirmation{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;
+  color:rgba(160,220,255,0.9);margin-top:1.8rem;min-height:3rem;line-height:1.6;
+  text-shadow:0 0 25px rgba(60,160,255,0.4);transition:opacity 1.2s;}
 </style>
 </head>
 <body>
@@ -320,38 +232,28 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
   <div class="si">
     <span class="eyebrow rv">a world built for you</span>
     <h1 class="big rv" style="font-size:clamp(2.6rem,8vw,4.2rem);">Hello,<br><em>Nadia.</em></h1>
-    <p class="sub rv" style="max-width:360px;">Six little worlds, made just for you. Each one is waiting. Explore them all.</p>
+    <p class="sub rv" style="max-width:360px;">Four little worlds, made just for you. Each one is waiting.</p>
     <div class="divline rv"></div>
-    <div class="hub-grid rv">
-      <div class="hub-card hc1" onclick="go('s-universe')">
-        <span class="hc-icon">🌌</span>
-        <div class="hc-title">Your Universe</div>
-        <div class="hc-desc">Touch the stars</div>
+    <div class="hub-grid rv" style="grid-template-columns:1fr 1fr;max-width:400px;">
+      <div class="hub-card hc7" onclick="go('s-smash')">
+        <span class="hc-icon">💥</span>
+        <div class="hc-title">Smash Room</div>
+        <div class="hc-desc">Break something</div>
       </div>
-      <div class="hub-card hc2" onclick="go('s-carousel')">
-        <span class="hc-icon">🎠</span>
-        <div class="hc-title">Carousel of Moments</div>
-        <div class="hc-desc">Spin through our story</div>
+      <div class="hub-card hc8" onclick="go('s-scream')">
+        <span class="hc-icon">😤</span>
+        <div class="hc-title">Scream Into The Void</div>
+        <div class="hc-desc">Let it all out</div>
       </div>
-      <div class="hub-card hc3" onclick="go('s-bottle')">
+      <div class="hub-card hc9" onclick="go('s-darts')">
+        <span class="hc-icon">🎯</span>
+        <div class="hc-title">Rage Darts</div>
+        <div class="hc-desc">Pop every balloon</div>
+      </div>
+      <div class="hub-card hc10" onclick="go('s-ocean')">
         <span class="hc-icon">🌊</span>
-        <div class="hc-title">Message in a Bottle</div>
-        <div class="hc-desc">Shake it open</div>
-      </div>
-      <div class="hub-card hc4" onclick="go('s-ferris')">
-        <span class="hc-icon">🎡</span>
-        <div class="hc-title">The Ferris Wheel</div>
-        <div class="hc-desc">Click each gondola</div>
-      </div>
-      <div class="hub-card hc5" onclick="go('s-paint')">
-        <span class="hc-icon">🖼️</span>
-        <div class="hc-title">Paint With Me</div>
-        <div class="hc-desc">Uncover the secret</div>
-      </div>
-      <div class="hub-card hc6" onclick="go('s-petal')">
-        <span class="hc-icon">🌹</span>
-        <div class="hc-title">Petal Oracle</div>
-        <div class="hc-desc">Pull the petals</div>
+        <div class="hc-title">Ocean Drift</div>
+        <div class="hc-desc">Float &amp; breathe</div>
       </div>
     </div>
     <p class="rv" style="font-family:'Cormorant Garamond',serif;font-style:italic;
@@ -359,220 +261,63 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
   </div>
 </div>
 
-<!-- ═══════ UNIVERSE ═══════ -->
-<div class="screen" id="s-universe">
-  <canvas id="universe-canvas"></canvas>
-  <div class="si universe-ui">
-    <span class="eyebrow rv">the universe loves you</span>
-    <h2 class="big rv" style="font-size:clamp(1.8rem,5vw,3rem);color:rgba(255,255,255,0.92);">Every star up there<br><em style="color:#f0d080;">has your name on it.</em></h2>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(240,208,128,0.8),transparent);"></div>
-    <p class="sub rv" style="color:rgba(255,255,255,0.4);">Touch each glowing star to see what it's named after you.</p>
-    <div id="universe-back" class="rv">
-      <button class="btn btn-gold" onclick="goHub()">back to your world</button>
-    </div>
-  </div>
-  <div id="star-tooltip"><span class="star-name" id="star-name-label"></span><span id="star-msg-label"></span></div>
-</div>
-
-<!-- ═══════ CAROUSEL ═══════ -->
-<div class="screen" id="s-carousel">
-  <div class="si">
-    <span class="eyebrow rv">carousel of moments</span>
-    <h2 class="big rv">Swipe through<br><em>our story.</em></h2>
-    <p class="sub rv" style="font-size:0.82rem;">Tap the arrows to spin. Click a card to open it.</p>
-    <div class="carousel-stage rv" id="carouselStage">
-      <div class="carousel-track" id="carouselTrack"></div>
-    </div>
-    <div class="carousel-nav rv">
-      <button class="cnav" onclick="spinCarousel(-1)">←</button>
-      <div class="carousel-dots" id="carouselDots"></div>
-      <button class="cnav" onclick="spinCarousel(1)">→</button>
-    </div>
-    <div class="rv" style="margin-top:1.4rem;">
-      <button class="btn btn-rose" onclick="goHub()">back to your world</button>
-    </div>
-  </div>
-</div>
-<div id="carousel-overlay" onclick="closeCarouselPopup()">
-  <div class="carousel-popup" onclick="event.stopPropagation()">
-    <div class="popup-icon" id="popup-icon"></div>
-    <div class="popup-title" id="popup-title"></div>
-    <div class="popup-text" id="popup-text"></div>
-    <span class="popup-close" onclick="closeCarouselPopup()">tap anywhere to close</span>
+<!-- ═══════ SMASH ROOM ═══════ -->
+<div class="screen" id="s-smash">
+  <canvas id="smash-canvas"></canvas>
+  <div id="smash-score">💥 0</div>
+  <div id="smash-hint">click anything to smash</div>
+  <div id="smash-btns">
+    <button onclick="resetSmash()">↺ reset</button>
+    <button onclick="goHub()">← back</button>
   </div>
 </div>
 
-<!-- ═══════ BOTTLE ═══════ -->
-<div class="screen" id="s-bottle">
-  <canvas id="bottle-canvas"></canvas>
-  <div class="si bottle-ui">
-    <span class="eyebrow rv">message in a bottle</span>
-    <h2 class="big rv">Washed ashore,<br><em>just for you.</em></h2>
-    <p class="sub rv" style="font-size:0.82rem;">Tap the bottle to uncork it and read what's inside.</p>
-    <div id="bottle-svg-wrap" class="rv" onclick="uncorkBottle()">
-      <svg viewBox="0 0 140 260" fill="none" xmlns="http://www.w3.org/2000/svg" width="140" height="260">
-        <defs>
-          <linearGradient id="glassBody" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="rgba(100,180,220,0.35)"/>
-            <stop offset="25%" stop-color="rgba(180,230,255,0.55)"/>
-            <stop offset="55%" stop-color="rgba(220,245,255,0.45)"/>
-            <stop offset="100%" stop-color="rgba(80,160,210,0.40)"/>
-          </linearGradient>
-          <linearGradient id="glassNeck" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="rgba(100,180,220,0.4)"/>
-            <stop offset="50%" stop-color="rgba(200,240,255,0.6)"/>
-            <stop offset="100%" stop-color="rgba(80,160,210,0.4)"/>
-          </linearGradient>
-          <linearGradient id="corkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#d4a460"/>
-            <stop offset="100%" stop-color="#a07030"/>
-          </linearGradient>
-          <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="rgba(100,180,220,0.25)"/>
-            <stop offset="100%" stop-color="rgba(60,140,200,0.35)"/>
-          </linearGradient>
-          <filter id="bottleGlow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-          </filter>
-          <clipPath id="bottleClip">
-            <path d="M45 100 Q30 120 28 160 Q26 200 30 230 Q34 255 70 256 Q106 255 110 230 Q114 200 112 160 Q110 120 95 100 Z"/>
-          </clipPath>
-        </defs>
-        <!-- Bottle body shadow -->
-        <ellipse cx="70" cy="250" rx="38" ry="6" fill="rgba(60,120,180,0.12)"/>
-        <!-- Water fill inside -->
-        <path d="M45 100 Q30 120 28 160 Q26 200 30 230 Q34 255 70 256 Q106 255 110 230 Q114 200 112 160 Q110 120 95 100 Z" fill="url(#waterGrad)"/>
-        <!-- Message scroll inside bottle -->
-        <g clip-path="url(#bottleClip)">
-          <rect x="52" y="130" width="36" height="80" rx="18" fill="rgba(255,248,235,0.85)" transform="rotate(-8,70,170)"/>
-          <rect x="52" y="130" width="36" height="80" rx="18" fill="none" stroke="rgba(200,150,80,0.4)" stroke-width="1" transform="rotate(-8,70,170)"/>
-          <line x1="57" y1="150" x2="81" y2="147" stroke="rgba(180,130,60,0.35)" stroke-width="1.2" transform="rotate(-8,70,170)"/>
-          <line x1="57" y1="162" x2="81" y2="159" stroke="rgba(180,130,60,0.28)" stroke-width="1" transform="rotate(-8,70,170)"/>
-          <line x1="57" y1="174" x2="81" y2="171" stroke="rgba(180,130,60,0.22)" stroke-width="1" transform="rotate(-8,70,170)"/>
-          <text x="67" y="200" font-size="9" fill="rgba(201,112,112,0.7)" text-anchor="middle" transform="rotate(-8,70,200)">♥</text>
-        </g>
-        <!-- Bottle body glass -->
-        <path d="M45 100 Q30 120 28 160 Q26 200 30 230 Q34 255 70 256 Q106 255 110 230 Q114 200 112 160 Q110 120 95 100 Z" fill="url(#glassBody)" stroke="rgba(160,220,255,0.5)" stroke-width="1.5"/>
-        <!-- Glass shine left -->
-        <path d="M36 130 Q33 160 34 200" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="round"/>
-        <!-- Glass shine right small -->
-        <path d="M96 150 Q97 170 96 190" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Top highlight -->
-        <ellipse cx="58" cy="108" rx="8" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-15,58,108)"/>
-        <!-- Neck -->
-        <path d="M55 50 Q52 70 45 100 L95 100 Q88 70 85 50 Z" fill="url(#glassNeck)" stroke="rgba(160,220,255,0.45)" stroke-width="1.5"/>
-        <!-- Neck shine -->
-        <path d="M59 55 Q57 72 55 98" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- Neck rim -->
-        <rect x="52" y="44" width="36" height="10" rx="5" fill="rgba(160,220,240,0.5)" stroke="rgba(180,230,255,0.6)" stroke-width="1"/>
-        <!-- Cork -->
-        <rect id="bottle-cork" x="56" y="20" width="28" height="28" rx="6" fill="url(#corkGrad)" stroke="rgba(160,100,40,0.6)" stroke-width="1"/>
-        <!-- Cork grain lines -->
-        <line x1="60" y1="25" x2="80" y2="25" stroke="rgba(120,70,20,0.25)" stroke-width="1"/>
-        <line x1="60" y1="30" x2="80" y2="30" stroke="rgba(120,70,20,0.2)" stroke-width="1"/>
-        <line x1="60" y1="35" x2="80" y2="35" stroke="rgba(120,70,20,0.18)" stroke-width="1"/>
-        <line x1="60" y1="40" x2="80" y2="40" stroke="rgba(120,70,20,0.15)" stroke-width="1"/>
-        <!-- Cork top shine -->
-        <rect x="59" y="22" width="12" height="5" rx="2.5" fill="rgba(255,255,255,0.2)"/>
-      </svg>
-    </div>
-    <div class="bottle-hint rv" id="bottleHint">tap to uncork</div>
-    <div class="rv" style="margin-top:1rem;">
-      <button class="btn btn-sky" onclick="goHub()">back to your world</button>
-    </div>
-  </div>
-</div>
-<div id="letter-overlay" onclick="closeLetter()"></div>
-<div id="letter-paper">
-  <div class="letter-p-text">
-    <p>Nadia,</p>
-    <p>I don't know how a bottle found you, but I'm glad it did. Because this is what I wanted to say — the thing I keep carrying around without quite knowing how to set it down.</p>
-    <p>You are the most interesting person I've ever been lucky enough to know. Not in a complicated way. In the way that makes me want to pay attention. To everything.</p>
-    <p>The way you laugh. The way you think. The way you exist in a room and somehow make it warmer.</p>
-    <p>I found you. And I'm keeping you.</p>
-  </div>
-  <div class="letter-p-sig">always yours ♥</div>
-</div>
-
-<!-- ═══════ FERRIS WHEEL ═══════ -->
-<div class="screen" id="s-ferris">
-  <canvas id="ferris-canvas"></canvas>
-  <div class="ferris-ui si" style="pointer-events:none;justify-content:flex-start;padding-top:3rem;">
-    <span class="eyebrow rv" style="color:var(--textsoft);">the ferris wheel</span>
-    <h2 class="big rv" style="font-size:clamp(1.6rem,4.5vw,2.6rem);">Click each gondola<br><em>as it comes around.</em></h2>
-  </div>
-  <div id="ferris-hint">tap the gondolas ↓</div>
-  <div id="ferris-back"><button class="btn btn-soft" onclick="goHub()">← back to your world</button></div>
-</div>
-<div id="gondola-popup">
-  <div class="gp-icon" id="gp-icon"></div>
-  <div class="gp-text" id="gp-text"></div>
-  <span class="gp-close" onclick="closeGondola()">close ×</span>
-</div>
-
-<!-- ═══════ PAINT ═══════ -->
-<div class="screen" id="s-paint">
-  <canvas id="paint-canvas"></canvas>
-</div>
-<div id="paint-title" style="display:none;">
-  <span class="eyebrow" style="color:var(--textvsoft);">paint with me</span>
-</div>
-<div id="paint-progress"></div>
-<div id="reveal-overlay"><div class="reveal-message" id="reveal-msg"></div></div>
-<div class="paint-ui" id="paint-ui" style="display:none;">
-  <div class="paint-colors">
-    <div class="pc on" style="background:#e88080;" data-color="#e88080" onclick="setPaintColor(this,'#e88080')"></div>
-    <div class="pc" style="background:#f0c860;" data-color="#f0c860" onclick="setPaintColor(this,'#f0c860')"></div>
-    <div class="pc" style="background:#80c0a0;" data-color="#80c0a0" onclick="setPaintColor(this,'#80c0a0')"></div>
-    <div class="pc" style="background:#88b8d8;" data-color="#88b8d8" onclick="setPaintColor(this,'#88b8d8')"></div>
-    <div class="pc" style="background:#c0a0d8;" data-color="#c0a0d8" onclick="setPaintColor(this,'#c0a0d8')"></div>
-    <div class="pc" style="background:#f0a880;" data-color="#f0a880" onclick="setPaintColor(this,'#f0a880')"></div>
-    <div class="pc" style="background:#3a2a20;" data-color="#3a2a20" onclick="setPaintColor(this,'#3a2a20')"></div>
-    <div class="pc" style="background:#ffffff;border:1.5px solid rgba(180,140,120,0.3);" data-color="#ffffff" onclick="setPaintColor(this,'#ffffff')"></div>
-  </div>
-  <div class="paint-sizes">
-    <div class="ps" style="width:12px;height:12px;" data-size="6" onclick="setPaintSize(this,6)"></div>
-    <div class="ps on" style="width:18px;height:18px;" data-size="12" onclick="setPaintSize(this,12)"></div>
-    <div class="ps" style="width:26px;height:26px;" data-size="20" onclick="setPaintSize(this,20)"></div>
-    <div class="ps" style="width:36px;height:36px;" data-size="32" onclick="setPaintSize(this,32)"></div>
-  </div>
-  <div class="paint-actions">
-    <button id="reveal-btn" onclick="revealPainting()">✨ reveal</button>
-    <button id="clear-btn" onclick="clearPainting()">clear</button>
-    <button class="btn btn-soft" style="padding:0.55rem 1.2rem;font-size:0.68rem;" onclick="goHub()">← back</button>
+<!-- ═══════ SCREAM ═══════ -->
+<div class="screen" id="s-scream">
+  <canvas id="scream-canvas"></canvas>
+  <div class="scream-ui si">
+    <span class="eyebrow rv" style="color:rgba(200,150,255,0.5);">the void is listening</span>
+    <h2 class="big rv" style="color:rgba(220,180,255,0.95);">Scream into<br><em style="color:#c060ff;">the void.</em></h2>
+    <p class="sub rv" style="color:rgba(200,150,255,0.5);">Hold the button. Let it all out. The void will absorb everything.</p>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(180,80,255,0.6),transparent);"></div>
+    <button id="scream-btn" onmousedown="startScream()" onmouseup="stopScream()" ontouchstart="startScream()" ontouchend="stopScream()">😤</button>
+    <div id="scream-label">hold to scream</div>
+    <div id="scream-release"></div>
+    <button id="scream-back" onclick="goHub()">← back</button>
   </div>
 </div>
 
-<!-- ═══════ PETAL ═══════ -->
-<div class="screen" id="s-petal">
-  <div class="si">
-    <span class="eyebrow rv">the petal oracle</span>
-    <h2 class="big rv">Pull the petals,<br><em>discover the truth.</em></h2>
-    <div id="petal-game" class="rv">
-      <div id="petal-rose-wrap">
-        <canvas id="petal-canvas" width="240" height="240"></canvas>
-      </div>
-      <div class="petal-count" id="petal-count">12 petals remaining</div>
-      <div class="petal-phrase" id="petal-phrase">tap the rose to begin…</div>
-      <div class="petal-sub" id="petal-sub"></div>
-    </div>
-    <div id="petal-final" class="rv">
-      <div style="font-size:4rem;margin-bottom:1rem;">🌹</div>
-      <h2 class="big" style="font-size:clamp(2rem,6vw,3.2rem);"><em>He loves you.</em></h2>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--textsoft);line-height:1.9;margin-top:0.8rem;max-width:320px;">
-        More than the petals could ever count. More than any oracle could measure. Completely. Wholly. Every single day.
-      </p>
-      <div style="margin-top:1.6rem;">
-        <button class="btn btn-rose" onclick="resetPetal()">play again</button>
-        <button class="btn btn-soft" onclick="goHub()">back to your world</button>
-      </div>
-    </div>
-    <div class="rv" id="petalBackBtn" style="margin-top:1.2rem;">
-      <button class="btn btn-soft" onclick="goHub()">back to your world</button>
-    </div>
+<!-- ═══════ RAGE DARTS ═══════ -->
+<div class="screen" id="s-darts">
+  <canvas id="darts-canvas"></canvas>
+  <div id="darts-score">🎯 0</div>
+  <div id="darts-msg"></div>
+  <div id="darts-hint">click anywhere to throw 🎯</div>
+  <button id="darts-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ OCEAN DRIFT ═══════ -->
+<div class="screen" id="s-ocean">
+  <canvas id="ocean-canvas"></canvas>
+  <div class="ocean-ui si">
+    <span class="eyebrow rv" style="color:rgba(100,180,255,0.5);">breathe</span>
+    <h2 class="big rv" style="color:rgba(150,210,255,0.95);">Let the ocean<br><em style="color:#60c0ff;">hold you.</em></h2>
+    <p class="sub rv" style="color:rgba(100,180,255,0.45);">Float here for a while. You don't have to do anything.</p>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(80,160,255,0.6),transparent);"></div>
+    <div id="breath-ring"><div id="breath-inner"></div></div>
+    <div id="breath-word">breathe in...</div>
+    <div id="breath-affirmation"></div>
+    <button class="btn rv" style="background:rgba(60,140,255,0.08);border:1.5px solid rgba(60,140,255,0.2);color:rgba(120,190,255,0.6);margin-top:1.5rem;" onclick="goHub()">← back</button>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
 <script>
 /* ═══ ROUNDRECT POLYFILL ═══ */
@@ -844,18 +589,23 @@ function go(id){
   const el=document.getElementById(id);
   el.classList.add('on');el.scrollTop=0;
   document.getElementById('backBtn').classList.add('vis');
+  // init screens AFTER .on is added so rAF guards work
+  if(id==='s-smash')initSmash();
+  if(id==='s-scream')initScream();
+  if(id==='s-darts')initDarts();
+  if(id==='s-ocean')initOcean();
   setTimeout(()=>{el.querySelectorAll('.rv').forEach((r,i)=>{r.classList.remove('on');setTimeout(()=>r.classList.add('on'),120+i*110);});},150);
   // Show paint UI when entering paint
   if(id==='s-paint')showPaintUI(true);
   // Init screens (one-time for most, re-runnable for stateful ones)
   if(!screenInited[id]){screenInited[id]=true;
-    if(id==='s-universe')initUniverse();
-    if(id==='s-carousel')initCarousel();
-    if(id==='s-bottle')initBottleWater();
-    if(id==='s-ferris')initFerris();
-    if(id==='s-paint')initPaint();
+  
+  
+  
+  
+  
   }
-  if(id==='s-petal')initPetal();
+
   // Show/hide ferris fixed elements
   const fb=document.getElementById('ferris-back');
   const fh=document.getElementById('ferris-hint');
@@ -1507,6 +1257,592 @@ function spawnFallingPetal(x,y){
 function resetPetal(){
   resetPetalState();
 }
+
+/* ═══ SMASH ROOM ═══ */
+let smashCanvas,smashCtx,smashCount=0,smashObjects=[],smashParticles=[];
+const SMASH_ITEMS=[
+  {e:'🍾',label:'stress'},
+  {e:'📱',label:'bad news'},
+  {e:'💻',label:'problems'},
+  {e:'🪟',label:'expectations'},
+  {e:'🏺',label:'that feeling'},
+  {e:'📺',label:'the situation'},
+  {e:'⌚',label:'wasted time'},
+  {e:'💡',label:'their idea'},
+  {e:'📷',label:'the memory'},
+  {e:'🎭',label:'the lies'},
+  {e:'🏆',label:'their ego'},
+  {e:'📻',label:'the noise'},
+];
+function initSmash(){
+  smashCanvas=document.getElementById('smash-canvas');
+  smashCtx=smashCanvas.getContext('2d');
+  smashCanvas.width=window.innerWidth;smashCanvas.height=window.innerHeight;
+  smashObjects=[];smashParticles=[];smashCount=0;
+  document.getElementById('smash-score').textContent='💥 0';
+  document.getElementById('smash-hint').style.opacity='1';
+  spawnSmashObjects();
+  smashCanvas.addEventListener('click',onSmashClick);
+  requestAnimationFrame(drawSmash);
+}
+function spawnSmashObjects(){
+  const shuffled=[...SMASH_ITEMS].sort(()=>Math.random()-0.5);
+  for(let i=0;i<9;i++){
+    const item=shuffled[i%shuffled.length];
+    smashObjects.push({
+      x:100+Math.random()*(smashCanvas.width-200),
+      y:100+Math.random()*(smashCanvas.height-250),
+      emoji:item.e, label:item.label,
+      scale:1, broken:false,
+      wobble:Math.random()*Math.PI*2, wobbleSpeed:0.02+Math.random()*0.02,
+      hover:0, hoverDir:1,
+      hoverY:Math.random()*Math.PI*2, hoverSpeed:0.005+Math.random()*0.005,
+    });
+  }
+}
+function onSmashClick(e){
+  document.getElementById('smash-hint').style.opacity='0';
+  const rect=smashCanvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left, my=e.clientY-rect.top;
+  let hit=false;
+  smashObjects.forEach(obj=>{
+    if(obj.broken)return;
+    const dist=Math.hypot(mx-obj.x,my-obj.y);
+    if(dist<65){
+      obj.broken=true; hit=true; smashCount++;
+      document.getElementById('smash-score').textContent='💥 '+smashCount;
+      // shockwave ring
+      smashParticles.push({type:'ring',x:obj.x,y:obj.y,r:10,maxR:200,life:1,hue:20});
+      // flying debris chunks
+      for(let i=0;i<24;i++){
+        const a=Math.random()*Math.PI*2;
+        const spd=4+Math.random()*14;
+        smashParticles.push({
+          type:'chunk',
+          x:obj.x+( Math.random()-0.5)*20,
+          y:obj.y+(Math.random()-0.5)*20,
+          vx:Math.cos(a)*spd, vy:Math.sin(a)*spd-6,
+          rot:Math.random()*Math.PI*2, rotV:(Math.random()-0.5)*0.5,
+          life:1, decay:0.018+Math.random()*0.012,
+          size:0.8+Math.random()*1.2,
+          emoji:['💢','✨','⚡','🔥','💫'][Math.floor(Math.random()*5)]
+        });
+      }
+      // smoke puffs
+      for(let i=0;i<8;i++){
+        const a=Math.random()*Math.PI*2;
+        smashParticles.push({
+          type:'smoke',x:obj.x,y:obj.y,
+          vx:Math.cos(a)*(1+Math.random()*3), vy:Math.sin(a)*(1+Math.random()*3)-2,
+          life:1,decay:0.012,r:10+Math.random()*20
+        });
+      }
+      // screen flash
+      smashParticles.push({type:'flash',life:1,decay:0.12});
+    }
+  });
+  if(!hit){
+    // crack the floor
+    smashParticles.push({type:'ring',x:mx,y:my,r:5,maxR:80,life:1,hue:30,decay:0.06});
+    for(let i=0;i<6;i++){
+      const a=Math.random()*Math.PI*2;
+      smashParticles.push({type:'chunk',x:mx,y:my,vx:Math.cos(a)*5,vy:Math.sin(a)*5-3,
+        rot:0,rotV:(Math.random()-0.5)*0.4,life:0.6,decay:0.04,size:0.6,emoji:'✨'});
+    }
+  }
+  if(smashObjects.filter(o=>!o.broken).length===0) setTimeout(()=>{smashObjects=[];spawnSmashObjects();},1800);
+}
+function drawSmash(){
+  if(!smashCtx)return;
+  smashCtx.clearRect(0,0,smashCanvas.width,smashCanvas.height);
+  // Draw floor cracks / glow
+  smashCtx.fillStyle='rgba(0,0,0,0.0)';
+  // Flash
+  const flash=smashParticles.find(p=>p.type==='flash'&&p.life>0);
+  if(flash){
+    smashCtx.fillStyle=`rgba(255,120,40,${flash.life*0.18})`;
+    smashCtx.fillRect(0,0,smashCanvas.width,smashCanvas.height);
+  }
+  // Intact objects
+  smashObjects.forEach(obj=>{
+    if(obj.broken)return;
+    obj.wobble+=obj.wobbleSpeed;
+    obj.hoverY+=obj.hoverSpeed;
+    const yOff=Math.sin(obj.hoverY)*6;
+    smashCtx.save();
+    smashCtx.translate(obj.x,obj.y+yOff);
+    smashCtx.rotate(Math.sin(obj.wobble)*0.07);
+    // glow behind
+    const g=smashCtx.createRadialGradient(0,0,0,0,0,60);
+    g.addColorStop(0,'rgba(255,100,30,0.08)');g.addColorStop(1,'transparent');
+    smashCtx.fillStyle=g;smashCtx.beginPath();smashCtx.arc(0,0,60,0,Math.PI*2);smashCtx.fill();
+    // emoji
+    smashCtx.font='3.2rem serif';smashCtx.textAlign='center';smashCtx.textBaseline='middle';
+    smashCtx.fillText(obj.emoji,0,0);
+    // label
+    smashCtx.font='500 0.7rem Jost,sans-serif';
+    smashCtx.fillStyle='rgba(255,180,120,0.55)';
+    smashCtx.fillText(obj.label,0,38);
+    smashCtx.restore();
+  });
+  // Particles
+  smashParticles.forEach(p=>{
+    if(p.type==='ring'){
+      p.r+=(p.maxR-p.r)*0.12; p.life-=(p.decay||0.04);
+      smashCtx.save();smashCtx.globalAlpha=p.life*0.7;
+      smashCtx.strokeStyle=`hsl(${p.hue||20},90%,70%)`;smashCtx.lineWidth=3;
+      smashCtx.beginPath();smashCtx.arc(p.x,p.y,p.r,0,Math.PI*2);smashCtx.stroke();
+      smashCtx.restore();
+    } else if(p.type==='chunk'){
+      p.x+=p.vx;p.y+=p.vy;p.vy+=0.6;p.vx*=0.97;p.rot+=p.rotV;p.life-=p.decay;
+      smashCtx.save();smashCtx.globalAlpha=Math.max(0,p.life);
+      smashCtx.translate(p.x,p.y);smashCtx.rotate(p.rot);
+      smashCtx.font=p.size+'rem serif';smashCtx.textAlign='center';smashCtx.textBaseline='middle';
+      smashCtx.fillText(p.emoji,0,0);smashCtx.restore();
+    } else if(p.type==='smoke'){
+      p.x+=p.vx;p.y+=p.vy;p.vy-=0.05;p.r+=0.8;p.life-=p.decay;
+      smashCtx.save();smashCtx.globalAlpha=p.life*0.15;
+      smashCtx.fillStyle='rgba(255,150,80,1)';
+      smashCtx.beginPath();smashCtx.arc(p.x,p.y,p.r,0,Math.PI*2);smashCtx.fill();
+      smashCtx.restore();
+    }
+    if(p.type==='flash') p.life-=p.decay;
+  });
+  smashParticles=smashParticles.filter(p=>p.life>0);
+  if(document.querySelector('#s-smash.on'))requestAnimationFrame(drawSmash);
+}
+function resetSmash(){
+  smashCanvas.removeEventListener('click',onSmashClick);
+  smashObjects=[];smashParticles=[];smashCount=0;
+  document.getElementById('smash-score').textContent='💥 0';
+  document.getElementById('smash-hint').style.opacity='1';
+  spawnSmashObjects();
+  smashCanvas.addEventListener('click',onSmashClick);
+}
+
+/* ═══ SCREAM INTO THE VOID ═══ */
+let screamCanvas,screamCtx,screamHeld=false,screamAF=null;
+let screamWaves=[],screamStars=[],screamIntensity=0,screamDuration=0;
+const SCREAM_LINES=['The void heard you.','Release. Release. Release.','You are allowed to be angry.','Let it all go.','The stars absorbed your fury.','Lighter now?','That anger does not define you.','Good. Again.','The universe held it for you.'];
+function initScream(){
+  screamCanvas=document.getElementById('scream-canvas');
+  screamCtx=screamCanvas.getContext('2d');
+  screamCanvas.width=window.innerWidth;screamCanvas.height=window.innerHeight;
+  screamWaves=[];screamStars=[];screamIntensity=0;screamDuration=0;
+  document.getElementById('scream-release').textContent='';
+  document.getElementById('scream-release').style.opacity='0';
+  // Seed background stars
+  for(let i=0;i<120;i++){
+    screamStars.push({
+      x:Math.random()*screamCanvas.width,y:Math.random()*screamCanvas.height,
+      r:0.5+Math.random()*1.5,base:0.2+Math.random()*0.5,bright:0,
+      flicker:Math.random()*Math.PI*2,flickerSpeed:0.02+Math.random()*0.04
+    });
+  }
+  drawScream();
+}
+function startScream(){
+  screamHeld=true;screamDuration=0;
+  document.getElementById('scream-btn').classList.add('screaming');
+  document.getElementById('scream-label').textContent='releasing...';
+  document.getElementById('scream-release').style.opacity='0';
+}
+function stopScream(){
+  if(!screamHeld)return;
+  screamHeld=false;
+  document.getElementById('scream-btn').classList.remove('screaming');
+  document.getElementById('scream-label').textContent='hold to scream';
+  if(screamDuration>8){
+    const msg=SCREAM_LINES[Math.floor(Math.random()*SCREAM_LINES.length)];
+    const el=document.getElementById('scream-release');
+    el.textContent=msg;el.style.opacity='1';
+    setTimeout(()=>{el.style.opacity='0';},4000);
+  }
+  screamIntensity=0;
+}
+function drawScream(){
+  if(!screamCtx)return;
+  const W=screamCanvas.width,H=screamCanvas.height;
+  const CX=W/2,CY=H*0.55;
+  if(screamHeld){
+    screamDuration++;
+    screamIntensity=Math.min(1,screamIntensity+0.04);
+    // Emit shockwave rings
+    if(Math.random()<0.4+screamIntensity*0.4){
+      screamWaves.push({
+        x:CX+(Math.random()-0.5)*30*screamIntensity,
+        y:CY+(Math.random()-0.5)*30*screamIntensity,
+        r:8+Math.random()*20,
+        maxR:Math.min(W,H)*(0.5+Math.random()*0.4),
+        life:1, hue:260+Math.random()*80,
+        thick:1+Math.random()*3
+      });
+    }
+  } else {
+    screamIntensity=Math.max(0,screamIntensity-0.03);
+  }
+  // Background fade
+  screamCtx.fillStyle=`rgba(4,0,8,${screamHeld?0.08:0.15})`;
+  screamCtx.fillRect(0,0,W,H);
+  // Central glow when screaming
+  if(screamIntensity>0){
+    const r=80+screamIntensity*180;
+    const g=screamCtx.createRadialGradient(CX,CY,0,CX,CY,r);
+    g.addColorStop(0,`rgba(180,40,255,${screamIntensity*0.35})`);
+    g.addColorStop(0.4,`rgba(100,0,200,${screamIntensity*0.15})`);
+    g.addColorStop(1,'transparent');
+    screamCtx.fillStyle=g;screamCtx.fillRect(0,0,W,H);
+    // Distortion lines radiating out
+    for(let i=0;i<8;i++){
+      const a=(i/8)*Math.PI*2+screamDuration*0.05;
+      const len=60+screamIntensity*(100+Math.random()*120);
+      screamCtx.save();
+      screamCtx.globalAlpha=screamIntensity*(0.2+Math.random()*0.3);
+      screamCtx.strokeStyle=`hsl(${280+Math.random()*60},90%,75%)`;
+      screamCtx.lineWidth=1+Math.random()*2;
+      screamCtx.beginPath();
+      screamCtx.moveTo(CX+Math.cos(a)*30,CY+Math.sin(a)*30);
+      screamCtx.lineTo(CX+Math.cos(a)*len,CY+Math.sin(a)*len);
+      screamCtx.stroke();screamCtx.restore();
+    }
+  }
+  // Stars
+  screamStars.forEach(s=>{
+    s.flicker+=s.flickerSpeed;
+    s.bright=s.base+(screamIntensity*0.5);
+    const alpha=s.bright+Math.sin(s.flicker)*0.15;
+    if(screamIntensity>0){
+      // Stars get pulled toward center when screaming
+      const dx=CX-s.x,dy=CY-s.y;
+      const dist=Math.hypot(dx,dy);
+      s.x+=dx/dist*screamIntensity*1.5;
+      s.y+=dy/dist*screamIntensity*1.5;
+    }
+    screamCtx.save();screamCtx.globalAlpha=Math.min(1,alpha);
+    screamCtx.fillStyle=`hsl(${260+Math.random()*80},80%,85%)`;
+    screamCtx.beginPath();screamCtx.arc(s.x,s.y,s.r*(1+screamIntensity*0.5),0,Math.PI*2);
+    screamCtx.fill();screamCtx.restore();
+    // Drift back to original area slowly
+    if(!screamHeld&&(s.x<20||s.x>W-20||s.y<20||s.y>H-20)){
+      s.x=Math.random()*W;s.y=Math.random()*H;
+    }
+  });
+  // Waves
+  screamWaves.forEach(w=>{
+    const progress=1-(w.r/w.maxR);
+    w.r+=(w.maxR-w.r)*0.08;w.life=w.r/w.maxR;
+    const alpha=(1-w.life)*0.6;
+    screamCtx.save();screamCtx.globalAlpha=alpha;
+    screamCtx.strokeStyle=`hsl(${w.hue},85%,72%)`;
+    screamCtx.lineWidth=w.thick*(1-w.life);
+    screamCtx.beginPath();screamCtx.arc(w.x,w.y,w.r,0,Math.PI*2);
+    screamCtx.stroke();screamCtx.restore();
+  });
+  screamWaves=screamWaves.filter(w=>w.r<w.maxR*0.98);
+  if(document.querySelector('#s-scream.on'))requestAnimationFrame(drawScream);
+}
+
+/* ═══ RAGE DARTS ═══ */
+let dartsCanvas,dartsCtx,dartsScore=0,balloons=[],dartsList=[],dartParticles=[];
+const DART_MSGS=['DESTROYED 💥','OBLITERATED 🔥','SHATTERED ⚡','YES! 💢','BOOM 💫','GET IT 🎯'];
+const BALLOON_WORDS=['WHY','UGH','NO','STOP','ENOUGH','REALLY','UNFAIR','ANGRY','HURT','NOT OK','WHY ME','DONE'];
+function initDarts(){
+  dartsCanvas=document.getElementById('darts-canvas');
+  dartsCtx=dartsCanvas.getContext('2d');
+  dartsCanvas.width=window.innerWidth;dartsCanvas.height=window.innerHeight;
+  balloons=[];dartsList=[];dartParticles=[];dartsScore=0;
+  document.getElementById('darts-score').textContent='🎯 0';
+  document.getElementById('darts-msg').style.opacity='0';
+  document.getElementById('darts-hint').style.opacity='1';
+  spawnBalloons();
+  dartsCanvas.addEventListener('click',onDartClick);
+  requestAnimationFrame(drawDarts);
+}
+function spawnBalloons(){
+  const words=[...BALLOON_WORDS].sort(()=>Math.random()-0.5);
+  for(let i=0;i<9;i++){
+    const hue=Math.random()*360;
+    balloons.push({
+      x:80+Math.random()*(dartsCanvas.width-160),
+      y:60+Math.random()*(dartsCanvas.height*0.65),
+      ry:0,rySpeed:0.008+Math.random()*0.008,
+      vx:(Math.random()-0.5)*0.7, vy:(Math.random()-0.5)*0.5,
+      r:30+Math.random()*18, hue,
+      word:words[i%words.length],
+      pop:false, popLife:1, shards:[], alpha:1
+    });
+  }
+}
+function onDartClick(e){
+  document.getElementById('darts-hint').style.opacity='0';
+  const rect=dartsCanvas.getBoundingClientRect();
+  const tx=e.clientX-rect.left,ty=e.clientY-rect.top;
+  // Check immediate hit first
+  let hit=false;
+  balloons.forEach(b=>{
+    if(b.pop)return;
+    if(Math.hypot(tx-b.x,ty-b.y)<b.r+8){
+      popBalloon(b); hit=true;
+    }
+  });
+  if(!hit){
+    dartsList.push({
+      x:tx, y:dartsCanvas.height+40,
+      tx, ty, life:1,
+      speed:0.055+Math.random()*0.02
+    });
+  }
+}
+function popBalloon(b){
+  b.pop=true;dartsScore++;
+  document.getElementById('darts-score').textContent='🎯 '+dartsScore;
+  const el=document.getElementById('darts-msg');
+  el.textContent=DART_MSGS[Math.floor(Math.random()*DART_MSGS.length)];
+  el.style.opacity='1';
+  setTimeout(()=>el.style.opacity='0',900);
+  for(let i=0;i<28;i++){
+    const a=Math.random()*Math.PI*2,spd=3+Math.random()*12;
+    b.shards.push({x:b.x,y:b.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-4,
+      life:1,decay:0.02+Math.random()*0.015,hue:b.hue,r:3+Math.random()*5});
+  }
+  // bang flash
+  dartParticles.push({type:'flash',x:b.x,y:b.y,r:10,maxR:b.r*3.5,life:1,hue:b.hue});
+  if(balloons.filter(b=>!b.pop).length===0) setTimeout(()=>{balloons=[];spawnBalloons();},2000);
+}
+function drawDarts(){
+  if(!dartsCtx)return;
+  dartsCtx.clearRect(0,0,dartsCanvas.width,dartsCanvas.height);
+  // Balloons
+  balloons.forEach(b=>{
+    if(!b.pop){
+      b.x+=b.vx;b.y+=b.vy;b.ry+=b.rySpeed;
+      const yOff=Math.sin(b.ry)*8;
+      if(b.x<b.r||b.x>dartsCanvas.width-b.r)b.vx*=-1;
+      if(b.y<40||b.y>dartsCanvas.height*0.75)b.vy*=-1;
+      dartsCtx.save();dartsCtx.translate(b.x,b.y+yOff);
+      // balloon body
+      dartsCtx.beginPath();
+      dartsCtx.ellipse(0,-b.r*0.15,b.r,b.r*1.25,0,0,Math.PI*2);
+      dartsCtx.fillStyle=`hsla(${b.hue},75%,60%,0.92)`;dartsCtx.fill();
+      dartsCtx.strokeStyle=`hsla(${b.hue},65%,45%,0.5)`;dartsCtx.lineWidth=1.5;dartsCtx.stroke();
+      // shine
+      dartsCtx.beginPath();
+      dartsCtx.ellipse(-b.r*0.25,-b.r*0.6,b.r*0.25,b.r*0.35,-0.5,0,Math.PI*2);
+      dartsCtx.fillStyle='rgba(255,255,255,0.25)';dartsCtx.fill();
+      // string
+      dartsCtx.strokeStyle=`hsla(${b.hue},40%,50%,0.4)`;dartsCtx.lineWidth=1;
+      dartsCtx.beginPath();dartsCtx.moveTo(0,b.r*1.1);dartsCtx.bezierCurveTo(5,b.r*1.5,-5,b.r*2,0,b.r*2.5);dartsCtx.stroke();
+      // word
+      dartsCtx.fillStyle='rgba(255,255,255,0.9)';
+      dartsCtx.font=`bold ${Math.max(9,b.r*0.42)}px Jost,sans-serif`;
+      dartsCtx.textAlign='center';dartsCtx.textBaseline='middle';
+      dartsCtx.fillText(b.word,0,-b.r*0.1);
+      dartsCtx.restore();
+    } else {
+      // Popped shards
+      b.shards.forEach(s=>{
+        s.x+=s.vx;s.y+=s.vy;s.vy+=0.3;s.vx*=0.97;s.life-=s.decay;
+        if(s.life<=0)return;
+        dartsCtx.save();dartsCtx.globalAlpha=s.life;
+        dartsCtx.fillStyle=`hsl(${s.hue},75%,65%)`;
+        dartsCtx.beginPath();dartsCtx.arc(s.x,s.y,s.r*s.life,0,Math.PI*2);dartsCtx.fill();
+        dartsCtx.restore();
+      });
+      b.shards=b.shards.filter(s=>s.life>0);
+    }
+  });
+  // Flying darts
+  dartsList.forEach(d=>{
+    d.x=d.x+(d.tx-d.x)*0.15;
+    d.y=d.y+(d.ty-d.y)*0.15;
+    d.life-=0.04;
+    if(Math.hypot(d.x-d.tx,d.y-d.ty)<15){
+      balloons.forEach(b=>{if(!b.pop&&Math.hypot(d.tx-b.x,d.ty-b.y)<b.r+10){popBalloon(b);}});
+      d.life=0;return;
+    }
+    const angle=Math.atan2(d.ty-d.y,d.tx-d.x);
+    dartsCtx.save();dartsCtx.translate(d.x,d.y);dartsCtx.rotate(angle);
+    dartsCtx.fillStyle='rgba(255,220,60,0.95)';
+    dartsCtx.beginPath();dartsCtx.moveTo(22,0);dartsCtx.lineTo(-8,5);dartsCtx.lineTo(-8,-5);dartsCtx.closePath();dartsCtx.fill();
+    dartsCtx.fillStyle='rgba(255,80,40,0.95)';
+    dartsCtx.beginPath();dartsCtx.arc(22,0,5,0,Math.PI*2);dartsCtx.fill();
+    dartsCtx.fillStyle='rgba(200,200,200,0.7)';
+    dartsCtx.fillRect(-12,-1.5,5,3);
+    dartsCtx.restore();
+  });
+  dartsList=dartsList.filter(d=>d.life>0);
+  // Flash particles
+  dartParticles.forEach(p=>{
+    if(p.type==='flash'){
+      p.r+=(p.maxR-p.r)*0.2;p.life-=0.1;
+      dartsCtx.save();dartsCtx.globalAlpha=p.life*0.4;
+      dartsCtx.fillStyle=`hsl(${p.hue},80%,70%)`;
+      dartsCtx.beginPath();dartsCtx.arc(p.x,p.y,p.r,0,Math.PI*2);dartsCtx.fill();
+      dartsCtx.restore();
+    }
+  });
+  dartParticles=dartParticles.filter(p=>p.life>0);
+  if(document.querySelector('#s-darts.on'))requestAnimationFrame(drawDarts);
+}
+
+/* ═══ OCEAN DRIFT ═══ */
+let oceanCanvas,oceanCtx,oceanT=0,oceanAffirmIdx=0,oceanAffirmTimer=0;
+let oceanParticles=[];
+const OCEAN_AFFIRMATIONS=[
+  'You are allowed to feel this.','The water holds you now.',
+  'Breathe. Just breathe.','This too will pass, like every wave.',
+  'You are stronger than this moment.','Let the ocean take it from you.',
+  'You are not alone in this.','Rest here as long as you need.',
+  'Your feelings are valid.','The sea has survived every storm.',
+  'Be soft with yourself right now.','Nothing is required of you here.'
+];
+function initOcean(){
+  oceanCanvas=document.getElementById('ocean-canvas');
+  oceanCtx=oceanCanvas.getContext('2d');
+  oceanCanvas.width=window.innerWidth;oceanCanvas.height=window.innerHeight;
+  oceanT=0;oceanAffirmTimer=0;oceanAffirmIdx=0;oceanParticles=[];
+  // Seed foam particles
+  for(let i=0;i<60;i++){
+    oceanParticles.push({
+      x:Math.random()*oceanCanvas.width,
+      y:oceanCanvas.height*0.5+Math.random()*oceanCanvas.height*0.4,
+      r:1+Math.random()*3,life:Math.random(),speed:0.003+Math.random()*0.004,
+      alpha:0.1+Math.random()*0.3,ox:Math.random()*Math.PI*2
+    });
+  }
+  document.getElementById('breath-affirmation').textContent=OCEAN_AFFIRMATIONS[0];
+  document.getElementById('breath-affirmation').style.opacity='1';
+  drawOcean();
+}
+function drawOcean(){
+  if(!oceanCtx)return;
+  oceanT++;oceanAffirmTimer++;
+  const W=oceanCanvas.width,H=oceanCanvas.height;
+  // Affirmation rotation
+  if(oceanAffirmTimer>320){
+    oceanAffirmTimer=0;
+    oceanAffirmIdx=(oceanAffirmIdx+1)%OCEAN_AFFIRMATIONS.length;
+    const el=document.getElementById('breath-affirmation');
+    el.style.opacity='0';
+    setTimeout(()=>{el.textContent=OCEAN_AFFIRMATIONS[oceanAffirmIdx];el.style.opacity='1';},700);
+  }
+  // Breath word update
+  const breathPhase=Math.sin(oceanT*0.012);
+  document.getElementById('breath-word').textContent=breathPhase>0?'breathe in...':'breathe out...';
+
+  // Sky gradient
+  const sky=oceanCtx.createLinearGradient(0,0,0,H);
+  sky.addColorStop(0,'#020c1a');
+  sky.addColorStop(0.45,'#041428');
+  sky.addColorStop(1,'#061c38');
+  oceanCtx.fillStyle=sky;oceanCtx.fillRect(0,0,W,H);
+
+  // Moon glow
+  const moonX=W*0.72,moonY=H*0.12;
+  const moonGlow=oceanCtx.createRadialGradient(moonX,moonY,0,moonX,moonY,160);
+  moonGlow.addColorStop(0,'rgba(180,220,255,0.12)');
+  moonGlow.addColorStop(0.3,'rgba(120,180,255,0.06)');
+  moonGlow.addColorStop(1,'transparent');
+  oceanCtx.fillStyle=moonGlow;oceanCtx.fillRect(0,0,W,H);
+  // Moon
+  oceanCtx.save();
+  oceanCtx.beginPath();oceanCtx.arc(moonX,moonY,22,0,Math.PI*2);
+  oceanCtx.fillStyle='rgba(220,235,255,0.88)';oceanCtx.fill();
+  oceanCtx.restore();
+
+  // Stars in sky
+  for(let i=0;i<40;i++){
+    const sx=((i*137+50)%W), sy=((i*97+20)%(H*0.38));
+    const twinkle=0.3+Math.sin(oceanT*0.02+i)*0.2;
+    oceanCtx.save();oceanCtx.globalAlpha=twinkle;
+    oceanCtx.fillStyle='rgba(200,220,255,0.9)';
+    const sr=0.5+((i*31)%10)/10;
+    oceanCtx.beginPath();oceanCtx.arc(sx,sy,sr,0,Math.PI*2);oceanCtx.fill();
+    oceanCtx.restore();
+  }
+
+  // Moon reflection on water
+  const refY=H*0.48;
+  const refGrad=oceanCtx.createLinearGradient(0,refY,0,refY+H*0.15);
+  refGrad.addColorStop(0,'rgba(150,200,255,0.12)');
+  refGrad.addColorStop(1,'transparent');
+  const refW=60+Math.sin(oceanT*0.03)*15;
+  oceanCtx.save();oceanCtx.globalAlpha=0.6;
+  oceanCtx.fillStyle=refGrad;
+  oceanCtx.beginPath();oceanCtx.ellipse(moonX,refY,refW,H*0.18,0,0,Math.PI*2);
+  oceanCtx.fill();oceanCtx.restore();
+
+  // ── WAVES ──────────────────────────────────────────────────────────────
+  const waveBase=H*0.48;
+  const waveLayers=[
+    {amp:18,freq:0.012,speed:0.018,yOff:0,   alpha:0.18,hue:210,light:55,thick:2},
+    {amp:22,freq:0.009,speed:0.013,yOff:H*0.06,alpha:0.22,hue:215,light:50,thick:3},
+    {amp:28,freq:0.007,speed:0.010,yOff:H*0.13,alpha:0.28,hue:210,light:45,thick:0},
+    {amp:35,freq:0.005,speed:0.007,yOff:H*0.21,alpha:0.35,hue:205,light:40,thick:0},
+    {amp:40,freq:0.004,speed:0.005,yOff:H*0.30,alpha:0.55,hue:200,light:35,thick:0},
+  ];
+
+  waveLayers.forEach((wl,li)=>{
+    const y0=waveBase+wl.yOff;
+    oceanCtx.save();
+    oceanCtx.beginPath();
+    oceanCtx.moveTo(0,H);
+    for(let x=0;x<=W;x+=3){
+      const y=y0
+        +Math.sin(x*wl.freq+oceanT*wl.speed)*wl.amp
+        +Math.sin(x*wl.freq*1.7-oceanT*wl.speed*0.8)*wl.amp*0.45
+        +Math.sin(x*wl.freq*0.5+oceanT*wl.speed*1.3)*wl.amp*0.25;
+      oceanCtx.lineTo(x,y);
+    }
+    oceanCtx.lineTo(W,H);oceanCtx.closePath();
+    // Fill with gradient
+    const wg=oceanCtx.createLinearGradient(0,y0-wl.amp,0,H);
+    wg.addColorStop(0,`hsla(${wl.hue},70%,${wl.light}%,${wl.alpha})`);
+    wg.addColorStop(1,`hsla(${wl.hue},60%,${wl.light-10}%,${Math.min(1,wl.alpha*1.8)})`);
+    oceanCtx.fillStyle=wg;oceanCtx.fill();
+    // Wave crest line
+    if(wl.thick>0){
+      oceanCtx.beginPath();
+      for(let x=0;x<=W;x+=3){
+        const y=y0+Math.sin(x*wl.freq+oceanT*wl.speed)*wl.amp
+          +Math.sin(x*wl.freq*1.7-oceanT*wl.speed*0.8)*wl.amp*0.45;
+        x===0?oceanCtx.moveTo(x,y):oceanCtx.lineTo(x,y);
+      }
+      oceanCtx.strokeStyle=`hsla(${wl.hue},80%,80%,0.35)`;
+      oceanCtx.lineWidth=wl.thick;oceanCtx.stroke();
+    }
+    oceanCtx.restore();
+  });
+
+  // Foam / spray particles on wave crests
+  oceanParticles.forEach(p=>{
+    p.life+=p.speed;
+    const waveY=waveBase+Math.sin(p.x*0.012+oceanT*0.018)*18+Math.sin(p.x*0.005+oceanT*0.01)*28;
+    if(p.life>1){p.life=0;p.x=Math.random()*W;p.y=waveY;}
+    p.y=waveY-p.life*12;
+    const a=p.alpha*(1-p.life);
+    oceanCtx.save();oceanCtx.globalAlpha=a;
+    oceanCtx.fillStyle='rgba(200,230,255,0.9)';
+    oceanCtx.beginPath();oceanCtx.arc(p.x,p.y,p.r,0,Math.PI*2);oceanCtx.fill();
+    oceanCtx.restore();
+  });
+
+  // Bioluminescence deep water
+  for(let i=0;i<12;i++){
+    const bx=((W*0.08*i)+oceanT*(i%2===0?0.4:-0.3))%W;
+    const by=H*0.65+Math.sin(oceanT*0.008+i*0.8)*H*0.12;
+    const ba=0.08+Math.sin(oceanT*0.015+i*1.2)*0.07;
+    oceanCtx.save();oceanCtx.globalAlpha=ba;
+    const bg=oceanCtx.createRadialGradient(bx,by,0,bx,by,20);
+    bg.addColorStop(0,'rgba(80,220,255,1)');bg.addColorStop(1,'transparent');
+    oceanCtx.fillStyle=bg;
+    oceanCtx.beginPath();oceanCtx.arc(bx,by,20,0,Math.PI*2);oceanCtx.fill();
+    oceanCtx.restore();
+  }
+
+  if(document.querySelector('#s-ocean.on'))requestAnimationFrame(drawOcean);
+}
+
 </script>
 </body>
 </html>
