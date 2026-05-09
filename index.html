@@ -9,31 +9,31 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;overflow-x:hidden;}
 :root{
-  --cream:#fdf8f2;
-  --blush:#f9e8e0;
-  --rose:#e8a0a0;
-  --deeprose:#c97070;
-  --gold:#d4a843;
-  --lightgold:#f0d080;
-  --sage:#8aab8a;
-  --sky:#b8d4e8;
-  --deepsky:#7aaac0;
-  --text:#3a2a20;
-  --textsoft:#7a5a48;
-  --textvsoft:#b09080;
+  --cream:#e8e0f8;
+  --blush:#d0c4f0;
+  --rose:#a080d0;
+  --deeprose:#9060c0;
+  --gold:#c0a840;
+  --lightgold:#e0cc70;
+  --sage:#70a080;
+  --sky:#6090c0;
+  --deepsky:#4070a0;
+  --text:#e0d8f8;
+  --textsoft:#a898d8;
+  --textvsoft:#7868a8;
 }
-body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cursor:none;overflow-x:hidden;}
+body{font-family:'Jost',sans-serif;background:#06030f;color:var(--text);cursor:none;overflow-x:hidden;}
 
 /* CURSOR */
 #cur{position:fixed;width:12px;height:12px;border-radius:50%;pointer-events:none;z-index:9999;
-  transform:translate(-50%,-50%);background:var(--deeprose);
-  box-shadow:0 0 16px rgba(201,112,112,0.5);}
+  transform:translate(-50%,-50%);background:rgba(160,100,255,0.9);
+  box-shadow:0 0 16px rgba(140,80,255,0.5);}
 #cur2{position:fixed;width:34px;height:34px;border:1.5px solid rgba(201,112,112,0.35);border-radius:50%;
   pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left 0.12s,top 0.12s;}
 @media(max-width:600px){#cur,#cur2{display:none;}body{cursor:auto;}}
 
 /* BACK */
-#backBtn{position:fixed;top:1.2rem;left:1.2rem;z-index:8500;
+#backBtn{color:rgba(180,150,255,0.7);border-color:rgba(140,80,255,0.2);position:fixed;top:1.2rem;left:1.2rem;z-index:8500;
   font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;font-family:'Jost',sans-serif;
   color:var(--textsoft);border:1px solid rgba(170,120,100,0.25);
   background:rgba(253,248,242,0.85);backdrop-filter:blur(12px);
@@ -51,7 +51,7 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
 #s-universe,
 
 /* BACKGROUNDS */
-#s-hub{background:linear-gradient(160deg,#fdf5ee 0%,#f9ede0 40%,#f5e8f0 100%);}
+#s-hub{background:linear-gradient(160deg,#080414 0%,#0c0620 25%,#100830 55%,#080418 80%,#040210 100%);overflow-y:auto;}
 
 
 
@@ -220,6 +220,104 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
 #breath-affirmation{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;
   color:rgba(160,220,255,0.9);margin-top:1.8rem;min-height:3rem;line-height:1.6;
   text-shadow:0 0 25px rgba(60,160,255,0.4);transition:opacity 1.2s;}
+
+.hc11{background:linear-gradient(145deg,#0d0825,#1a1248,#0d0820);border:1px solid rgba(160,120,255,0.15);}
+.hc11 .hc-title{color:rgba(180,160,255,0.95);}
+.hc11 .hc-desc{color:rgba(180,160,255,0.45);}
+.hc12{background:linear-gradient(145deg,#020d1a,#041838,#021220);border:1px solid rgba(60,180,255,0.15);}
+.hc12 .hc-title{color:rgba(80,220,255,0.95);}
+.hc12 .hc-desc{color:rgba(80,220,255,0.45);}
+.hc13{background:linear-gradient(145deg,#0e0820,#180c40,#0e0820);border:1px solid rgba(180,100,255,0.15);}
+.hc13 .hc-title{color:rgba(200,160,255,0.95);}
+.hc13 .hc-desc{color:rgba(200,160,255,0.45);}
+.hc14{background:linear-gradient(145deg,#180c08,#281408,#180c08);border:1px solid rgba(255,150,60,0.15);}
+.hc14 .hc-title{color:rgba(255,180,100,0.95);}
+.hc14 .hc-desc{color:rgba(255,180,100,0.45);}
+
+/* ═══ ASK THE UNIVERSE ═══ */
+#s-universe{background:linear-gradient(135deg,#020008 0%,#080420 40%,#0c0630 70%,#020010 100%);overflow:hidden;}
+#universe-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.universe-ui{position:relative;z-index:5;text-align:center;}
+#universe-orb{width:160px;height:160px;border-radius:50%;margin:1.5rem auto;display:block;
+  background:radial-gradient(circle at 35% 35%,rgba(200,180,255,0.4),rgba(80,40,180,0.6),rgba(20,5,60,0.9));
+  border:1.5px solid rgba(180,140,255,0.35);cursor:pointer;position:relative;z-index:10;
+  box-shadow:0 0 60px rgba(120,60,255,0.3),inset 0 0 40px rgba(100,40,200,0.4);
+  transition:all 0.3s;animation:orb-float 4s ease-in-out infinite;}
+@keyframes orb-float{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-8px) scale(1.02);}}
+#universe-orb:hover{box-shadow:0 0 100px rgba(160,80,255,0.6),inset 0 0 60px rgba(140,60,220,0.5);}
+#universe-question{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;
+  color:rgba(180,150,255,0.6);margin-bottom:0.8rem;letter-spacing:0.06em;}
+#universe-answer{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;
+  color:rgba(220,200,255,0.95);min-height:3rem;text-align:center;
+  text-shadow:0 0 30px rgba(160,100,255,0.7);transition:opacity 0.5s;opacity:0;
+  line-height:1.5;padding:0 1rem;}
+#universe-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(100,60,220,0.1);border:1px solid rgba(100,60,220,0.25);color:rgba(180,150,255,0.6);}
+
+/* ═══ GEM CATCHER ═══ */
+#s-gems{background:linear-gradient(160deg,#010508 0%,#020c18 35%,#041828 70%,#010810 100%);overflow:hidden;}
+#gems-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;cursor:none;}
+#gems-score{position:fixed;top:4.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(80,220,255,0.95);
+  text-shadow:0 0 30px rgba(40,180,255,0.8);pointer-events:none;letter-spacing:0.1em;}
+#gems-lives{position:fixed;top:4.5rem;right:1.5rem;z-index:20;font-size:1.2rem;pointer-events:none;}
+#gems-msg{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;
+  color:rgba(80,220,255,0.95);pointer-events:none;text-align:center;
+  text-shadow:0 0 30px rgba(40,200,255,0.8);transition:opacity 0.4s;opacity:0;}
+#gems-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(40,160,220,0.1);border:1px solid rgba(40,160,220,0.25);color:rgba(80,200,255,0.6);}
+
+/* ═══ TAROT ═══ */
+#s-tarot{background:linear-gradient(145deg,#04020e 0%,#0a0420 40%,#100830 70%,#040210 100%);overflow:hidden;}
+#tarot-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.tarot-ui{position:relative;z-index:5;text-align:center;}
+#tarot-deck{width:120px;height:200px;border-radius:12px;margin:1rem auto;display:block;cursor:pointer;
+  background:linear-gradient(135deg,#1a0a30,#2a1050,#1a0a30);
+  border:1.5px solid rgba(180,120,255,0.4);position:relative;z-index:10;
+  box-shadow:0 0 40px rgba(120,60,255,0.3),4px 4px 0 rgba(100,40,200,0.3),8px 8px 0 rgba(80,20,180,0.2);
+  transition:all 0.4s;animation:card-float 5s ease-in-out infinite;}
+@keyframes card-float{0%,100%{transform:translateY(0) rotate(-1deg);}50%{transform:translateY(-6px) rotate(1deg);}}
+#tarot-deck:hover{box-shadow:0 0 80px rgba(160,80,255,0.5),4px 4px 0 rgba(100,40,200,0.4);}
+#tarot-deck-label{font-family:'Cormorant Garamond',serif;font-size:1.8rem;
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(200,160,255,0.7);}
+#tarot-card{display:none;width:140px;margin:0.5rem auto;border-radius:12px;
+  background:linear-gradient(135deg,#120820,#201040);
+  border:1.5px solid rgba(200,150,255,0.5);padding:1.2rem 1rem;text-align:center;
+  box-shadow:0 0 60px rgba(140,60,255,0.4);animation:card-reveal 0.6s ease-out;}
+@keyframes card-reveal{from{opacity:0;transform:rotateY(90deg) scale(0.8);}to{opacity:1;transform:rotateY(0) scale(1);}}
+#tarot-icon{font-size:2.5rem;display:block;margin-bottom:0.5rem;}
+#tarot-name{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:rgba(200,160,255,0.9);margin-bottom:0.5rem;}
+#tarot-meaning{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;
+  color:rgba(180,140,255,0.75);line-height:1.5;}
+#tarot-hint{font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-style:italic;
+  color:rgba(160,120,255,0.5);margin-top:0.5rem;}
+#tarot-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(100,40,200,0.1);border:1px solid rgba(100,40,200,0.25);color:rgba(180,120,255,0.6);}
+
+/* ═══ FRUIT SLICER ═══ */
+#s-fruit{background:linear-gradient(150deg,#050108 0%,#100818 35%,#180c28 65%,#080410 100%);overflow:hidden;}
+#fruit-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:inherit;cursor:crosshair;}
+#fruit-score{position:fixed;top:4.5rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(255,180,80,0.95);
+  text-shadow:0 0 30px rgba(255,140,40,0.8);pointer-events:none;letter-spacing:0.1em;}
+#fruit-lives{position:fixed;top:4.5rem;right:1.5rem;z-index:20;font-size:1.2rem;pointer-events:none;}
+#fruit-combo{position:fixed;top:7rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.8rem;
+  color:rgba(255,220,80,0.95);pointer-events:none;text-shadow:0 0 20px rgba(255,180,40,0.7);
+  transition:opacity 0.4s;opacity:0;}
+#fruit-back{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:20;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(200,100,20,0.1);border:1px solid rgba(200,100,20,0.25);color:rgba(255,160,60,0.6);}
+
 </style>
 </head>
 <body>
@@ -231,94 +329,36 @@ body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);cur
 <div class="screen on" id="s-hub">
   <div class="si">
     <span class="eyebrow rv">a world built for you</span>
-    <h1 class="big rv" style="font-size:clamp(2.6rem,8vw,4.2rem);">Hello,<br><em>Nadia.</em></h1>
-    <p class="sub rv" style="max-width:360px;">Four little worlds, made just for you. Each one is waiting.</p>
-    <div class="divline rv"></div>
+    <h1 class="big rv" style="font-size:clamp(2.6rem,8vw,4.2rem);color:rgba(220,210,255,0.95);">Hello,<br><em style="color:#b080ff;text-shadow:0 0 40px rgba(160,80,255,0.6);">Nadia.</em></h1>
+    <p class="sub rv" style="max-width:360px;">Four worlds, made just for you.</p>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(140,80,255,0.5),transparent);"></div>
     <div class="hub-grid rv" style="grid-template-columns:1fr 1fr;max-width:400px;">
-      <div class="hub-card hc7" onclick="go('s-smash')">
-        <span class="hc-icon">💥</span>
-        <div class="hc-title">Smash Room</div>
-        <div class="hc-desc">Break something</div>
+
+          <div class="hub-card hc11" onclick="go('s-universe')">
+        <span class="hc-icon">🤔</span>
+        <div class="hc-title">Ask the Universe</div>
+        <div class="hc-desc">Click for an answer</div>
       </div>
-      <div class="hub-card hc8" onclick="go('s-scream')">
-        <span class="hc-icon">😤</span>
-        <div class="hc-title">Scream Into The Void</div>
-        <div class="hc-desc">Let it all out</div>
+      <div class="hub-card hc12" onclick="go('s-gems')">
+        <span class="hc-icon">💎</span>
+        <div class="hc-title">Gem Catcher</div>
+        <div class="hc-desc">Catch every gem</div>
       </div>
-      <div class="hub-card hc9" onclick="go('s-darts')">
-        <span class="hc-icon">🎯</span>
-        <div class="hc-title">Rage Darts</div>
-        <div class="hc-desc">Pop every balloon</div>
+      <div class="hub-card hc13" onclick="go('s-tarot')">
+        <span class="hc-icon">🔮</span>
+        <div class="hc-title">Tarot Card</div>
+        <div class="hc-desc">Draw your card</div>
       </div>
-      <div class="hub-card hc10" onclick="go('s-ocean')">
-        <span class="hc-icon">🌊</span>
-        <div class="hc-title">Ocean Drift</div>
-        <div class="hc-desc">Float &amp; breathe</div>
+      <div class="hub-card hc14" onclick="go('s-fruit')">
+        <span class="hc-icon">🍑</span>
+        <div class="hc-title">Fruit Slicer</div>
+        <div class="hc-desc">Swipe to slice</div>
       </div>
     </div>
     <p class="rv" style="font-family:'Cormorant Garamond',serif;font-style:italic;
       font-size:0.85rem;color:var(--textvsoft);margin-top:0.5rem;">always yours ♥</p>
   </div>
 </div>
-
-<!-- ═══════ SMASH ROOM ═══════ -->
-<div class="screen" id="s-smash">
-  <canvas id="smash-canvas"></canvas>
-  <div id="smash-score">💥 0</div>
-  <div id="smash-hint">click anything to smash</div>
-  <div id="smash-btns">
-    <button onclick="resetSmash()">↺ reset</button>
-    <button onclick="goHub()">← back</button>
-  </div>
-</div>
-
-<!-- ═══════ SCREAM ═══════ -->
-<div class="screen" id="s-scream">
-  <canvas id="scream-canvas"></canvas>
-  <div class="scream-ui si">
-    <span class="eyebrow rv" style="color:rgba(200,150,255,0.5);">the void is listening</span>
-    <h2 class="big rv" style="color:rgba(220,180,255,0.95);">Scream into<br><em style="color:#c060ff;">the void.</em></h2>
-    <p class="sub rv" style="color:rgba(200,150,255,0.5);">Hold the button. Let it all out. The void will absorb everything.</p>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(180,80,255,0.6),transparent);"></div>
-    <button id="scream-btn" onmousedown="startScream()" onmouseup="stopScream()" ontouchstart="startScream()" ontouchend="stopScream()">😤</button>
-    <div id="scream-label">hold to scream</div>
-    <div id="scream-release"></div>
-    <button id="scream-back" onclick="goHub()">← back</button>
-  </div>
-</div>
-
-<!-- ═══════ RAGE DARTS ═══════ -->
-<div class="screen" id="s-darts">
-  <canvas id="darts-canvas"></canvas>
-  <div id="darts-score">🎯 0</div>
-  <div id="darts-msg"></div>
-  <div id="darts-hint">click anywhere to throw 🎯</div>
-  <button id="darts-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ OCEAN DRIFT ═══════ -->
-<div class="screen" id="s-ocean">
-  <canvas id="ocean-canvas"></canvas>
-  <div class="ocean-ui si">
-    <span class="eyebrow rv" style="color:rgba(100,180,255,0.5);">breathe</span>
-    <h2 class="big rv" style="color:rgba(150,210,255,0.95);">Let the ocean<br><em style="color:#60c0ff;">hold you.</em></h2>
-    <p class="sub rv" style="color:rgba(100,180,255,0.45);">Float here for a while. You don't have to do anything.</p>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(80,160,255,0.6),transparent);"></div>
-    <div id="breath-ring"><div id="breath-inner"></div></div>
-    <div id="breath-word">breathe in...</div>
-    <div id="breath-affirmation"></div>
-    <button class="btn rv" style="background:rgba(60,140,255,0.08);border:1.5px solid rgba(60,140,255,0.2);color:rgba(120,190,255,0.6);margin-top:1.5rem;" onclick="goHub()">← back</button>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
 <script>
 /* ═══ ROUNDRECT POLYFILL ═══ */
 if(!CanvasRenderingContext2D.prototype.roundRect){
@@ -590,10 +630,10 @@ function go(id){
   el.classList.add('on');el.scrollTop=0;
   document.getElementById('backBtn').classList.add('vis');
   // init screens AFTER .on is added so rAF guards work
-  if(id==='s-smash')initSmash();
-  if(id==='s-scream')initScream();
-  if(id==='s-darts')initDarts();
-  if(id==='s-ocean')initOcean();
+  if(id==='s-universe')initUniverse();
+  if(id==='s-gems')initGems();
+  if(id==='s-tarot')initTarot();
+  if(id==='s-fruit')initFruit();
   setTimeout(()=>{el.querySelectorAll('.rv').forEach((r,i)=>{r.classList.remove('on');setTimeout(()=>r.classList.add('on'),120+i*110);});},150);
   // Show paint UI when entering paint
   if(id==='s-paint')showPaintUI(true);
@@ -1843,6 +1883,625 @@ function drawOcean(){
   if(document.querySelector('#s-ocean.on'))requestAnimationFrame(drawOcean);
 }
 
+
+/* ═══ ASK THE UNIVERSE ═══ */
+const UNIVERSE_ANSWERS=[
+  'Yes. Trust it.','Not yet — but soon.','The answer is already within you.',
+  'Let go first, then it will come.','Absolutely, without a doubt.',
+  'The universe says: be patient.','Yes — but not in the way you expect.',
+  'No. And that is a blessing.','The timing is not right yet.',
+  'Focus on what you can control.','It is already on its way to you.',
+  'Your heart already knows the answer.','Yes. Take the leap.',
+  'Not this path — but another one will open.','Rest first. Then you will know.',
+  'The stars are aligning for you.','Release the fear. Then yes.',
+  'You are closer than you think.','Trust the process.',
+  'Something better is coming instead.'
+];
+let univCanvas,univCtx,univStars=[],univT=0,univAnswered=false;
+function initUniverse(){
+  univCanvas=document.getElementById('universe-canvas');
+  univCtx=univCanvas.getContext('2d');
+  univCanvas.width=window.innerWidth;univCanvas.height=window.innerHeight;
+  univStars=[];univT=0;univAnswered=false;
+  document.getElementById('universe-answer').style.opacity='0';
+  document.getElementById('universe-answer').textContent='';
+  document.getElementById('universe-question').textContent='think of your question... then click the orb';
+  for(let i=0;i<200;i++){
+    univStars.push({
+      x:Math.random()*univCanvas.width,y:Math.random()*univCanvas.height,
+      r:0.4+Math.random()*1.8,alpha:0.1+Math.random()*0.7,
+      flicker:Math.random()*Math.PI*2,flickerSpd:0.01+Math.random()*0.03,
+      twinkle:Math.random()>0.7
+    });
+  }
+  document.getElementById('universe-orb').onclick=askUniverse;
+  requestAnimationFrame(drawUniverse);
+}
+function askUniverse(){
+  if(univAnswered){
+    // Reset for another question
+    univAnswered=false;
+    const el=document.getElementById('universe-answer');
+    el.style.opacity='0';
+    document.getElementById('universe-question').textContent='think of your next question... then click again';
+    return;
+  }
+  univAnswered=true;
+  const answer=UNIVERSE_ANSWERS[Math.floor(Math.random()*UNIVERSE_ANSWERS.length)];
+  const el=document.getElementById('universe-answer');
+  el.textContent='"'+answer+'"';
+  el.style.opacity='0';
+  // Shoot stars from center
+  for(let i=0;i<30;i++){
+    const a=Math.random()*Math.PI*2;
+    const spd=2+Math.random()*6;
+    univStars.push({
+      x:univCanvas.width/2,y:univCanvas.height/2,
+      vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+      r:1+Math.random()*2,alpha:1,shooting:true,decay:0.02+Math.random()*0.02,
+      flicker:0,flickerSpd:0,twinkle:false
+    });
+  }
+  setTimeout(()=>{el.style.opacity='1';},600);
+  document.getElementById('universe-question').textContent='click again for another question';
+}
+function drawUniverse(){
+  if(!univCtx)return;
+  univT++;
+  const W=univCanvas.width,H=univCanvas.height;
+  // Rich space background - slow fade trail
+  univCtx.fillStyle='rgba(2,0,8,0.12)';
+  univCtx.fillRect(0,0,W,H);
+  // Multiple nebula clouds
+  const nebulas=[
+    {x:W*0.3,y:H*0.25,r:280,h:280,a:0.06},{x:W*0.75,y:H*0.7,r:240,h:240,a:0.05},
+    {x:W*0.6,y:H*0.4,r:320,h:260,a:0.04},{x:W*0.15,y:H*0.65,r:200,h:200,a:0.04}
+  ];
+  nebulas.forEach((n,i)=>{
+    const pulse=Math.sin(univT*0.008+i*1.5)*0.015;
+    const g=univCtx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+    g.addColorStop(0,`hsla(${n.h+Math.sin(univT*0.005+i)*20},80%,50%,${n.a+pulse})`);
+    g.addColorStop(0.5,`hsla(${n.h+30},60%,30%,${n.a*0.5})`);
+    g.addColorStop(1,'transparent');
+    univCtx.fillStyle=g;univCtx.fillRect(0,0,W,H);
+  });
+  // Orb glow
+  const nebX=W/2,nebY=H*0.56;
+  const neb=univCtx.createRadialGradient(nebX,nebY,0,nebX,nebY,160);
+  neb.addColorStop(0,`rgba(120,60,255,${0.12+Math.sin(univT*0.02)*0.04})`);
+  neb.addColorStop(0.5,`rgba(80,30,200,${0.06})`);
+  neb.addColorStop(1,'transparent');
+  univCtx.fillStyle=neb;univCtx.fillRect(0,0,W,H);
+  // Stars
+  univStars.forEach((s,i)=>{
+    if(s.shooting){
+      s.x+=s.vx;s.y+=s.vy;s.vx*=0.96;s.vy*=0.96;s.alpha-=s.decay;
+      if(s.alpha<=0){univStars.splice(i,1);return;}
+    } else {
+      s.flicker+=s.flickerSpd;
+      s.alpha=s.twinkle?0.3+Math.abs(Math.sin(s.flicker))*0.65:s.alpha;
+    }
+    univCtx.save();univCtx.globalAlpha=Math.max(0,s.alpha);
+    univCtx.fillStyle=s.shooting?'rgba(220,200,255,1)':`rgba(${180+Math.floor(s.r*20)},${160+Math.floor(s.r*15)},255,1)`;
+    univCtx.beginPath();univCtx.arc(s.x,s.y,s.r,0,Math.PI*2);univCtx.fill();
+    if(s.shooting&&s.alpha>0.3){
+      univCtx.strokeStyle=`rgba(200,180,255,${s.alpha*0.4})`;univCtx.lineWidth=1;
+      univCtx.beginPath();univCtx.moveTo(s.x,s.y);univCtx.lineTo(s.x-s.vx*4,s.y-s.vy*4);univCtx.stroke();
+    }
+    univCtx.restore();
+  });
+  if(document.querySelector('#s-universe.on'))requestAnimationFrame(drawUniverse);
+}
+
+/* ═══ GEM CATCHER ═══ */
+let gemsCanvas,gemsCtx,gemsScore=0,gemsLives=3,gems=[],gemParticles=[],gemBasket={x:0,y:0,w:110,h:22};
+let gemCombo=0,gemComboTimer=0,gemShield=false,gemMagnet=false,gemSlow=false,gemPowerups=[];
+let gemSpawnTimer=0,gemSpawnRate=80,gemGameOver=false,gemMouseX=0;
+const GEM_TYPES=[
+  {e:'💎',pts:3,color:'rgba(80,220,255,0.9)',r:18},
+  {e:'💍',pts:5,color:'rgba(255,150,220,0.9)',r:16},
+  {e:'✨',pts:1,color:'rgba(255,240,100,0.9)',r:14},
+  {e:'🌟',pts:2,color:'rgba(255,200,60,0.9)',r:16},
+  {e:'💜',pts:2,color:'rgba(180,100,255,0.9)',r:15},
+  {e:'🔷',pts:1,color:'rgba(60,160,255,0.9)',r:15},
+];
+const GEM_BOMBS=[{e:'💣',bad:true,r:18},{e:'🖤',bad:true,r:16}];
+function initGems(){
+  gemsCanvas=document.getElementById('gems-canvas');
+  gemsCtx=gemsCanvas.getContext('2d');
+  gemsCanvas.width=window.innerWidth;gemsCanvas.height=window.innerHeight;
+  gemsScore=0;gemsLives=3;gems=[];gemParticles=[];gemSpawnTimer=0;gemSpawnRate=70;gemGameOver=false;
+  gemBasket.x=gemsCanvas.width/2;gemBasket.y=gemsCanvas.height-70;
+  gemBasket.w=110;  // wider start
+  gemCombo=0;gemComboTimer=0;gemShield=false;gemMagnet=false;gemSlow=false;
+  gemPowerupTimer=0;gemPowerups=[];
+  document.getElementById('gems-score').textContent='💎 0';
+  document.getElementById('gems-lives').textContent='❤️❤️❤️';
+  document.getElementById('gems-msg').style.opacity='0';
+  gemsCanvas.addEventListener('mousemove',onGemMouseMove);
+  gemsCanvas.addEventListener('touchmove',onGemTouch,{passive:true});
+  requestAnimationFrame(drawGems);
+}
+function onGemMouseMove(e){gemBasket.x=e.clientX;}
+function onGemTouch(e){gemBasket.x=e.touches[0].clientX;}
+function spawnGem(){
+  const isBomb=Math.random()<Math.min(0.1,0.04+gemsScore*0.002);
+  const isPowerup=Math.random()<0.06&&gemsScore>5;
+  if(isPowerup){
+    const types=['🧲','🛡️','⏱️'];
+    const t=types[Math.floor(Math.random()*types.length)];
+    gems.push({x:40+Math.random()*(gemsCanvas.width-80),y:-30,vy:1.5+Math.random(),
+      e:t,pts:0,color:'rgba(255,255,100,0.9)',r:22,powerup:t,rotation:0,rotSpd:0.04,bad:false});
+    return;
+  }
+  const type=isBomb?GEM_BOMBS[Math.floor(Math.random()*GEM_BOMBS.length)]:GEM_TYPES[Math.floor(Math.random()*GEM_TYPES.length)];
+  const speedMult=gemSlow?0.5:1;
+  gems.push({
+    x:40+Math.random()*(gemsCanvas.width-80),
+    y:-type.r,
+    vy:(1.4+Math.random()*1.8+Math.min(gemsScore*0.018,3))*speedMult,
+    ...type,rotation:0,rotSpd:(Math.random()-0.5)*0.08
+  });
+}
+function drawGems(){
+  if(!gemsCtx||gemGameOver)return;
+  // Background
+  gemsCtx.fillStyle='rgba(1,5,14,0.92)';
+  gemsCtx.fillRect(0,0,gemsCanvas.width,gemsCanvas.height);
+  const gOff=(gemSpawnTimer*0.5)%60;
+  gemsCtx.save();gemsCtx.strokeStyle='rgba(40,140,220,0.04)';gemsCtx.lineWidth=1;
+  for(let x=gOff;x<gemsCanvas.width;x+=60){gemsCtx.beginPath();gemsCtx.moveTo(x,0);gemsCtx.lineTo(x,gemsCanvas.height);gemsCtx.stroke();}
+  for(let y=gOff;y<gemsCanvas.height;y+=60){gemsCtx.beginPath();gemsCtx.moveTo(0,y);gemsCtx.lineTo(gemsCanvas.width,y);gemsCtx.stroke();}
+  gemsCtx.restore();
+  for(let i=0;i<5;i++){
+    const ax=((gemsCanvas.width*0.2*i)+gemSpawnTimer*(i%2===0?0.15:-0.1))%gemsCanvas.width;
+    const ay=gemsCanvas.height*0.1+Math.sin(gemSpawnTimer*0.01+i*1.3)*gemsCanvas.height*0.08;
+    const ag=0.03+Math.sin(gemSpawnTimer*0.02+i)*0.02;
+    gemsCtx.save();gemsCtx.globalAlpha=ag;
+    const gg=gemsCtx.createRadialGradient(ax,ay,0,ax,ay,30);
+    gg.addColorStop(0,'rgba(60,200,255,1)');gg.addColorStop(1,'transparent');
+    gemsCtx.fillStyle=gg;gemsCtx.beginPath();gemsCtx.arc(ax,ay,30,0,Math.PI*2);gemsCtx.fill();
+    gemsCtx.restore();
+  }
+  gemSpawnTimer++;gemComboTimer=Math.max(0,gemComboTimer-1);
+  if(gemComboTimer===0&&gemCombo>0){gemCombo=0;}
+  if(gemSpawnTimer>=gemSpawnRate){
+    gemSpawnTimer=0;
+    gemSpawnRate=Math.max(28,70-gemsScore*1.2);
+    spawnGem();
+    if(gemsScore>12&&Math.random()<0.35) spawnGem();
+    if(gemsScore>25&&Math.random()<0.25) spawnGem();
+  }
+  // Basket width shrinks slightly as score goes up (more challenge)
+  gemBasket.w=Math.max(70,110-gemsScore*0.5);
+  const bx=Math.max(gemBasket.w/2+5,Math.min(gemsCanvas.width-gemBasket.w/2-5,gemBasket.x));
+  const by=gemBasket.y,bw=gemBasket.w,bh=22;
+  // Basket glow when magnet active
+  if(gemMagnet){
+    const mg=gemsCtx.createRadialGradient(bx,by,0,bx,by,200);
+    mg.addColorStop(0,'rgba(255,200,0,0.08)');mg.addColorStop(1,'transparent');
+    gemsCtx.fillStyle=mg;gemsCtx.fillRect(0,0,gemsCanvas.width,gemsCanvas.height);
+    // Pull gems toward basket
+    gems.forEach(g=>{if(!g.bad&&!g.powerup){const dx=bx-g.x;g.x+=dx*0.03;}});
+  }
+  gemsCtx.save();
+  const bg=gemsCtx.createLinearGradient(bx-bw/2,by,bx+bw/2,by+bh);
+  if(gemShield){bg.addColorStop(0,'rgba(100,255,150,0.5)');bg.addColorStop(1,'rgba(40,180,80,0.35)');}
+  else{bg.addColorStop(0,'rgba(60,180,255,0.45)');bg.addColorStop(1,'rgba(20,100,200,0.3)');}
+  gemsCtx.fillStyle=bg;
+  gemsCtx.strokeStyle=gemShield?'rgba(80,255,120,0.8)':'rgba(80,200,255,0.8)';
+  gemsCtx.lineWidth=2.5;
+  gemsCtx.shadowColor=gemShield?'rgba(80,255,120,0.6)':'rgba(60,180,255,0.5)';
+  gemsCtx.shadowBlur=12;
+  gemsCtx.beginPath();
+  gemsCtx.moveTo(bx-bw/2,by);gemsCtx.lineTo(bx+bw/2,by);
+  gemsCtx.lineTo(bx+bw/2-8,by+bh);gemsCtx.lineTo(bx-bw/2+8,by+bh);
+  gemsCtx.closePath();gemsCtx.fill();gemsCtx.stroke();
+  gemsCtx.restore();
+  // Powerup timers display
+  if(gemMagnet||gemShield||gemSlow){
+    gemsCtx.fillStyle='rgba(255,255,255,0.5)';gemsCtx.font='0.7rem Jost,sans-serif';
+    gemsCtx.textAlign='center';
+    const active=[];
+    if(gemMagnet)active.push('🧲 MAGNET');
+    if(gemShield)active.push('🛡️ SHIELD');
+    if(gemSlow)active.push('⏱️ SLOW');
+    gemsCtx.fillText(active.join('  '),gemsCanvas.width/2,gemsCanvas.height-35);
+  }
+  // Gems
+  gems.forEach((g,i)=>{
+    g.y+=g.vy;g.rotation+=g.rotSpd;
+    const catchY=by+(g.powerup?0:0);
+    if(g.y+g.r>=by&&g.y-g.r<=by+bh&&g.x>=bx-bw/2-10&&g.x<=bx+bw/2+10){
+      // Caught!
+      if(g.powerup){
+        activatePowerup(g.powerup);
+      } else if(g.bad){
+        if(!gemShield){
+          gemsLives--;
+          document.getElementById('gems-lives').textContent='❤️'.repeat(Math.max(0,gemsLives))+'🖤'.repeat(Math.max(0,3-gemsLives));
+          for(let j=0;j<8;j++){const a=Math.random()*Math.PI*2;gemParticles.push({x:g.x,y:g.y,vx:Math.cos(a)*5,vy:Math.sin(a)*5-3,life:1,decay:0.04,color:'rgba(200,50,50,0.9)',r:5});}
+          if(gemsLives<=0)endGemGame();
+        } else {
+          // Shield absorbs bomb
+          gemShield=false;
+          for(let j=0;j<12;j++){const a=Math.random()*Math.PI*2;gemParticles.push({x:g.x,y:g.y,vx:Math.cos(a)*7,vy:Math.sin(a)*7-3,life:1,decay:0.03,color:'rgba(80,255,120,0.9)',r:5});}
+        }
+      } else {
+        gemCombo++;gemComboTimer=90;
+        const multiplier=Math.min(gemCombo,4);
+        const pts=g.pts*multiplier;
+        gemsScore+=pts;
+        document.getElementById('gems-score').textContent='💎 '+gemsScore;
+        for(let j=0;j<12;j++){
+          const a=Math.random()*Math.PI*2,spd=3+Math.random()*7;
+          gemParticles.push({x:g.x,y:g.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-4,life:1,decay:0.025,color:g.color,r:3+Math.random()*4});
+        }
+        if(gemCombo>=2){
+          const el=document.getElementById('gems-msg');
+          el.textContent=gemCombo>=4?'🔥 x'+multiplier+' COMBO! +'+pts:gemCombo>=3?'⚡ x3 COMBO! +'+pts:'✨ x2! +'+pts;
+          el.style.opacity='1';setTimeout(()=>el.style.opacity='0',800);
+        } else if(g.pts>=3){
+          const el=document.getElementById('gems-msg');
+          el.textContent='💍 RARE! +'+pts;
+          el.style.opacity='1';setTimeout(()=>el.style.opacity='0',700);
+        }
+      }
+      gems.splice(i,1);return;
+    }
+    if(g.y-g.r>gemsCanvas.height){
+      if(!g.bad&&!g.powerup){gemCombo=0;}// miss breaks combo
+      gems.splice(i,1);return;
+    }
+    // Draw gem
+    gemsCtx.save();gemsCtx.translate(g.x,g.y);gemsCtx.rotate(g.rotation);
+    if(!g.bad&&!g.powerup){
+      const gg=gemsCtx.createRadialGradient(0,0,0,0,0,g.r*1.6);
+      gg.addColorStop(0,g.color.replace('0.9','0.3'));gg.addColorStop(1,'transparent');
+      gemsCtx.fillStyle=gg;gemsCtx.beginPath();gemsCtx.arc(0,0,g.r*1.6,0,Math.PI*2);gemsCtx.fill();
+    }
+    if(g.powerup){
+      // Pulsing powerup
+      const pulse=1+Math.sin(gemSpawnTimer*0.15)*0.12;
+      gemsCtx.shadowColor='rgba(255,220,0,0.8)';gemsCtx.shadowBlur=20;
+      gemsCtx.font=(g.r*1.5*pulse)+'px serif';
+    } else {
+      gemsCtx.font=g.r*1.3+'px serif';
+    }
+    gemsCtx.textAlign='center';gemsCtx.textBaseline='middle';
+    gemsCtx.fillText(g.e,0,0);gemsCtx.restore();
+  });
+  // Particles
+  gemParticles.forEach((p,i)=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.2;p.vx*=0.97;p.life-=p.decay;
+    if(p.life<=0){gemParticles.splice(i,1);return;}
+    gemsCtx.save();gemsCtx.globalAlpha=p.life;
+    gemsCtx.fillStyle=p.color;gemsCtx.beginPath();gemsCtx.arc(p.x,p.y,p.r,0,Math.PI*2);gemsCtx.fill();
+    gemsCtx.restore();
+  });
+  if(document.querySelector('#s-gems.on'))requestAnimationFrame(drawGems);
+}
+function activatePowerup(type){
+  const el=document.getElementById('gems-msg');
+  if(type==='🧲'){gemMagnet=true;el.textContent='🧲 MAGNET! Pulling gems!';setTimeout(()=>{gemMagnet=false;},5000);}
+  else if(type==='🛡️'){gemShield=true;el.textContent='🛡️ SHIELD! Next bomb absorbed!';setTimeout(()=>{gemShield=false;},8000);}
+  else if(type==='⏱️'){gemSlow=true;el.textContent='⏱️ SLOW! Everything slows!';gems.forEach(g=>g.vy*=0.5);setTimeout(()=>{gemSlow=false;},4000);}
+  el.style.opacity='1';setTimeout(()=>el.style.opacity='0',1500);
+}
+function endGemGame(){
+  gemGameOver=true;
+  const el=document.getElementById('gems-msg');
+  el.textContent=gemsScore>40?'Legend! 💎 '+gemsScore:gemsScore>20?'Amazing! 💎 '+gemsScore:'Game over 💎 '+gemsScore;
+  el.style.opacity='1';
+  setTimeout(()=>{
+    gemsScore=0;gemsLives=3;gems=[];gemParticles=[];gemSpawnTimer=0;gemSpawnRate=70;gemGameOver=false;
+    gemCombo=0;gemComboTimer=0;gemShield=false;gemMagnet=false;gemSlow=false;
+    gemBasket.w=110;
+    document.getElementById('gems-score').textContent='💎 0';
+    document.getElementById('gems-lives').textContent='❤️❤️❤️';
+    el.style.opacity='0';
+    requestAnimationFrame(drawGems);
+  },2800);
+}
+
+/* ═══ TAROT CARD ═══ */
+const TAROT_CARDS=[
+  {icon:'☀️',name:'The Sun',meaning:'Joy, warmth and success are ahead. Let yourself shine.'},
+  {icon:'🌙',name:'The Moon',meaning:'Trust your intuition. The path will reveal itself.'},
+  {icon:'⭐',name:'The Star',meaning:'Hope is restored. Something beautiful is coming.'},
+  {icon:'💫',name:'The World',meaning:'Completion. You have everything you need within you.'},
+  {icon:'❤️',name:'The Lovers',meaning:'Deep connection and alignment are near. Open your heart.'},
+  {icon:'⚡',name:'The Tower',meaning:'Change brings freedom. What breaks was not built to last.'},
+  {icon:'🌸',name:'The Empress',meaning:'Nurture yourself. Abundance flows when you bloom.'},
+  {icon:'🦋',name:'Transformation',meaning:'You are becoming. Trust the process of change.'},
+  {icon:'🌊',name:'The High Priestess',meaning:'Be still. The answers live in the quiet.'},
+  {icon:'🔥',name:'Strength',meaning:'You are braver than you feel. Your power is real.'},
+  {icon:'🌿',name:'The Hermit',meaning:'Time alone will bring clarity. Solitude is sacred.'},
+  {icon:'⚖️',name:'Justice',meaning:'What is true will come to light. Balance is restored.'},
+  {icon:'🌈',name:'Judgement',meaning:'A new chapter. Let the past go and rise.'},
+  {icon:'🕊️',name:'The Fool',meaning:'Step forward with joy. The leap is worth it.'},
+  {icon:'💎',name:'The Magician',meaning:'You have all the tools. Now create.'},
+  {icon:'🌺',name:'The Wheel',meaning:'Fortune turns. Your moment is coming.'},
+];
+let tarotCanvas,tarotCtx,tarotT=0,tarotParticles=[];
+function initTarot(){
+  tarotCanvas=document.getElementById('tarot-canvas');
+  tarotCtx=tarotCanvas.getContext('2d');
+  tarotCanvas.width=window.innerWidth;tarotCanvas.height=window.innerHeight;
+  tarotT=0;tarotParticles=[];
+  document.getElementById('tarot-card').style.display='none';
+  document.getElementById('tarot-deck').style.display='block';
+  document.getElementById('tarot-hint').style.display='block';
+  requestAnimationFrame(drawTarotBg);
+}
+function drawTarot(){
+  const card=TAROT_CARDS[Math.floor(Math.random()*TAROT_CARDS.length)];
+  document.getElementById('tarot-deck').style.display='none';
+  document.getElementById('tarot-hint').textContent='tap again to draw another';
+  document.getElementById('tarot-hint').style.display='block';
+  document.getElementById('tarot-card').style.display='block';
+  document.getElementById('tarot-icon').textContent=card.icon;
+  document.getElementById('tarot-name').textContent=card.name;
+  document.getElementById('tarot-meaning').textContent=card.meaning;
+  // Burst particles
+  const cx=tarotCanvas.width/2,cy=tarotCanvas.height*0.52;
+  for(let i=0;i<40;i++){
+    const a=Math.random()*Math.PI*2,spd=2+Math.random()*8;
+    tarotParticles.push({x:cx,y:cy,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+      life:1,decay:0.015+Math.random()*0.01,
+      hue:260+Math.random()*80,r:2+Math.random()*4});
+  }
+  // Allow drawing another
+  document.getElementById('tarot-card').onclick=drawTarot;
+}
+function drawTarotBg(){
+  if(!tarotCtx)return;
+  tarotT++;
+  const W=tarotCanvas.width,H=tarotCanvas.height;
+  // Rich tarot background
+  tarotCtx.fillStyle='rgba(4,2,14,0.14)';
+  tarotCtx.fillRect(0,0,W,H);
+  // Slow rotating star field
+  for(let i=0;i<6;i++){
+    const angle=tarotT*0.002+i*(Math.PI*2/6);
+    const r=Math.min(W,H)*0.35+Math.sin(tarotT*0.007+i)*30;
+    const sx=W/2+Math.cos(angle)*r,sy=H*0.45+Math.sin(angle)*r*0.4;
+    const sa=0.08+Math.sin(tarotT*0.015+i*0.8)*0.06;
+    tarotCtx.save();tarotCtx.globalAlpha=sa;
+    const sg=tarotCtx.createRadialGradient(sx,sy,0,sx,sy,40);
+    sg.addColorStop(0,`hsl(${260+i*25},85%,72%)`);sg.addColorStop(1,'transparent');
+    tarotCtx.fillStyle=sg;tarotCtx.beginPath();tarotCtx.arc(sx,sy,40,0,Math.PI*2);tarotCtx.fill();
+    tarotCtx.restore();
+  }
+  // Central glow
+  const cg=tarotCtx.createRadialGradient(W/2,H*0.45,0,W/2,H*0.45,280);
+  cg.addColorStop(0,`rgba(80,20,180,${0.08+Math.sin(tarotT*0.01)*0.03})`);
+  cg.addColorStop(1,'transparent');
+  tarotCtx.fillStyle=cg;tarotCtx.fillRect(0,0,W,H);
+  // Floating mystic dust
+  for(let i=0;i<5;i++){
+    const x=((W*0.22*i)+tarotT*(i%2===0?0.25:-0.18))%W;
+    const y=H*0.2+Math.sin(tarotT*0.009+i*1.4)*H*0.35;
+    const a=0.06+Math.sin(tarotT*0.018+i)*0.04;
+    tarotCtx.save();tarotCtx.globalAlpha=a;
+    const g=tarotCtx.createRadialGradient(x,y,0,x,y,25);
+    g.addColorStop(0,`hsl(${255+i*28},85%,72%)`);g.addColorStop(1,'transparent');
+    tarotCtx.fillStyle=g;tarotCtx.beginPath();tarotCtx.arc(x,y,25,0,Math.PI*2);tarotCtx.fill();
+    tarotCtx.restore();
+  }
+  // Particles from card reveal
+  tarotParticles.forEach((p,i)=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.vx*=0.98;p.life-=p.decay;
+    if(p.life<=0){tarotParticles.splice(i,1);return;}
+    tarotCtx.save();tarotCtx.globalAlpha=p.life;
+    tarotCtx.fillStyle=`hsl(${p.hue},80%,72%)`;
+    tarotCtx.beginPath();tarotCtx.arc(p.x,p.y,p.r,0,Math.PI*2);tarotCtx.fill();
+    tarotCtx.restore();
+  });
+  if(document.querySelector('#s-tarot.on'))requestAnimationFrame(drawTarotBg);
+}
+
+/* ═══ FRUIT SLICER ═══ */
+let fruitCanvas,fruitCtx,fruits=[],fruitSlices=[],fruitParticles=[];
+let fruitScore=0,fruitLives=3,fruitTimer=0,fruitRate=90,fruitGameOver=false;
+let fruitMouse={x:0,y:0,px:0,py:0,down:false};
+const FRUITS_LIST=[
+  {e:'🍑',pts:1,color:'rgba(255,180,100,0.9)'},
+  {e:'🍓',pts:1,color:'rgba(255,80,80,0.9)'},
+  {e:'🍋',pts:1,color:'rgba(255,230,60,0.9)'},
+  {e:'🍇',pts:2,color:'rgba(160,80,220,0.9)'},
+  {e:'🍉',pts:2,color:'rgba(80,200,80,0.9)'},
+  {e:'🍊',pts:1,color:'rgba(255,150,40,0.9)'},
+  {e:'🥝',pts:3,color:'rgba(100,200,80,0.9)'},
+  {e:'🍍',pts:3,color:'rgba(220,180,40,0.9)'},
+  {e:'💣',pts:0,color:'rgba(60,60,60,0.9)',bomb:true},
+];
+function initFruit(){
+  fruitCanvas=document.getElementById('fruit-canvas');
+  fruitCtx=fruitCanvas.getContext('2d');
+  fruitCanvas.width=window.innerWidth;fruitCanvas.height=window.innerHeight;
+  fruits=[];fruitSlices=[];fruitParticles=[];
+  fruitScore=0;fruitLives=5;fruitTimer=0;fruitRate=75;fruitGameOver=false;
+  document.getElementById('fruit-score').textContent='🍑 0';
+  document.getElementById('fruit-lives').textContent='❤️❤️❤️❤️❤️';
+  document.getElementById('fruit-combo').style.opacity='0';
+  fruitCanvas.addEventListener('mousemove',onFruitMove);
+  fruitCanvas.addEventListener('mousedown',()=>fruitMouse.down=true);
+  fruitCanvas.addEventListener('mouseup',()=>fruitMouse.down=false);
+  fruitCanvas.addEventListener('touchmove',onFruitTouch,{passive:true});
+  fruitCanvas.addEventListener('touchstart',()=>fruitMouse.down=true,{passive:true});
+  fruitCanvas.addEventListener('touchend',()=>fruitMouse.down=false);
+  requestAnimationFrame(drawFruit);
+}
+function onFruitMove(e){
+  fruitMouse.px=fruitMouse.x;fruitMouse.py=fruitMouse.y;
+  fruitMouse.x=e.clientX;fruitMouse.y=e.clientY;
+  if(fruitMouse.down) checkFruitSlice();
+}
+function onFruitTouch(e){
+  fruitMouse.px=fruitMouse.x;fruitMouse.py=fruitMouse.y;
+  fruitMouse.x=e.touches[0].clientX;fruitMouse.y=e.touches[0].clientY;
+  fruitMouse.down=true;
+  checkFruitSlice();
+}
+function checkFruitSlice(){
+  const mx=fruitMouse.x,my=fruitMouse.y;
+  fruits.forEach((f,i)=>{
+    if(f.sliced)return;
+    if(Math.hypot(mx-f.x,my-f.y)<f.r+18){
+      f.sliced=true;
+      if(f.bomb){
+        fruitLives--;
+        document.getElementById('fruit-lives').textContent='❤️'.repeat(Math.max(0,fruitLives))+'🖤'.repeat(Math.max(0,3-fruitLives));
+        document.getElementById('fruit-lives').textContent='❤️'.repeat(Math.max(0,fruitLives))+'🖤'.repeat(Math.max(0,5-fruitLives));
+        for(let j=0;j<16;j++){const a=Math.random()*Math.PI*2;fruitParticles.push({x:f.x,y:f.y,vx:Math.cos(a)*8,vy:Math.sin(a)*8-4,life:1,decay:0.03,color:'rgba(100,80,60,0.9)',r:4});}
+        if(fruitLives<=0)endFruitGame();
+      } else {
+        fruitScore+=f.pts;
+        document.getElementById('fruit-score').textContent='🍑 '+fruitScore;
+        // Slice effect
+        fruitSlices.push({x:f.x,y:f.y,angle:Math.atan2(my-fruitMouse.py,mx-fruitMouse.px),life:1,color:f.color});
+        for(let j=0;j<20;j++){
+          const a=Math.random()*Math.PI*2,spd=3+Math.random()*9;
+          fruitParticles.push({x:f.x,y:f.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-5,life:1,decay:0.02+Math.random()*0.02,color:f.color,r:3+Math.random()*5});
+        }
+        if(f.pts>=2){
+          const el=document.getElementById('fruit-combo');
+          el.textContent=f.pts>=3?'RARE! +'+f.pts+' ✨':'+'+f.pts;
+          el.style.opacity='1';setTimeout(()=>el.style.opacity='0',700);
+        }
+      }
+    }
+  });
+}
+function spawnFruit(){
+  const bombChance=fruitScore<10?0:fruitScore<25?0.05:0.08;
+  const type=Math.random()<bombChance?FRUITS_LIST[8]:FRUITS_LIST[Math.floor(Math.random()*8)];
+  const x=80+Math.random()*(fruitCanvas.width-160);
+  const vx=(Math.random()-0.5)*4;
+  const vy=-(6+Math.random()*4+Math.min(fruitScore*0.015,4));
+  fruits.push({x,y:fruitCanvas.height+40,vx,vy,r:28+Math.random()*12,...type,rotation:0,rotSpd:(Math.random()-0.5)*0.08,sliced:false});
+}
+function drawFruit(){
+  if(!fruitCtx||fruitGameOver)return;
+  // Rich fruit world background
+  fruitCtx.fillStyle='rgba(5,1,10,0.9)';
+  fruitCtx.fillRect(0,0,fruitCanvas.width,fruitCanvas.height);
+  // Bokeh lights
+  for(let i=0;i<8;i++){
+    const bx=((fruitCanvas.width*0.14*i)+fruitTimer*(i%2===0?0.2:-0.15))%fruitCanvas.width;
+    const by=fruitCanvas.height*0.15+Math.sin(fruitTimer*0.008+i*0.9)*fruitCanvas.height*0.15;
+    const ba=0.04+Math.sin(fruitTimer*0.012+i*1.1)*0.025;
+    fruitCtx.save();fruitCtx.globalAlpha=ba;
+    const bg=fruitCtx.createRadialGradient(bx,by,0,bx,by,35);
+    bg.addColorStop(0,`hsl(${280+i*20},75%,68%)`);bg.addColorStop(1,'transparent');
+    fruitCtx.fillStyle=bg;fruitCtx.beginPath();fruitCtx.arc(bx,by,35,0,Math.PI*2);fruitCtx.fill();
+    fruitCtx.restore();
+  }
+  fruitTimer++;
+  if(fruitTimer>=fruitRate){fruitTimer=0;fruitRate=Math.max(45,75-fruitScore*1.2);spawnFruit();if(fruitScore>15&&Math.random()<0.3)spawnFruit();}
+  // Slice trail
+  if(fruitMouse.down){
+    fruitCtx.save();fruitCtx.strokeStyle='rgba(255,255,255,0.7)';fruitCtx.lineWidth=3;
+    fruitCtx.lineCap='round';fruitCtx.globalAlpha=0.6;
+    fruitCtx.beginPath();fruitCtx.moveTo(fruitMouse.px,fruitMouse.py);fruitCtx.lineTo(fruitMouse.x,fruitMouse.y);
+    fruitCtx.stroke();fruitCtx.restore();
+  }
+  // Fruits
+  fruits.forEach((f,i)=>{
+    f.x+=f.vx;f.y+=f.vy;f.vy+=0.35;f.rotation+=f.rotSpd;
+    if(f.y>fruitCanvas.height+60){
+      if(!f.sliced&&!f.bomb&&fruitScore>5){fruitLives--;document.getElementById('fruit-lives').textContent='❤️'.repeat(Math.max(0,fruitLives))+'🖤'.repeat(Math.max(0,5-fruitLives));if(fruitLives<=0)endFruitGame();}
+      fruits.splice(i,1);return;
+    }
+    if(f.sliced){fruits.splice(i,1);return;}
+    fruitCtx.save();fruitCtx.translate(f.x,f.y);fruitCtx.rotate(f.rotation);
+    fruitCtx.font=(f.r*1.4)+'px serif';fruitCtx.textAlign='center';fruitCtx.textBaseline='middle';
+    fruitCtx.fillText(f.e,0,0);fruitCtx.restore();
+  });
+  // Slice flash
+  fruitSlices.forEach((s,i)=>{
+    s.life-=0.08;if(s.life<=0){fruitSlices.splice(i,1);return;}
+    fruitCtx.save();fruitCtx.globalAlpha=s.life*0.7;
+    fruitCtx.strokeStyle=s.color;fruitCtx.lineWidth=3+s.life*4;fruitCtx.lineCap='round';
+    const len=50*s.life;
+    fruitCtx.beginPath();
+    fruitCtx.moveTo(s.x-Math.cos(s.angle)*len,s.y-Math.sin(s.angle)*len);
+    fruitCtx.lineTo(s.x+Math.cos(s.angle)*len,s.y+Math.sin(s.angle)*len);
+    fruitCtx.stroke();fruitCtx.restore();
+  });
+  // Particles
+  fruitParticles.forEach((p,i)=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.25;p.vx*=0.97;p.life-=p.decay;
+    if(p.life<=0){fruitParticles.splice(i,1);return;}
+    fruitCtx.save();fruitCtx.globalAlpha=p.life;
+    fruitCtx.fillStyle=p.color;fruitCtx.beginPath();fruitCtx.arc(p.x,p.y,p.r,0,Math.PI*2);fruitCtx.fill();
+    fruitCtx.restore();
+  });
+  if(document.querySelector('#s-fruit.on'))requestAnimationFrame(drawFruit);
+}
+function endFruitGame(){
+  fruitGameOver=true;
+  const el=document.getElementById('fruit-combo');
+  el.textContent=fruitScore>30?'Master Slicer! 🍑 '+fruitScore:fruitScore>15?'Nice slicing! 🍑 '+fruitScore:'Game over 🍑 '+fruitScore;
+  el.style.opacity='1';
+  setTimeout(()=>{
+    fruits=[];fruitSlices=[];fruitParticles=[];fruitScore=0;fruitLives=3;fruitTimer=0;fruitRate=90;fruitGameOver=false;
+    document.getElementById('fruit-score').textContent='🍑 0';
+    document.getElementById('fruit-lives').textContent='❤️❤️❤️';
+    el.style.opacity='0';requestAnimationFrame(drawFruit);
+  },2800);
+}
+
 </script>
+<!-- ═══════ ASK THE UNIVERSE ═══════ -->
+<div class="screen" id="s-universe">
+  <canvas id="universe-canvas"></canvas>
+  <div class="universe-ui si">
+    <span class="eyebrow rv" style="color:rgba(180,150,255,0.5);">the universe knows</span>
+    <h2 class="big rv" style="color:rgba(210,190,255,0.95);">Ask the<br><em style="color:#a060ff;">Universe.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(140,80,255,0.6),transparent);"></div>
+    <p id="universe-question" class="rv">think of your question... then click the orb</p>
+    <div id="universe-orb"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.5rem;">🔮</span></div>
+    <div id="universe-answer"></div>
+  </div>
+  <button id="universe-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ GEM CATCHER ═══════ -->
+<div class="screen" id="s-gems">
+  <canvas id="gems-canvas"></canvas>
+  <div id="gems-score">💎 0</div>
+  <div id="gems-lives">❤️❤️❤️</div>
+  <div id="gems-msg"></div>
+  <button id="gems-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ TAROT ═══════ -->
+<div class="screen" id="s-tarot">
+  <canvas id="tarot-canvas"></canvas>
+  <div class="tarot-ui si">
+    <span class="eyebrow rv" style="color:rgba(180,130,255,0.5);">the cards speak</span>
+    <h2 class="big rv" style="color:rgba(210,180,255,0.95);">Draw your<br><em style="color:#b060ff;">Card.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(140,60,255,0.6),transparent);"></div>
+    <div id="tarot-deck" onclick="drawTarot()"><span id="tarot-deck-label">✦</span></div>
+    <div id="tarot-hint" class="rv">tap the deck to draw</div>
+    <div id="tarot-card">
+      <span id="tarot-icon"></span>
+      <div id="tarot-name"></div>
+      <div id="tarot-meaning"></div>
+    </div>
+  </div>
+  <button id="tarot-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ FRUIT SLICER ═══════ -->
+<div class="screen" id="s-fruit">
+  <canvas id="fruit-canvas"></canvas>
+  <div id="fruit-score">🍑 0</div>
+  <div id="fruit-lives">❤️❤️❤️</div>
+  <div id="fruit-combo"></div>
+  <button id="fruit-back" onclick="goHub()">← back</button>
+</div>
 </body>
 </html>
