@@ -533,6 +533,177 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
   .hub-card{padding:2.2rem 1.6rem 2rem;}
   .hc-icon{font-size:3rem;}
 }
+/* ── NEW HUB CARD COLORS ─────────────────────────────────────── */
+.hc-book{background:linear-gradient(145deg,#1a0828,#2a1045,#1a0828);border:1px solid rgba(180,100,255,0.2);}
+.hc-book .hc-title{color:rgba(200,160,255,0.95);}
+.hc-book .hc-desc{color:rgba(200,160,255,0.45);}
+.hc-mirror{background:linear-gradient(145deg,#0a1828,#1a2840,#0a1828);border:1px solid rgba(100,200,255,0.2);}
+.hc-mirror .hc-title{color:rgba(140,210,255,0.95);}
+.hc-mirror .hc-desc{color:rgba(140,210,255,0.45);}
+.hc-portrait{background:linear-gradient(145deg,#200820,#381038,#200820);border:1px solid rgba(255,100,180,0.2);}
+.hc-portrait .hc-title{color:rgba(255,150,210,0.95);}
+.hc-portrait .hc-desc{color:rgba(255,150,210,0.45);}
+.hc-openwhen{background:linear-gradient(145deg,#201008,#381a08,#201008);border:1px solid rgba(255,180,80,0.2);}
+.hc-openwhen .hc-title{color:rgba(255,200,120,0.95);}
+.hc-openwhen .hc-desc{color:rgba(255,200,120,0.45);}
+.hc-letters{background:linear-gradient(145deg,#180810,#2a1020,#180810);border:1px solid rgba(255,120,150,0.2);}
+.hc-letters .hc-title{color:rgba(255,160,180,0.95);}
+.hc-letters .hc-desc{color:rgba(255,160,180,0.45);}
+.hc-thoughts{background:linear-gradient(145deg,#080818,#101030,#080818);border:1px solid rgba(120,120,255,0.2);}
+.hc-thoughts .hc-title{color:rgba(160,160,255,0.95);}
+.hc-thoughts .hc-desc{color:rgba(160,160,255,0.45);}
+
+/* ── SHARED WORLD ELEMENTS ───────────────────────────────────── */
+.love-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.love-ui{position:relative;z-index:5;text-align:center;}
+.love-title{position:fixed;top:1.2rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.2em;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);pointer-events:none;}
+
+/* ── BOOK OF YOU ─────────────────────────────────────────────── */
+#s-book{background:linear-gradient(160deg,#0c0418 0%,#180830 50%,#0c0418 100%);overflow:hidden;}
+#book-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#book-container{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+#book-cover{width:min(240px,60vw);height:min(320px,80vw);border-radius:8px 16px 16px 8px;
+  background:linear-gradient(135deg,#2a0840,#4a1060,#2a0840);
+  border:2px solid rgba(200,140,255,0.4);cursor:pointer;position:relative;z-index:10;
+  box-shadow:-6px 6px 30px rgba(0,0,0,0.6),0 0 60px rgba(140,60,255,0.2);
+  transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0.8rem;}
+#book-cover:hover{transform:scale(1.04) rotate(-1deg);box-shadow:-8px 8px 40px rgba(0,0,0,0.7),0 0 80px rgba(160,80,255,0.3);}
+#book-cover-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;
+  color:rgba(220,190,255,0.9);text-align:center;padding:0 1rem;line-height:1.4;}
+#book-cover-sub{font-family:'Cormorant Garamond',serif;font-size:0.8rem;letter-spacing:0.2em;
+  text-transform:uppercase;color:rgba(180,140,255,0.5);}
+#book-spine{position:absolute;left:0;top:0;width:16px;height:100%;
+  background:linear-gradient(180deg,#3a1060,#1a0830);border-radius:8px 0 0 8px;
+  border-right:1px solid rgba(200,140,255,0.2);}
+#book-pages{display:none;max-width:min(500px,90vw);width:100%;}
+#book-page{background:rgba(20,8,35,0.95);border:1px solid rgba(180,120,255,0.2);border-radius:12px;
+  padding:2rem;font-family:'Cormorant Garamond',serif;text-align:center;
+  box-shadow:0 0 40px rgba(120,60,255,0.15);min-height:200px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1rem;}
+#book-chapter{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(180,120,255,0.5);}
+#book-text{font-size:1.1rem;font-style:italic;color:rgba(220,200,255,0.9);line-height:1.8;max-width:380px;}
+#book-nav{display:flex;gap:1rem;margin-top:0.5rem;}
+.book-btn{font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;border:1px solid rgba(180,100,255,0.3);
+  background:rgba(140,60,220,0.1);color:rgba(200,160,255,0.7);transition:all 0.3s;}
+.book-btn:hover{background:rgba(140,60,220,0.2);color:rgba(220,190,255,0.9);}
+#book-progress{font-size:0.6rem;letter-spacing:0.15em;color:rgba(160,100,255,0.4);margin-top:0.3rem;}
+
+/* ── MIRROR ─────────────────────────────────────────────────── */
+#s-mirror{background:radial-gradient(ellipse at center,#060412 0%,#020008 100%);overflow:hidden;}
+#mirror-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#mirror-frame{position:relative;z-index:10;width:min(280px,70vw);height:min(380px,85vw);
+  margin:1rem auto;border-radius:50% 50% 48% 48%;
+  border:3px solid rgba(180,140,255,0.5);
+  box-shadow:0 0 60px rgba(140,80,255,0.3),inset 0 0 40px rgba(100,40,200,0.2);
+  background:radial-gradient(ellipse at 30% 25%,rgba(180,140,255,0.08),rgba(80,40,180,0.04));
+  cursor:default;overflow:hidden;display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;padding-top:15%;}
+#mirror-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;
+  color:rgba(220,200,255,0.9);text-align:center;padding:0 1.5rem;line-height:1.7;
+  text-shadow:0 0 20px rgba(180,120,255,0.5);transition:opacity 0.8s;max-width:240px;}
+#mirror-sub{font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.1em;
+  color:rgba(180,140,255,0.5);margin-top:0.5rem;font-style:italic;}
+#mirror-tap{font-family:'Jost',sans-serif;font-size:0.55rem;letter-spacing:0.25em;
+  text-transform:uppercase;color:rgba(160,120,255,0.4);margin-top:1.5rem;}
+#mirror-shine{position:absolute;top:8%;left:15%;width:30%;height:45%;
+  background:linear-gradient(135deg,rgba(255,255,255,0.08),transparent);
+  border-radius:50%;pointer-events:none;}
+
+/* ── PORTRAIT ────────────────────────────────────────────────── */
+#s-portrait{background:linear-gradient(160deg,#0c0415 0%,#180820 50%,#0c0415 100%);overflow:hidden;}
+#portrait-canvas{position:absolute;inset:0;width:100%;height:100%;}
+#portrait-caption{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;
+  color:rgba(255,180,220,0.7);pointer-events:none;text-align:center;
+  text-shadow:0 0 20px rgba(255,100,180,0.4);transition:opacity 0.8s;}
+#portrait-hint{position:fixed;top:3.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(255,160,200,0.4);pointer-events:none;}
+#portrait-complete{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;
+  color:rgba(255,200,230,0.95);text-shadow:0 0 40px rgba(255,100,180,0.6);
+  pointer-events:none;opacity:0;transition:opacity 1.5s;text-align:center;line-height:1.5;}
+
+/* ── OPEN WHEN ───────────────────────────────────────────────── */
+#s-openwhen{background:linear-gradient(160deg,#100808 0%,#201010 50%,#100808 100%);overflow:hidden;}
+#ow-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#ow-shelf{position:relative;z-index:10;display:flex;flex-direction:column;gap:0.8rem;
+  align-items:center;width:100%;max-width:460px;margin:0 auto;}
+.ow-envelope{width:100%;border-radius:12px;cursor:pointer;border:1px solid rgba(255,180,80,0.2);
+  background:linear-gradient(135deg,rgba(40,20,8,0.9),rgba(60,30,10,0.8));
+  backdrop-filter:blur(8px);padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem;
+  transition:all 0.4s;position:relative;overflow:hidden;}
+.ow-envelope:hover{border-color:rgba(255,200,100,0.5);background:linear-gradient(135deg,rgba(60,30,10,0.95),rgba(80,40,15,0.9));
+  transform:translateX(6px);}
+.ow-envelope.opened{border-color:rgba(255,180,80,0.4);opacity:0.7;}
+.ow-seal{font-size:1.6rem;flex-shrink:0;}
+.ow-label{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;
+  color:rgba(255,210,150,0.9);}
+.ow-hint{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(200,160,100,0.5);margin-top:0.2rem;}
+#ow-letter{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);display:none;}
+#ow-paper{background:linear-gradient(135deg,#1a0c08,#251208);border:1px solid rgba(255,180,80,0.3);
+  border-radius:16px;padding:2.5rem;max-width:min(480px,90vw);text-align:center;
+  box-shadow:0 0 80px rgba(200,120,40,0.2);position:relative;}
+#ow-paper-icon{font-size:2.5rem;margin-bottom:0.8rem;}
+#ow-paper-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;
+  color:rgba(255,200,120,0.9);margin-bottom:1rem;}
+#ow-paper-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;
+  color:rgba(240,200,160,0.85);line-height:1.9;}
+#ow-close{margin-top:1.5rem;font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.5rem 1.2rem;border-radius:50px;cursor:pointer;
+  border:1px solid rgba(200,140,60,0.3);background:rgba(180,100,30,0.1);
+  color:rgba(255,200,120,0.6);transition:all 0.3s;}
+
+/* ── LETTERS ─────────────────────────────────────────────────── */
+#s-letters{background:linear-gradient(160deg,#0a0415 0%,#180825 50%,#0a0415 100%);overflow:hidden;}
+#letters-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#letter-display{position:relative;z-index:10;width:100%;max-width:500px;margin:0 auto;}
+#letter-envelope-anim{font-size:4rem;margin-bottom:0.5rem;cursor:pointer;
+  display:block;text-align:center;transition:transform 0.3s;filter:drop-shadow(0 0 20px rgba(255,120,150,0.4));}
+#letter-envelope-anim:hover{transform:scale(1.1);}
+#letter-card{background:linear-gradient(135deg,rgba(25,8,30,0.95),rgba(35,12,45,0.9));
+  border:1px solid rgba(255,120,160,0.2);border-radius:16px;padding:2rem;
+  font-family:'Cormorant Garamond',serif;text-align:left;min-height:200px;
+  box-shadow:0 0 60px rgba(180,60,120,0.1);}
+#letter-from{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,150,180,0.5);margin-bottom:1rem;}
+#letter-body{font-size:1rem;font-style:italic;color:rgba(240,200,220,0.9);
+  line-height:2;white-space:pre-line;}
+#letter-sign{font-size:0.9rem;font-style:italic;color:rgba(220,160,180,0.7);
+  margin-top:1.2rem;text-align:right;}
+#letter-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;}
+.letter-btn{font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.4rem 1rem;border-radius:50px;cursor:pointer;
+  border:1px solid rgba(255,100,150,0.3);background:rgba(180,40,80,0.08);
+  color:rgba(255,150,180,0.6);transition:all 0.3s;}
+.letter-btn:hover{background:rgba(180,40,80,0.18);color:rgba(255,180,200,0.9);}
+#letter-count{font-size:0.6rem;letter-spacing:0.15em;color:rgba(200,130,160,0.4);}
+
+/* ── LATE NIGHT THOUGHTS ─────────────────────────────────────── */
+#s-thoughts{background:linear-gradient(180deg,#02020c 0%,#040418 50%,#02020c 100%);overflow:hidden;}
+#thoughts-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#thoughts-time{position:fixed;top:3.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:rgba(180,180,255,0.4);
+  letter-spacing:0.15em;pointer-events:none;}
+#thoughts-bubble{position:relative;z-index:10;max-width:min(460px,85vw);margin:0 auto;
+  text-align:center;}
+#thoughts-text{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;
+  color:rgba(200,200,255,0.9);line-height:1.9;min-height:120px;
+  text-shadow:0 0 30px rgba(100,100,255,0.3);transition:opacity 0.6s;}
+#thoughts-attr{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(150,150,220,0.4);margin-top:0.8rem;transition:opacity 0.6s;}
+#thoughts-next{font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.5rem 1.4rem;border-radius:50px;cursor:pointer;
+  border:1px solid rgba(120,120,255,0.25);background:rgba(80,80,200,0.06);
+  color:rgba(160,160,255,0.5);transition:all 0.3s;margin-top:1.2rem;display:inline-block;}
+#thoughts-next:hover{background:rgba(80,80,200,0.15);color:rgba(180,180,255,0.8);}
+
 </style>
 </head>
 <body>
@@ -543,40 +714,40 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
 <!-- ═══════ HUB ═══════ -->
 <div class="screen on" id="s-hub">
   <div class="si" style="justify-content:flex-start;padding-top:2.5rem;">
-    <span class="eyebrow rv">a world built for you</span>
+    <span class="eyebrow rv">made with love, for you</span>
     <h1 class="big rv" style="font-size:clamp(2.6rem,8vw,4.2rem);color:rgba(220,210,255,0.95);">Hello,<br><em style="color:#b080ff;text-shadow:0 0 40px rgba(160,80,255,0.6);">Nadia.</em></h1>
-    <p class="sub rv" style="max-width:360px;">Six worlds, made just for you.</p>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(140,80,255,0.5),transparent);"></div>
+    <p class="sub rv" style="max-width:360px;">Six things I want you to feel.</p>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(180,100,255,0.5),transparent);"></div>
     <div class="hub-grid rv">
-      <div class="hub-card hc-space" onclick="go('s-space')">
-        <span class="hc-icon">🔭</span>
-        <div class="hc-title">Space Explorer</div>
-        <div class="hc-desc">Fly through the cosmos</div>
+      <div class="hub-card hc-book" onclick="go('s-book')">
+        <span class="hc-icon">📖</span>
+        <div class="hc-title">The Book of You</div>
+        <div class="hc-desc">Your story, written by me</div>
       </div>
-      <div class="hub-card hc-mood" onclick="go('s-mood')">
-        <span class="hc-icon">🎭</span>
-        <div class="hc-title">Mood Ring</div>
-        <div class="hc-desc">What are you feeling?</div>
+      <div class="hub-card hc-mirror" onclick="go('s-mirror')">
+        <span class="hc-icon">🪞</span>
+        <div class="hc-title">What I See</div>
+        <div class="hc-desc">Look in the mirror</div>
       </div>
-      <div class="hub-card hc-garden" onclick="go('s-garden')">
-        <span class="hc-icon">🌺</span>
-        <div class="hc-title">Flower Garden</div>
-        <div class="hc-desc">Grow something beautiful</div>
+      <div class="hub-card hc-portrait" onclick="go('s-portrait')">
+        <span class="hc-icon">🎨</span>
+        <div class="hc-title">Paint Her Portrait</div>
+        <div class="hc-desc">Watch yourself appear</div>
       </div>
-      <div class="hub-card hc-blackhole" onclick="go('s-blackhole')">
-        <span class="hc-icon">🌌</span>
-        <div class="hc-title">Black Hole</div>
-        <div class="hc-desc">Watch gravity take hold</div>
+      <div class="hub-card hc-openwhen" onclick="go('s-openwhen')">
+        <span class="hc-icon">✉️</span>
+        <div class="hc-title">Open When...</div>
+        <div class="hc-desc">Letters sealed just for you</div>
       </div>
-      <div class="hub-card hc-potion" onclick="go('s-potion')">
-        <span class="hc-icon">🧪</span>
-        <div class="hc-title">Potion Mixer</div>
-        <div class="hc-desc">Brew something magical</div>
+      <div class="hub-card hc-letters" onclick="go('s-letters')">
+        <span class="hc-icon">💌</span>
+        <div class="hc-title">Letters I Never Sent</div>
+        <div class="hc-desc">Things I kept to myself</div>
       </div>
-      <div class="hub-card hc-room" onclick="go('s-room')">
-        <span class="hc-icon">🏠</span>
-        <div class="hc-title">Room Decorator</div>
-        <div class="hc-desc">Design your dream room</div>
+      <div class="hub-card hc-thoughts" onclick="go('s-thoughts')">
+        <span class="hc-icon">🌙</span>
+        <div class="hc-title">Late Night Thoughts</div>
+        <div class="hc-desc">3am and it's all about you</div>
       </div>
     </div>
     <p class="rv" style="font-family:'Cormorant Garamond',serif;font-style:italic;
@@ -585,6 +756,7 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
 </div>
 
 <script>
+
 /* ═══ ROUNDRECT POLYFILL ═══ */
 if(!CanvasRenderingContext2D.prototype.roundRect){
   CanvasRenderingContext2D.prototype.roundRect=function(x,y,w,h,r){
@@ -653,14 +825,14 @@ function go(id){
   // Show paint UI when entering paint
   if(id==='s-paint')showPaintUI(true);
   // Init screens (one-time for most, re-runnable for stateful ones)
-  if(!screenInited[id]||['s-space','s-garden','s-blackhole','s-potion','s-mood','s-room'].includes(id)){
+  if(!screenInited[id]||['s-book','s-mirror','s-portrait','s-openwhen','s-letters','s-thoughts'].includes(id)){
     screenInited[id]=true;
-    if(id==='s-space')initSpace();
-    if(id==='s-mood')initMood();
-    if(id==='s-garden')initGarden();
-    if(id==='s-blackhole')initBlackHole();
-    if(id==='s-potion')initPotion();
-    if(id==='s-room')initRoom();
+    if(id==='s-book')initBook();
+    if(id==='s-mirror')initMirror();
+    if(id==='s-portrait')initPortrait();
+    if(id==='s-openwhen')initOpenWhen();
+    if(id==='s-letters')initLetters();
+    if(id==='s-thoughts')initThoughts();
   }
 
   // Show/hide ferris fixed elements
@@ -1949,1493 +2121,605 @@ function playAbsorb(){
 /* ══════════════════════════════════════════════════════════════
    SPACE EXPLORER — 3D star field, planets, drag to fly
 ══════════════════════════════════════════════════════════════ */
-let spaceCanvas,spaceCtx,spaceT=0;
-let spaceCam={x:0,y:0,z:-200,vx:0,vy:0,vz:0.25};
-let spaceDrag={active:false,lx:0,ly:0};
-let spaceStars=[],spacePlanets=[],spaceNebulas=[];
-let spaceZoom=1,spaceTargetZoom=1,spaceNearPlanet=null;
 
-const PLANET_DATA=[
-  {name:"Violetta",color:"#c060ff",size:38,desc:"A dreamy purple world where it rains amethysts and the clouds are made of lavender smoke.",ring:true,ringColor:"rgba(180,80,255,0.3)"},
-  {name:"Rosara",color:"#ff6080",size:30,desc:"The rose planet. Every sunrise paints the sky a different shade of pink. Home to endless meadows.",ring:false,ringColor:""},
-  {name:"Luminos",color:"#ffe060",size:46,desc:"A golden giant wrapped in warm light. Astronomers say it hums a gentle melody at night.",ring:true,ringColor:"rgba(255,200,60,0.25)"},
-  {name:"Oceara",color:"#40c0ff",size:34,desc:"Entirely covered in deep teal ocean. Bioluminescent creatures illuminate its depths.",ring:false,ringColor:""},
-  {name:"Nebulara",color:"#ff80c0",size:28,desc:"Born inside a nebula. Its atmosphere shimmers with every color imaginable. Magical.",ring:false,ringColor:""},
-  {name:"Crystalis",color:"#80ffff",size:36,desc:"A world of towering crystal formations that refract starlight into permanent rainbows.",ring:true,ringColor:"rgba(120,255,255,0.2)"},
-  {name:"Aurelion",color:"#ffa040",size:52,desc:"The warmest star in this cluster. It nurtures life on seven nearby worlds.",ring:true,ringColor:"rgba(255,160,60,0.2)"},
-  {name:"Midnight",color:"#4040a0",size:26,desc:"The quietest world. No wind, no storms. Just stars reflected perfectly in its still dark seas.",ring:false,ringColor:""},
-];
+/* ══════════════════════════════════════════════════════
+   AUDIO (lightweight Web Audio)
+══════════════════════════════════════════════════════ */
+let _ac=null;
+function _ga(){if(!_ac)_ac=new(window.AudioContext||window.webkitAudioContext)();return _ac;}
+function lTone(f,type='sine',dur=0.4,vol=0.1,delay=0){
+  try{const ac=_ga(),o=ac.createOscillator(),g=ac.createGain();
+  o.connect(g);g.connect(ac.destination);o.type=type;
+  o.frequency.setValueAtTime(f,ac.currentTime+delay);
+  g.gain.setValueAtTime(0,ac.currentTime+delay);
+  g.gain.linearRampToValueAtTime(vol,ac.currentTime+delay+0.02);
+  g.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+delay+dur);
+  o.start(ac.currentTime+delay);o.stop(ac.currentTime+delay+dur+0.05);}catch(e){}
+}
+function lChime(freqs){freqs.forEach((f,i)=>lTone(f,'sine',0.6,0.08,i*0.08));}
+function lPageTurn(){lTone(440,'sine',0.15,0.06);lTone(554,'sine',0.12,0.04,0.1);}
+function lReveal(){lChime([523,659,784,1047]);}
+function lWhisper(){lTone(220,'sine',0.8,0.06);lTone(330,'sine',0.6,0.04,0.2);}
 
-function initSpace(){
-  spaceCanvas=document.getElementById('space-canvas');
-  spaceCtx=spaceCanvas.getContext('2d');
-  spaceCanvas.width=window.innerWidth;spaceCanvas.height=window.innerHeight;
-  spaceT=0;spaceCam={x:0,y:0,z:0,vx:0,vy:0,vz:0.3};
-  spaceZoom=1;spaceTargetZoom=1;spaceNearPlanet=null;
-
-  // Generate stars
-  spaceStars=[];
-  for(let i=0;i<2000;i++){
-    spaceStars.push({
-      x:(Math.random()-0.5)*4000,y:(Math.random()-0.5)*4000,z:Math.random()*2000,
-      size:0.3+Math.random()*1.8,brightness:0.3+Math.random()*0.7,
-      color:`hsl(${200+Math.random()*80},${40+Math.random()*60}%,${70+Math.random()*30}%)`,
-      twinkle:Math.random()*Math.PI*2,twinkleSpd:0.02+Math.random()*0.04
+/* ══════════════════════════════════════════════════════
+   SHARED PARTICLE BG HELPER
+══════════════════════════════════════════════════════ */
+function makeParticleBg(canvasId,hue1,hue2,particleCount=60){
+  const canvas=document.getElementById(canvasId);
+  if(!canvas)return null;
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+  const particles=[];
+  for(let i=0;i<particleCount;i++){
+    particles.push({
+      x:Math.random()*canvas.width,y:Math.random()*canvas.height,
+      vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,
+      r:0.5+Math.random()*1.5,hue:hue1+Math.random()*(hue2-hue1),
+      alpha:0.1+Math.random()*0.4,flicker:Math.random()*Math.PI*2,
+      fspd:0.01+Math.random()*0.03
     });
   }
-
-  // Place planets at different depths
-  // place planets clustered along the flight path
-  spacePlanets=PLANET_DATA.map((pd,i)=>({
-    ...pd,
-    x:(Math.random()-0.5)*600,y:(Math.random()-0.5)*400,z:200+i*180,
-    discovered:false,glowPhase:Math.random()*Math.PI*2
-  }));
-
-  // Nebula clouds
-  spaceNebulas=[];
-  for(let i=0;i<8;i++){
-    spaceNebulas.push({
-      x:(Math.random()-0.5)*5000,y:(Math.random()-0.5)*4000,z:1000+Math.random()*1000,
-      r:200+Math.random()*400,hue:200+Math.random()*160,alpha:0.04+Math.random()*0.06
+  function draw(){
+    ctx.fillStyle='rgba(0,0,0,0.04)';ctx.fillRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;p.flicker+=p.fspd;
+      if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
+      if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
+      const a=p.alpha*(0.6+Math.sin(p.flicker)*0.4);
+      ctx.save();ctx.globalAlpha=a;
+      ctx.fillStyle=`hsl(${p.hue},70%,70%)`;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+      ctx.restore();
     });
+    if(document.querySelector(`#${canvasId}`)?.closest('.screen.on'))requestAnimationFrame(draw);
   }
-
-  // Events
-  spaceCanvas.addEventListener('mousedown',e=>{spaceDrag={active:true,lx:e.clientX,ly:e.clientY};});
-  spaceCanvas.addEventListener('mousemove',e=>{
-    if(spaceDrag.active){
-      spaceCam.vx+=(e.clientX-spaceDrag.lx)*0.003;
-      spaceCam.vy+=(e.clientY-spaceDrag.ly)*0.003;
-      spaceDrag.lx=e.clientX;spaceDrag.ly=e.clientY;
-    }
-  });
-  spaceCanvas.addEventListener('mouseup',()=>spaceDrag.active=false);
-  spaceCanvas.addEventListener('wheel',e=>{
-    spaceTargetZoom=Math.max(0.4,Math.min(3,spaceTargetZoom-e.deltaY*0.001));
-    e.preventDefault();
-  },{passive:false});
-  spaceCanvas.addEventListener('click',e=>{checkPlanetClick(e.clientX,e.clientY);});
-  spaceCanvas.addEventListener('touchstart',e=>{spaceDrag={active:true,lx:e.touches[0].clientX,ly:e.touches[0].clientY};},{passive:true});
-  spaceCanvas.addEventListener('touchmove',e=>{
-    if(spaceDrag.active){
-      spaceCam.vx+=(e.touches[0].clientX-spaceDrag.lx)*0.004;
-      spaceCam.vy+=(e.touches[0].clientY-spaceDrag.ly)*0.004;
-      spaceDrag.lx=e.touches[0].clientX;spaceDrag.ly=e.touches[0].clientY;
-    }
-    e.preventDefault();
-  },{passive:false});
-  spaceCanvas.addEventListener('touchend',()=>spaceDrag.active=false);
-
-  requestAnimationFrame(drawSpace);
+  draw();
+  return ctx;
 }
 
-function project3D(px,py,pz,cam,W,H,zoom){
-  const rx=px-cam.x,ry=py-cam.y,rz=pz-cam.z;
-  if(rz<=0)return null;
-  const f=600*zoom/rz;
-  return{sx:W/2+rx*f,sy:H/2+ry*f,f,rz};
-}
-
-function checkPlanetClick(mx,my){
-  const W=spaceCanvas.width,H=spaceCanvas.height;
-  spacePlanets.forEach(p=>{
-    const proj=project3D(p.x,p.y,p.z,spaceCam,W,H,spaceZoom);
-    if(!proj)return;
-    const screenR=p.size*proj.f;
-    if(Math.hypot(mx-proj.sx,my-proj.sy)<screenR+20){
-      document.getElementById('spi-name').textContent=p.name;
-      document.getElementById('spi-desc').textContent=p.desc;
-      const info=document.getElementById('space-planet-info');
-      info.style.opacity='1';
-      document.getElementById('space-hint').style.opacity='0';
-      if(!p.discovered){p.discovered=true;playChime([440,554,659,880],0.1);}
-      else playTone(440,'sine',0.3,0.1);
-      setTimeout(()=>info.style.opacity='0',5000);
-    }
-  });
-}
-
-function drawSpace(){
-  if(!spaceCtx)return;
-  spaceT++;
-  const W=spaceCanvas.width,H=spaceCanvas.height;
-  spaceZoom+=(spaceTargetZoom-spaceZoom)*0.05;
-  spaceCam.vx*=0.92;spaceCam.vy*=0.92;
-  spaceCam.x+=spaceCam.vx*8;spaceCam.y+=spaceCam.vy*8;
-  spaceCam.z+=spaceCam.vz;
-  if(spaceCam.z>2000)spaceCam.z=0;
-
-  // Deep space background
-  spaceCtx.fillStyle='rgba(0,0,6,0.12)';
-  spaceCtx.fillRect(0,0,W,H);
-
-  // Nebula clouds
-  spaceNebulas.forEach(n=>{
-    const proj=project3D(n.x,n.y,n.z,spaceCam,W,H,spaceZoom);
-    if(!proj)return;
-    const sr=n.r*proj.f;
-    if(sr<20||proj.sx<-sr||proj.sx>W+sr)return;
-    const g=spaceCtx.createRadialGradient(proj.sx,proj.sy,0,proj.sx,proj.sy,sr);
-    g.addColorStop(0,`hsla(${n.hue},70%,50%,${n.alpha})`);
-    g.addColorStop(1,'transparent');
-    spaceCtx.fillStyle=g;spaceCtx.fillRect(proj.sx-sr,proj.sy-sr,sr*2,sr*2);
-  });
-
-  // Stars
-  spaceStars.forEach(s=>{
-    let sz=s.z-spaceCam.z;
-    if(sz<=0)sz+=2000;
-    const proj=project3D(s.x,s.y,sz,spaceCam,W,H,spaceZoom);
-    if(!proj)return;
-    if(proj.sx<0||proj.sx>W||proj.sy<0||proj.sy>H)return;
-    s.twinkle+=s.twinkleSpd;
-    const a=s.brightness*(0.7+Math.sin(s.twinkle)*0.3);
-    const r=s.size*Math.min(3,proj.f*0.5);
-    spaceCtx.save();spaceCtx.globalAlpha=a;
-    spaceCtx.fillStyle=s.color;
-    spaceCtx.beginPath();spaceCtx.arc(proj.sx,proj.sy,Math.max(0.3,r),0,Math.PI*2);spaceCtx.fill();
-    // Star cross sparkle for big ones
-    if(r>1.2){
-      spaceCtx.strokeStyle=s.color;spaceCtx.lineWidth=0.4;spaceCtx.globalAlpha=a*0.4;
-      spaceCtx.beginPath();spaceCtx.moveTo(proj.sx-r*2,proj.sy);spaceCtx.lineTo(proj.sx+r*2,proj.sy);spaceCtx.stroke();
-      spaceCtx.beginPath();spaceCtx.moveTo(proj.sx,proj.sy-r*2);spaceCtx.lineTo(proj.sx,proj.sy+r*2);spaceCtx.stroke();
-    }
-    spaceCtx.restore();
-  });
-
-  // Planets
-  spacePlanets.sort((a,b)=>{
-    const az=a.z-spaceCam.z+(a.z<spaceCam.z?2000:0);
-    const bz=b.z-spaceCam.z+(b.z<spaceCam.z?2000:0);
-    return bz-az;
-  }).forEach(p=>{
-    let pz=p.z-spaceCam.z;
-    if(pz<=0)pz+=2000;
-    const proj=project3D(p.x,p.y,pz,spaceCam,W,H,spaceZoom);
-    if(!proj||proj.sx<-200||proj.sx>W+200||proj.sy<-200||proj.sy>H+200)return;
-    const sr=p.size*proj.f;
-    if(sr<2)return;
-    p.glowPhase+=0.015;
-
-    // Planet glow
-    const glowR=sr*2.5;
-    const gg=spaceCtx.createRadialGradient(proj.sx,proj.sy,sr*0.5,proj.sx,proj.sy,glowR);
-    const pc=p.color;const pr2=parseInt(pc.slice(1,3),16),pg2=parseInt(pc.slice(3,5),16),pb2=parseInt(pc.slice(5,7),16);
-    gg.addColorStop(0,`rgba(${pr2},${pg2},${pb2},${0.18+Math.sin(p.glowPhase)*0.05})`);
-    gg.addColorStop(1,'transparent');
-    spaceCtx.fillStyle=gg;spaceCtx.beginPath();spaceCtx.arc(proj.sx,proj.sy,glowR,0,Math.PI*2);spaceCtx.fill();
-
-    // Ring shadow (behind)
-    if(p.ring){
-      spaceCtx.save();spaceCtx.translate(proj.sx,proj.sy);spaceCtx.scale(1,0.28);
-      spaceCtx.strokeStyle=p.ringColor;spaceCtx.lineWidth=sr*0.35;
-      spaceCtx.beginPath();spaceCtx.arc(0,0,sr*1.7,Math.PI,Math.PI*2);spaceCtx.stroke();
-      spaceCtx.restore();
-    }
-
-    // Planet sphere
-    const pg=spaceCtx.createRadialGradient(proj.sx-sr*0.3,proj.sy-sr*0.3,sr*0.1,proj.sx,proj.sy,sr);
-    pg.addColorStop(0,'white');pg.addColorStop(0.2,p.color);pg.addColorStop(0.7,p.color);pg.addColorStop(1,'#000820');
-    spaceCtx.fillStyle=pg;spaceCtx.beginPath();spaceCtx.arc(proj.sx,proj.sy,sr,0,Math.PI*2);spaceCtx.fill();
-
-    // Atmosphere edge
-    spaceCtx.save();spaceCtx.globalAlpha=0.3;
-    const atmo=spaceCtx.createRadialGradient(proj.sx,proj.sy,sr*0.85,proj.sx,proj.sy,sr*1.12);
-    atmo.addColorStop(0,'transparent');atmo.addColorStop(1,p.color);
-    spaceCtx.fillStyle=atmo;spaceCtx.beginPath();spaceCtx.arc(proj.sx,proj.sy,sr*1.12,0,Math.PI*2);spaceCtx.fill();
-    spaceCtx.restore();
-
-    // Ring front
-    if(p.ring){
-      spaceCtx.save();spaceCtx.translate(proj.sx,proj.sy);spaceCtx.scale(1,0.28);
-      spaceCtx.strokeStyle=p.ringColor;spaceCtx.lineWidth=sr*0.35;
-      spaceCtx.beginPath();spaceCtx.arc(0,0,sr*1.7,0,Math.PI);spaceCtx.stroke();
-      spaceCtx.restore();
-    }
-
-    // Discovery indicator
-    if(!p.discovered&&sr>8){
-      spaceCtx.save();spaceCtx.globalAlpha=0.5+Math.sin(spaceT*0.05)*0.3;
-      spaceCtx.strokeStyle='rgba(255,255,255,0.5)';spaceCtx.lineWidth=1;
-      spaceCtx.setLineDash([3,5]);
-      spaceCtx.beginPath();spaceCtx.arc(proj.sx,proj.sy,sr+8,0,Math.PI*2);spaceCtx.stroke();
-      spaceCtx.setLineDash([]);spaceCtx.restore();
-    }
-
-    // Name label when close
-    if(sr>15){
-      spaceCtx.save();spaceCtx.globalAlpha=Math.min(1,(sr-15)/20);
-      spaceCtx.fillStyle='rgba(220,210,255,0.8)';
-      spaceCtx.font=`${Math.min(14,sr*0.4)}px 'Cormorant Garamond',serif`;
-      spaceCtx.textAlign='center';
-      spaceCtx.fillText(p.name,proj.sx,proj.sy+sr+14);
-      spaceCtx.restore();
-    }
-  });
-
-  // HUD coords
-  document.getElementById('space-coords').textContent=
-    `x:${Math.round(spaceCam.x)} y:${Math.round(spaceCam.y)} z:${Math.round(spaceCam.z)}`;
-
-  if(document.querySelector('#s-space.on'))requestAnimationFrame(drawSpace);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   MOOD RING
-══════════════════════════════════════════════════════════════ */
-const MOODS=[
-  {color:'#9060ff',emoji:'💜',label:'Mystical',desc:'You are in a dreamy, intuitive space. Trust what you feel without needing to explain it.',hue:270},
-  {color:'#ff4080',emoji:'❤️',label:'Passionate',desc:'Your heart is full and burning bright. You feel things deeply and that is your gift.',hue:340},
-  {color:'#40c0ff',emoji:'💙',label:'Calm',desc:'A serene ocean. You are at peace with where you are, even if it is uncertain.',hue:200},
-  {color:'#60ff80',emoji:'💚',label:'Growing',desc:'Something inside you is quietly expanding. Like a plant reaching for light.',hue:130},
-  {color:'#ffd040',emoji:'💛',label:'Joyful',desc:'There is warmth radiating from you today. People can feel it without you saying a word.',hue:45},
-  {color:'#ff8040',emoji:'🧡',label:'Creative',desc:'Your mind is sparking with ideas. This is the energy that builds beautiful things.',hue:25},
-  {color:'#ff60a0',emoji:'🩷',label:'Tender',desc:'Soft and open. You are in a space of gentleness — with yourself and with the world.',hue:330},
-  {color:'#c0c0ff',emoji:'🩵',label:'Reflective',desc:'Quiet thoughts, deep waters. You are processing something important.',hue:240},
-  {color:'#ffffff',emoji:'🤍',label:'Pure',desc:'A blank, clear feeling. Open to anything. Ready for whatever comes next.',hue:0},
-  {color:'#a0ffc0',emoji:'💫',label:'Hopeful',desc:'Something is coming and you can feel it. A quiet excitement in your chest.',hue:150},
-  {color:'#ff4040',emoji:'❤️‍🔥',label:'Fierce',desc:'Unstoppable energy. You know exactly who you are today.',hue:0},
-  {color:'#8040ff',emoji:'💜',label:'Dreaming',desc:'Half here, half somewhere beautiful. Let yourself wander.',hue:270},
+/* ══════════════════════════════════════════════════════
+   📖 THE BOOK OF YOU
+══════════════════════════════════════════════════════ */
+const BOOK_CHAPTERS = [
+  {chapter:'Chapter One · The Beginning',
+   text:'There is a girl. She does not always know how remarkable she is. She carries her kindness quietly, like something she is not sure the world deserves to see. But I see it. I have always seen it.'},
+  {chapter:'Chapter Two · What She Does Not Know',
+   text:'She does not know that when she laughs — really laughs — something in the air changes. People near her feel it without knowing why. She makes rooms warmer by walking into them.'},
+  {chapter:'Chapter Three · The Small Things',
+   text:'The way she thinks before she speaks. The way she notices the things others miss. The way she cares, sometimes too much, and would never admit it. These are not small things. These are everything.'},
+  {chapter:'Chapter Four · What Scares Him',
+   text:'He is not scared of much. But he is scared of a world where she does not know how loved she is. So he wrote this. Not because he is good with words, but because she deserves to have it in writing.'},
+  {chapter:'Chapter Five · The Truth',
+   text:'The truth is simple: he thinks about her more than he says. He chooses her more than he shows. And he loves her in ways that are difficult to explain — but impossible to stop.'},
+  {chapter:'Chapter Six · What Comes Next',
+   text:'She will close this book and carry on with her day. But somewhere, someone will be thinking of her. Grateful for her. Choosing her. That does not end when the page does.'},
+  {chapter:'The Last Page',
+   text:'This is not the end of the story. This is just the part where she knows: she is deeply, completely, irreversibly loved. The rest is still being written — and she is the best part of every chapter.'},
 ];
-let moodCanvas,moodCtx,moodT=0,moodParticles=[],currentMood=null;
-
-function initMood(){
-  moodCanvas=document.getElementById('mood-canvas');
-  moodCtx=moodCanvas.getContext('2d');
-  moodCanvas.width=window.innerWidth;moodCanvas.height=window.innerHeight;
-  moodT=0;moodParticles=[];currentMood=null;
-
-  // Build palette
-  const palette=document.getElementById('mood-palette');
-  palette.innerHTML='';
-  MOODS.forEach((m,i)=>{
-    const sw=document.createElement('div');
-    sw.className='mood-swatch';sw.style.background=m.color;
-    sw.title=m.label;
-    sw.onclick=()=>selectMood(i);
-    palette.appendChild(sw);
-  });
-  requestAnimationFrame(drawMood);
+let bookPage=0,bookOpen=false;
+function initBook(){
+  makeParticleBg('book-canvas',260,300,50);
+  bookPage=0;bookOpen=false;
+  document.getElementById('book-pages').style.display='none';
+  document.getElementById('book-cover').style.display='flex';
 }
+function openBook(){
+  bookOpen=true;
+  const cover=document.getElementById('book-cover');
+  cover.style.transform='rotateY(-90deg) scale(0.8)';
+  cover.style.opacity='0';
+  setTimeout(()=>{
+    cover.style.display='none';
+    document.getElementById('book-pages').style.display='block';
+    showBookPage(0);
+    lReveal();
+  },500);
+}
+function showBookPage(idx){
+  bookPage=Math.max(0,Math.min(BOOK_CHAPTERS.length-1,idx));
+  const ch=BOOK_CHAPTERS[bookPage];
+  const textEl=document.getElementById('book-text');
+  const chapEl=document.getElementById('book-chapter');
+  textEl.style.opacity='0';chapEl.style.opacity='0';
+  setTimeout(()=>{
+    chapEl.textContent=ch.chapter;
+    textEl.textContent=ch.text;
+    textEl.style.opacity='1';chapEl.style.opacity='1';
+    document.getElementById('book-progress').textContent=`${bookPage+1} of ${BOOK_CHAPTERS.length}`;
+    lPageTurn();
+  },300);
+}
+function nextPage(){showBookPage(bookPage+1);}
+function prevPage(){showBookPage(bookPage-1);}
 
-function selectMood(idx){
-  currentMood=MOODS[idx];
-  document.querySelectorAll('.mood-swatch').forEach((s,i)=>s.classList.toggle('active',i===idx));
-  document.getElementById('mood-label').textContent=currentMood.label;
-  document.getElementById('mood-desc').textContent=currentMood.desc;
-  document.getElementById('ring-emoji').textContent=currentMood.emoji;
-
-  // Update ring gradient
-  document.getElementById('rg1').setAttribute('stop-color',currentMood.color);
-  document.getElementById('rg2').setAttribute('stop-color',currentMood.color+'80');
-  document.getElementById('mood-ring-svg').style.filter=`drop-shadow(0 0 40px ${currentMood.color}88)`;
-
-  // Burst particles
-  const W=moodCanvas.width,H=moodCanvas.height;
-  const cx=W/2,cy=H*0.42;
-  for(let i=0;i<60;i++){
-    const a=Math.random()*Math.PI*2,spd=2+Math.random()*10;
-    moodParticles.push({x:cx,y:cy,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
-      life:1,decay:0.012+Math.random()*0.01,r:2+Math.random()*5,
-      hue:currentMood.hue+(Math.random()-0.5)*40});
+/* ══════════════════════════════════════════════════════
+   🪞 WHAT I SEE IN YOU (MIRROR)
+══════════════════════════════════════════════════════ */
+const MIRROR_LINES = [
+  {text:'Someone who makes the world feel warmer just by being in it.',sub:'— and she does not even try'},
+  {text:'The most effortlessly beautiful person I have ever seen.',sub:'— and I have been paying attention'},
+  {text:'A mind that works in ways that genuinely astonish me.',sub:'— every single time'},
+  {text:'Someone who is kinder than she gives herself credit for.',sub:'— I notice it, always'},
+  {text:'A laugh that I would do ridiculous things to hear again.',sub:'— worth every embarrassing attempt'},
+  {text:'Eyes that I cannot quite describe, but cannot stop thinking about.',sub:'— trust me, I have tried'},
+  {text:'Strength that she carries so quietly, you might mistake it for softness.',sub:'— it is both, actually'},
+  {text:'The exact person I did not know I was looking for.',sub:'— until I found her'},
+  {text:'Someone who deserves every soft and beautiful thing.',sub:'— without condition, without limit'},
+  {text:'The most interesting person in any room she walks into.',sub:'— she will deny this'},
+  {text:'A heart that loves in a way that is rare.',sub:'— and I am the lucky one'},
+  {text:'You. Just you. That is what I see.',sub:'— and it is everything'},
+];
+let mirrorIdx=0,mirrorCanvas,mirrorCtx,mirrorT=0;
+function initMirror(){
+  mirrorCanvas=document.getElementById('mirror-canvas');
+  mirrorCtx=mirrorCanvas.getContext('2d');
+  mirrorCanvas.width=window.innerWidth;mirrorCanvas.height=window.innerHeight;
+  mirrorT=0;mirrorIdx=0;
+  showMirrorLine(0);
+  drawMirrorBg();
+}
+function nextMirrorLine(){
+  mirrorIdx=(mirrorIdx+1)%MIRROR_LINES.length;
+  showMirrorLine(mirrorIdx);
+  lWhisper();
+  // Burst particles from mirror
+  for(let i=0;i<20;i++){
+    const a=Math.random()*Math.PI*2,spd=2+Math.random()*6;
+    // Simple confetti-style spark
+    const div=document.createElement('div');
+    div.style.cssText=`position:fixed;left:50%;top:42%;width:4px;height:4px;border-radius:50%;background:hsl(${200+Math.random()*80},80%,75%);pointer-events:none;z-index:999;transform:translate(-50%,-50%);transition:all ${0.6+Math.random()*0.8}s ease-out;`;
+    document.body.appendChild(div);
+    setTimeout(()=>{div.style.transform=`translate(calc(-50% + ${Math.cos(a)*80}px),calc(-50% + ${Math.sin(a)*80}px))`;div.style.opacity='0';},10);
+    setTimeout(()=>div.remove(),1500);
   }
-  playChime([261,329,392,523,659],0.07);
 }
-
-function drawMood(){
-  if(!moodCtx)return;
-  moodT++;
-  const W=moodCanvas.width,H=moodCanvas.height;
-  moodCtx.fillStyle=`rgba(6,2,14,${currentMood?0.1:0.15})`;
-  moodCtx.fillRect(0,0,W,H);
-
-  // Background aura
-  if(currentMood){
-    const aura=moodCtx.createRadialGradient(W/2,H*0.45,0,W/2,H*0.45,Math.min(W,H)*0.55);
-    aura.addColorStop(0,currentMood.color+'22');aura.addColorStop(1,'transparent');
-    moodCtx.fillStyle=aura;moodCtx.fillRect(0,0,W,H);
+function showMirrorLine(idx){
+  const line=MIRROR_LINES[idx];
+  const textEl=document.getElementById('mirror-text');
+  const subEl=document.getElementById('mirror-sub');
+  textEl.style.opacity='0';subEl.style.opacity='0';
+  setTimeout(()=>{
+    textEl.textContent='"'+line.text+'"';
+    subEl.textContent=line.sub;
+    textEl.style.opacity='1';subEl.style.opacity='1';
+  },400);
+}
+function drawMirrorBg(){
+  if(!mirrorCtx)return;
+  mirrorT++;
+  const W=mirrorCanvas.width,H=mirrorCanvas.height;
+  mirrorCtx.fillStyle='rgba(4,2,12,0.1)';mirrorCtx.fillRect(0,0,W,H);
+  // Soft floating light orbs
+  for(let i=0;i<4;i++){
+    const x=W*0.2+W*0.6*(i/3)+Math.sin(mirrorT*0.008+i*1.5)*60;
+    const y=H*0.15+Math.sin(mirrorT*0.006+i*0.9)*H*0.12;
+    const a=0.04+Math.sin(mirrorT*0.015+i)*0.025;
+    mirrorCtx.save();mirrorCtx.globalAlpha=a;
+    const g=mirrorCtx.createRadialGradient(x,y,0,x,y,80);
+    g.addColorStop(0,`hsl(${200+i*25},70%,65%)`);g.addColorStop(1,'transparent');
+    mirrorCtx.fillStyle=g;mirrorCtx.fillRect(x-80,y-80,160,160);
+    mirrorCtx.restore();
   }
-
-  // Floating orbs
-  for(let i=0;i<6;i++){
-    const x=W*0.1+W*0.8*(i/5);
-    const y=H*0.08+Math.sin(moodT*0.008+i*1.2)*H*0.04;
-    const hue=currentMood?currentMood.hue+(i-3)*15:220+i*30;
-    const a=0.06+Math.sin(moodT*0.015+i)*0.04;
-    moodCtx.save();moodCtx.globalAlpha=a;
-    const g=moodCtx.createRadialGradient(x,y,0,x,y,40);
-    g.addColorStop(0,`hsl(${hue},80%,65%)`);g.addColorStop(1,'transparent');
-    moodCtx.fillStyle=g;moodCtx.beginPath();moodCtx.arc(x,y,40,0,Math.PI*2);moodCtx.fill();
-    moodCtx.restore();
-  }
-
-  // Particles
-  moodParticles.forEach((p,i)=>{
-    p.x+=p.vx;p.y+=p.vy;p.vy+=0.05;p.vx*=0.98;p.life-=p.decay;
-    if(p.life<=0){moodParticles.splice(i,1);return;}
-    moodCtx.save();moodCtx.globalAlpha=p.life;
-    moodCtx.fillStyle=`hsl(${p.hue},85%,70%)`;
-    moodCtx.beginPath();moodCtx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);moodCtx.fill();
-    moodCtx.restore();
-  });
-
-  if(document.querySelector('#s-mood.on'))requestAnimationFrame(drawMood);
+  if(document.querySelector('#s-mirror.on'))requestAnimationFrame(drawMirrorBg);
 }
 
-/* ══════════════════════════════════════════════════════════════
-   FLOWER GARDEN — 3D planted flowers with growth animation
-══════════════════════════════════════════════════════════════ */
-let gardenCanvas,gardenCtx,gardenT=0,gardenFlowers=[],gardenParticles=[];
-let gardenSelected='rose',gardenCount=0,gardenWind=0,gardenWindTarget=0;
-const FLOWER_DEF={
-  rose:{petals:5,petalColor:'#ff4080',centerColor:'#ffd060',stemColor:'#40a040',height:80,width:20,emoji:'🌹'},
-  sunflower:{petals:16,petalColor:'#ffd040',centerColor:'#804020',stemColor:'#508030',height:110,width:18,emoji:'🌻'},
-  cherry:{petals:5,petalColor:'#ffb8d0',centerColor:'#fff0f5',stemColor:'#604838',height:60,width:15,emoji:'🌸'},
-  tulip:{petals:6,petalColor:'#ff6090',centerColor:'#ff90b0',stemColor:'#48a048',height:90,width:14,emoji:'🌷'},
-  lavender:{petals:8,petalColor:'#c080ff',centerColor:'#e0b0ff',stemColor:'#607050',height:70,width:10,emoji:'💜'},
-  daisy:{petals:12,petalColor:'#fff8e0',centerColor:'#ffd040',stemColor:'#508040',height:65,width:12,emoji:'🌼'},
-};
-const GARDEN_MSGS=['Nadia\'s garden grows 🌸','Beautiful choice ✨','Keep planting 🌿','The garden loves you 💜','Every flower is unique, like you 🌺'];
+/* ══════════════════════════════════════════════════════
+   🎨 PAINT HER PORTRAIT
+══════════════════════════════════════════════════════ */
+let portraitCanvas,portraitCtx,portraitT=0,portraitComplete=false;
+let portraitMouse={x:-999,y:-999};
+let portraitRevealPct=0;
+const PORTRAIT_CAPTIONS=[
+  'She is coming into focus...',
+  'There she is...',
+  'I see her...',
+  'She is beautiful...',
+  'She always was...',
+];
 
-function selectSeed(type){
-  gardenSelected=type;
-  document.querySelectorAll('.garden-seed').forEach(el=>el.classList.toggle('selected',el.dataset.seed===type));
-  playTone(523,'sine',0.15,0.08);
-}
-
-function initGarden(){
-  gardenCanvas=document.getElementById('garden-canvas');
-  gardenCtx=gardenCanvas.getContext('2d');
-  gardenCanvas.width=window.innerWidth;gardenCanvas.height=window.innerHeight;
-  gardenT=0;gardenFlowers=[];gardenParticles=[];gardenCount=0;gardenWind=0;
-  document.getElementById('garden-count').textContent='🌸 0';
-  document.getElementById('garden-season').textContent='Spring · Nadia\'s Garden';
-
-  gardenCanvas.addEventListener('click',onGardenClick);
-  gardenCanvas.addEventListener('touchstart',e=>{
-    onGardenClick({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});
+function initPortrait(){
+  portraitCanvas=document.getElementById('portrait-canvas');
+  portraitCtx=portraitCanvas.getContext('2d');
+  portraitCanvas.width=window.innerWidth;portraitCanvas.height=window.innerHeight;
+  portraitT=0;portraitComplete=false;portraitRevealPct=0;
+  document.getElementById('portrait-complete').style.opacity='0';
+  document.getElementById('portrait-caption').textContent='move your mouse to reveal her';
+  drawPortrait();
+  portraitCanvas.addEventListener('mousemove',onPortraitMove);
+  portraitCanvas.addEventListener('touchmove',e=>{
+    onPortraitMove({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});
+    e.preventDefault();
+  },{passive:false});
+  portraitCanvas.addEventListener('touchstart',e=>{
+    onPortraitMove({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});
   },{passive:true});
-  requestAnimationFrame(drawGarden);
+}
+function onPortraitMove(e){
+  portraitMouse.x=e.clientX;portraitMouse.y=e.clientY;
+}
+function drawPortrait(){
+  if(!portraitCtx)return;
+  portraitT++;
+  const W=portraitCanvas.width,H=portraitCanvas.height;
+  const CX=W/2,CY=H*0.44;
+
+  // Dark background with subtle gradient
+  const bg=portraitCtx.createRadialGradient(CX,CY,0,CX,CY,Math.max(W,H)*0.7);
+  bg.addColorStop(0,'rgba(20,8,28,1)');bg.addColorStop(1,'rgba(8,2,12,1)');
+  portraitCtx.fillStyle=bg;portraitCtx.fillRect(0,0,W,H);
+
+  // The silhouette — drawn as a layered shape
+  const scale=Math.min(W,H)*0.0012;
+  const sh=H*0.65; // silhouette height
+  const sw=sh*0.55; // width
+
+  // Draw the hidden silhouette in very dark purple
+  portraitCtx.save();
+  portraitCtx.translate(CX,CY);
+  // Head
+  portraitCtx.beginPath();
+  portraitCtx.ellipse(0,-sh*0.38,sw*0.22,sw*0.28,0,0,Math.PI*2);
+  portraitCtx.fillStyle='rgba(30,12,45,1)';portraitCtx.fill();
+  // Hair — flowing
+  portraitCtx.beginPath();
+  portraitCtx.ellipse(0,-sh*0.42,sw*0.26,sw*0.18,0,0,Math.PI*2);
+  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
+  // Hair flowing down sides
+  portraitCtx.beginPath();
+  portraitCtx.moveTo(-sw*0.22,-sh*0.35);
+  portraitCtx.bezierCurveTo(-sw*0.3,-sh*0.2,-sw*0.28,0,-sw*0.2,sh*0.1);
+  portraitCtx.bezierCurveTo(-sw*0.3,sh*0.0,-sw*0.32,-sh*0.22,-sw*0.24,-sh*0.38);
+  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
+  portraitCtx.beginPath();
+  portraitCtx.moveTo(sw*0.22,-sh*0.35);
+  portraitCtx.bezierCurveTo(sw*0.3,-sh*0.2,sw*0.28,0,sw*0.2,sh*0.1);
+  portraitCtx.bezierCurveTo(sw*0.3,sh*0.0,sw*0.32,-sh*0.22,sw*0.24,-sh*0.38);
+  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
+  // Neck
+  portraitCtx.fillRect(-sw*0.07,-sh*0.15,sw*0.14,sh*0.08);
+  // Shoulders & body
+  portraitCtx.beginPath();
+  portraitCtx.moveTo(-sw*0.4,-sh*0.08);
+  portraitCtx.bezierCurveTo(-sw*0.45,sh*0.1,-sw*0.35,sh*0.3,-sw*0.3,sh*0.5);
+  portraitCtx.lineTo(sw*0.3,sh*0.5);
+  portraitCtx.bezierCurveTo(sw*0.35,sh*0.3,sw*0.45,sh*0.1,sw*0.4,-sh*0.08);
+  portraitCtx.bezierCurveTo(sw*0.3,-sh*0.12,sw*0.15,-sh*0.12,0,-sh*0.12);
+  portraitCtx.bezierCurveTo(-sw*0.15,-sh*0.12,-sw*0.3,-sh*0.12,-sw*0.4,-sh*0.08);
+  portraitCtx.fillStyle='rgba(25,10,38,1)';portraitCtx.fill();
+  portraitCtx.restore();
+
+  // Reveal brush — where mouse is, paint color in
+  const mx=portraitMouse.x,my=portraitMouse.y;
+  if(mx>0&&mx<W){
+    const brushR=40+Math.sin(portraitT*0.05)*8;
+    // Create color fill based on position
+    const hue=300+((mx/W)*60);
+    const grd=portraitCtx.createRadialGradient(mx,my,0,mx,my,brushR*2);
+    grd.addColorStop(0,`hsla(${hue},70%,65%,0.7)`);
+    grd.addColorStop(0.4,`hsla(${hue+20},60%,50%,0.3)`);
+    grd.addColorStop(1,'transparent');
+    portraitCtx.save();
+    // Only paint inside the silhouette area (roughly)
+    portraitCtx.globalCompositeOperation='source-atop';
+    // Actually use lighter blend to reveal
+    portraitCtx.globalCompositeOperation='lighter';
+    portraitCtx.globalAlpha=0.06;
+    portraitCtx.fillStyle=grd;
+    portraitCtx.beginPath();portraitCtx.arc(mx,my,brushR*2,0,Math.PI*2);portraitCtx.fill();
+    portraitCtx.restore();
+    portraitRevealPct=Math.min(100,portraitRevealPct+0.08);
+  }
+
+  // Floating caption update
+  const capIdx=Math.min(PORTRAIT_CAPTIONS.length-1,Math.floor(portraitRevealPct/25));
+  document.getElementById('portrait-caption').textContent=PORTRAIT_CAPTIONS[capIdx];
+
+  // Ambient glow around silhouette
+  const glow=portraitCtx.createRadialGradient(CX,CY,0,CX,CY,Math.min(W,H)*0.35);
+  glow.addColorStop(0,`rgba(200,80,180,${0.04+Math.sin(portraitT*0.02)*0.02})`);
+  glow.addColorStop(1,'transparent');
+  portraitCtx.globalAlpha=1;
+  portraitCtx.fillStyle=glow;
+  portraitCtx.fillRect(0,0,W,H);
+
+  // Completion check
+  if(portraitRevealPct>=100&&!portraitComplete){
+    portraitComplete=true;
+    document.getElementById('portrait-complete').style.opacity='1';
+    lReveal();
+    setTimeout(()=>lChime([523,659,784,1047,1318]),500);
+  }
+
+  if(document.querySelector('#s-portrait.on'))requestAnimationFrame(drawPortrait);
 }
 
-function onGardenClick(e){
-  const x=e.clientX,y=e.clientY;
-  if(y>window.innerHeight-120)return; // avoid UI buttons
-  const def=FLOWER_DEF[gardenSelected];
-  gardenFlowers.push({
-    x,groundY:y,type:gardenSelected,def,
-    growth:0,growSpeed:0.004+Math.random()*0.003,
-    lean:( Math.random()-0.5)*0.15,
-    swayPhase:Math.random()*Math.PI*2,
-    swayAmp:0.02+Math.random()*0.03,
-    scale:0.7+Math.random()*0.6,
-    bloomPhase:0,bloomed:false,id:gardenCount
-  });
-  gardenCount++;
-  document.getElementById('garden-count').textContent='🌸 '+gardenCount;
-  // Soil particles
-  for(let i=0;i<8;i++){
-    const a=Math.PI+Math.random()*Math.PI;
-    gardenParticles.push({x,y,vx:Math.cos(a)*2,vy:Math.sin(a)*2-1,life:1,decay:0.04,r:2+Math.random()*3,color:`hsl(${25+Math.random()*15},60%,${25+Math.random()*15}%)`});
-  }
-  playGarden();
-  if(gardenCount%5===0){
-    const el=document.getElementById('garden-hint');
-    el.textContent=GARDEN_MSGS[Math.floor(Math.random()*GARDEN_MSGS.length)];
-    el.style.opacity='1';setTimeout(()=>el.style.opacity='0.4',3000);
-  }
-}
-
-function drawFlower(ctx,f,T){
-  const {x,groundY,def,growth,lean,swayPhase,swayAmp,scale,bloomed}=f;
-  const g=Math.min(1,growth);
-  const totalH=def.height*scale*g;
-  const sway=Math.sin(T*0.02+swayPhase)*swayAmp*(gardenWind*0.5+1);
-  const topX=x+Math.sin(lean+sway)*totalH;
-  const topY=groundY-totalH;
-
-  // Stem — bezier curve for natural look
-  ctx.save();
-  ctx.strokeStyle=def.stemColor;ctx.lineWidth=Math.max(1.5,def.width*0.18*scale*g);
-  ctx.lineCap='round';
-  ctx.beginPath();
-  ctx.moveTo(x,groundY);
-  ctx.quadraticCurveTo(x+Math.sin(lean+sway)*totalH*0.5,groundY-totalH*0.5,topX,topY);
-  ctx.stroke();
-
-  // Leaves (two small ones on stem)
-  if(g>0.4){
-    const la=g*0.5;
-    [0.35,0.6].forEach((t,i)=>{
-      const lx=x+Math.sin(lean+sway)*totalH*t;
-      const ly=groundY-totalH*t;
-      const lr=def.width*0.5*scale*la*(i===0?1:0.8);
-      const angle=(i===0?-0.8:0.8)+sway;
-      ctx.save();ctx.translate(lx,ly);ctx.rotate(angle);
-      ctx.fillStyle=def.stemColor;ctx.beginPath();
-      ctx.ellipse(lr,0,lr,lr*0.4,0,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    });
-  }
-
-  // Flower head
-  if(g>0.6){
-    const petalG=Math.min(1,(g-0.6)/0.4);
-    ctx.save();ctx.translate(topX,topY);ctx.rotate(sway);
-    const pr=def.width*0.55*scale*petalG;
-
-    // Petals
-    for(let p=0;p<def.petals;p++){
-      const angle=(p/def.petals)*Math.PI*2;
-      ctx.save();ctx.rotate(angle+(f.bloomPhase||0));
-      ctx.fillStyle=def.petalColor;ctx.globalAlpha=0.85*petalG;
-      ctx.beginPath();
-      ctx.ellipse(pr*0.9,0,pr,pr*0.45,0,0,Math.PI*2);
-      ctx.fill();
-      // Petal shine
-      ctx.fillStyle='rgba(255,255,255,0.2)';
-      ctx.beginPath();ctx.ellipse(pr*0.7,-pr*0.15,pr*0.3,pr*0.15,0,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
-    // Center
-    const cr=pr*0.5;
-    const cg=ctx.createRadialGradient(0,0,0,0,0,cr);
-    cg.addColorStop(0,'rgba(255,255,255,0.6)');cg.addColorStop(0.3,def.centerColor);cg.addColorStop(1,def.centerColor+'aa');
-    ctx.globalAlpha=petalG;ctx.fillStyle=cg;
-    ctx.beginPath();ctx.arc(0,0,cr,0,Math.PI*2);ctx.fill();
-    ctx.restore();
-  }
-  ctx.restore();
-}
-
-function drawGarden(){
-  if(!gardenCtx)return;
-  gardenT++;
-  const W=gardenCanvas.width,H=gardenCanvas.height;
-
-  // Wind update
-  if(Math.random()<0.002)gardenWindTarget=(Math.random()-0.5)*2;
-  gardenWind+=(gardenWindTarget-gardenWind)*0.01;
-
-  // Sky gradient — changes subtly over time
-  const skyHue=120+Math.sin(gardenT*0.001)*10;
-  const sky=gardenCtx.createLinearGradient(0,0,0,H);
-  sky.addColorStop(0,`hsl(${200+skyHue*0.1},60%,8%)`);
-  sky.addColorStop(0.5,`hsl(${180+skyHue*0.05},50%,5%)`);
-  sky.addColorStop(1,`hsl(${skyHue},40%,6%)`);
-  gardenCtx.fillStyle=sky;gardenCtx.fillRect(0,0,W,H);
-
-  // Moon
-  gardenCtx.save();gardenCtx.globalAlpha=0.6;
-  const mG=gardenCtx.createRadialGradient(W*0.75,H*0.1,0,W*0.75,H*0.1,60);
-  mG.addColorStop(0,'rgba(255,240,220,0.9)');mG.addColorStop(0.4,'rgba(220,210,180,0.6)');mG.addColorStop(1,'transparent');
-  gardenCtx.fillStyle=mG;gardenCtx.beginPath();gardenCtx.arc(W*0.75,H*0.1,25,0,Math.PI*2);gardenCtx.fill();
-  gardenCtx.restore();
-
-  // Stars
-  for(let i=0;i<50;i++){
-    const sx=((i*137)%W),sy=((i*97)%(H*0.45));
-    const sa=0.3+Math.sin(gardenT*0.02+i)*0.2;
-    gardenCtx.save();gardenCtx.globalAlpha=sa*0.6;
-    gardenCtx.fillStyle='rgba(220,210,255,0.9)';
-    gardenCtx.beginPath();gardenCtx.arc(sx,sy,0.8,0,Math.PI*2);gardenCtx.fill();
-    gardenCtx.restore();
-  }
-
-  // Ground
-  const ground=gardenCtx.createLinearGradient(0,H*0.75,0,H);
-  ground.addColorStop(0,'#0a1a08');ground.addColorStop(0.3,'#081408');ground.addColorStop(1,'#040c04');
-  gardenCtx.fillStyle=ground;gardenCtx.fillRect(0,H*0.72,W,H);
-
-  // Ground edge glow
-  gardenCtx.save();gardenCtx.globalAlpha=0.3;
-  const ge=gardenCtx.createLinearGradient(0,H*0.72,0,H*0.78);
-  ge.addColorStop(0,'rgba(60,180,40,0.3)');ge.addColorStop(1,'transparent');
-  gardenCtx.fillStyle=ge;gardenCtx.fillRect(0,H*0.72,W,H*0.06);
-  gardenCtx.restore();
-
-  // Grass blades
-  for(let i=0;i<80;i++){
-    const gx=W*i/80+Math.sin(i*13.7)*W*0.01;
-    const gy=H*0.72+Math.sin(i*7.3)*H*0.02;
-    const gh=8+Math.sin(i*3.7)*6;
-    const gsway=Math.sin(gardenT*0.02+i*0.5)*gardenWind*2;
-    gardenCtx.save();gardenCtx.strokeStyle=`hsl(${110+i%20},60%,${25+i%15}%)`;
-    gardenCtx.lineWidth=1;gardenCtx.lineCap='round';
-    gardenCtx.beginPath();gardenCtx.moveTo(gx,gy);gardenCtx.lineTo(gx+gsway,gy-gh);gardenCtx.stroke();
-    gardenCtx.restore();
-  }
-
-  // Grow flowers
-  gardenFlowers.forEach(f=>{
-    if(f.growth<1){
-      f.growth+=f.growSpeed;
-      if(f.growth>=1&&!f.bloomed){
-        f.bloomed=true;playSparkle();
-        for(let i=0;i<15;i++){
-          const a=Math.random()*Math.PI*2,spd=2+Math.random()*6;
-          gardenParticles.push({
-            x:f.x+Math.sin(f.lean)*f.def.height*f.scale,
-            y:f.groundY-f.def.height*f.scale,
-            vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-3,
-            life:1,decay:0.02,r:3+Math.random()*4,
-            color:f.def.petalColor
-          });
-        }
-      }
-    }
-    f.bloomPhase+=0.005;
-    drawFlower(gardenCtx,f,gardenT);
-  });
-
-  // Soil particles
-  gardenParticles.forEach((p,i)=>{
-    p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=p.decay;
-    if(p.life<=0){gardenParticles.splice(i,1);return;}
-    gardenCtx.save();gardenCtx.globalAlpha=p.life;
-    gardenCtx.fillStyle=p.color;gardenCtx.beginPath();gardenCtx.arc(p.x,p.y,p.r,0,Math.PI*2);gardenCtx.fill();
-    gardenCtx.restore();
-  });
-
-  // Fireflies
-  for(let i=0;i<10;i++){
-    const fx=W*0.1+(W*0.8*i/10)+Math.sin(gardenT*0.015+i*2.3)*60;
-    const fy=H*0.5+Math.sin(gardenT*0.012+i*1.7)*H*0.18;
-    const fa=0.4+Math.sin(gardenT*0.08+i*1.1)*0.4;
-    gardenCtx.save();gardenCtx.globalAlpha=fa*0.7;
-    gardenCtx.fillStyle='rgba(220,255,120,0.9)';
-    gardenCtx.shadowColor='rgba(180,255,80,0.8)';gardenCtx.shadowBlur=8;
-    gardenCtx.beginPath();gardenCtx.arc(fx,fy,1.5,0,Math.PI*2);gardenCtx.fill();
-    gardenCtx.restore();
-  }
-
-  if(document.querySelector('#s-garden.on'))requestAnimationFrame(drawGarden);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   BLACK HOLE — gravitational physics, real accretion disk
-══════════════════════════════════════════════════════════════ */
-let bhCanvas,bhCtx,bhT=0,bhParticles=[],bhAbsorbed=0,bhRotation=0;
-let bhMouseX=0,bhMouseY=0;
-const BH_QUOTES=['Even stars surrender to gravity.','Everything returns to stillness.','The void is not empty — it is full of possibility.','In darkness, light is created.','What is pulled in is not lost. It transforms.'];
-let bhQuoteIdx=0;
-
-function initBlackHole(){
-  bhCanvas=document.getElementById('bh-canvas');
-  bhCtx=bhCanvas.getContext('2d');
-  bhCanvas.width=window.innerWidth;bhCanvas.height=window.innerHeight;
-  bhT=0;bhParticles=[];bhAbsorbed=0;bhRotation=0;
-  document.getElementById('bh-absorbed').textContent='0 stars absorbed';
-
-  // Seed initial particles
-  for(let i=0;i<120;i++)spawnBHStar(true);
-
-  bhCanvas.addEventListener('click',e=>spawnBHStar(false,e.clientX,e.clientY));
-  bhCanvas.addEventListener('mousemove',e=>{bhMouseX=e.clientX;bhMouseY=e.clientY;});
-  bhCanvas.addEventListener('touchstart',e=>{spawnBHStar(false,e.touches[0].clientX,e.touches[0].clientY);},{passive:true});
-
-  requestAnimationFrame(drawBlackHole);
-}
-
-function spawnBHStar(random=true,mx=0,my=0){
-  const W=bhCanvas.width,H=bhCanvas.height;
-  const cx=W/2,cy=H/2;
-  let x,y,vx,vy;
-  if(random){
-    const a=Math.random()*Math.PI*2;
-    const r=Math.max(120,90+Math.random()*(Math.min(W,H)*0.42));
-    x=cx+Math.cos(a)*r;y=cy+Math.sin(a)*r;
-    const dist=Math.hypot(x-cx,y-cy);
-    const orbitalSpd=Math.sqrt(6000/dist)*0.5;
-    const tangent=a+Math.PI/2;
-    vx=Math.cos(tangent)*orbitalSpd*(0.8+Math.random()*0.4);
-    vy=Math.sin(tangent)*orbitalSpd*(0.8+Math.random()*0.4);
-  } else {
-    x=mx;y=my;
-    const a=Math.random()*Math.PI*2;
-    vx=Math.cos(a)*0.5;vy=Math.sin(a)*0.5;
-    playDrop(440+Math.random()*220);
-  }
-  bhParticles.push({
-    x,y,vx,vy,
-    size:0.6+Math.random()*2.5,
-    hue:180+Math.random()*180,
-    brightness:60+Math.random()*40,
-    life:1,trail:[],absorbed:false,
-    distortion:0
-  });
-}
-
-function drawBlackHole(){
-  if(!bhCtx)return;
-  bhT++;bhRotation+=0.003;
-  const W=bhCanvas.width,H=bhCanvas.height;
-  const cx=W/2,cy=H/2;
-  const BH_R=55; // event horizon radius
-
-  bhCtx.fillStyle='rgba(0,0,6,0.15)';bhCtx.fillRect(0,0,W,H);
-
-  // Accretion disk — layered rings with doppler shift
-  for(let ring=0;ring<12;ring++){
-    const rr=BH_R*1.3+ring*18;
-    const alpha=0.06-ring*0.004;
-    const hue=ring<4?20+ring*15:ring<8?60+ring*8:200+(ring-8)*20;
-    bhCtx.save();bhCtx.globalAlpha=alpha+Math.sin(bhT*0.03+ring)*0.02;
-    bhCtx.strokeStyle=`hsl(${hue},90%,${60+ring*2}%)`;
-    bhCtx.lineWidth=ring<3?8:ring<6?5:3;
-    bhCtx.shadowColor=`hsl(${hue},90%,70%)`;
-    bhCtx.shadowBlur=ring<4?20:8;
-    bhCtx.beginPath();
-    // Distorted ellipse for relativistic effect
-    bhCtx.save();bhCtx.translate(cx,cy);bhCtx.rotate(bhRotation+ring*0.15);bhCtx.scale(1,0.22+ring*0.02);
-    bhCtx.arc(0,0,rr,0,Math.PI*2);
-    bhCtx.restore();bhCtx.stroke();bhCtx.restore();
-  }
-
-  // Gravitational lensing effect — light bending around hole
-  for(let i=0;i<8;i++){
-    const a=i/8*Math.PI*2+bhT*0.005;
-    const lx=cx+Math.cos(a)*(BH_R+40);
-    const ly=cy+Math.sin(a)*(BH_R+40)*0.2;
-    bhCtx.save();bhCtx.globalAlpha=0.15;
-    const g=bhCtx.createRadialGradient(lx,ly,0,lx,ly,30);
-    g.addColorStop(0,'rgba(255,180,80,0.6)');g.addColorStop(1,'transparent');
-    bhCtx.fillStyle=g;bhCtx.beginPath();bhCtx.arc(lx,ly,30,0,Math.PI*2);bhCtx.fill();
-    bhCtx.restore();
-  }
-
-  // Black hole core
-  const core=bhCtx.createRadialGradient(cx-10,cy-10,0,cx,cy,BH_R);
-  core.addColorStop(0,'rgba(0,0,0,1)');core.addColorStop(0.7,'rgba(0,0,8,0.99)');
-  core.addColorStop(0.85,'rgba(30,10,60,0.9)');core.addColorStop(1,'rgba(60,20,120,0.5)');
-  bhCtx.fillStyle=core;bhCtx.beginPath();bhCtx.arc(cx,cy,BH_R,0,Math.PI*2);bhCtx.fill();
-
-  // Photon sphere glow ring
-  bhCtx.save();
-  bhCtx.shadowColor='rgba(180,120,255,0.8)';bhCtx.shadowBlur=30;
-  bhCtx.strokeStyle='rgba(180,120,255,0.25)';bhCtx.lineWidth=3;
-  bhCtx.beginPath();bhCtx.arc(cx,cy,BH_R+2,0,Math.PI*2);bhCtx.stroke();
-  bhCtx.restore();
-
-  // Particles (stars/matter)
-  bhParticles.forEach((p,i)=>{
-    if(p.absorbed)return;
-    const dx=cx-p.x,dy=cy-p.y;
-    const dist=Math.sqrt(dx*dx+dy*dy);
-    const gravity=3000/(dist*dist+200);
-    p.vx+=dx/dist*gravity;p.vy+=dy/dist*gravity;
-    p.x+=p.vx;p.y+=p.vy;
-    p.trail.push({x:p.x,y:p.y});
-    if(p.trail.length>18)p.trail.shift();
-
-    if(dist<BH_R){
-      p.absorbed=true;bhAbsorbed++;
-      document.getElementById('bh-absorbed').textContent=bhAbsorbed+' star'+(bhAbsorbed!==1?'s':'')+' absorbed';
-      playAbsorb();
-      if(bhAbsorbed%5===0){
-        const el=document.getElementById('bh-quote');
-        el.textContent=BH_QUOTES[bhQuoteIdx%BH_QUOTES.length];bhQuoteIdx++;
-        el.style.opacity='1';setTimeout(()=>el.style.opacity='0',3500);
-      }
-      if(bhParticles.filter(pp=>!pp.absorbed).length<20)spawnBHStar(true);
-      return;
-    }
-
-    // Doppler color shift — blue when moving toward us, red away
-    const radialVel=(p.vx*dx+p.vy*dy)/dist;
-    const dopplerHue=p.hue+radialVel*30;
-    const closeness=Math.max(0,1-dist/300);
-    const brightness=p.brightness*(1+closeness*0.5);
-
-    // Trail
-    p.trail.forEach((t,ti)=>{
-      const ta=ti/p.trail.length*0.6*closeness+0.05;
-      bhCtx.save();bhCtx.globalAlpha=ta;
-      bhCtx.fillStyle=`hsl(${dopplerHue},90%,${brightness}%)`;
-      bhCtx.beginPath();bhCtx.arc(t.x,t.y,p.size*(ti/p.trail.length),0,Math.PI*2);bhCtx.fill();
-      bhCtx.restore();
-    });
-
-    bhCtx.save();bhCtx.globalAlpha=0.9;
-    bhCtx.fillStyle=`hsl(${dopplerHue},90%,${brightness}%)`;
-    bhCtx.shadowColor=`hsl(${dopplerHue},90%,70%)`;bhCtx.shadowBlur=p.size*3*closeness;
-    bhCtx.beginPath();bhCtx.arc(p.x,p.y,p.size*(1+closeness),0,Math.PI*2);bhCtx.fill();
-    bhCtx.restore();
-  });
-
-  bhParticles=bhParticles.filter(p=>!p.absorbed||p.trail.length>0);
-
-  if(document.querySelector('#s-blackhole.on'))requestAnimationFrame(drawBlackHole);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   POTION MIXER
-══════════════════════════════════════════════════════════════ */
-const POTIONS=[
-  {ings:['🌹','🌙'],name:'Potion of Dreams',desc:'Drink before sleep. Tonight your dreams will be vivid, warm, and yours to keep.',color:'#ff60b0'},
-  {ings:['✨','💎'],name:'Stardust Elixir',desc:'One sip and you will glow. Not just on the outside.',color:'#c0c0ff'},
-  {ings:['🍄','🌙'],name:'Moonshroom Brew',desc:'A mysterious concoction that makes everything feel slightly magical for exactly one hour.',color:'#80ff80'},
-  {ings:['💜','✨'],name:'Amethyst Tonic',desc:'Clears the mind of worry. Recommended on overwhelming days.',color:'#d060ff'},
-  {ings:['🌹','💜'],name:'Potion of Courage',desc:'Tastes like roses and thunder. You will not be afraid today.',color:'#ff80c0'},
-  {ings:['🔥','💎'],name:'Phoenix Serum',desc:'For days when you need to rise again. Powerful. Rare.',color:'#ff8040'},
-  {ings:['🦋','🌙'],name:'Transformation Brew',desc:'One sip and you become exactly who you were always meant to be.',color:'#80d0ff'},
-  {ings:['🍯','🌹'],name:'Honey Rose Potion',desc:'Sweet. Warm. For when you need to be soft with yourself.',color:'#ffb040'},
-  {ings:['🌊','💜'],name:'Tide of Clarity',desc:'Washes away confusion. Everything becomes obvious after the third sip.',color:'#40c0e0'},
-  {ings:['🔥','🦋'],name:'Wildfire Spirit',desc:'Unpredictable, exciting, alive. Not for the faint of heart.',color:'#ff6020'},
-  {ings:['✨','🌙','💜'],name:'Galaxy Potion',desc:'Three sips and you will understand the entire universe. Or at least feel like you do.',color:'#a060ff'},
-  {ings:['🌹','✨','🦋'],name:'Potion of Pure Joy',desc:'Rare. Precious. Made of things that cannot be found — only given freely.',color:'#ffb0ff'},
-  {ings:['🍄','🔥','🌙'],name:'Chaos Elixir',desc:'Nobody knows exactly what this does. That\'s the point.',color:'#ff4040'},
-  {ings:['💎','🍯','🌊'],name:'Nadia\'s Potion',desc:'This one was made for you. It smells like lavender and starlight. It works perfectly.',color:'#c060ff'},
+/* ══════════════════════════════════════════════════════
+   ✉️ OPEN WHEN...
+══════════════════════════════════════════════════════ */
+const OW_LETTERS = [
+  {icon:'💛',title:'Open when you feel sad',
+   text:`Hey.\n\nI know today is hard. I am not going to tell you to feel better, because feelings do not work like that.\n\nBut I want you to know that you are not alone in whatever this is. Not even a little.\n\nYou are allowed to be sad. You are allowed to have a bad day. That does not make you weak — it makes you honest.\n\nI hope tomorrow is gentler to you.\n\nBut even if it is not — you have gotten through hard things before. You will get through this one too.\n\nI am proud of you for still being here.\n\nAlways,\nSomeone who means it`},
+  {icon:'🌙',title:'Open when you cannot sleep',
+   text:`It is late. The world is quiet and your mind is not.\n\nI know this feeling — when the dark makes everything feel heavier than it actually is.\n\nHere is what I want you to do: breathe out, slowly. Let your shoulders drop.\n\nYou have done everything you needed to do today. Whatever is left can wait.\n\nAnd while you are lying there — know that somewhere, someone is thinking of you. Warmly. Quietly. Without needing anything from you at all.\n\nJust rest.\n\nGoodnight, Nadia.`},
+  {icon:'🔥',title:'Open when you are angry',
+   text:`Good. Be angry. You are allowed.\n\nAnger means something mattered to you. It means you have standards, and they were not met. There is nothing wrong with you for feeling this.\n\nYell if you need to. Cry if it comes. Sit with it.\n\nAnd when you are ready — not before, only when you are ready — you will know what to do next.\n\nYou always do.\n\nI am not scared of your anger. It is part of you, and I love all of you.\n\nAll of it.`},
+  {icon:'💜',title:'Open when you miss me',
+   text:`I am probably thinking about you right now.\n\nThat is not something I say lightly. But you have this way of showing up in my thoughts — in the middle of ordinary moments, completely uninvited, and I do not mind at all.\n\nDistance is strange. You can miss someone who is not even far away. You can miss a version of a moment, or a look, or a conversation.\n\nWhatever version of missing this is — I feel it too.\n\nNot much longer now.\n\nI am yours.`},
+  {icon:'✨',title:'Open when you need confidence',
+   text:`Listen to me.\n\nYou are about to do something that matters to you. And you are nervous. That is because you care — and caring is not weakness.\n\nBut here is what I know:\n\nYou are more capable than you believe right now. You have done hard things. You have surprised yourself before. You will do it again.\n\nWalk in like you belong there. Because you do.\n\nAnd whatever happens — I will still think you are extraordinary.\n\nGo show them.`},
+  {icon:'❤️',title:'Open when you feel unloved',
+   text:`I need you to hear this.\n\nYou are loved. Not in a vague, general, anyone-could-feel-this way. I mean specifically. I mean you, the particular person you are — with your specific laugh and your specific way of thinking and all the small things you do not even notice yourself doing.\n\nYou are loved for those things. For all of them.\n\nIf today made you feel otherwise — today was wrong.\n\nYou are someone's favourite thought. Someone's reason to try harder. Someone's answer to a question they did not even know they were asking.\n\nPlease do not forget that.\n\nWith everything,\nSomeone who loves you more than he knows how to say`},
 ];
-let potionCanvas,potionCtx,potionT=0,potionParticles=[],currentRecipe=[],cauldronBubbles=[];
-let potionColor='#8040ff',potionBrewTimer=0;
-
-function initPotion(){
-  potionCanvas=document.getElementById('potion-canvas');
-  potionCtx=potionCanvas.getContext('2d');
-  potionCanvas.width=window.innerWidth;potionCanvas.height=window.innerHeight;
-  potionT=0;potionParticles=[];currentRecipe=[];cauldronBubbles=[];
-  document.getElementById('potion-recipe').innerHTML='';
-  document.getElementById('potion-result').style.opacity='0';
-  document.getElementById('cauldron-liquid').setAttribute('fill','rgba(140,40,255,0.5)');
-  requestAnimationFrame(drawPotion);
+function initOpenWhen(){
+  makeParticleBg('ow-canvas',25,50,40);
+}
+function openEnvelope(idx){
+  const letter=OW_LETTERS[idx];
+  document.getElementById('ow-paper-icon').textContent=letter.icon;
+  document.getElementById('ow-paper-title').textContent=letter.title;
+  document.getElementById('ow-paper-text').textContent=letter.text;
+  document.getElementById('ow-letter').style.display='flex';
+  document.querySelectorAll('.ow-envelope')[idx].classList.add('opened');
+  lReveal();
+}
+function closeEnvelope(){
+  document.getElementById('ow-letter').style.display='none';
 }
 
-function addIngredient(ing){
-  currentRecipe.push(ing);
-  // Add to recipe display
-  const span=document.createElement('span');
-  span.className='recipe-ing';span.textContent=ing;
-  document.getElementById('potion-recipe').appendChild(span);
-  // Drop animation into cauldron
-  potionParticles.push({
-    type:'drop',x:window.innerWidth/2+(Math.random()-0.5)*100,y:window.innerHeight*0.35,
-    tx:window.innerWidth/2+(Math.random()-0.5)*30,ty:window.innerHeight*0.62,
-    progress:0,emoji:ing
-  });
-  // Add bubble
-  cauldronBubbles.push({x:(Math.random()-0.5)*80,y:0,size:4+Math.random()*8,speed:0.4+Math.random()*0.6,life:1});
-  playBubble();
+/* ══════════════════════════════════════════════════════
+   💌 LETTERS I NEVER SENT
+══════════════════════════════════════════════════════ */
+const UNSENT_LETTERS = [
+  {from:'A letter I wrote the first time I realised.',
+   body:`I did not say anything that day.\n\nI just noticed — the way you were talking, the way you were present in that moment — and something shifted. Quietly. Like a door opening in a room I did not know existed.\n\nI thought it would pass. These things usually do.\n\nIt did not pass.`,
+   sign:'— unsent, carried since then'},
+  {from:'A letter I wrote on a night I could not sleep.',
+   body:`It is 2am and I am thinking about the way you said something weeks ago.\n\nI cannot remember the exact words. I remember the feeling of it. I remember thinking — I want to keep hearing this person talk for as long as they will let me.\n\nI did not tell you that. I am telling you now.`,
+   sign:'— sent finally, and late'},
+  {from:'A letter I wrote when you were having a hard time.',
+   body:`I wanted to take it from you.\n\nWhatever it was that was making things heavy — I wanted to take it and carry it somewhere you would not have to see it.\n\nI know I cannot do that. I know that is not how any of this works.\n\nBut I wanted you to know the wanting was there.`,
+   sign:'— written quietly, for you'},
+  {from:'A letter I wrote about the small things.',
+   body:`You do not notice the things you do.\n\nThe way you listen — really listen — when someone is speaking to you. The way you find the kind thing to say without having to search for it. The way you exist in a room and make it feel different.\n\nI notice. I keep a list, somewhere. It is getting long.`,
+   sign:'— a collector of small things'},
+  {from:'A letter I wrote when I wanted to just say it.',
+   body:`I love you.\n\nI am not sure I have said it the way I mean it — with all of it, completely, without a disclaimer or a qualification or a fear.\n\nSo here it is. On paper. Where it cannot be taken back.\n\nI love you, Nadia. In the specific, unqualified, no-conditions-attached way.\n\nThere it is.`,
+   sign:'— finally, actually sent'},
+];
+let letterIdx=0,lettersCanvas;
+function initLetters(){
+  lettersCanvas=document.getElementById('letters-canvas');
+  makeParticleBg('letters-canvas',300,340,50);
+  letterIdx=0;
+  showLetter(0);
+}
+function showLetter(idx){
+  letterIdx=Math.max(0,Math.min(UNSENT_LETTERS.length-1,idx));
+  const l=UNSENT_LETTERS[letterIdx];
+  const bodyEl=document.getElementById('letter-body');
+  bodyEl.style.opacity='0';
+  setTimeout(()=>{
+    document.getElementById('letter-from').textContent=l.from;
+    bodyEl.textContent=l.body;
+    document.getElementById('letter-sign').textContent=l.sign;
+    document.getElementById('letter-count').textContent=`${letterIdx+1} / ${UNSENT_LETTERS.length}`;
+    bodyEl.style.opacity='1';
+    lPageTurn();
+  },300);
+}
+function nextLetter(){showLetter(letterIdx+1);}
+function prevLetter(){showLetter(letterIdx-1);}
 
-  // Check for match
-  if(currentRecipe.length>=2){
-    const recipe=currentRecipe.slice(-3);
-    let match=null;
-    POTIONS.forEach(p=>{
-      if(p.ings.length===2&&recipe.slice(-2).every(r=>p.ings.includes(r))&&p.ings.every(r=>recipe.slice(-2).includes(r)))match=p;
-      if(p.ings.length===3&&recipe.length>=3&&recipe.slice(-3).every(r=>p.ings.includes(r))&&p.ings.every(r=>recipe.slice(-3).includes(r)))match=p;
-    });
-    if(match){
-      brewPotion(match);
-    } else if(currentRecipe.length>=6){
-      // Too many ingredients — explode
-      potionColor='#ff4040';
-      document.getElementById('pr-name').textContent='Potion of Mystery 🌀';
-      document.getElementById('pr-desc').textContent='Too many ingredients. The cauldron decided to improvise. Strangely, it might work.';
-      document.getElementById('potion-result').style.opacity='1';
-      setTimeout(()=>{document.getElementById('potion-result').style.opacity='0';},5000);
-      currentRecipe=[];
-      document.getElementById('potion-recipe').innerHTML='';
-      for(let i=0;i<30;i++){
-        const a=Math.random()*Math.PI*2,spd=3+Math.random()*10;
-        potionParticles.push({type:'burst',x:window.innerWidth/2,y:window.innerHeight*0.6,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-5,life:1,decay:0.02,r:3+Math.random()*5,hue:Math.random()*360});
-      }
-      playMagic();
-    }
+/* ══════════════════════════════════════════════════════
+   🌙 LATE NIGHT THOUGHTS
+══════════════════════════════════════════════════════ */
+const THOUGHTS = [
+  {text:'I wonder if she knows how often she crosses my mind.',attr:'3:07 AM'},
+  {text:'She laughed at something today and I keep replaying it. I do not know why. I do not need to know why.',attr:'3:14 AM'},
+  {text:'I hope she is asleep right now. I hope her mind is quiet and whatever was hard today has let her go.',attr:'3:22 AM'},
+  {text:'There are things I want to say to her that I have not found the words for yet. I keep looking.',attr:'3:31 AM'},
+  {text:'She does not know that she is the reason the future looks warmer than it used to.',attr:'3:38 AM'},
+  {text:'I think about what it is like to be known by her. To have her actually see you. It is rare. It is a lot.',attr:'3:45 AM'},
+  {text:'Sometimes I just want to tell her — you are doing better than you think you are. You always are.',attr:'3:52 AM'},
+  {text:'She would probably tell me to go to sleep. She would be right. But here we are.',attr:'4:01 AM'},
+  {text:'I am grateful for her. Not in a general way. In a very specific, considered, she-in-particular way.',attr:'4:09 AM'},
+  {text:'I think she is extraordinary. I have thought this from the beginning. I will think it at the end.',attr:'4:17 AM'},
+  {text:'If I could give her one thing — beyond everything — it would be the ability to see herself the way I see her.',attr:'4:28 AM'},
+  {text:'It is nearly 5am. I should sleep. But I am glad these hours exist. They belong to this, and she is worth them.',attr:'4:58 AM'},
+];
+let thoughtIdx=0,thoughtsCanvas,thoughtsCtx,thoughtsT=0;
+function initThoughts(){
+  thoughtsCanvas=document.getElementById('thoughts-canvas');
+  thoughtsCtx=thoughtsCanvas.getContext('2d');
+  thoughtsCanvas.width=window.innerWidth;thoughtsCanvas.height=window.innerHeight;
+  thoughtsT=0;thoughtIdx=0;
+  showThought(0);
+  drawThoughtsBg();
+}
+function showThought(idx){
+  thoughtIdx=Math.max(0,Math.min(THOUGHTS.length-1,idx));
+  const t=THOUGHTS[thoughtIdx];
+  const textEl=document.getElementById('thoughts-text');
+  const attrEl=document.getElementById('thoughts-attr');
+  const timeEl=document.getElementById('thoughts-time');
+  textEl.style.opacity='0';attrEl.style.opacity='0';
+  setTimeout(()=>{
+    textEl.textContent='\u201c'+t.text+'\u201d';
+    attrEl.textContent=t.attr;
+    timeEl.textContent=t.attr;
+    textEl.style.opacity='1';attrEl.style.opacity='1';
+    lWhisper();
+  },350);
+}
+function nextThought(){
+  if(thoughtIdx<THOUGHTS.length-1) showThought(thoughtIdx+1);
+  else showThought(0);
+}
+function drawThoughtsBg(){
+  if(!thoughtsCtx)return;
+  thoughtsT++;
+  const W=thoughtsCanvas.width,H=thoughtsCanvas.height;
+  thoughtsCtx.fillStyle='rgba(2,2,12,0.12)';thoughtsCtx.fillRect(0,0,W,H);
+  // Stars — very subtle
+  for(let i=0;i<3;i++){
+    const sx=((thoughtsT*0.2+i*W/3))%W;
+    const sy=((thoughtsT*0.1+i*H/3))%H;
+    const a=0.15+Math.sin(thoughtsT*0.02+i)*0.12;
+    thoughtsCtx.save();thoughtsCtx.globalAlpha=a;
+    thoughtsCtx.fillStyle='rgba(160,160,255,0.9)';
+    thoughtsCtx.beginPath();thoughtsCtx.arc(sx,sy,0.8,0,Math.PI*2);thoughtsCtx.fill();
+    thoughtsCtx.restore();
   }
-}
-
-function brewPotion(p){
-  potionColor=p.color;
-  document.getElementById('pr-name').textContent=p.name+' ✨';
-  document.getElementById('pr-desc').textContent=p.desc;
-  document.getElementById('potion-result').style.opacity='1';
-  document.getElementById('cauldron-liquid').setAttribute('fill',p.color+'88');
-  setTimeout(()=>{document.getElementById('potion-result').style.opacity='0';},7000);
-  currentRecipe=[];
-  document.getElementById('potion-recipe').innerHTML='';
-  for(let i=0;i<50;i++){
-    const a=Math.random()*Math.PI*2,spd=2+Math.random()*12;
-    potionParticles.push({type:'burst',x:window.innerWidth/2+(Math.random()-0.5)*40,y:window.innerHeight*0.6,
-      vx:Math.cos(a)*spd,vy:Math.sin(a)*spd-6,life:1,decay:0.015,r:3+Math.random()*6,hue:parseInt(p.color.slice(1),16)%360});
+  // Very slow drifting orbs — like thoughts floating
+  for(let i=0;i<3;i++){
+    const x=W*0.2+W*0.6*(i/2)+Math.sin(thoughtsT*0.004+i*2)*W*0.08;
+    const y=H*0.3+Math.sin(thoughtsT*0.003+i*1.5)*H*0.2;
+    const a=0.03+Math.sin(thoughtsT*0.008+i)*0.02;
+    thoughtsCtx.save();thoughtsCtx.globalAlpha=a;
+    const g=thoughtsCtx.createRadialGradient(x,y,0,x,y,120);
+    g.addColorStop(0,`hsl(${220+i*20},60%,60%)`);g.addColorStop(1,'transparent');
+    thoughtsCtx.fillStyle=g;thoughtsCtx.fillRect(x-120,y-120,240,240);
+    thoughtsCtx.restore();
   }
-  playMagic();setTimeout(()=>playSparkle(),400);
-}
-
-function drawPotion(){
-  if(!potionCtx)return;
-  potionT++;
-  const W=potionCanvas.width,H=potionCanvas.height;
-  potionCtx.fillStyle='rgba(8,2,20,0.15)';potionCtx.fillRect(0,0,W,H);
-
-  // Mystic background
-  for(let i=0;i<5;i++){
-    const bx=((W*0.22*i)+potionT*(i%2===0?0.2:-0.15))%W;
-    const by=H*0.2+Math.sin(potionT*0.009+i*1.3)*H*0.25;
-    const ba=0.05+Math.sin(potionT*0.015+i)*0.03;
-    potionCtx.save();potionCtx.globalAlpha=ba;
-    const bg=potionCtx.createRadialGradient(bx,by,0,bx,by,60);
-    bg.addColorStop(0,`hsl(${270+i*25},80%,60%)`);bg.addColorStop(1,'transparent');
-    potionCtx.fillStyle=bg;potionCtx.beginPath();potionCtx.arc(bx,by,60,0,Math.PI*2);potionCtx.fill();
-    potionCtx.restore();
-  }
-
-  // Cauldron liquid glow
-  const cx=W/2,cy=H*0.615;
-  const lg=potionCtx.createRadialGradient(cx,cy,0,cx,cy,100);
-  lg.addColorStop(0,potionColor+'44');lg.addColorStop(1,'transparent');
-  potionCtx.fillStyle=lg;potionCtx.fillRect(cx-100,cy-50,200,100);
-
-  // Animated cauldron bubbles
-  cauldronBubbles.forEach((b,i)=>{
-    b.y-=b.speed;b.life-=0.008;
-    if(b.life<=0){cauldronBubbles.splice(i,1);return;}
-    potionCtx.save();potionCtx.globalAlpha=b.life*0.5;
-    potionCtx.strokeStyle=potionColor+'aa';potionCtx.lineWidth=1.5;
-    potionCtx.beginPath();potionCtx.arc(cx+b.x,cy+b.y,b.size,0,Math.PI*2);potionCtx.stroke();
-    potionCtx.restore();
-  });
-
-  // Particles
-  potionParticles.forEach((p,i)=>{
-    if(p.type==='drop'){
-      p.progress=Math.min(1,p.progress+0.03);
-      const x=p.x+(p.tx-p.x)*p.progress;
-      const y=p.y+(p.ty-p.y)*p.progress+Math.sin(p.progress*Math.PI)*(-30);
-      potionCtx.font='1.4rem serif';potionCtx.textAlign='center';potionCtx.textBaseline='middle';
-      potionCtx.globalAlpha=1-p.progress*0.5;
-      potionCtx.fillText(p.emoji,x,y);potionCtx.globalAlpha=1;
-      if(p.progress>=1){potionParticles.splice(i,1);return;}
-    } else if(p.type==='burst'){
-      p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=p.decay;
-      if(p.life<=0){potionParticles.splice(i,1);return;}
-      potionCtx.save();potionCtx.globalAlpha=p.life;
-      potionCtx.fillStyle=`hsl(${p.hue},85%,70%)`;potionCtx.shadowColor=`hsl(${p.hue},85%,70%)`;potionCtx.shadowBlur=8;
-      potionCtx.beginPath();potionCtx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);potionCtx.fill();
-      potionCtx.restore();
-    }
-  });
-
-  // Floating ingredient hints
-  ['🌹','✨','🍄','🌙','💎','🦋','🔥','🍯','💜','🌊'].forEach((ing,i)=>{
-    const fy=H*0.08+Math.sin(potionT*0.012+i*0.9)*H*0.03;
-    const fx=W*0.08+W*0.84*(i/9);
-    potionCtx.save();potionCtx.globalAlpha=0.08+Math.sin(potionT*0.02+i)*0.04;
-    potionCtx.font='1.5rem serif';potionCtx.textAlign='center';
-    potionCtx.fillText(ing,fx,fy);potionCtx.restore();
-  });
-
-  if(document.querySelector('#s-potion.on'))requestAnimationFrame(drawPotion);
-}
-
-/* ══════════════════════════════════════════════════════════════
-   ROOM DECORATOR — 3D perspective room, drag furniture
-══════════════════════════════════════════════════════════════ */
-let roomCanvas,roomCtx,roomT=0,roomFurniture=[],roomSelected='bed';
-let roomDrag={active:false,item:null,ox:0,oy:0};
-const ROOM_COLORS={wall:'#1a0c1e',floor:'#0e0810',accent:'#c060ff',trim:'#2a1a2e'};
-const FURNITURE={
-  bed:{emoji:'🛏️',w:120,h:70,label:'Bed',z:2},
-  desk:{emoji:'🖥️',w:90,h:60,label:'Desk',z:1},
-  lamp:{emoji:'🪔',w:35,h:50,label:'Lamp',z:0},
-  plant:{emoji:'🌿',w:40,h:55,label:'Plant',z:0},
-  mirror:{emoji:'🪞',w:45,h:80,label:'Mirror',z:1},
-  sofa:{emoji:'🛋️',w:130,h:65,label:'Sofa',z:2},
-  rug:{emoji:'🟣',w:140,h:90,label:'Rug',z:3},
-  art:{emoji:'🖼️',w:70,h:60,label:'Art',z:0,wall:true},
-  candle:{emoji:'🕯️',w:30,h:40,label:'Candles',z:0},
-  books:{emoji:'📚',w:70,h:60,label:'Bookshelf',z:1},
-};
-
-function selectFurniture(type){
-  roomSelected=type;
-  document.querySelectorAll('.furniture-btn').forEach(b=>b.classList.remove('selected'));
-  document.querySelector(`.furniture-btn[onclick*="${type}"]`)?.classList.add('selected');
-  playTone(660,'sine',0.1,0.06);
-}
-
-function clearRoom(){
-  roomFurniture=[];
-  document.getElementById('room-hint').textContent='room cleared — start decorating!';
-  document.getElementById('room-hint').style.opacity='1';
-  setTimeout(()=>document.getElementById('room-hint').style.opacity='0.35',2000);
-  playTone(330,'sine',0.2,0.1);
-}
-
-function initRoom(){
-  roomCanvas=document.getElementById('room-canvas');
-  roomCtx=roomCanvas.getContext('2d');
-  roomCanvas.width=window.innerWidth;roomCanvas.height=window.innerHeight;
-  roomT=0;
-  if(!roomFurniture.length){
-    // Place a few starter items
-    const W=roomCanvas.width,H=roomCanvas.height;
-    roomFurniture=[
-      {type:'rug',x:W/2,y:H*0.7,rot:0,scale:1},
-      {type:'plant',x:W*0.15,y:H*0.6,rot:0,scale:0.9},
-      {type:'lamp',x:W*0.82,y:H*0.55,rot:0,scale:0.95},
-    ];
-  }
-
-  roomCanvas.addEventListener('click',onRoomClick);
-  roomCanvas.addEventListener('mousedown',onRoomMouseDown);
-  roomCanvas.addEventListener('mousemove',onRoomMouseMove);
-  roomCanvas.addEventListener('mouseup',()=>{roomDrag.active=false;roomDrag.item=null;});
-  roomCanvas.addEventListener('touchstart',e=>onRoomMouseDown({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY}),{passive:true});
-  roomCanvas.addEventListener('touchmove',e=>{onRoomMouseMove({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});e.preventDefault();},{passive:false});
-  roomCanvas.addEventListener('touchend',()=>{roomDrag.active=false;roomDrag.item=null;});
-
-  requestAnimationFrame(drawRoom);
-}
-
-function onRoomClick(e){
-  if(roomDrag.moved)return;
-  const mx=e.clientX,my=e.clientY;
-  const W=roomCanvas.width,H=roomCanvas.height;
-  if(my>H-80)return;
-  // Check if clicked existing furniture
-  let hit=null;
-  for(let i=roomFurniture.length-1;i>=0;i--){
-    const f=roomFurniture[i];
-    const def=FURNITURE[f.type];
-    if(Math.abs(mx-f.x)<def.w/2+10&&Math.abs(my-f.y)<def.h/2+10){hit=i;break;}
-  }
-  if(hit!==null){
-    // Remove it (toggle)
-    // Actually just keep it and select it - done by drag
-    return;
-  }
-  // Place new furniture
-  const def=FURNITURE[roomSelected];
-  roomFurniture.push({type:roomSelected,x:mx,y:my,rot:0,scale:0.85+Math.random()*0.3,placed:true});
-  playTone(392,'triangle',0.15,0.08);
-
-  // Hint update
-  document.getElementById('room-hint').style.opacity='0';
-}
-
-function onRoomMouseDown(e){
-  const mx=e.clientX,my=e.clientY;
-  roomDrag.moved=false;
-  for(let i=roomFurniture.length-1;i>=0;i--){
-    const f=roomFurniture[i];
-    const def=FURNITURE[f.type];
-    if(Math.abs(mx-f.x)<def.w/2+15&&Math.abs(my-f.y)<def.h/2+15){
-      roomDrag={active:true,item:i,ox:mx-f.x,oy:my-f.y,moved:false};
-      // Bring to front
-      roomFurniture.push(roomFurniture.splice(i,1)[0]);
-      roomDrag.item=roomFurniture.length-1;
-      break;
-    }
-  }
-}
-
-function onRoomMouseMove(e){
-  if(!roomDrag.active||roomDrag.item===null)return;
-  roomDrag.moved=true;
-  const f=roomFurniture[roomDrag.item];
-  f.x=e.clientX-roomDrag.ox;f.y=e.clientY-roomDrag.oy;
-}
-
-
-function hexToRgb(hex){
-  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-  return {r,g,b};
-}
-function shadeColor(hex,amt){
-  const {r,g,b}=hexToRgb(hex);
-  return `rgb(${Math.min(255,r+amt)},${Math.min(255,g+amt)},${Math.min(255,b+amt)})`;
-}
-function drawFurniture3D(ctx,type,sc,T){
-  const W=sc;
-  ctx.save();
-  ctx.shadowColor='rgba(0,0,0,0.4)';ctx.shadowBlur=10*sc;ctx.shadowOffsetY=4*sc;
-  switch(type){
-    case 'bed':{
-      const bw=110*sc,bh=65*sc,depth=22*sc;
-      // Ground shadow
-      ctx.globalAlpha=0.25;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,bh*0.5+depth,bw*0.55,depth*0.35,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Bed base - front face
-      ctx.fillStyle='#2a1635';
-      ctx.fillRect(-bw/2,-bh/2,bw,bh);
-      // Top face (slight 3D)
-      ctx.fillStyle='#3d2050';
-      ctx.beginPath();ctx.moveTo(-bw/2,-bh/2);ctx.lineTo(-bw/2+depth,-bh/2-depth*0.5);
-      ctx.lineTo(bw/2+depth,-bh/2-depth*0.5);ctx.lineTo(bw/2,-bh/2);ctx.closePath();ctx.fill();
-      // Side face
-      ctx.fillStyle='#1a0e25';
-      ctx.beginPath();ctx.moveTo(bw/2,-bh/2);ctx.lineTo(bw/2+depth,-bh/2-depth*0.5);
-      ctx.lineTo(bw/2+depth,bh/2-depth*0.5);ctx.lineTo(bw/2,bh/2);ctx.closePath();ctx.fill();
-      // Mattress
-      ctx.fillStyle='#c060d0';ctx.fillRect(-bw/2+4,-bh/2+4,bw-8,bh*0.6);
-      ctx.fillStyle='#d880e8';ctx.fillRect(-bw/2+4,-bh/2+4,bw-8,8);
-      // Pillow
-      const px=-bw*0.3,pw=bw*0.28,ph=bh*0.22;
-      ctx.fillStyle='#f0e0ff';ctx.beginPath();ctx.roundRect(px,-bh/2+6,pw,ph,4);ctx.fill();
-      ctx.fillStyle='#e8d0f8';ctx.beginPath();ctx.roundRect(bw*0.05,-bh/2+6,pw,ph,4);ctx.fill();
-      // Headboard
-      ctx.fillStyle='#4a1060';ctx.fillRect(-bw/2,-bh/2-20*sc,bw,20*sc);
-      ctx.fillStyle='#6a2080';ctx.fillRect(-bw/2+6,-bh/2-16*sc,bw-12,12*sc);
-      break;
-    }
-    case 'sofa':{
-      const sw=120*sc,sh=55*sc,depth=18*sc;
-      ctx.globalAlpha=0.2;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,sh*0.5+5,sw*0.5,8*sc,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Base
-      ctx.fillStyle='#1e0c28';ctx.fillRect(-sw/2,0,sw,sh*0.4);
-      // Back cushions - top face
-      ctx.fillStyle='#7030a0';ctx.fillRect(-sw/2,-sh/2,sw,sh*0.6);
-      // Cushion dividers
-      ctx.fillStyle='#5020780';ctx.fillRect(-6,-sh/2+4,12,sh*0.55);
-      // Arm rests
-      ctx.fillStyle='#5525780';
-      ctx.fillRect(-sw/2,-sh/2-8*sc,18*sc,sh+8*sc);
-      ctx.fillRect(sw/2-18*sc,-sh/2-8*sc,18*sc,sh+8*sc);
-      // Top face 3D
-      ctx.fillStyle='#8840b0';
-      ctx.beginPath();ctx.moveTo(-sw/2,-sh/2);ctx.lineTo(-sw/2+depth,-sh/2-depth*0.4);
-      ctx.lineTo(sw/2+depth,-sh/2-depth*0.4);ctx.lineTo(sw/2,-sh/2);ctx.closePath();ctx.fill();
-      // Cushion shine
-      ctx.fillStyle='rgba(255,255,255,0.08)';ctx.fillRect(-sw/2+20,-sh/2+6,sw-40,8);
-      break;
-    }
-    case 'desk':{
-      const dw=80*sc,dh=10*sc,depth=40*sc;
-      ctx.globalAlpha=0.2;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,50*sc,dw*0.4,8*sc,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Legs
-      ctx.fillStyle='#2a1535';
-      [[-dw/2+6,-dh],[-dw/2+6,-dh+45*sc],[dw/2-6,-dh],[dw/2-6,-dh+45*sc]].forEach(([lx,ly])=>{
-        ctx.fillRect(lx-3,ly,6,50*sc);
-      });
-      // Side face
-      ctx.fillStyle='#1a0e22';
-      ctx.beginPath();ctx.moveTo(dw/2,-dh);ctx.lineTo(dw/2+depth*0.5,-dh-depth*0.25);
-      ctx.lineTo(dw/2+depth*0.5,0);ctx.lineTo(dw/2,0);ctx.closePath();ctx.fill();
-      // Top face
-      ctx.fillStyle='#4a2870';
-      ctx.beginPath();ctx.moveTo(-dw/2,-dh);ctx.lineTo(-dw/2+depth*0.5,-dh-depth*0.25);
-      ctx.lineTo(dw/2+depth*0.5,-dh-depth*0.25);ctx.lineTo(dw/2,-dh);ctx.closePath();ctx.fill();
-      // Front face
-      ctx.fillStyle='#3a1e55';ctx.fillRect(-dw/2,-dh,dw,dh+2);
-      // Monitor on desk
-      ctx.fillStyle='#0a0510';ctx.fillRect(-20*sc,-45*sc,40*sc,28*sc);
-      ctx.fillStyle='#1a1530';ctx.fillRect(-18*sc,-43*sc,36*sc,24*sc);
-      ctx.fillStyle='rgba(120,200,255,0.6)';ctx.fillRect(-16*sc,-41*sc,32*sc,20*sc);
-      ctx.fillStyle='#0a0510';ctx.fillRect(-4*sc,-18*sc,8*sc,4*sc);
-      break;
-    }
-    case 'lamp':{
-      const lh=70*sc;
-      ctx.globalAlpha=0.15;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,lh/2,12*sc,4*sc,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Stand
-      ctx.strokeStyle='#4a3060';ctx.lineWidth=3*sc;
-      ctx.beginPath();ctx.moveTo(0,lh/2);ctx.lineTo(0,-lh*0.3);ctx.stroke();
-      // Base
-      ctx.fillStyle='#3a2050';ctx.beginPath();ctx.ellipse(0,lh/2,14*sc,5*sc,0,0,Math.PI*2);ctx.fill();
-      // Shade
-      ctx.fillStyle='#c0a030';
-      ctx.beginPath();ctx.moveTo(-20*sc,-lh*0.3);ctx.lineTo(-12*sc,-lh/2);ctx.lineTo(12*sc,-lh/2);ctx.lineTo(20*sc,-lh*0.3);ctx.closePath();ctx.fill();
-      ctx.fillStyle='#e0c040';ctx.fillRect(-12*sc,-lh/2,24*sc,4*sc);
-      // Warm glow
-      ctx.save();ctx.globalAlpha=0.15+Math.sin(T*0.08)*0.05;
-      const lg=ctx.createRadialGradient(0,-lh*0.35,0,0,-lh*0.35,60*sc);
-      lg.addColorStop(0,'rgba(255,200,80,0.8)');lg.addColorStop(1,'transparent');
-      ctx.fillStyle=lg;ctx.beginPath();ctx.arc(0,-lh*0.35,60*sc,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-      break;
-    }
-    case 'plant':{
-      const ph=55*sc;
-      // Pot shadow
-      ctx.globalAlpha=0.2;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,ph*0.45,16*sc,5*sc,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Pot
-      ctx.fillStyle='#8b4513';
-      ctx.beginPath();ctx.moveTo(-14*sc,ph*0.3);ctx.lineTo(-10*sc,ph*0.45);ctx.lineTo(10*sc,ph*0.45);ctx.lineTo(14*sc,ph*0.3);ctx.closePath();ctx.fill();
-      ctx.fillStyle='#a0522d';ctx.fillRect(-14*sc,ph*0.2,28*sc,10*sc);
-      // Soil
-      ctx.fillStyle='#3d1f00';ctx.beginPath();ctx.ellipse(0,ph*0.22,12*sc,4*sc,0,0,Math.PI*2);ctx.fill();
-      // Stems and leaves
-      [[0,-ph*0.1,-15*sc,-ph*0.6,'#228b22'],[0,-ph*0.05,12*sc,-ph*0.5,'#2e8b57'],
-       [0,-ph*0.08,-8*sc,-ph*0.75,'#006400'],[0,-ph*0.1,18*sc,-ph*0.35,'#32cd32']].forEach(([x1,y1,x2,y2,col])=>{
-        ctx.strokeStyle='#1a5c1a';ctx.lineWidth=2*sc;
-        ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo(x1+(x2-x1)*0.3,y1+(y2-y1)*0.5,x2,y2);ctx.stroke();
-        // Leaf
-        ctx.save();ctx.translate(x2,y2);ctx.rotate(Math.atan2(y2-y1,x2-x1)+Math.PI/2);
-        ctx.fillStyle=col;ctx.beginPath();ctx.ellipse(0,0,6*sc,12*sc,0,0,Math.PI*2);ctx.fill();
-        ctx.restore();
-      });
-      break;
-    }
-    case 'mirror':{
-      const mw=35*sc,mh=60*sc;
-      ctx.globalAlpha=0.15;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,mh/2,mw*0.4,6*sc,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Frame
-      ctx.fillStyle='#8860c0';ctx.fillRect(-mw/2-5,-mh/2-5,mw+10,mh+10);
-      ctx.fillStyle='#6040a0';ctx.fillRect(-mw/2-5,-mh/2-5,mw+10,8);
-      ctx.fillStyle='#6040a0';ctx.fillRect(-mw/2-5,mh/2-3,mw+10,8);
-      // Mirror surface
-      const mg=ctx.createLinearGradient(-mw/2,-mh/2,mw/2,mh/2);
-      mg.addColorStop(0,'rgba(180,160,220,0.4)');mg.addColorStop(0.3,'rgba(220,210,255,0.2)');
-      mg.addColorStop(0.7,'rgba(160,140,200,0.35)');mg.addColorStop(1,'rgba(100,80,160,0.3)');
-      ctx.fillStyle=mg;ctx.fillRect(-mw/2,-mh/2,mw,mh);
-      // Shine
-      ctx.fillStyle='rgba(255,255,255,0.15)';
-      ctx.beginPath();ctx.moveTo(-mw/2,-mh/2);ctx.lineTo(-mw/4,-mh/2);ctx.lineTo(-mw/2,-mh/4);ctx.closePath();ctx.fill();
-      // Stand
-      ctx.fillStyle='#8860c0';ctx.fillRect(-5,mh/2,10,14*sc);
-      ctx.fillRect(-16*sc,mh/2+10*sc,32*sc,5*sc);
-      break;
-    }
-    case 'rug':{
-      const rw=130*sc,rh=85*sc;
-      ctx.save();ctx.scale(1,0.4);
-      ctx.globalAlpha=0.25;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,0,rw*0.55,rh*0.55,0,0,Math.PI*2);ctx.fill();
-      ctx.globalAlpha=1;
-      // Rug base
-      ctx.fillStyle='#6020a0';ctx.beginPath();ctx.ellipse(0,0,rw/2,rh/2,0,0,Math.PI*2);ctx.fill();
-      // Pattern rings
-      [[0.7,'#8040c0'],[0.5,'#9050d0'],[0.3,'#7030b0']].forEach(([r,c])=>{
-        ctx.strokeStyle=c;ctx.lineWidth=4;
-        ctx.beginPath();ctx.ellipse(0,0,rw/2*r,rh/2*r,0,0,Math.PI*2);ctx.stroke();
-      });
-      // Center pattern
-      ctx.fillStyle='#c060ff';ctx.beginPath();ctx.arc(0,0,rw*0.1,0,Math.PI*2);ctx.fill();
-      // Star pattern
-      for(let i=0;i<8;i++){
-        const a=i/8*Math.PI*2;
-        ctx.fillStyle='rgba(220,160,255,0.5)';
-        ctx.beginPath();ctx.arc(Math.cos(a)*rw*0.25,Math.sin(a)*rh*0.25,4,0,Math.PI*2);ctx.fill();
-      }
-      ctx.restore();
-      break;
-    }
-    case 'art':{
-      const aw=65*sc,ah=50*sc;
-      ctx.globalAlpha=0.15;ctx.fillStyle='#000';
-      ctx.fillRect(-aw/2+4,ah/2-4,aw,8);ctx.globalAlpha=1;
-      // Frame
-      ctx.fillStyle='#7040b0';ctx.fillRect(-aw/2-4,-ah/2-4,aw+8,ah+8);
-      ctx.fillStyle='#4a2880';ctx.fillRect(-aw/2-4,-ah/2-4,aw+8,6);
-      ctx.fillStyle='#4a2880';ctx.fillRect(-aw/2-4,ah/2-2,aw+8,6);
-      // Canvas
-      ctx.fillStyle='#0a0418';ctx.fillRect(-aw/2,-ah/2,aw,ah);
-      // Abstract art - swirls for Nadia
-      [['#ff6090',0.3,-0.2,0.15],['#c060ff',0,0,0.2],['#60c0ff',0.2,0.3,0.12],['#ffd060',-0.3,0.1,0.1]].forEach(([col,ox,oy,r])=>{
-        ctx.save();ctx.globalAlpha=0.7;
-        const ag=ctx.createRadialGradient(aw*ox,ah*oy,0,aw*ox,ah*oy,aw*r);
-        ag.addColorStop(0,col);ag.addColorStop(1,'transparent');
-        ctx.fillStyle=ag;ctx.fillRect(-aw/2,-ah/2,aw,ah);ctx.restore();
-      });
-      // Nadia's name on art
-      ctx.save();ctx.globalAlpha=0.3;ctx.fillStyle='rgba(255,220,255,0.8)';
-      ctx.font=`italic ${7*sc}px 'Cormorant Garamond',serif`;
-      ctx.textAlign='center';ctx.fillText('Nadia',0,ah*0.1);ctx.restore();
-      break;
-    }
-    case 'candle':{
-      const ch=38*sc;
-      ctx.globalAlpha=0.15;ctx.fillStyle='#000';
-      ctx.beginPath();ctx.ellipse(0,ch/2,9*sc,3*sc,0,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
-      // Candle body
-      const cg=ctx.createLinearGradient(-8*sc,0,8*sc,0);
-      cg.addColorStop(0,'#e8d0c0');cg.addColorStop(0.3,'#fff8f0');cg.addColorStop(1,'#c8b0a0');
-      ctx.fillStyle=cg;ctx.fillRect(-7*sc,-ch/2,14*sc,ch);
-      // Top wax
-      ctx.fillStyle='#e8d0c0';ctx.beginPath();ctx.ellipse(0,-ch/2,7*sc,3*sc,0,0,Math.PI*2);ctx.fill();
-      // Wick
-      ctx.strokeStyle='#333';ctx.lineWidth=1.5*sc;
-      ctx.beginPath();ctx.moveTo(0,-ch/2);ctx.lineTo(0,-ch/2-6*sc);ctx.stroke();
-      // Flame
-      const flicker=Math.sin(T*0.15+Math.random()*0.1)*3*sc;
-      const fg=ctx.createRadialGradient(0,-ch/2-14*sc+flicker,0,0,-ch/2-10*sc,14*sc);
-      fg.addColorStop(0,'rgba(255,255,180,0.95)');fg.addColorStop(0.4,'rgba(255,140,20,0.8)');fg.addColorStop(1,'transparent');
-      ctx.fillStyle=fg;ctx.beginPath();ctx.arc(0,-ch/2-10*sc+flicker,12*sc,0,Math.PI*2);ctx.fill();
-      // Warm glow
-      ctx.save();ctx.globalAlpha=0.12+Math.sin(T*0.1)*0.05;
-      const wg=ctx.createRadialGradient(0,-ch/2-10*sc,0,0,-ch/2-10*sc,50*sc);
-      wg.addColorStop(0,'rgba(255,180,60,0.8)');wg.addColorStop(1,'transparent');
-      ctx.fillStyle=wg;ctx.beginPath();ctx.arc(0,-ch/2-10*sc,50*sc,0,Math.PI*2);ctx.fill();ctx.restore();
-      break;
-    }
-    case 'books':{
-      const bsw=65*sc,bsh=55*sc;
-      ctx.globalAlpha=0.2;ctx.fillStyle='#000';
-      ctx.fillRect(-bsw/2+4,bsh/2-4,bsw,6);ctx.globalAlpha=1;
-      // Shelf
-      ctx.fillStyle='#3a1a25';ctx.fillRect(-bsw/2-4,bsh*0.35,bsw+8,8);
-      ctx.fillRect(-bsw/2-4,-bsh*0.5,8,bsh);ctx.fillRect(bsw/2-4,-bsh*0.5,8,bsh);
-      // Books
-      const books=[['#e040fb',14],['#ff6090',10],['#40c0ff',16],['#ffd040',12],['#80ff80',10],['#c060ff',13]];
-      let bx=-bsw/2+8;
-      books.forEach(([col,bw])=>{
-        ctx.fillStyle=col;ctx.fillRect(bx,-bsh*0.45,bw,bsh*0.8);
-        ctx.fillStyle='rgba(255,255,255,0.15)';ctx.fillRect(bx+2,-bsh*0.45,2,bsh*0.8);
-        ctx.fillStyle='rgba(0,0,0,0.2)';ctx.fillRect(bx+bw-2,-bsh*0.45,2,bsh*0.8);
-        bx+=bw+2;
-        if(bx>bsw/2-8)return;
-      });
-      // Top shelf books
-      bx=-bsw/2+8;let tx=-bsh*0.5;
-      [['#ff4040',12],['#40a0ff',9],['#80ff40',11]].forEach(([col,bw])=>{
-        ctx.fillStyle=col;ctx.fillRect(bx,tx,bw,bsh*0.35);
-        bx+=bw+3;
-      });
-      break;
-    }
-    default:{
-      ctx.fillStyle='rgba(180,140,220,0.5)';
-      ctx.beginPath();ctx.roundRect(-20*sc,-20*sc,40*sc,40*sc,6);ctx.fill();
-    }
-  }
-  ctx.restore();
-}
-
-function drawRoom(){
-  if(!roomCtx)return;
-  roomT++;
-  const W=roomCanvas.width,H=roomCanvas.height;
-  const VPX=W/2,VPY=H*0.35; // vanishing point
-
-  // Back wall
-  const wallGrad=roomCtx.createLinearGradient(0,0,0,H*0.65);
-  wallGrad.addColorStop(0,'#100818');wallGrad.addColorStop(1,'#1c1028');
-  roomCtx.fillStyle=wallGrad;roomCtx.fillRect(0,0,W,H*0.65);
-
-  // Floor with perspective
-  const floorGrad=roomCtx.createLinearGradient(0,H*0.65,0,H);
-  floorGrad.addColorStop(0,'#140e18');floorGrad.addColorStop(0.5,'#100c14');floorGrad.addColorStop(1,'#0c0810');
-  roomCtx.fillStyle=floorGrad;roomCtx.fillRect(0,H*0.65,W,H*0.35);
-
-  // Floor perspective lines
-  for(let i=0;i<=10;i++){
-    const fx=W*i/10;
-    roomCtx.save();roomCtx.strokeStyle='rgba(180,120,255,0.04)';roomCtx.lineWidth=1;
-    roomCtx.beginPath();roomCtx.moveTo(VPX+(fx-VPX)*0.01,H*0.65);roomCtx.lineTo(fx,H);roomCtx.stroke();
-    roomCtx.restore();
-  }
-  for(let j=0;j<=6;j++){
-    const fy=H*0.65+j*(H*0.35/6);
-    const t=(fy-H*0.65)/(H*0.35);
-    const lx=VPX*(1-t);const rx=W-(W-VPX)*(1-t);
-    roomCtx.save();roomCtx.strokeStyle=`rgba(180,120,255,${0.03+t*0.02})`;roomCtx.lineWidth=1;
-    roomCtx.beginPath();roomCtx.moveTo(lx,fy);roomCtx.lineTo(rx,fy);roomCtx.stroke();
-    roomCtx.restore();
-  }
-
-  // Wall-floor edge
-  roomCtx.strokeStyle='rgba(200,140,255,0.2)';roomCtx.lineWidth=2;
-  roomCtx.beginPath();roomCtx.moveTo(0,H*0.65);roomCtx.lineTo(W,H*0.65);roomCtx.stroke();
-
-  // Left/right walls (side panels)
-  roomCtx.save();roomCtx.globalAlpha=0.15;
-  roomCtx.fillStyle='rgba(120,60,180,0.3)';
-  roomCtx.beginPath();roomCtx.moveTo(0,0);roomCtx.lineTo(0,H);roomCtx.lineTo(W*0.08,H*0.65);roomCtx.lineTo(W*0.06,0);roomCtx.closePath();roomCtx.fill();
-  roomCtx.beginPath();roomCtx.moveTo(W,0);roomCtx.lineTo(W,H);roomCtx.lineTo(W*0.92,H*0.65);roomCtx.lineTo(W*0.94,0);roomCtx.closePath();roomCtx.fill();
-  roomCtx.restore();
-
-  // Window on wall
-  const winX=W*0.6,winY=H*0.15,winW=W*0.2,winH=H*0.3;
-  const winGlow=roomCtx.createRadialGradient(winX,winY+winH/2,0,winX,winY+winH/2,winW);
-  winGlow.addColorStop(0,'rgba(120,180,255,0.15)');winGlow.addColorStop(1,'transparent');
-  roomCtx.fillStyle=winGlow;roomCtx.fillRect(winX-winW,winY-20,winW*2,winH+40);
-  roomCtx.strokeStyle='rgba(160,200,255,0.3)';roomCtx.lineWidth=2;
-  roomCtx.strokeRect(winX-winW/2,winY,winW,winH);
-  // Window panes
-  roomCtx.strokeStyle='rgba(160,200,255,0.15)';roomCtx.lineWidth=1;
-  roomCtx.beginPath();roomCtx.moveTo(winX,winY);roomCtx.lineTo(winX,winY+winH);roomCtx.stroke();
-  roomCtx.beginPath();roomCtx.moveTo(winX-winW/2,winY+winH/2);roomCtx.lineTo(winX+winW/2,winY+winH/2);roomCtx.stroke();
-  // Moon/stars outside window
-  roomCtx.save();roomCtx.globalAlpha=0.5;
-  roomCtx.fillStyle='rgba(220,230,255,0.8)';roomCtx.beginPath();roomCtx.arc(winX+winW*0.15,winY+winH*0.3,8,0,Math.PI*2);roomCtx.fill();
-  for(let s=0;s<8;s++){
-    const sx=winX-winW*0.3+Math.random()*winW*0.8,sy=winY+Math.random()*winH*0.8;
-    roomCtx.fillStyle='rgba(200,220,255,0.6)';roomCtx.beginPath();roomCtx.arc(sx,sy,1,0,Math.PI*2);roomCtx.fill();
-  }
-  roomCtx.restore();
-
-  // Soft lamp light pool
-  roomFurniture.filter(f=>f.type==='lamp').forEach(f=>{
-    const lg=roomCtx.createRadialGradient(f.x,f.y,0,f.x,f.y,180);
-    lg.addColorStop(0,'rgba(255,200,100,0.08)');lg.addColorStop(1,'transparent');
-    roomCtx.fillStyle=lg;roomCtx.fillRect(f.x-180,f.y-180,360,360);
-  });
-
-  // Sort furniture by y (depth) for painter's algorithm
-  const sorted=[...roomFurniture].sort((a,b)=>a.y-b.y);
-  sorted.forEach(f=>{
-    const def=FURNITURE[f.type];
-    const sc=f.scale*(roomDrag.item!==null&&roomFurniture[roomDrag.item]===f?1.08:1);
-    const depthT=Math.max(0,Math.min(1,(f.y-H*0.35)/(H*0.55)));
-    const finalSc=sc*(0.55+depthT*0.55);
-    roomCtx.save();roomCtx.translate(f.x,f.y);
-    drawFurniture3D(roomCtx,f.type,finalSc,roomT);
-    roomCtx.restore();
-  });
-
-  // Nadia's name embossed on wall
-  roomCtx.save();roomCtx.globalAlpha=0.06;
-  roomCtx.font=`italic ${W*0.04}px 'Cormorant Garamond',serif`;
-  roomCtx.fillStyle='rgba(200,160,255,1)';
-  roomCtx.textAlign='center';roomCtx.fillText('Nadia\'s Room',W/2,H*0.58);
-  roomCtx.restore();
-
-  // Candle flicker
-  roomFurniture.filter(f=>f.type==='candle').forEach(f=>{
-    const flicker=0.5+Math.sin(roomT*0.15+f.x)*0.5;
-    roomCtx.save();roomCtx.globalAlpha=flicker*0.3;
-    const cf=roomCtx.createRadialGradient(f.x,f.y-30,0,f.x,f.y-30,60);
-    cf.addColorStop(0,'rgba(255,180,60,0.8)');cf.addColorStop(1,'transparent');
-    roomCtx.fillStyle=cf;roomCtx.beginPath();roomCtx.arc(f.x,f.y-30,60,0,Math.PI*2);roomCtx.fill();
-    roomCtx.restore();
-  });
-
-  if(document.querySelector('#s-room.on'))requestAnimationFrame(drawRoom);
+  if(document.querySelector('#s-thoughts.on'))requestAnimationFrame(drawThoughtsBg);
 }
 
 </script>
-<!-- ═══════ SPACE EXPLORER ═══════ -->
-<div class="screen" id="s-space">
-  <canvas id="space-canvas"></canvas>
-  <div id="space-ui">
-    <div id="space-coords"></div>
-  </div>
-  <div id="space-hint">drag to fly · scroll to zoom · fly close to planets · click to discover</div>
-  <div id="space-planet-info"><h3 id="spi-name"></h3><p id="spi-desc"></p></div>
-  <button class="world-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ MOOD RING ═══════ -->
-<div class="screen" id="s-mood">
-  <canvas id="mood-canvas"></canvas>
-  <div class="si" style="position:relative;z-index:10;">
-    <span class="eyebrow rv" style="color:rgba(180,130,255,0.5);">what are you feeling?</span>
-    <div id="mood-ring-container" class="rv">
-      <svg id="mood-ring-svg" viewBox="0 0 220 220">
-        <defs>
-          <radialGradient id="ring-glow" cx="50%" cy="50%" r="50%">
-            <stop id="rg1" offset="0%" stop-color="#c060ff" stop-opacity="0.8"/>
-            <stop id="rg2" offset="60%" stop-color="#6020c0" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#060010" stop-opacity="1"/>
-          </radialGradient>
-          <filter id="glow-filter">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <circle cx="110" cy="110" r="105" fill="url(#ring-glow)" filter="url(#glow-filter)"/>
-        <circle cx="110" cy="110" r="105" fill="none" stroke="rgba(180,100,255,0.4)" stroke-width="1.5"/>
-        <circle cx="110" cy="110" r="70" fill="rgba(10,4,24,0.8)"/>
-        <circle cx="110" cy="110" r="70" fill="none" stroke="rgba(140,80,255,0.2)" stroke-width="1"/>
-        <text id="ring-emoji" x="110" y="122" text-anchor="middle" font-size="40">💜</text>
-      </svg>
-      <div id="mood-label">touch a colour...</div>
-      <div id="mood-desc">What does your heart feel right now?</div>
-      <div id="mood-palette"></div>
+<!-- ═══════ BOOK OF YOU ═══════ -->
+<div class="screen" id="s-book">
+  <canvas id="book-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(180,120,255,0.5);">chapter one</span>
+    <h2 class="big rv" style="color:rgba(210,180,255,0.95);">The Book<br><em style="color:#b060ff;">of You.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(160,80,255,0.5),transparent);"></div>
+    <div id="book-container" class="rv">
+      <div id="book-cover" onclick="openBook()">
+        <div id="book-spine"></div>
+        <div id="book-cover-title">The Story of<br>Nadia</div>
+        <div id="book-cover-sub">written by someone who knows</div>
+      </div>
+      <div id="book-pages" style="display:none;">
+        <div id="book-page">
+          <div id="book-chapter"></div>
+          <div id="book-text"></div>
+        </div>
+        <div id="book-nav">
+          <button class="book-btn" onclick="prevPage()">← prev</button>
+          <button class="book-btn" onclick="nextPage()">next →</button>
+        </div>
+        <div id="book-progress"></div>
+      </div>
     </div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
 
-<!-- ═══════ FLOWER GARDEN ═══════ -->
-<div class="screen" id="s-garden">
-  <canvas id="garden-canvas"></canvas>
-  <div id="garden-hint">choose a seed · click to plant · watch it grow</div>
-  <div id="garden-season"></div>
-  <div id="garden-count">🌸 0</div>
-  <div id="garden-ui">
-    <div class="garden-seed selected" data-seed="rose" onclick="selectSeed('rose')">🌹</div>
-    <div class="garden-seed" data-seed="sunflower" onclick="selectSeed('sunflower')">🌻</div>
-    <div class="garden-seed" data-seed="cherry" onclick="selectSeed('cherry')">🌸</div>
-    <div class="garden-seed" data-seed="tulip" onclick="selectSeed('tulip')">🌷</div>
-    <div class="garden-seed" data-seed="lavender" onclick="selectSeed('lavender')">💜</div>
-    <div class="garden-seed" data-seed="daisy" onclick="selectSeed('daisy')">🌼</div>
+<!-- ═══════ MIRROR ═══════ -->
+<div class="screen" id="s-mirror">
+  <canvas id="mirror-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(140,180,255,0.5);">look closer</span>
+    <h2 class="big rv" style="color:rgba(180,220,255,0.95);">What I See<br><em style="color:#60b0ff;">in You.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(80,160,255,0.5),transparent);"></div>
+    <div id="mirror-frame" class="rv" onclick="nextMirrorLine()">
+      <div id="mirror-shine"></div>
+      <div id="mirror-text">tap the mirror</div>
+      <div id="mirror-sub"></div>
+      <div id="mirror-tap">tap to see more</div>
+    </div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
 
-<!-- ═══════ BLACK HOLE ═══════ -->
-<div class="screen" id="s-blackhole">
-  <canvas id="bh-canvas"></canvas>
-  <div id="bh-ui">
-    <div id="bh-absorbed">0 stars absorbed</div>
-    <div id="bh-hint">click to add stars · they will fall in</div>
-  </div>
-  <div id="bh-quote"></div>
+<!-- ═══════ PORTRAIT ═══════ -->
+<div class="screen" id="s-portrait">
+  <canvas id="portrait-canvas"></canvas>
+  <div id="portrait-hint">move your mouse · watch her appear</div>
+  <div id="portrait-caption"></div>
+  <div id="portrait-complete">She is<br>breathtaking.</div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
 
-<!-- ═══════ POTION MIXER ═══════ -->
-<div class="screen" id="s-potion">
-  <canvas id="potion-canvas"></canvas>
-  <div id="potion-result"><h3 id="pr-name"></h3><p id="pr-desc"></p></div>
-  <div id="potion-recipe"></div>
-  <div style="position:relative;z-index:10;text-align:center;padding-top:1.2rem;"><span style="font-family:Cormorant Garamond,serif;font-style:italic;color:rgba(200,150,255,0.5);font-size:0.9rem;">combine ingredients to brew a message</span></div>
-  <div id="cauldron-area">
-    <svg id="cauldron-svg" viewBox="0 0 180 160">
-      <defs>
-        <radialGradient id="cauldron-glow" cx="50%" cy="70%" r="50%">
-          <stop id="cg1" offset="0%" stop-color="#c040ff" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#400080" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <ellipse cx="90" cy="148" rx="55" ry="10" fill="rgba(80,0,120,0.4)"/>
-      <path d="M30,80 Q20,150 90,158 Q160,150 150,80 Z" fill="#1a0830" stroke="rgba(140,60,220,0.6)" stroke-width="2"/>
-      <path d="M25,80 Q90,70 155,80" fill="none" stroke="rgba(160,80,240,0.5)" stroke-width="3"/>
-      <ellipse id="cauldron-liquid" cx="90" cy="80" rx="60" ry="12" fill="rgba(140,40,255,0.5)"/>
-      <ellipse id="cauldron-glow-el" cx="90" cy="80" rx="60" ry="12" fill="url(#cauldron-glow)"/>
-      <path d="M60,80 Q90,72 120,80" id="bubble1" fill="none" stroke="rgba(200,120,255,0.4)" stroke-width="1.5"/>
-      <circle id="bubble2" cx="75" cy="78" r="4" fill="rgba(200,120,255,0.2)" stroke="rgba(200,120,255,0.4)" stroke-width="1"/>
-      <circle id="bubble3" cx="108" cy="76" r="3" fill="rgba(200,120,255,0.2)" stroke="rgba(200,120,255,0.4)" stroke-width="1"/>
-      <line x1="70" y1="65" x2="50" y2="40" stroke="rgba(140,60,220,0.5)" stroke-width="4" stroke-linecap="round"/>
-      <line x1="110" y1="65" x2="130" y2="40" stroke="rgba(140,60,220,0.5)" stroke-width="4" stroke-linecap="round"/>
-    </svg>
+<!-- ═══════ OPEN WHEN ═══════ -->
+<div class="screen" id="s-openwhen">
+  <canvas id="ow-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(255,180,80,0.5);">sealed with love</span>
+    <h2 class="big rv" style="color:rgba(255,210,150,0.95);">Open<br><em style="color:#ffb040;">When...</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(255,160,60,0.5),transparent);"></div>
+    <div id="ow-shelf" class="rv">
+      <div class="ow-envelope" onclick="openEnvelope(0)">
+        <span class="ow-seal">💛</span>
+        <div><div class="ow-label">Open when you feel sad</div><div class="ow-hint">for the hard days</div></div>
+      </div>
+      <div class="ow-envelope" onclick="openEnvelope(1)">
+        <span class="ow-seal">🌙</span>
+        <div><div class="ow-label">Open when you can't sleep</div><div class="ow-hint">for 3am</div></div>
+      </div>
+      <div class="ow-envelope" onclick="openEnvelope(2)">
+        <span class="ow-seal">🔥</span>
+        <div><div class="ow-label">Open when you're angry</div><div class="ow-hint">it's okay</div></div>
+      </div>
+      <div class="ow-envelope" onclick="openEnvelope(3)">
+        <span class="ow-seal">💜</span>
+        <div><div class="ow-label">Open when you miss me</div><div class="ow-hint">I'm already thinking of you</div></div>
+      </div>
+      <div class="ow-envelope" onclick="openEnvelope(4)">
+        <span class="ow-seal">✨</span>
+        <div><div class="ow-label">Open when you need confidence</div><div class="ow-hint">before something big</div></div>
+      </div>
+      <div class="ow-envelope" onclick="openEnvelope(5)">
+        <span class="ow-seal">❤️</span>
+        <div><div class="ow-label">Open when you feel unloved</div><div class="ow-hint">read this one slowly</div></div>
+      </div>
+    </div>
   </div>
-  <div id="ingredients-shelf">
-    <button class="ingredient-btn" onclick="addIngredient('🌹')" title="Rose"><span>🌹</span><span class="ing-label">rose</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('✨')" title="Stardust"><span>✨</span><span class="ing-label">stardust</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🍄')" title="Mushroom"><span>🍄</span><span class="ing-label">mushroom</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🌙')" title="Moonwater"><span>🌙</span><span class="ing-label">moonwater</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('💎')" title="Crystal"><span>💎</span><span class="ing-label">crystal</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🦋')" title="Butterfly"><span>🦋</span><span class="ing-label">butterfly</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🔥')" title="Dragon Flame"><span>🔥</span><span class="ing-label">dragonfire</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🍯')" title="Honey"><span>🍯</span><span class="ing-label">honey</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('💜')" title="Amethyst"><span>💜</span><span class="ing-label">amethyst</span></button>
-    <button class="ingredient-btn" onclick="addIngredient('🌊')" title="Tide"><span>🌊</span><span class="ing-label">tide</span></button>
+  <div id="ow-letter">
+    <div id="ow-paper">
+      <div id="ow-paper-icon"></div>
+      <div id="ow-paper-title"></div>
+      <div id="ow-paper-text"></div>
+      <button id="ow-close" onclick="closeEnvelope()">close</button>
+    </div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
 
-<!-- ═══════ ROOM DECORATOR ═══════ -->
-<div class="screen" id="s-room">
-  <canvas id="room-canvas"></canvas>
-  <div id="room-nadia">Nadia's Room ✦</div>
-  <div id="room-hint">select furniture · click to place · drag to move</div>
-  <div id="room-ui">
-    <button class="furniture-btn selected" onclick="selectFurniture('bed')" title="Bed">🛏️</button>
-    <button class="furniture-btn" onclick="selectFurniture('desk')" title="Desk">🖥️</button>
-    <button class="furniture-btn" onclick="selectFurniture('lamp')" title="Lamp">🪔</button>
-    <button class="furniture-btn" onclick="selectFurniture('plant')" title="Plant">🌿</button>
-    <button class="furniture-btn" onclick="selectFurniture('mirror')" title="Mirror">🪞</button>
-    <button class="furniture-btn" onclick="selectFurniture('sofa')" title="Sofa">🛋️</button>
-    <button class="furniture-btn" onclick="selectFurniture('rug')" title="Rug">🟣</button>
-    <button class="furniture-btn" onclick="selectFurniture('art')" title="Wall Art">🖼️</button>
-    <button class="furniture-btn" onclick="selectFurniture('candle')" title="Candles">🕯️</button>
-    <button class="furniture-btn" onclick="selectFurniture('books')" title="Bookshelf">📚</button>
-    <button class="furniture-btn" onclick="clearRoom()" title="Clear" style="border-color:rgba(255,80,80,0.3);color:rgba(255,120,100,0.6);">🗑️</button>
+<!-- ═══════ LETTERS ═══════ -->
+<div class="screen" id="s-letters">
+  <canvas id="letters-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(255,140,170,0.5);">things I never found the words for</span>
+    <h2 class="big rv" style="color:rgba(255,190,210,0.95);">Letters I<br><em style="color:#ff6090;">Never Sent.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(255,100,150,0.5),transparent);"></div>
+    <div id="letter-display" class="rv">
+      <span id="letter-envelope-anim" onclick="nextLetter()">💌</span>
+      <div id="letter-card">
+        <div id="letter-from"></div>
+        <div id="letter-body"></div>
+        <div id="letter-sign"></div>
+      </div>
+      <div id="letter-nav">
+        <button class="letter-btn" onclick="prevLetter()">← prev</button>
+        <div id="letter-count"></div>
+        <button class="letter-btn" onclick="nextLetter()">next →</button>
+      </div>
+    </div>
+  </div>
+  <button class="world-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ LATE NIGHT THOUGHTS ═══════ -->
+<div class="screen" id="s-thoughts">
+  <canvas id="thoughts-canvas"></canvas>
+  <div class="love-ui si">
+    <div id="thoughts-time" class="rv">3:00 AM</div>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(100,100,220,0.4),transparent);margin-top:3rem;"></div>
+    <div id="thoughts-bubble" class="rv">
+      <div id="thoughts-text"></div>
+      <div id="thoughts-attr"></div>
+      <button id="thoughts-next" onclick="nextThought()">another thought →</button>
+    </div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
