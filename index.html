@@ -534,25 +534,18 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
   .hc-icon{font-size:3rem;}
 }
 /* ── NEW HUB CARD COLORS ─────────────────────────────────────── */
-.hc-book{background:linear-gradient(145deg,#1a0828,#2a1045,#1a0828);border:1px solid rgba(180,100,255,0.2);}
-.hc-book .hc-title{color:rgba(200,160,255,0.95);}
-.hc-book .hc-desc{color:rgba(200,160,255,0.45);}
-.hc-mirror{background:linear-gradient(145deg,#0a1828,#1a2840,#0a1828);border:1px solid rgba(100,200,255,0.2);}
-.hc-mirror .hc-title{color:rgba(140,210,255,0.95);}
-.hc-mirror .hc-desc{color:rgba(140,210,255,0.45);}
-.hc-portrait{background:linear-gradient(145deg,#200820,#381038,#200820);border:1px solid rgba(255,100,180,0.2);}
-.hc-portrait .hc-title{color:rgba(255,150,210,0.95);}
-.hc-portrait .hc-desc{color:rgba(255,150,210,0.45);}
-.hc-openwhen{background:linear-gradient(145deg,#201008,#381a08,#201008);border:1px solid rgba(255,180,80,0.2);}
-.hc-openwhen .hc-title{color:rgba(255,200,120,0.95);}
-.hc-openwhen .hc-desc{color:rgba(255,200,120,0.45);}
-.hc-letters{background:linear-gradient(145deg,#180810,#2a1020,#180810);border:1px solid rgba(255,120,150,0.2);}
-.hc-letters .hc-title{color:rgba(255,160,180,0.95);}
-.hc-letters .hc-desc{color:rgba(255,160,180,0.45);}
-.hc-thoughts{background:linear-gradient(145deg,#080818,#101030,#080818);border:1px solid rgba(120,120,255,0.2);}
-.hc-thoughts .hc-title{color:rgba(160,160,255,0.95);}
-.hc-thoughts .hc-desc{color:rgba(160,160,255,0.45);}
-
+.hc-universe{background:linear-gradient(145deg,#040820,#081540,#040820);border:1px solid rgba(80,120,255,0.2);}
+.hc-universe .hc-title{color:rgba(140,180,255,0.95);}.hc-universe .hc-desc{color:rgba(140,180,255,0.45);}
+.hc-confess{background:linear-gradient(145deg,#180c08,#281808,#180c08);border:1px solid rgba(255,140,60,0.2);}
+.hc-confess .hc-title{color:rgba(255,180,100,0.95);}.hc-confess .hc-desc{color:rgba(255,180,100,0.45);}
+.hc-shedoesnt{background:linear-gradient(145deg,#180820,#281038,#180820);border:1px solid rgba(220,100,255,0.2);}
+.hc-shedoesnt .hc-title{color:rgba(230,160,255,0.95);}.hc-shedoesnt .hc-desc{color:rgba(230,160,255,0.45);}
+.hc-frequency{background:linear-gradient(145deg,#041818,#082828,#041818);border:1px solid rgba(60,220,200,0.2);}
+.hc-frequency .hc-title{color:rgba(100,240,220,0.95);}.hc-frequency .hc-desc{color:rgba(100,240,220,0.45);}
+.hc-forever{background:linear-gradient(145deg,#100818,#201230,#100818);border:1px solid rgba(200,140,255,0.2);}
+.hc-forever .hc-title{color:rgba(210,170,255,0.95);}.hc-forever .hc-desc{color:rgba(210,170,255,0.45);}
+.hc-planet{background:linear-gradient(145deg,#081020,#102040,#081020);border:1px solid rgba(100,160,255,0.2);}
+.hc-planet .hc-title{color:rgba(140,200,255,0.95);}.hc-planet .hc-desc{color:rgba(140,200,255,0.45);}
 /* ── SHARED WORLD ELEMENTS ───────────────────────────────────── */
 .love-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .love-ui{position:relative;z-index:5;text-align:center;}
@@ -704,6 +697,121 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
   color:rgba(160,160,255,0.5);transition:all 0.3s;margin-top:1.2rem;display:inline-block;}
 #thoughts-next:hover{background:rgba(80,80,200,0.15);color:rgba(180,180,255,0.8);}
 
+/* ══ SHARED ══ */
+.world-canvas{position:absolute;inset:0;width:100%;height:100%;}
+.world-label{position:fixed;top:3.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;pointer-events:none;
+  color:rgba(255,255,255,0.25);}
+
+/* ══ UNIVERSE ══ */
+#s-universe{background:#000;overflow:hidden;}
+#universe-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;}
+#universe-input-wrap{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);
+  z-index:200;display:flex;gap:0.6rem;align-items:center;}
+#universe-input{font-family:'Cormorant Garamond',serif;font-size:1.1rem;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(100,140,255,0.3);
+  color:rgba(200,220,255,0.9);padding:0.6rem 1.2rem;border-radius:50px;
+  outline:none;text-align:center;width:200px;letter-spacing:0.1em;}
+#universe-input::placeholder{color:rgba(150,170,255,0.3);font-style:italic;}
+#universe-go{font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.6rem 1.2rem;border-radius:50px;cursor:pointer;
+  background:rgba(80,120,255,0.15);border:1px solid rgba(100,150,255,0.35);
+  color:rgba(160,200,255,0.8);transition:all 0.3s;}
+#universe-go:hover{background:rgba(80,120,255,0.3);color:rgba(200,230,255,1);}
+#universe-msg{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.8rem);font-style:italic;
+  color:rgba(200,220,255,0.95);text-align:center;pointer-events:none;
+  text-shadow:0 0 40px rgba(100,150,255,0.7);transition:opacity 1.2s;opacity:0;
+  line-height:1.7;max-width:min(500px,80vw);}
+
+/* ══ CONFESSION ROOM ══ */
+#s-confess{background:radial-gradient(ellipse at center,#0e0602 0%,#040200 100%);overflow:hidden;}
+#confess-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#confess-ui{position:relative;z-index:5;text-align:center;}
+#confess-candle-wrap{position:relative;z-index:10;cursor:pointer;display:inline-block;margin:0.5rem auto;}
+#confess-current{position:fixed;top:50%;left:50%;transform:translate(-50%,-60%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.6rem);font-style:italic;
+  color:rgba(255,220,160,0.95);text-align:center;pointer-events:none;
+  text-shadow:0 0 30px rgba(255,160,60,0.5);transition:opacity 0.8s;opacity:0;
+  max-width:min(480px,80vw);line-height:1.8;}
+#confess-tap{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(200,140,60,0.4);pointer-events:none;}
+
+/* ══ SHE DOESNT KNOW ══ */
+#s-shedoesnt{background:linear-gradient(160deg,#0c0418 0%,#180830 50%,#0c0418 100%);overflow:hidden;}
+#shedoesnt-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#shedoesnt-ui{position:relative;z-index:5;text-align:center;}
+#shedoesnt-orb{width:min(180px,45vw);height:min(180px,45vw);border-radius:50%;
+  margin:1rem auto;cursor:pointer;position:relative;z-index:10;
+  background:radial-gradient(circle at 35% 30%,rgba(240,180,255,0.4),rgba(120,40,180,0.6),rgba(20,4,40,0.95));
+  border:1.5px solid rgba(200,120,255,0.4);
+  box-shadow:0 0 60px rgba(180,80,255,0.3),inset 0 0 40px rgba(140,40,220,0.3);
+  transition:all 0.4s;display:flex;align-items:center;justify-content:center;}
+#shedoesnt-orb:hover{transform:scale(1.04);box-shadow:0 0 100px rgba(200,100,255,0.5),inset 0 0 60px rgba(160,60,240,0.4);}
+#shedoesnt-text{font-family:'Cormorant Garamond',serif;font-size:clamp(0.95rem,2vw,1.3rem);
+  font-style:italic;color:rgba(220,180,255,0.95);line-height:1.9;
+  transition:opacity 0.6s;max-width:min(460px,85vw);text-align:center;}
+#shedoesnt-sub{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(180,120,255,0.4);margin-top:0.6rem;transition:opacity 0.6s;}
+#shedoesnt-count{font-size:0.55rem;letter-spacing:0.2em;color:rgba(160,100,255,0.3);margin-top:0.4rem;}
+
+/* ══ FREQUENCY ══ */
+#s-frequency{background:#000;overflow:hidden;}
+#freq-canvas{position:absolute;inset:0;width:100%;height:100%;}
+#freq-ui{position:relative;z-index:5;text-align:center;pointer-events:none;}
+#freq-label{position:fixed;top:3.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Jost',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(80,240,200,0.5);pointer-events:none;}
+#freq-reading{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.5rem);font-style:italic;
+  color:rgba(120,255,220,0.95);text-align:center;pointer-events:none;
+  text-shadow:0 0 40px rgba(60,220,180,0.6);max-width:min(440px,80vw);line-height:1.8;
+  transition:opacity 0.8s;opacity:0;}
+#freq-hz{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Jost',sans-serif;font-size:1.8rem;color:rgba(80,240,200,0.7);
+  letter-spacing:0.2em;pointer-events:none;text-shadow:0 0 20px rgba(60,220,180,0.5);}
+#freq-tuning{position:fixed;bottom:3rem;left:50%;transform:translateX(-50%);z-index:200;
+  width:min(300px,70vw);cursor:pointer;}
+input[type=range]#freq-slider{width:100%;-webkit-appearance:none;background:rgba(60,220,180,0.15);
+  height:3px;border-radius:2px;outline:none;}
+input[type=range]#freq-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;
+  border-radius:50%;background:rgba(80,240,200,0.9);box-shadow:0 0 12px rgba(60,220,180,0.8);}
+
+/* ══ FOREVER ══ */
+#s-forever{background:linear-gradient(180deg,#04020c 0%,#080418 50%,#04020c 100%);overflow:hidden;}
+#forever-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+#forever-ui{position:relative;z-index:5;text-align:center;}
+#forever-line{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.5rem);
+  font-style:italic;color:rgba(200,190,255,0.95);line-height:2;
+  text-shadow:0 0 30px rgba(140,100,255,0.4);max-width:min(520px,85vw);
+  text-align:center;transition:opacity 0.8s;min-height:60px;}
+#forever-cursor{display:inline-block;width:2px;height:1.2em;background:rgba(180,150,255,0.7);
+  margin-left:2px;animation:blink 1s step-end infinite;vertical-align:middle;}
+@keyframes blink{50%{opacity:0;}}
+#forever-progress{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(160,130,255,0.3);margin-top:1.2rem;}
+#forever-next{font-family:'Jost',sans-serif;font-size:0.58rem;letter-spacing:0.2em;
+  text-transform:uppercase;padding:0.5rem 1.4rem;border-radius:50px;cursor:pointer;
+  border:1px solid rgba(160,120,255,0.25);background:rgba(120,80,220,0.08);
+  color:rgba(180,150,255,0.55);transition:all 0.3s;margin-top:1rem;display:inline-block;}
+#forever-next:hover{background:rgba(120,80,220,0.18);color:rgba(200,180,255,0.9);}
+
+/* ══ HER PLANET ══ */
+#s-planet{background:#000;overflow:hidden;}
+#planet-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;}
+#planet-canvas:active{cursor:grabbing;}
+#planet-info{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-family:'Cormorant Garamond',serif;text-align:center;pointer-events:none;
+  transition:opacity 0.8s;max-width:min(400px,80vw);}
+#planet-name{font-size:clamp(1.2rem,3vw,2rem);color:rgba(180,220,255,0.95);
+  text-shadow:0 0 40px rgba(100,180,255,0.6);letter-spacing:0.1em;}
+#planet-desc{font-size:0.9rem;font-style:italic;color:rgba(140,190,255,0.7);
+  margin-top:0.4rem;line-height:1.6;}
+#planet-trait{position:fixed;top:3.5rem;left:50%;transform:translateX(-50%);z-index:200;
+  font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(140,190,255,0.35);pointer-events:none;}
+
 </style>
 </head>
 <body>
@@ -714,48 +822,48 @@ body{font-family:'Jost',sans-serif;background:#04020c;color:var(--text);cursor:n
 <!-- ═══════ HUB ═══════ -->
 <div class="screen on" id="s-hub">
   <div class="si" style="justify-content:flex-start;padding-top:2.5rem;">
-    <span class="eyebrow rv">made with love, for you</span>
+    <span class="eyebrow rv">built from everything I feel</span>
     <h1 class="big rv" style="font-size:clamp(2.6rem,8vw,4.2rem);color:rgba(220,210,255,0.95);">Hello,<br><em style="color:#b080ff;text-shadow:0 0 40px rgba(160,80,255,0.6);">Nadia.</em></h1>
-    <p class="sub rv" style="max-width:360px;">Six things I want you to feel.</p>
+    <p class="sub rv" style="max-width:360px;">Six worlds that belong only to you.</p>
     <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(180,100,255,0.5),transparent);"></div>
     <div class="hub-grid rv">
-      <div class="hub-card hc-book" onclick="go('s-book')">
-        <span class="hc-icon">📖</span>
-        <div class="hc-title">The Book of You</div>
-        <div class="hc-desc">Your story, written by me</div>
+      <div class="hub-card hc-universe" onclick="go('s-universe')">
+        <span class="hc-icon">🌌</span>
+        <div class="hc-title">The Universe Wrote This</div>
+        <div class="hc-desc">stars rearranged for you</div>
       </div>
-      <div class="hub-card hc-mirror" onclick="go('s-mirror')">
-        <span class="hc-icon">🪞</span>
-        <div class="hc-title">What I See</div>
-        <div class="hc-desc">Look in the mirror</div>
+      <div class="hub-card hc-confess" onclick="go('s-confess')">
+        <span class="hc-icon">🕯️</span>
+        <div class="hc-title">Confession Room</div>
+        <div class="hc-desc">things rising like smoke</div>
       </div>
-      <div class="hub-card hc-portrait" onclick="go('s-portrait')">
-        <span class="hc-icon">🎨</span>
-        <div class="hc-title">Paint Her Portrait</div>
-        <div class="hc-desc">Watch yourself appear</div>
+      <div class="hub-card hc-shedoesnt" onclick="go('s-shedoesnt')">
+        <span class="hc-icon">🌸</span>
+        <div class="hc-title">She Doesn't Know</div>
+        <div class="hc-desc">things she cannot see in herself</div>
       </div>
-      <div class="hub-card hc-openwhen" onclick="go('s-openwhen')">
-        <span class="hc-icon">✉️</span>
-        <div class="hc-title">Open When...</div>
-        <div class="hc-desc">Letters sealed just for you</div>
+      <div class="hub-card hc-frequency" onclick="go('s-frequency')">
+        <span class="hc-icon">📡</span>
+        <div class="hc-title">Frequency</div>
+        <div class="hc-desc">tune to her wavelength</div>
       </div>
-      <div class="hub-card hc-letters" onclick="go('s-letters')">
-        <span class="hc-icon">💌</span>
-        <div class="hc-title">Letters I Never Sent</div>
-        <div class="hc-desc">Things I kept to myself</div>
+      <div class="hub-card hc-forever" onclick="go('s-forever')">
+        <span class="hc-icon">💫</span>
+        <div class="hc-title">What Forever Looks Like</div>
+        <div class="hc-desc">a vision, word by word</div>
       </div>
-      <div class="hub-card hc-thoughts" onclick="go('s-thoughts')">
-        <span class="hc-icon">🌙</span>
-        <div class="hc-title">Late Night Thoughts</div>
-        <div class="hc-desc">3am and it's all about you</div>
+      <div class="hub-card hc-planet" onclick="go('s-planet')">
+        <span class="hc-icon">🪐</span>
+        <div class="hc-title">Her Planet</div>
+        <div class="hc-desc">built entirely from her</div>
       </div>
     </div>
     <p class="rv" style="font-family:'Cormorant Garamond',serif;font-style:italic;
       font-size:0.85rem;color:var(--textvsoft);margin-top:0.5rem;">always yours ♥</p>
   </div>
 </div>
-
 <script>
+
 
 /* ═══ ROUNDRECT POLYFILL ═══ */
 if(!CanvasRenderingContext2D.prototype.roundRect){
@@ -825,14 +933,14 @@ function go(id){
   // Show paint UI when entering paint
   if(id==='s-paint')showPaintUI(true);
   // Init screens (one-time for most, re-runnable for stateful ones)
-  if(!screenInited[id]||['s-book','s-mirror','s-portrait','s-openwhen','s-letters','s-thoughts'].includes(id)){
+  if(!screenInited[id]||['s-universe','s-confess','s-shedoesnt','s-frequency','s-forever','s-planet'].includes(id)){
     screenInited[id]=true;
-    if(id==='s-book')initBook();
-    if(id==='s-mirror')initMirror();
-    if(id==='s-portrait')initPortrait();
-    if(id==='s-openwhen')initOpenWhen();
-    if(id==='s-letters')initLetters();
-    if(id==='s-thoughts')initThoughts();
+    if(id==='s-universe')initUniverse2();
+    if(id==='s-confess')initConfess();
+    if(id==='s-shedoesnt')initSheDoesnt();
+    if(id==='s-frequency')initFrequency();
+    if(id==='s-forever')initForever();
+    if(id==='s-planet')initPlanet();
   }
 
   // Show/hide ferris fixed elements
@@ -2125,601 +2233,960 @@ function playAbsorb(){
 /* ══════════════════════════════════════════════════════
    AUDIO (lightweight Web Audio)
 ══════════════════════════════════════════════════════ */
-let _ac=null;
-function _ga(){if(!_ac)_ac=new(window.AudioContext||window.webkitAudioContext)();return _ac;}
-function lTone(f,type='sine',dur=0.4,vol=0.1,delay=0){
-  try{const ac=_ga(),o=ac.createOscillator(),g=ac.createGain();
+
+/* ══════════════════════════════════════════════
+   AUDIO ENGINE
+══════════════════════════════════════════════ */
+let _ac2=null;
+function ga2(){if(!_ac2)_ac2=new(window.AudioContext||window.webkitAudioContext)();return _ac2;}
+function t2(f,type,dur,vol,delay){
+  delay=delay||0;type=type||'sine';dur=dur||0.4;vol=vol||0.1;
+  try{const ac=ga2(),o=ac.createOscillator(),g=ac.createGain();
   o.connect(g);g.connect(ac.destination);o.type=type;
   o.frequency.setValueAtTime(f,ac.currentTime+delay);
   g.gain.setValueAtTime(0,ac.currentTime+delay);
-  g.gain.linearRampToValueAtTime(vol,ac.currentTime+delay+0.02);
+  g.gain.linearRampToValueAtTime(vol,ac.currentTime+delay+0.015);
   g.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+delay+dur);
   o.start(ac.currentTime+delay);o.stop(ac.currentTime+delay+dur+0.05);}catch(e){}
 }
-function lChime(freqs){freqs.forEach((f,i)=>lTone(f,'sine',0.6,0.08,i*0.08));}
-function lPageTurn(){lTone(440,'sine',0.15,0.06);lTone(554,'sine',0.12,0.04,0.1);}
-function lReveal(){lChime([523,659,784,1047]);}
-function lWhisper(){lTone(220,'sine',0.8,0.06);lTone(330,'sine',0.6,0.04,0.2);}
+function chime2(freqs){freqs.forEach(function(f,i){t2(f,'sine',0.8,0.07,i*0.09);});}
+function whoosh2(){
+  try{const ac=ga2(),buf=ac.createBuffer(1,Math.floor(ac.sampleRate*0.5),ac.sampleRate);
+  const d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.5);
+  const src=ac.createBufferSource();src.buffer=buf;
+  const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=600;f.Q.value=0.8;
+  const g=ac.createGain();g.gain.value=0.12;
+  src.connect(f);f.connect(g);g.connect(ac.destination);src.start();}catch(e){}
+}
+function shimmer(){t2(1200,'sine',0.3,0.06);t2(1500,'sine',0.25,0.04,0.08);t2(1800,'sine',0.2,0.03,0.16);t2(2200,'sine',0.15,0.02,0.24);}
+function deepHum(){t2(80,'sine',2.0,0.08);t2(120,'sine',1.5,0.05,0.1);}
+function reveal2(){chime2([523,659,784,1047,1318]);}
 
-/* ══════════════════════════════════════════════════════
-   SHARED PARTICLE BG HELPER
-══════════════════════════════════════════════════════ */
-function makeParticleBg(canvasId,hue1,hue2,particleCount=60){
-  const canvas=document.getElementById(canvasId);
-  if(!canvas)return null;
-  const ctx=canvas.getContext('2d');
-  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
-  const particles=[];
-  for(let i=0;i<particleCount;i++){
-    particles.push({
-      x:Math.random()*canvas.width,y:Math.random()*canvas.height,
-      vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,
-      r:0.5+Math.random()*1.5,hue:hue1+Math.random()*(hue2-hue1),
-      alpha:0.1+Math.random()*0.4,flicker:Math.random()*Math.PI*2,
-      fspd:0.01+Math.random()*0.03
+/* ══════════════════════════════════════════════
+   1. UNIVERSE WROTE THIS
+══════════════════════════════════════════════ */
+let univCanvas2,univCtx2,univT2=0;
+let univStars2=[],univMsg='',univWords=[],univWordTimer=0,univWordIdx=0;
+let univTriggered=false,univTypedName='';
+const UNIVERSE_MSGS=[
+  'She did not appear by accident.',
+  'The universe spent {name} years arranging this.',
+  'Every star in this field has been watching her.',
+  'She is not a coincidence. She is a conclusion.',
+  'He has loved her longer than he has known her.',
+  '{name}: the reason some stars shine harder.',
+];
+
+function initUniverse2(){
+  univCanvas2=document.getElementById('universe-canvas');
+  univCtx2=univCanvas2.getContext('2d');
+  univCanvas2.width=window.innerWidth;univCanvas2.height=window.innerHeight;
+  univT2=0;univTriggered=false;univStars2=[];univWords=[];
+  document.getElementById('universe-msg').style.opacity='0';
+  document.getElementById('universe-msg').textContent='';
+
+  // Seed deep star field — 3 layers of depth
+  for(let i=0;i<1200;i++){
+    univStars2.push({
+      x:Math.random()*univCanvas2.width,y:Math.random()*univCanvas2.height,
+      z:Math.random(),  // depth 0=far, 1=near
+      size:0.3+Math.random()*1.6,
+      hue:180+Math.random()*80,
+      brightness:0.2+Math.random()*0.7,
+      twinkle:Math.random()*Math.PI*2,
+      tspd:0.008+Math.random()*0.025,
+      vx:(Math.random()-0.5)*0.05,vy:(Math.random()-0.5)*0.05,
+      target:null  // for name-spell animation
     });
   }
-  function draw(){
-    ctx.fillStyle='rgba(0,0,0,0.04)';ctx.fillRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;p.flicker+=p.fspd;
-      if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
-      if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
-      const a=p.alpha*(0.6+Math.sin(p.flicker)*0.4);
-      ctx.save();ctx.globalAlpha=a;
-      ctx.fillStyle=`hsl(${p.hue},70%,70%)`;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
-      ctx.restore();
+  drawUniverse2();
+}
+
+function onUniverseType(val){
+  univTypedName=val;
+  // As she types, stars gently orbit toward center
+  if(val.length>0 && !univTriggered){
+    univStars2.forEach(function(s){
+      if(Math.random()<0.01){
+        s.vx+=(univCanvas2.width/2-s.x)*0.00005;
+        s.vy+=(univCanvas2.height/2-s.y)*0.00005;
+      }
     });
-    if(document.querySelector(`#${canvasId}`)?.closest('.screen.on'))requestAnimationFrame(draw);
-  }
-  draw();
-  return ctx;
-}
-
-/* ══════════════════════════════════════════════════════
-   📖 THE BOOK OF YOU
-══════════════════════════════════════════════════════ */
-const BOOK_CHAPTERS = [
-  {chapter:'Chapter One · The Beginning',
-   text:'There is a girl. She does not always know how remarkable she is. She carries her kindness quietly, like something she is not sure the world deserves to see. But I see it. I have always seen it.'},
-  {chapter:'Chapter Two · What She Does Not Know',
-   text:'She does not know that when she laughs — really laughs — something in the air changes. People near her feel it without knowing why. She makes rooms warmer by walking into them.'},
-  {chapter:'Chapter Three · The Small Things',
-   text:'The way she thinks before she speaks. The way she notices the things others miss. The way she cares, sometimes too much, and would never admit it. These are not small things. These are everything.'},
-  {chapter:'Chapter Four · What Scares Him',
-   text:'He is not scared of much. But he is scared of a world where she does not know how loved she is. So he wrote this. Not because he is good with words, but because she deserves to have it in writing.'},
-  {chapter:'Chapter Five · The Truth',
-   text:'The truth is simple: he thinks about her more than he says. He chooses her more than he shows. And he loves her in ways that are difficult to explain — but impossible to stop.'},
-  {chapter:'Chapter Six · What Comes Next',
-   text:'She will close this book and carry on with her day. But somewhere, someone will be thinking of her. Grateful for her. Choosing her. That does not end when the page does.'},
-  {chapter:'The Last Page',
-   text:'This is not the end of the story. This is just the part where she knows: she is deeply, completely, irreversibly loved. The rest is still being written — and she is the best part of every chapter.'},
-];
-let bookPage=0,bookOpen=false;
-function initBook(){
-  makeParticleBg('book-canvas',260,300,50);
-  bookPage=0;bookOpen=false;
-  document.getElementById('book-pages').style.display='none';
-  document.getElementById('book-cover').style.display='flex';
-}
-function openBook(){
-  bookOpen=true;
-  const cover=document.getElementById('book-cover');
-  cover.style.transform='rotateY(-90deg) scale(0.8)';
-  cover.style.opacity='0';
-  setTimeout(()=>{
-    cover.style.display='none';
-    document.getElementById('book-pages').style.display='block';
-    showBookPage(0);
-    lReveal();
-  },500);
-}
-function showBookPage(idx){
-  bookPage=Math.max(0,Math.min(BOOK_CHAPTERS.length-1,idx));
-  const ch=BOOK_CHAPTERS[bookPage];
-  const textEl=document.getElementById('book-text');
-  const chapEl=document.getElementById('book-chapter');
-  textEl.style.opacity='0';chapEl.style.opacity='0';
-  setTimeout(()=>{
-    chapEl.textContent=ch.chapter;
-    textEl.textContent=ch.text;
-    textEl.style.opacity='1';chapEl.style.opacity='1';
-    document.getElementById('book-progress').textContent=`${bookPage+1} of ${BOOK_CHAPTERS.length}`;
-    lPageTurn();
-  },300);
-}
-function nextPage(){showBookPage(bookPage+1);}
-function prevPage(){showBookPage(bookPage-1);}
-
-/* ══════════════════════════════════════════════════════
-   🪞 WHAT I SEE IN YOU (MIRROR)
-══════════════════════════════════════════════════════ */
-const MIRROR_LINES = [
-  {text:'Someone who makes the world feel warmer just by being in it.',sub:'— and she does not even try'},
-  {text:'The most effortlessly beautiful person I have ever seen.',sub:'— and I have been paying attention'},
-  {text:'A mind that works in ways that genuinely astonish me.',sub:'— every single time'},
-  {text:'Someone who is kinder than she gives herself credit for.',sub:'— I notice it, always'},
-  {text:'A laugh that I would do ridiculous things to hear again.',sub:'— worth every embarrassing attempt'},
-  {text:'Eyes that I cannot quite describe, but cannot stop thinking about.',sub:'— trust me, I have tried'},
-  {text:'Strength that she carries so quietly, you might mistake it for softness.',sub:'— it is both, actually'},
-  {text:'The exact person I did not know I was looking for.',sub:'— until I found her'},
-  {text:'Someone who deserves every soft and beautiful thing.',sub:'— without condition, without limit'},
-  {text:'The most interesting person in any room she walks into.',sub:'— she will deny this'},
-  {text:'A heart that loves in a way that is rare.',sub:'— and I am the lucky one'},
-  {text:'You. Just you. That is what I see.',sub:'— and it is everything'},
-];
-let mirrorIdx=0,mirrorCanvas,mirrorCtx,mirrorT=0;
-function initMirror(){
-  mirrorCanvas=document.getElementById('mirror-canvas');
-  mirrorCtx=mirrorCanvas.getContext('2d');
-  mirrorCanvas.width=window.innerWidth;mirrorCanvas.height=window.innerHeight;
-  mirrorT=0;mirrorIdx=0;
-  showMirrorLine(0);
-  drawMirrorBg();
-}
-function nextMirrorLine(){
-  mirrorIdx=(mirrorIdx+1)%MIRROR_LINES.length;
-  showMirrorLine(mirrorIdx);
-  lWhisper();
-  // Burst particles from mirror
-  for(let i=0;i<20;i++){
-    const a=Math.random()*Math.PI*2,spd=2+Math.random()*6;
-    // Simple confetti-style spark
-    const div=document.createElement('div');
-    div.style.cssText=`position:fixed;left:50%;top:42%;width:4px;height:4px;border-radius:50%;background:hsl(${200+Math.random()*80},80%,75%);pointer-events:none;z-index:999;transform:translate(-50%,-50%);transition:all ${0.6+Math.random()*0.8}s ease-out;`;
-    document.body.appendChild(div);
-    setTimeout(()=>{div.style.transform=`translate(calc(-50% + ${Math.cos(a)*80}px),calc(-50% + ${Math.sin(a)*80}px))`;div.style.opacity='0';},10);
-    setTimeout(()=>div.remove(),1500);
   }
 }
-function showMirrorLine(idx){
-  const line=MIRROR_LINES[idx];
-  const textEl=document.getElementById('mirror-text');
-  const subEl=document.getElementById('mirror-sub');
+
+function triggerUniverse(){
+  const name=univTypedName.trim()||'Nadia';
+  univTriggered=true;
+  document.getElementById('universe-input-wrap').style.opacity='0.3';
+  document.getElementById('universe-input-wrap').style.pointerEvents='none';
+  whoosh2();
+
+  // Animate stars converging to spell name
+  const W=univCanvas2.width,H=univCanvas2.height;
+  const letters=name.toUpperCase().split('');
+  const letterW=Math.min(60,W*0.06);
+  const totalW=letters.length*letterW;
+  const startX=W/2-totalW/2;
+
+  // Create letter-position targets
+  const targets=[];
+  letters.forEach(function(ch,li){
+    const lx=startX+li*letterW+letterW/2;
+    const ly=H/2;
+    // Each letter gets ~8 stars
+    for(let p=0;p<8;p++){
+      const angle=(p/8)*Math.PI*2;
+      const r=letterW*0.3;
+      targets.push({x:lx+Math.cos(angle)*r,y:ly+Math.sin(angle)*r,ch:ch});
+    }
+  });
+
+  // Assign stars to targets
+  univStars2.forEach(function(s,i){
+    if(i<targets.length){
+      s.target={x:targets[i].x,y:targets[i].y};
+      s.brightness=0.9;s.size=2;
+    }
+  });
+
+  // After converge, show message
+  setTimeout(function(){
+    const rawMsg=UNIVERSE_MSGS[Math.floor(Math.random()*UNIVERSE_MSGS.length)];
+    const msg=rawMsg.replace(/\{name\}/g,name);
+    const el=document.getElementById('universe-msg');
+    el.textContent='"'+msg+'"';
+    el.style.opacity='1';
+    reveal2();
+    setTimeout(function(){
+      // Release stars
+      univStars2.forEach(function(s){s.target=null;s.brightness=0.2+Math.random()*0.6;s.size=0.5+Math.random()*1.5;});
+      setTimeout(function(){el.style.opacity='0';
+        setTimeout(function(){
+          univTriggered=false;
+          document.getElementById('universe-input-wrap').style.opacity='1';
+          document.getElementById('universe-input-wrap').style.pointerEvents='all';
+          document.getElementById('universe-input').value='';
+          univTypedName='';
+        },1200);
+      },5000);
+    },500);
+  },2200);
+}
+
+function drawUniverse2(){
+  if(!univCtx2)return;
+  univT2++;
+  const W=univCanvas2.width,H=univCanvas2.height;
+
+  // Deep space fade
+  univCtx2.fillStyle='rgba(0,0,4,0.18)';
+  univCtx2.fillRect(0,0,W,H);
+
+  // Nebula clouds — 3 slow drifting ones
+  [[W*0.25,H*0.3,250,220,0.05],[W*0.7,H*0.6,300,200,0.04],[W*0.5,H*0.15,200,260,0.035]].forEach(function(n,i){
+    const nx=n[0]+Math.sin(univT2*0.003+i)*40,ny=n[1]+Math.cos(univT2*0.002+i)*25;
+    const pulse=0.02+Math.sin(univT2*0.007+i)*0.01;
+    const ng=univCtx2.createRadialGradient(nx,ny,0,nx,ny,n[2]);
+    ng.addColorStop(0,'hsla('+n[3]+',70%,45%,'+(n[4]+pulse)+')');
+    ng.addColorStop(0.5,'hsla('+n[3]+',50%,30%,'+(n[4]*0.4)+')');
+    ng.addColorStop(1,'transparent');
+    univCtx2.fillStyle=ng;univCtx2.fillRect(0,0,W,H);
+  });
+
+  // Stars
+  univStars2.forEach(function(s){
+    s.twinkle+=s.tspd;
+    if(s.target){
+      s.x+=(s.target.x-s.x)*0.04;s.y+=(s.target.y-s.y)*0.04;
+    } else {
+      s.x+=s.vx;s.y+=s.vy;
+      if(s.x<0)s.x=W;if(s.x>W)s.x=0;
+      if(s.y<0)s.y=H;if(s.y>H)s.y=0;
+    }
+    const a=s.brightness*(0.6+Math.sin(s.twinkle)*0.4);
+    const r=s.size*(0.8+s.z*0.4);
+    univCtx2.save();
+    univCtx2.globalAlpha=Math.min(1,a);
+    // Bigger stars get a cross sparkle
+    if(r>1.4){
+      univCtx2.strokeStyle='hsl('+s.hue+',80%,90%)';
+      univCtx2.lineWidth=0.4;univCtx2.globalAlpha=a*0.3;
+      univCtx2.beginPath();univCtx2.moveTo(s.x-r*2.5,s.y);univCtx2.lineTo(s.x+r*2.5,s.y);univCtx2.stroke();
+      univCtx2.beginPath();univCtx2.moveTo(s.x,s.y-r*2.5);univCtx2.lineTo(s.x,s.y+r*2.5);univCtx2.stroke();
+      univCtx2.globalAlpha=Math.min(1,a);
+    }
+    univCtx2.fillStyle='hsl('+s.hue+',75%,90%)';
+    univCtx2.beginPath();univCtx2.arc(s.x,s.y,Math.max(0.2,r),0,Math.PI*2);univCtx2.fill();
+    univCtx2.restore();
+  });
+
+  if(document.querySelector('#s-universe.on'))requestAnimationFrame(drawUniverse2);
+}
+
+/* ══════════════════════════════════════════════
+   3. CONFESSION ROOM
+══════════════════════════════════════════════ */
+const CONFESSIONS=[
+  'I think about the way she listens — like what you are saying actually matters. I have never felt more heard.',
+  'She makes ordinary moments feel like they are worth remembering.',
+  'I am afraid of how much I need her to be okay.',
+  'There are things I only say in my head because I cannot find the voice for them yet. They are all about her.',
+  'I love her in the specific and inconvenient way — the kind that changes how you see everything after.',
+  'She does not know that she is the reason I try harder.',
+  'I would choose the hard version of a life with her over the easy version of a life without.',
+  'Sometimes I watch her exist and think: I am the luckiest person who has ever lived.',
+  'The truth I keep almost saying: I am not the same since her. I do not want to be.',
+  'I carry her with me into every room I enter. She does not know this.',
+  'If I could give her one thing, it would be the ability to feel exactly how loved she is — just for one moment.',
+  'She is the thought I return to when the world stops making sense.',
+];
+let confessCanvas,confessCtx,confessT=0,confessSmokes=[],confessIdx=0;
+let confessActive=false;
+
+function initConfess(){
+  confessCanvas=document.getElementById('confess-canvas');
+  confessCtx=confessCanvas.getContext('2d');
+  confessCanvas.width=window.innerWidth;confessCanvas.height=window.innerHeight;
+  confessT=0;confessSmokes=[];confessIdx=0;confessActive=false;
+  document.getElementById('confess-current').style.opacity='0';
+  drawConfess();
+}
+
+function lightNextCandle(){
+  if(confessActive)return;
+  confessActive=true;
+  const confession=CONFESSIONS[confessIdx%CONFESSIONS.length];
+  confessIdx++;
+  document.getElementById('confess-tap').style.opacity='0';
+
+  // Create rising smoke particles
+  const W=confessCanvas.width,H=confessCanvas.height;
+  const cx=W/2,cy=H*0.62;
+  for(let i=0;i<40;i++){
+    confessSmokes.push({
+      x:cx+(Math.random()-0.5)*12,y:cy,
+      vx:(Math.random()-0.5)*0.8,vy:-(0.8+Math.random()*1.4),
+      size:4+Math.random()*10,life:1,decay:0.004+Math.random()*0.003,
+      hue:25+Math.random()*20,delay:i*40
+    });
+  }
+
+  // Show confession after smoke rises
+  t2(300,'sine',0.4,0.06);
+  setTimeout(function(){
+    const el=document.getElementById('confess-current');
+    el.textContent='"'+confession+'"';
+    el.style.opacity='1';
+    shimmer();
+    setTimeout(function(){
+      el.style.opacity='0';
+      setTimeout(function(){
+        confessActive=false;
+        document.getElementById('confess-tap').style.opacity='1';
+      },1000);
+    },6000);
+  },1800);
+}
+
+function drawConfess(){
+  if(!confessCtx)return;
+  confessT++;
+  const W=confessCanvas.width,H=confessCanvas.height;
+
+  // Deep dark warm bg
+  confessCtx.fillStyle='rgba(4,1,0,0.15)';
+  confessCtx.fillRect(0,0,W,H);
+
+  // Warm floor glow from candle
+  const flicker=Math.sin(confessT*0.12)*0.15+Math.sin(confessT*0.07)*0.1;
+  const candleGlow=confessCtx.createRadialGradient(W/2,H*0.68,0,W/2,H*0.68,260);
+  candleGlow.addColorStop(0,'rgba(255,160,40,'+(0.12+flicker)+')');
+  candleGlow.addColorStop(0.4,'rgba(200,100,20,'+(0.06+flicker*0.5)+')');
+  candleGlow.addColorStop(1,'transparent');
+  confessCtx.fillStyle=candleGlow;confessCtx.fillRect(0,0,W,H);
+
+  // Smoke particles
+  confessSmokes.forEach(function(s,i){
+    if(confessT*16<s.delay)return;
+    s.x+=s.vx;s.y+=s.vy;s.vy*=0.99;s.vx*=0.98;s.size*=1.01;s.life-=s.decay;
+    if(s.life<=0)return;
+    confessCtx.save();confessCtx.globalAlpha=s.life*0.18;
+    confessCtx.fillStyle='rgba(240,200,140,1)';
+    confessCtx.beginPath();confessCtx.arc(s.x,s.y,s.size,0,Math.PI*2);confessCtx.fill();
+    confessCtx.restore();
+  });
+  confessSmokes=confessSmokes.filter(function(s){return s.life>0;});
+
+  // Animate candle flame SVG
+  const flame=document.getElementById('conf-flame');
+  if(flame){
+    const fy=50+Math.sin(confessT*0.18)*4,rx=7+Math.sin(confessT*0.22)*1.5;
+    flame.setAttribute('cy',fy.toString());flame.setAttribute('rx',rx.toString());
+  }
+
+  if(document.querySelector('#s-confess.on'))requestAnimationFrame(drawConfess);
+}
+
+/* ══════════════════════════════════════════════
+   7. SHE DOESNT KNOW
+══════════════════════════════════════════════ */
+const SHE_DOESNT=[
+  {text:'She does not know that her laugh is the thing people remember most about a room she was in.',sub:'— but they do, always'},
+  {text:'She does not know how many times someone has thought: I want to be more like her.',sub:'— it is more than she imagines'},
+  {text:'She does not know that the way she cares — quietly, without asking for credit — is extraordinary.',sub:'— in a world that mostly does not'},
+  {text:'She does not know that she was exactly what was needed, at exactly the right time.',sub:'— some things are not accidents'},
+  {text:'She does not know how visible her strength is, even on the days she cannot feel it.',sub:'— I see it every time'},
+  {text:'She does not know that she makes people feel less alone just by being honest about being human.',sub:'— that is a rare gift'},
+  {text:'She does not know that the person who loves her thinks about her in the middle of completely unrelated things.',sub:'— constantly, and without warning'},
+  {text:'She does not know that she is the answer to a question someone spent years not knowing how to ask.',sub:'— but she is'},
+  {text:'She does not know that her kindness is not weakness. It is the bravest thing about her.',sub:'— braver than she gives it credit for'},
+  {text:'She does not know how much better things are because she exists in them.',sub:'— everything, actually. everything.'},
+];
+let shedoesntCanvas,shedoesntCtx,shedoesntT=0,shedoesntIdx=0,shedoesntParticles=[];
+
+function initSheDoesnt(){
+  shedoesntCanvas=document.getElementById('shedoesnt-canvas');
+  shedoesntCtx=shedoesntCanvas.getContext('2d');
+  shedoesntCanvas.width=window.innerWidth;shedoesntCanvas.height=window.innerHeight;
+  shedoesntT=0;shedoesntIdx=0;shedoesntParticles=[];
+  showSheDoesnt(0);
+  drawSheDoesntBg();
+}
+
+function nextSheDoesnt(){
+  shedoesntIdx=(shedoesntIdx+1)%SHE_DOESNT.length;
+  showSheDoesnt(shedoesntIdx);
+  // Burst from orb
+  const W=shedoesntCanvas.width,H=shedoesntCanvas.height;
+  for(let i=0;i<30;i++){
+    const a=Math.random()*Math.PI*2,spd=2+Math.random()*8;
+    shedoesntParticles.push({
+      x:W/2,y:H*0.52,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+      life:1,decay:0.02+Math.random()*0.015,
+      hue:260+Math.random()*80,r:2+Math.random()*4
+    });
+  }
+  shimmer();
+}
+
+function showSheDoesnt(idx){
+  const item=SHE_DOESNT[idx];
+  const textEl=document.getElementById('shedoesnt-text');
+  const subEl=document.getElementById('shedoesnt-sub');
   textEl.style.opacity='0';subEl.style.opacity='0';
-  setTimeout(()=>{
-    textEl.textContent='"'+line.text+'"';
-    subEl.textContent=line.sub;
+  setTimeout(function(){
+    textEl.textContent=item.text;subEl.textContent=item.sub;
+    document.getElementById('shedoesnt-count').textContent=(idx+1)+' of '+SHE_DOESNT.length;
     textEl.style.opacity='1';subEl.style.opacity='1';
-  },400);
-}
-function drawMirrorBg(){
-  if(!mirrorCtx)return;
-  mirrorT++;
-  const W=mirrorCanvas.width,H=mirrorCanvas.height;
-  mirrorCtx.fillStyle='rgba(4,2,12,0.1)';mirrorCtx.fillRect(0,0,W,H);
-  // Soft floating light orbs
-  for(let i=0;i<4;i++){
-    const x=W*0.2+W*0.6*(i/3)+Math.sin(mirrorT*0.008+i*1.5)*60;
-    const y=H*0.15+Math.sin(mirrorT*0.006+i*0.9)*H*0.12;
-    const a=0.04+Math.sin(mirrorT*0.015+i)*0.025;
-    mirrorCtx.save();mirrorCtx.globalAlpha=a;
-    const g=mirrorCtx.createRadialGradient(x,y,0,x,y,80);
-    g.addColorStop(0,`hsl(${200+i*25},70%,65%)`);g.addColorStop(1,'transparent');
-    mirrorCtx.fillStyle=g;mirrorCtx.fillRect(x-80,y-80,160,160);
-    mirrorCtx.restore();
-  }
-  if(document.querySelector('#s-mirror.on'))requestAnimationFrame(drawMirrorBg);
-}
-
-/* ══════════════════════════════════════════════════════
-   🎨 PAINT HER PORTRAIT
-══════════════════════════════════════════════════════ */
-let portraitCanvas,portraitCtx,portraitT=0,portraitComplete=false;
-let portraitMouse={x:-999,y:-999};
-let portraitRevealPct=0;
-const PORTRAIT_CAPTIONS=[
-  'She is coming into focus...',
-  'There she is...',
-  'I see her...',
-  'She is beautiful...',
-  'She always was...',
-];
-
-function initPortrait(){
-  portraitCanvas=document.getElementById('portrait-canvas');
-  portraitCtx=portraitCanvas.getContext('2d');
-  portraitCanvas.width=window.innerWidth;portraitCanvas.height=window.innerHeight;
-  portraitT=0;portraitComplete=false;portraitRevealPct=0;
-  document.getElementById('portrait-complete').style.opacity='0';
-  document.getElementById('portrait-caption').textContent='move your mouse to reveal her';
-  drawPortrait();
-  portraitCanvas.addEventListener('mousemove',onPortraitMove);
-  portraitCanvas.addEventListener('touchmove',e=>{
-    onPortraitMove({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});
-    e.preventDefault();
-  },{passive:false});
-  portraitCanvas.addEventListener('touchstart',e=>{
-    onPortraitMove({clientX:e.touches[0].clientX,clientY:e.touches[0].clientY});
-  },{passive:true});
-}
-function onPortraitMove(e){
-  portraitMouse.x=e.clientX;portraitMouse.y=e.clientY;
-}
-function drawPortrait(){
-  if(!portraitCtx)return;
-  portraitT++;
-  const W=portraitCanvas.width,H=portraitCanvas.height;
-  const CX=W/2,CY=H*0.44;
-
-  // Dark background with subtle gradient
-  const bg=portraitCtx.createRadialGradient(CX,CY,0,CX,CY,Math.max(W,H)*0.7);
-  bg.addColorStop(0,'rgba(20,8,28,1)');bg.addColorStop(1,'rgba(8,2,12,1)');
-  portraitCtx.fillStyle=bg;portraitCtx.fillRect(0,0,W,H);
-
-  // The silhouette — drawn as a layered shape
-  const scale=Math.min(W,H)*0.0012;
-  const sh=H*0.65; // silhouette height
-  const sw=sh*0.55; // width
-
-  // Draw the hidden silhouette in very dark purple
-  portraitCtx.save();
-  portraitCtx.translate(CX,CY);
-  // Head
-  portraitCtx.beginPath();
-  portraitCtx.ellipse(0,-sh*0.38,sw*0.22,sw*0.28,0,0,Math.PI*2);
-  portraitCtx.fillStyle='rgba(30,12,45,1)';portraitCtx.fill();
-  // Hair — flowing
-  portraitCtx.beginPath();
-  portraitCtx.ellipse(0,-sh*0.42,sw*0.26,sw*0.18,0,0,Math.PI*2);
-  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
-  // Hair flowing down sides
-  portraitCtx.beginPath();
-  portraitCtx.moveTo(-sw*0.22,-sh*0.35);
-  portraitCtx.bezierCurveTo(-sw*0.3,-sh*0.2,-sw*0.28,0,-sw*0.2,sh*0.1);
-  portraitCtx.bezierCurveTo(-sw*0.3,sh*0.0,-sw*0.32,-sh*0.22,-sw*0.24,-sh*0.38);
-  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
-  portraitCtx.beginPath();
-  portraitCtx.moveTo(sw*0.22,-sh*0.35);
-  portraitCtx.bezierCurveTo(sw*0.3,-sh*0.2,sw*0.28,0,sw*0.2,sh*0.1);
-  portraitCtx.bezierCurveTo(sw*0.3,sh*0.0,sw*0.32,-sh*0.22,sw*0.24,-sh*0.38);
-  portraitCtx.fillStyle='rgba(22,8,35,1)';portraitCtx.fill();
-  // Neck
-  portraitCtx.fillRect(-sw*0.07,-sh*0.15,sw*0.14,sh*0.08);
-  // Shoulders & body
-  portraitCtx.beginPath();
-  portraitCtx.moveTo(-sw*0.4,-sh*0.08);
-  portraitCtx.bezierCurveTo(-sw*0.45,sh*0.1,-sw*0.35,sh*0.3,-sw*0.3,sh*0.5);
-  portraitCtx.lineTo(sw*0.3,sh*0.5);
-  portraitCtx.bezierCurveTo(sw*0.35,sh*0.3,sw*0.45,sh*0.1,sw*0.4,-sh*0.08);
-  portraitCtx.bezierCurveTo(sw*0.3,-sh*0.12,sw*0.15,-sh*0.12,0,-sh*0.12);
-  portraitCtx.bezierCurveTo(-sw*0.15,-sh*0.12,-sw*0.3,-sh*0.12,-sw*0.4,-sh*0.08);
-  portraitCtx.fillStyle='rgba(25,10,38,1)';portraitCtx.fill();
-  portraitCtx.restore();
-
-  // Reveal brush — where mouse is, paint color in
-  const mx=portraitMouse.x,my=portraitMouse.y;
-  if(mx>0&&mx<W){
-    const brushR=40+Math.sin(portraitT*0.05)*8;
-    // Create color fill based on position
-    const hue=300+((mx/W)*60);
-    const grd=portraitCtx.createRadialGradient(mx,my,0,mx,my,brushR*2);
-    grd.addColorStop(0,`hsla(${hue},70%,65%,0.7)`);
-    grd.addColorStop(0.4,`hsla(${hue+20},60%,50%,0.3)`);
-    grd.addColorStop(1,'transparent');
-    portraitCtx.save();
-    // Only paint inside the silhouette area (roughly)
-    portraitCtx.globalCompositeOperation='source-atop';
-    // Actually use lighter blend to reveal
-    portraitCtx.globalCompositeOperation='lighter';
-    portraitCtx.globalAlpha=0.06;
-    portraitCtx.fillStyle=grd;
-    portraitCtx.beginPath();portraitCtx.arc(mx,my,brushR*2,0,Math.PI*2);portraitCtx.fill();
-    portraitCtx.restore();
-    portraitRevealPct=Math.min(100,portraitRevealPct+0.08);
-  }
-
-  // Floating caption update
-  const capIdx=Math.min(PORTRAIT_CAPTIONS.length-1,Math.floor(portraitRevealPct/25));
-  document.getElementById('portrait-caption').textContent=PORTRAIT_CAPTIONS[capIdx];
-
-  // Ambient glow around silhouette
-  const glow=portraitCtx.createRadialGradient(CX,CY,0,CX,CY,Math.min(W,H)*0.35);
-  glow.addColorStop(0,`rgba(200,80,180,${0.04+Math.sin(portraitT*0.02)*0.02})`);
-  glow.addColorStop(1,'transparent');
-  portraitCtx.globalAlpha=1;
-  portraitCtx.fillStyle=glow;
-  portraitCtx.fillRect(0,0,W,H);
-
-  // Completion check
-  if(portraitRevealPct>=100&&!portraitComplete){
-    portraitComplete=true;
-    document.getElementById('portrait-complete').style.opacity='1';
-    lReveal();
-    setTimeout(()=>lChime([523,659,784,1047,1318]),500);
-  }
-
-  if(document.querySelector('#s-portrait.on'))requestAnimationFrame(drawPortrait);
-}
-
-/* ══════════════════════════════════════════════════════
-   ✉️ OPEN WHEN...
-══════════════════════════════════════════════════════ */
-const OW_LETTERS = [
-  {icon:'💛',title:'Open when you feel sad',
-   text:`Hey.\n\nI know today is hard. I am not going to tell you to feel better, because feelings do not work like that.\n\nBut I want you to know that you are not alone in whatever this is. Not even a little.\n\nYou are allowed to be sad. You are allowed to have a bad day. That does not make you weak — it makes you honest.\n\nI hope tomorrow is gentler to you.\n\nBut even if it is not — you have gotten through hard things before. You will get through this one too.\n\nI am proud of you for still being here.\n\nAlways,\nSomeone who means it`},
-  {icon:'🌙',title:'Open when you cannot sleep',
-   text:`It is late. The world is quiet and your mind is not.\n\nI know this feeling — when the dark makes everything feel heavier than it actually is.\n\nHere is what I want you to do: breathe out, slowly. Let your shoulders drop.\n\nYou have done everything you needed to do today. Whatever is left can wait.\n\nAnd while you are lying there — know that somewhere, someone is thinking of you. Warmly. Quietly. Without needing anything from you at all.\n\nJust rest.\n\nGoodnight, Nadia.`},
-  {icon:'🔥',title:'Open when you are angry',
-   text:`Good. Be angry. You are allowed.\n\nAnger means something mattered to you. It means you have standards, and they were not met. There is nothing wrong with you for feeling this.\n\nYell if you need to. Cry if it comes. Sit with it.\n\nAnd when you are ready — not before, only when you are ready — you will know what to do next.\n\nYou always do.\n\nI am not scared of your anger. It is part of you, and I love all of you.\n\nAll of it.`},
-  {icon:'💜',title:'Open when you miss me',
-   text:`I am probably thinking about you right now.\n\nThat is not something I say lightly. But you have this way of showing up in my thoughts — in the middle of ordinary moments, completely uninvited, and I do not mind at all.\n\nDistance is strange. You can miss someone who is not even far away. You can miss a version of a moment, or a look, or a conversation.\n\nWhatever version of missing this is — I feel it too.\n\nNot much longer now.\n\nI am yours.`},
-  {icon:'✨',title:'Open when you need confidence',
-   text:`Listen to me.\n\nYou are about to do something that matters to you. And you are nervous. That is because you care — and caring is not weakness.\n\nBut here is what I know:\n\nYou are more capable than you believe right now. You have done hard things. You have surprised yourself before. You will do it again.\n\nWalk in like you belong there. Because you do.\n\nAnd whatever happens — I will still think you are extraordinary.\n\nGo show them.`},
-  {icon:'❤️',title:'Open when you feel unloved',
-   text:`I need you to hear this.\n\nYou are loved. Not in a vague, general, anyone-could-feel-this way. I mean specifically. I mean you, the particular person you are — with your specific laugh and your specific way of thinking and all the small things you do not even notice yourself doing.\n\nYou are loved for those things. For all of them.\n\nIf today made you feel otherwise — today was wrong.\n\nYou are someone's favourite thought. Someone's reason to try harder. Someone's answer to a question they did not even know they were asking.\n\nPlease do not forget that.\n\nWith everything,\nSomeone who loves you more than he knows how to say`},
-];
-function initOpenWhen(){
-  makeParticleBg('ow-canvas',25,50,40);
-}
-function openEnvelope(idx){
-  const letter=OW_LETTERS[idx];
-  document.getElementById('ow-paper-icon').textContent=letter.icon;
-  document.getElementById('ow-paper-title').textContent=letter.title;
-  document.getElementById('ow-paper-text').textContent=letter.text;
-  document.getElementById('ow-letter').style.display='flex';
-  document.querySelectorAll('.ow-envelope')[idx].classList.add('opened');
-  lReveal();
-}
-function closeEnvelope(){
-  document.getElementById('ow-letter').style.display='none';
-}
-
-/* ══════════════════════════════════════════════════════
-   💌 LETTERS I NEVER SENT
-══════════════════════════════════════════════════════ */
-const UNSENT_LETTERS = [
-  {from:'A letter I wrote the first time I realised.',
-   body:`I did not say anything that day.\n\nI just noticed — the way you were talking, the way you were present in that moment — and something shifted. Quietly. Like a door opening in a room I did not know existed.\n\nI thought it would pass. These things usually do.\n\nIt did not pass.`,
-   sign:'— unsent, carried since then'},
-  {from:'A letter I wrote on a night I could not sleep.',
-   body:`It is 2am and I am thinking about the way you said something weeks ago.\n\nI cannot remember the exact words. I remember the feeling of it. I remember thinking — I want to keep hearing this person talk for as long as they will let me.\n\nI did not tell you that. I am telling you now.`,
-   sign:'— sent finally, and late'},
-  {from:'A letter I wrote when you were having a hard time.',
-   body:`I wanted to take it from you.\n\nWhatever it was that was making things heavy — I wanted to take it and carry it somewhere you would not have to see it.\n\nI know I cannot do that. I know that is not how any of this works.\n\nBut I wanted you to know the wanting was there.`,
-   sign:'— written quietly, for you'},
-  {from:'A letter I wrote about the small things.',
-   body:`You do not notice the things you do.\n\nThe way you listen — really listen — when someone is speaking to you. The way you find the kind thing to say without having to search for it. The way you exist in a room and make it feel different.\n\nI notice. I keep a list, somewhere. It is getting long.`,
-   sign:'— a collector of small things'},
-  {from:'A letter I wrote when I wanted to just say it.',
-   body:`I love you.\n\nI am not sure I have said it the way I mean it — with all of it, completely, without a disclaimer or a qualification or a fear.\n\nSo here it is. On paper. Where it cannot be taken back.\n\nI love you, Nadia. In the specific, unqualified, no-conditions-attached way.\n\nThere it is.`,
-   sign:'— finally, actually sent'},
-];
-let letterIdx=0,lettersCanvas;
-function initLetters(){
-  lettersCanvas=document.getElementById('letters-canvas');
-  makeParticleBg('letters-canvas',300,340,50);
-  letterIdx=0;
-  showLetter(0);
-}
-function showLetter(idx){
-  letterIdx=Math.max(0,Math.min(UNSENT_LETTERS.length-1,idx));
-  const l=UNSENT_LETTERS[letterIdx];
-  const bodyEl=document.getElementById('letter-body');
-  bodyEl.style.opacity='0';
-  setTimeout(()=>{
-    document.getElementById('letter-from').textContent=l.from;
-    bodyEl.textContent=l.body;
-    document.getElementById('letter-sign').textContent=l.sign;
-    document.getElementById('letter-count').textContent=`${letterIdx+1} / ${UNSENT_LETTERS.length}`;
-    bodyEl.style.opacity='1';
-    lPageTurn();
-  },300);
-}
-function nextLetter(){showLetter(letterIdx+1);}
-function prevLetter(){showLetter(letterIdx-1);}
-
-/* ══════════════════════════════════════════════════════
-   🌙 LATE NIGHT THOUGHTS
-══════════════════════════════════════════════════════ */
-const THOUGHTS = [
-  {text:'I wonder if she knows how often she crosses my mind.',attr:'3:07 AM'},
-  {text:'She laughed at something today and I keep replaying it. I do not know why. I do not need to know why.',attr:'3:14 AM'},
-  {text:'I hope she is asleep right now. I hope her mind is quiet and whatever was hard today has let her go.',attr:'3:22 AM'},
-  {text:'There are things I want to say to her that I have not found the words for yet. I keep looking.',attr:'3:31 AM'},
-  {text:'She does not know that she is the reason the future looks warmer than it used to.',attr:'3:38 AM'},
-  {text:'I think about what it is like to be known by her. To have her actually see you. It is rare. It is a lot.',attr:'3:45 AM'},
-  {text:'Sometimes I just want to tell her — you are doing better than you think you are. You always are.',attr:'3:52 AM'},
-  {text:'She would probably tell me to go to sleep. She would be right. But here we are.',attr:'4:01 AM'},
-  {text:'I am grateful for her. Not in a general way. In a very specific, considered, she-in-particular way.',attr:'4:09 AM'},
-  {text:'I think she is extraordinary. I have thought this from the beginning. I will think it at the end.',attr:'4:17 AM'},
-  {text:'If I could give her one thing — beyond everything — it would be the ability to see herself the way I see her.',attr:'4:28 AM'},
-  {text:'It is nearly 5am. I should sleep. But I am glad these hours exist. They belong to this, and she is worth them.',attr:'4:58 AM'},
-];
-let thoughtIdx=0,thoughtsCanvas,thoughtsCtx,thoughtsT=0;
-function initThoughts(){
-  thoughtsCanvas=document.getElementById('thoughts-canvas');
-  thoughtsCtx=thoughtsCanvas.getContext('2d');
-  thoughtsCanvas.width=window.innerWidth;thoughtsCanvas.height=window.innerHeight;
-  thoughtsT=0;thoughtIdx=0;
-  showThought(0);
-  drawThoughtsBg();
-}
-function showThought(idx){
-  thoughtIdx=Math.max(0,Math.min(THOUGHTS.length-1,idx));
-  const t=THOUGHTS[thoughtIdx];
-  const textEl=document.getElementById('thoughts-text');
-  const attrEl=document.getElementById('thoughts-attr');
-  const timeEl=document.getElementById('thoughts-time');
-  textEl.style.opacity='0';attrEl.style.opacity='0';
-  setTimeout(()=>{
-    textEl.textContent='\u201c'+t.text+'\u201d';
-    attrEl.textContent=t.attr;
-    timeEl.textContent=t.attr;
-    textEl.style.opacity='1';attrEl.style.opacity='1';
-    lWhisper();
   },350);
 }
-function nextThought(){
-  if(thoughtIdx<THOUGHTS.length-1) showThought(thoughtIdx+1);
-  else showThought(0);
+
+function drawSheDoesntBg(){
+  if(!shedoesntCtx)return;
+  shedoesntT++;
+  const W=shedoesntCanvas.width,H=shedoesntCanvas.height;
+  shedoesntCtx.fillStyle='rgba(8,2,18,0.1)';shedoesntCtx.fillRect(0,0,W,H);
+
+  // 3 slow rotating light orbs around center
+  for(let i=0;i<3;i++){
+    const angle=shedoesntT*0.005+i*(Math.PI*2/3);
+    const rx=Math.min(W,H)*0.28,ry=Math.min(W,H)*0.18;
+    const ox=W/2+Math.cos(angle)*rx,oy=H*0.52+Math.sin(angle)*ry;
+    const a=0.06+Math.sin(shedoesntT*0.012+i)*0.04;
+    shedoesntCtx.save();shedoesntCtx.globalAlpha=a;
+    const g=shedoesntCtx.createRadialGradient(ox,oy,0,ox,oy,60);
+    g.addColorStop(0,'hsl('+(240+i*40)+',80%,70%)');g.addColorStop(1,'transparent');
+    shedoesntCtx.fillStyle=g;shedoesntCtx.fillRect(ox-60,oy-60,120,120);
+    shedoesntCtx.restore();
+  }
+
+  // Particles
+  shedoesntParticles.forEach(function(p,i){
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.06;p.life-=p.decay;
+    if(p.life<=0){shedoesntParticles.splice(i,1);return;}
+    shedoesntCtx.save();shedoesntCtx.globalAlpha=p.life;
+    shedoesntCtx.fillStyle='hsl('+p.hue+',85%,75%)';
+    shedoesntCtx.beginPath();shedoesntCtx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);shedoesntCtx.fill();
+    shedoesntCtx.restore();
+  });
+
+  if(document.querySelector('#s-shedoesnt.on'))requestAnimationFrame(drawSheDoesntBg);
 }
-function drawThoughtsBg(){
-  if(!thoughtsCtx)return;
-  thoughtsT++;
-  const W=thoughtsCanvas.width,H=thoughtsCanvas.height;
-  thoughtsCtx.fillStyle='rgba(2,2,12,0.12)';thoughtsCtx.fillRect(0,0,W,H);
-  // Stars — very subtle
-  for(let i=0;i<3;i++){
-    const sx=((thoughtsT*0.2+i*W/3))%W;
-    const sy=((thoughtsT*0.1+i*H/3))%H;
-    const a=0.15+Math.sin(thoughtsT*0.02+i)*0.12;
-    thoughtsCtx.save();thoughtsCtx.globalAlpha=a;
-    thoughtsCtx.fillStyle='rgba(160,160,255,0.9)';
-    thoughtsCtx.beginPath();thoughtsCtx.arc(sx,sy,0.8,0,Math.PI*2);thoughtsCtx.fill();
-    thoughtsCtx.restore();
+
+/* ══════════════════════════════════════════════
+   8. FREQUENCY
+══════════════════════════════════════════════ */
+const FREQ_READINGS=[
+  {hz:'432.0',text:'This is the frequency of her breathing when she is finally at peace. He finds it the most beautiful sound.'},
+  {hz:'528.0',text:'The frequency of transformation. The one scientists call the love frequency. She has always lived here.'},
+  {hz:'639.0',text:'Connection. The frequency that bridges people. Every time he hears her voice, this is what plays.'},
+  {hz:'741.0',text:'The frequency of expression and truth. She speaks in this one — clearly, honestly, without apology.'},
+  {hz:'852.0',text:'Returning to spiritual order. He found this when he found her. He did not realise it at the time.'},
+  {hz:'963.0',text:'The highest frequency — pure light, pure presence. What she feels like in the room before she says anything.'},
+  {hz:'108.0',text:'The sacred number. The distance between her and perfection, divided by her own grace. It equals this.'},
+  {hz:'333.0',text:'Halfway between where he was and where he wanted to be. She moved him the rest of the way.'},
+  {hz:'777.0',text:'The frequency of alignment. When everything that should happen, does. She happened. It was right.'},
+  {hz:'144.0',text:'Harmony. The exact resonance when two things fit together in a way they were always supposed to.'},
+];
+let freqCanvas,freqCtx,freqT=0,freqVal=0,freqWaves=[],freqLocked=false,freqLockIdx=-1;
+
+function initFrequency(){
+  freqCanvas=document.getElementById('freq-canvas');
+  freqCtx=freqCanvas.getContext('2d');
+  freqCanvas.width=window.innerWidth;freqCanvas.height=window.innerHeight;
+  freqT=0;freqVal=0;freqWaves=[];freqLocked=false;freqLockIdx=-1;
+  document.getElementById('freq-slider').value=0;
+  document.getElementById('freq-hz').textContent='000.0 Hz';
+  document.getElementById('freq-reading').style.opacity='0';
+  document.getElementById('freq-label').textContent='searching for her wavelength...';
+  drawFreq();
+}
+
+function onFreqSlide(val){
+  freqVal=parseInt(val);
+  // Map 0-100 to frequencies
+  const idx=Math.floor(freqVal/(100/FREQ_READINGS.length));
+  const capped=Math.min(idx,FREQ_READINGS.length-1);
+  const reading=FREQ_READINGS[capped];
+  document.getElementById('freq-hz').textContent=reading.hz+' Hz';
+
+  // Lock when within range of a frequency
+  const lockThreshold=3;
+  const lockZones=[0,10,20,30,40,50,60,70,80,90,100];
+  let locked=false;
+  lockZones.forEach(function(z,i){
+    if(Math.abs(freqVal-z)<lockThreshold&&i<FREQ_READINGS.length){
+      freqLocked=true;freqLockIdx=i;locked=true;
+      document.getElementById('freq-label').textContent='locked on · '+FREQ_READINGS[i].hz+' Hz';
+      const el=document.getElementById('freq-reading');
+      if(el.dataset.idx!==i.toString()){
+        el.dataset.idx=i.toString();
+        el.style.opacity='0';
+        setTimeout(function(){el.textContent='"'+FREQ_READINGS[i].text+'"';el.style.opacity='1';shimmer();},400);
+      }
+    }
+  });
+  if(!locked){
+    freqLocked=false;freqLockIdx=-1;
+    document.getElementById('freq-reading').style.opacity='0';
+    document.getElementById('freq-label').textContent='searching for her wavelength...';
+    t2(200+freqVal*8,'sine',0.05,0.04);
   }
-  // Very slow drifting orbs — like thoughts floating
-  for(let i=0;i<3;i++){
-    const x=W*0.2+W*0.6*(i/2)+Math.sin(thoughtsT*0.004+i*2)*W*0.08;
-    const y=H*0.3+Math.sin(thoughtsT*0.003+i*1.5)*H*0.2;
-    const a=0.03+Math.sin(thoughtsT*0.008+i)*0.02;
-    thoughtsCtx.save();thoughtsCtx.globalAlpha=a;
-    const g=thoughtsCtx.createRadialGradient(x,y,0,x,y,120);
-    g.addColorStop(0,`hsl(${220+i*20},60%,60%)`);g.addColorStop(1,'transparent');
-    thoughtsCtx.fillStyle=g;thoughtsCtx.fillRect(x-120,y-120,240,240);
-    thoughtsCtx.restore();
+}
+
+function drawFreq(){
+  if(!freqCtx)return;
+  freqT++;
+  const W=freqCanvas.width,H=freqCanvas.height;
+  freqCtx.fillStyle='rgba(0,0,0,0.15)';freqCtx.fillRect(0,0,W,H);
+
+  // Oscilloscope waveform
+  const freq=1+freqVal*0.08;
+  const amp=freqLocked?H*0.18:H*0.08;
+  const lineCount=freqLocked?5:2;
+
+  for(let li=0;li<lineCount;li++){
+    const alpha=freqLocked?(0.6-li*0.1):(0.3-li*0.08);
+    const hue=freqLocked?160+freqLockIdx*20:160;
+    freqCtx.save();
+    freqCtx.strokeStyle='hsla('+hue+',80%,'+(60+li*5)+'%,'+alpha+')';
+    freqCtx.lineWidth=freqLocked?2.5-li*0.3:1.5;
+    freqCtx.shadowColor='hsl('+hue+',80%,65%)';
+    freqCtx.shadowBlur=freqLocked?20:8;
+    freqCtx.beginPath();
+    for(let x=0;x<=W;x+=2){
+      const t=x/W*Math.PI*2*freq;
+      const y=H/2+Math.sin(t+freqT*0.04+li*0.3)*amp
+              +Math.sin(t*2.3-freqT*0.02)*amp*0.3
+              +Math.sin(t*0.5+freqT*0.01)*amp*0.2;
+      x===0?freqCtx.moveTo(x,y):freqCtx.lineTo(x,y);
+    }
+    freqCtx.stroke();freqCtx.restore();
   }
-  if(document.querySelector('#s-thoughts.on'))requestAnimationFrame(drawThoughtsBg);
+
+  // Center lock indicator
+  if(freqLocked){
+    const lockGlow=freqCtx.createRadialGradient(W/2,H/2,0,W/2,H/2,200);
+    const hue=160+freqLockIdx*20;
+    lockGlow.addColorStop(0,'hsla('+hue+',80%,60%,0.08)');lockGlow.addColorStop(1,'transparent');
+    freqCtx.fillStyle=lockGlow;freqCtx.fillRect(0,0,W,H);
+    // Pulse rings
+    for(let r=0;r<3;r++){
+      const rad=60+r*60+((freqT*1.5+r*40)%120);
+      const a=Math.max(0,0.25-(rad/300));
+      freqCtx.save();freqCtx.globalAlpha=a;
+      freqCtx.strokeStyle='hsl('+hue+',80%,70%)';freqCtx.lineWidth=1.5;
+      freqCtx.beginPath();freqCtx.arc(W/2,H/2,rad,0,Math.PI*2);freqCtx.stroke();
+      freqCtx.restore();
+    }
+  }
+
+  if(document.querySelector('#s-frequency.on'))requestAnimationFrame(drawFreq);
+}
+
+/* ══════════════════════════════════════════════
+   13. WHAT FOREVER LOOKS LIKE
+══════════════════════════════════════════════ */
+const FOREVER_LINES=[
+  'A Sunday morning with nowhere to be.',
+  'Her voice before she is fully awake.',
+  'A kitchen that smells like something she made.',
+  'Growing older and not minding, because it is with her.',
+  'Still learning new things about her after years.',
+  'The specific quiet of being somewhere difficult — and it being okay because she is there.',
+  'Her laugh at something I said, years from now, that I have not said yet.',
+  'The moment she stops being nervous about something and I get to watch the relief cross her face.',
+  'Choosing her again. And again. On the ordinary Tuesday with nothing special happening.',
+  'Getting to know what she is like when she is completely at rest.',
+  'Looking across a room at her and feeling: yes. still. always.',
+  'A life with her in it — the whole, unedited, completely real version.',
+  'This. Exactly this. Whatever it looks like from the outside, this is what forever looks like.',
+];
+let foreverCanvas,foreverCtx,foreverT=0,foreverIdx=0,foreverTyping=false;
+let foreverParticles2=[];
+
+function initForever(){
+  foreverCanvas=document.getElementById('forever-canvas');
+  foreverCtx=foreverCanvas.getContext('2d');
+  foreverCanvas.width=window.innerWidth;foreverCanvas.height=window.innerHeight;
+  foreverT=0;foreverIdx=0;foreverTyping=false;foreverParticles2=[];
+  typeForeverLine(0);
+  drawForeverBg();
+}
+
+function typeForeverLine(idx){
+  foreverIdx=Math.max(0,Math.min(FOREVER_LINES.length-1,idx));
+  const line=FOREVER_LINES[foreverIdx];
+  const lineEl=document.getElementById('forever-line');
+  const cursor=document.getElementById('forever-cursor');
+  document.getElementById('forever-progress').textContent=(foreverIdx+1)+' of '+FOREVER_LINES.length;
+  lineEl.textContent='';lineEl.appendChild(cursor);
+  foreverTyping=true;
+  let i=0;
+  function typeNext(){
+    if(i<line.length){
+      const char=document.createTextNode(line[i]);
+      lineEl.insertBefore(char,cursor);
+      i++;t2(400+Math.random()*200,'sine',0.06,0.03);
+      setTimeout(typeNext,28+Math.random()*30);
+    } else {foreverTyping=false;}
+  }
+  typeNext();
+}
+
+function nextForever(){
+  if(foreverTyping)return;
+  const nextIdx=foreverIdx+1;
+  if(nextIdx>=FOREVER_LINES.length){
+    // Cycle back, show special end message
+    document.getElementById('forever-next').textContent='from the beginning';
+    typeForeverLine(0);
+  } else {
+    typeForeverLine(nextIdx);
+    // Emit particles at transition
+    const W=foreverCanvas.width,H=foreverCanvas.height;
+    for(let i=0;i<20;i++){
+      const a=Math.random()*Math.PI*2,spd=1+Math.random()*5;
+      foreverParticles2.push({
+        x:W/2+(Math.random()-0.5)*200,y:H/2+(Math.random()-0.5)*100,
+        vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+        life:1,decay:0.025,hue:260+Math.random()*60,r:2+Math.random()*3
+      });
+    }
+  }
+  t2(523,'sine',0.2,0.06);setTimeout(function(){t2(659,'sine',0.2,0.05);},120);
+}
+
+function drawForeverBg(){
+  if(!foreverCtx)return;
+  foreverT++;
+  const W=foreverCanvas.width,H=foreverCanvas.height;
+  foreverCtx.fillStyle='rgba(4,2,12,0.12)';foreverCtx.fillRect(0,0,W,H);
+
+  // Slow drifting stars
+  for(let i=0;i<4;i++){
+    const x=((W*0.25*i)+foreverT*0.15*(i%2===0?1:-0.7))%W;
+    const y=H*0.2+Math.sin(foreverT*0.005+i*1.8)*H*0.3;
+    const a=0.04+Math.sin(foreverT*0.01+i*0.9)*0.025;
+    foreverCtx.save();foreverCtx.globalAlpha=a;
+    const g=foreverCtx.createRadialGradient(x,y,0,x,y,100);
+    g.addColorStop(0,'hsl('+(250+i*25)+',75%,65%)');g.addColorStop(1,'transparent');
+    foreverCtx.fillStyle=g;foreverCtx.fillRect(x-100,y-100,200,200);
+    foreverCtx.restore();
+  }
+
+  // Particles
+  foreverParticles2.forEach(function(p,i){
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.05;p.life-=p.decay;
+    if(p.life<=0){foreverParticles2.splice(i,1);return;}
+    foreverCtx.save();foreverCtx.globalAlpha=p.life;
+    foreverCtx.fillStyle='hsl('+p.hue+',80%,75%)';
+    foreverCtx.beginPath();foreverCtx.arc(p.x,p.y,p.r,0,Math.PI*2);foreverCtx.fill();
+    foreverCtx.restore();
+  });
+
+  if(document.querySelector('#s-forever.on'))requestAnimationFrame(drawForeverBg);
+}
+
+/* ══════════════════════════════════════════════
+   14. HER PLANET
+══════════════════════════════════════════════ */
+let planetCanvas,planetCtx,planetT=0;
+let planetRot=0,planetTiltX=0.3;
+let planetDrag2={active:false,lx:0,ly:0,vx:0,vy:0};
+let planetMoons=[],planetAtmosphereColor='#c080ff';
+let planetStars3=[];
+
+const PLANET_TRAITS=[
+  {name:'Warmth',color:'#ff8080',r:18,angle:0,speed:0.007,desc:'The warmth she carries into every room. Even the cold ones.'},
+  {name:'Honesty',color:'#80c0ff',r:14,angle:2.1,speed:0.011,desc:'The way she tells the truth even when it would be easier not to.'},
+  {name:'Depth',color:'#c080ff',r:16,angle:4.2,speed:0.009,desc:'The layers of her that most people never reach. He has been trying.'},
+  {name:'Courage',color:'#ffc080',r:12,angle:1.0,speed:0.013,desc:'The quiet kind of brave. The kind that does not announce itself.'},
+  {name:'Grace',color:'#80ffc0',r:10,angle:3.3,speed:0.015,desc:'The way she moves through difficulty. It looks effortless. It is not.'},
+];
+
+function initPlanet(){
+  planetCanvas=document.getElementById('planet-canvas');
+  planetCtx=planetCanvas.getContext('2d');
+  planetCanvas.width=window.innerWidth;planetCanvas.height=window.innerHeight;
+  planetT=0;planetRot=0;planetDrag2={active:false,lx:0,ly:0,vx:0,vy:0};
+
+  // Create star field
+  planetStars3=[];
+  for(let i=0;i<800;i++){
+    planetStars3.push({
+      x:Math.random()*planetCanvas.width,y:Math.random()*planetCanvas.height,
+      r:0.3+Math.random()*1.4,a:0.2+Math.random()*0.7,
+      twinkle:Math.random()*Math.PI*2,tspd:0.01+Math.random()*0.03
+    });
+  }
+
+  // Moons from traits
+  planetMoons=PLANET_TRAITS.map(function(t){
+    return {name:t.name,color:t.color,r:t.r,angle:t.angle,speed:t.speed,
+            orbitR:0,desc:t.desc,discovered:false};
+  });
+
+  // Drag & touch
+  planetCanvas.addEventListener('mousedown',function(e){planetDrag2={active:true,lx:e.clientX,ly:e.clientY,vx:0,vy:0};});
+  planetCanvas.addEventListener('mousemove',function(e){
+    if(planetDrag2.active){
+      planetDrag2.vx=(e.clientX-planetDrag2.lx)*0.004;
+      planetDrag2.vy=(e.clientY-planetDrag2.ly)*0.003;
+      planetRot+=planetDrag2.vx;planetTiltX+=planetDrag2.vy;
+      planetTiltX=Math.max(-0.6,Math.min(0.6,planetTiltX));
+      planetDrag2.lx=e.clientX;planetDrag2.ly=e.clientY;
+    }
+  });
+  planetCanvas.addEventListener('mouseup',function(){planetDrag2.active=false;});
+  planetCanvas.addEventListener('touchstart',function(e){planetDrag2={active:true,lx:e.touches[0].clientX,ly:e.touches[0].clientY,vx:0,vy:0};},{passive:true});
+  planetCanvas.addEventListener('touchmove',function(e){
+    if(planetDrag2.active){
+      planetDrag2.vx=(e.touches[0].clientX-planetDrag2.lx)*0.004;
+      planetDrag2.vy=(e.touches[0].clientY-planetDrag2.ly)*0.003;
+      planetRot+=planetDrag2.vx;planetTiltX+=planetDrag2.vy;
+      planetTiltX=Math.max(-0.6,Math.min(0.6,planetTiltX));
+      planetDrag2.lx=e.touches[0].clientX;planetDrag2.ly=e.touches[0].clientY;
+    }
+    e.preventDefault();
+  },{passive:false});
+  planetCanvas.addEventListener('touchend',function(){planetDrag2.active=false;});
+  planetCanvas.addEventListener('click',function(e){checkMoonClick(e.clientX,e.clientY);});
+
+  document.getElementById('planet-desc').textContent='drag to rotate · click a moon to learn her';
+  drawPlanet();
+}
+
+function checkMoonClick(mx,my){
+  const W=planetCanvas.width,H=planetCanvas.height;
+  const CX=W/2,CY=H*0.44;
+  const pR=Math.min(W,H)*0.22;
+  planetMoons.forEach(function(m){
+    const orbitR=pR+60+planetMoons.indexOf(m)*35;
+    const mx2=CX+Math.cos(m.angle)*orbitR;
+    const my2=CY+Math.sin(m.angle)*orbitR*0.35;
+    if(Math.hypot(mx-mx2,my-my2)<m.r+12){
+      m.discovered=true;
+      document.getElementById('planet-trait').textContent=m.name.toUpperCase();
+      document.getElementById('planet-desc').textContent=m.desc;
+      shimmer();
+    }
+  });
+}
+
+function drawPlanet(){
+  if(!planetCtx)return;
+  planetT++;
+  const W=planetCanvas.width,H=planetCanvas.height;
+  const CX=W/2,CY=H*0.44;
+  const pR=Math.min(W,H)*0.22;
+
+  // Drag momentum
+  if(!planetDrag2.active){
+    planetRot+=planetDrag2.vx;planetDrag2.vx*=0.94;
+    planetTiltX+=planetDrag2.vy;planetDrag2.vy*=0.94;
+    // Auto slow rotation
+    planetRot+=0.003;
+  }
+
+  // Background
+  planetCtx.fillStyle='rgba(0,0,4,0.2)';planetCtx.fillRect(0,0,W,H);
+
+  // Stars
+  planetStars3.forEach(function(s){
+    s.twinkle+=s.tspd;
+    const a=s.a*(0.6+Math.sin(s.twinkle)*0.4);
+    planetCtx.save();planetCtx.globalAlpha=a;
+    planetCtx.fillStyle='rgba(200,210,255,0.9)';
+    planetCtx.beginPath();planetCtx.arc(s.x,s.y,s.r,0,Math.PI*2);planetCtx.fill();
+    planetCtx.restore();
+  });
+
+  // Distant galaxy smear
+  var galG=planetCtx.createLinearGradient(0,H*0.1,W,H*0.4);
+  galG.addColorStop(0,'transparent');galG.addColorStop(0.3,'rgba(100,80,180,0.04)');
+  galG.addColorStop(0.7,'rgba(140,100,200,0.06)');galG.addColorStop(1,'transparent');
+  planetCtx.fillStyle=galG;planetCtx.fillRect(0,0,W,H);
+
+  // Moon orbits (back pass — behind planet)
+  planetMoons.forEach(function(m,i){
+    m.angle+=m.speed;
+    const orbitR=pR+60+i*35;
+    m.orbitR=orbitR;
+    // Draw orbit ellipse
+    planetCtx.save();planetCtx.globalAlpha=0.08;
+    planetCtx.strokeStyle='rgba(200,180,255,0.5)';planetCtx.lineWidth=1;
+    planetCtx.setLineDash([2,6]);
+    planetCtx.beginPath();planetCtx.ellipse(CX,CY,orbitR,orbitR*0.35,0,0,Math.PI*2);
+    planetCtx.stroke();planetCtx.setLineDash([]);planetCtx.restore();
+
+    // Draw moon if behind planet (sin(angle) < 0)
+    if(Math.sin(m.angle)<0){
+      const mx=CX+Math.cos(m.angle)*orbitR;
+      const my=CY+Math.sin(m.angle)*orbitR*0.35;
+      const depthScale=0.7+Math.sin(m.angle)*(-0.2);
+      planetCtx.save();
+      planetCtx.globalAlpha=0.6*depthScale;
+      // Glow
+      var mg=planetCtx.createRadialGradient(mx,my,0,mx,my,m.r*2.5);
+      mg.addColorStop(0,m.color+'80');mg.addColorStop(1,'transparent');
+      planetCtx.fillStyle=mg;planetCtx.beginPath();planetCtx.arc(mx,my,m.r*2.5,0,Math.PI*2);planetCtx.fill();
+      // Moon body
+      var mb=planetCtx.createRadialGradient(mx-m.r*0.3,my-m.r*0.3,m.r*0.1,mx,my,m.r);
+      mb.addColorStop(0,'white');mb.addColorStop(0.3,m.color);mb.addColorStop(1,m.color+'44');
+      planetCtx.fillStyle=mb;planetCtx.beginPath();planetCtx.arc(mx,my,m.r*depthScale,0,Math.PI*2);planetCtx.fill();
+      if(m.discovered){
+        planetCtx.fillStyle='rgba(255,255,255,0.7)';
+        planetCtx.font='bold '+Math.max(8,m.r*0.6)+'px Jost,sans-serif';
+        planetCtx.textAlign='center';planetCtx.fillText(m.name,mx,my+m.r+10);
+      }
+      planetCtx.restore();
+    }
+  });
+
+  // PLANET BODY — 3D sphere with lighting
+  var light={x:CX-pR*0.6,y:CY-pR*0.7}; // light source
+  var pg=planetCtx.createRadialGradient(light.x,light.y,pR*0.05,CX,CY,pR*1.1);
+  pg.addColorStop(0,'rgba(255,230,255,0.9)');
+  pg.addColorStop(0.15,'rgba(220,160,255,0.85)');
+  pg.addColorStop(0.45,'rgba(160,80,220,0.8)');
+  pg.addColorStop(0.75,'rgba(80,20,140,0.85)');
+  pg.addColorStop(1,'rgba(20,4,40,0.9)');
+  planetCtx.fillStyle=pg;
+  planetCtx.beginPath();planetCtx.arc(CX,CY,pR,0,Math.PI*2);planetCtx.fill();
+
+  // Surface detail — latitude bands with rotation
+  for(var band=0;band<6;band++){
+    var by=CY+(band-2.5)*(pR*0.3)*0.9;
+    var bw=Math.sqrt(Math.max(0,pR*pR-(by-CY)*(by-CY)));
+    if(bw<5)continue;
+    var bandAlpha=0.04+Math.sin(band*0.8)*0.03;
+    var bandHue=270+band*15;
+    planetCtx.save();planetCtx.globalAlpha=bandAlpha;
+    // Clip to planet circle
+    planetCtx.beginPath();planetCtx.arc(CX,CY,pR*0.99,0,Math.PI*2);planetCtx.clip();
+    // Wavy band
+    planetCtx.beginPath();
+    for(var x=CX-bw;x<=CX+bw;x+=3){
+      var t=((x-CX)/bw)*Math.PI+planetRot*2+band*0.5;
+      var y=by+Math.sin(t)*8;
+      x===CX-bw?planetCtx.moveTo(x,y):planetCtx.lineTo(x,y);
+    }
+    planetCtx.lineTo(CX+bw,by+pR*0.2);planetCtx.lineTo(CX-bw,by+pR*0.2);planetCtx.closePath();
+    planetCtx.fillStyle='hsl('+bandHue+',60%,50%)';planetCtx.fill();
+    planetCtx.restore();
+  }
+
+  // Atmosphere halo
+  var atmo=planetCtx.createRadialGradient(CX,CY,pR*0.92,CX,CY,pR*1.18);
+  atmo.addColorStop(0,'transparent');
+  atmo.addColorStop(0.4,'rgba(180,100,255,0.12)');
+  atmo.addColorStop(0.8,'rgba(140,60,220,0.08)');
+  atmo.addColorStop(1,'transparent');
+  planetCtx.fillStyle=atmo;planetCtx.beginPath();planetCtx.arc(CX,CY,pR*1.18,0,Math.PI*2);planetCtx.fill();
+
+  // Terminator shadow — dark side
+  var shadow=planetCtx.createRadialGradient(CX+pR*0.4,CY+pR*0.2,pR*0.2,CX+pR*0.5,CY,pR*0.9);
+  shadow.addColorStop(0,'transparent');
+  shadow.addColorStop(0.5,'rgba(0,0,0,0.15)');
+  shadow.addColorStop(1,'rgba(0,0,0,0.5)');
+  planetCtx.save();planetCtx.beginPath();planetCtx.arc(CX,CY,pR,0,Math.PI*2);planetCtx.clip();
+  planetCtx.fillStyle=shadow;planetCtx.fillRect(CX-pR,CY-pR,pR*2,pR*2);planetCtx.restore();
+
+  // Specular highlight
+  var spec=planetCtx.createRadialGradient(light.x,light.y,0,light.x,light.y,pR*0.5);
+  spec.addColorStop(0,'rgba(255,255,255,0.22)');spec.addColorStop(1,'transparent');
+  planetCtx.save();planetCtx.beginPath();planetCtx.arc(CX,CY,pR,0,Math.PI*2);planetCtx.clip();
+  planetCtx.fillStyle=spec;planetCtx.fillRect(CX-pR,CY-pR,pR*2,pR*2);planetCtx.restore();
+
+  // Ring system
+  planetCtx.save();planetCtx.translate(CX,CY);planetCtx.scale(1,0.25);
+  for(var ring=0;ring<4;ring++){
+    var rr=pR*1.4+ring*pR*0.18;
+    var ringAlpha=0.15-ring*0.025;
+    var rg=planetCtx.createLinearGradient(-rr,0,rr,0);
+    rg.addColorStop(0,'transparent');
+    rg.addColorStop(0.2,'rgba(200,160,255,'+ringAlpha+')');
+    rg.addColorStop(0.5,'rgba(220,180,255,'+(ringAlpha*1.5)+')');
+    rg.addColorStop(0.8,'rgba(200,160,255,'+ringAlpha+')');
+    rg.addColorStop(1,'transparent');
+    planetCtx.strokeStyle=rg;planetCtx.lineWidth=pR*0.1;
+    planetCtx.beginPath();planetCtx.arc(0,0,rr,0,Math.PI*2);planetCtx.stroke();
+  }
+  planetCtx.restore();
+
+  // Shadow of planet on rings
+  planetCtx.save();planetCtx.translate(CX,CY);planetCtx.scale(1,0.25);
+  planetCtx.beginPath();planetCtx.arc(0,0,pR*1.05,-Math.PI,0);
+  planetCtx.fillStyle='rgba(0,0,0,0.35)';planetCtx.fill();planetCtx.restore();
+
+  // Moons front pass
+  planetMoons.forEach(function(m,i){
+    if(Math.sin(m.angle)>=0){
+      const orbitR=m.orbitR||pR+60+i*35;
+      const mx=CX+Math.cos(m.angle)*orbitR;
+      const my=CY+Math.sin(m.angle)*orbitR*0.35;
+      const depthScale=0.85+Math.sin(m.angle)*0.15;
+      planetCtx.save();
+      var mg=planetCtx.createRadialGradient(mx,my,0,mx,my,m.r*3);
+      mg.addColorStop(0,m.color+'60');mg.addColorStop(1,'transparent');
+      planetCtx.fillStyle=mg;planetCtx.beginPath();planetCtx.arc(mx,my,m.r*3,0,Math.PI*2);planetCtx.fill();
+      var mb=planetCtx.createRadialGradient(mx-m.r*0.3,my-m.r*0.3,m.r*0.1,mx,my,m.r);
+      mb.addColorStop(0,'white');mb.addColorStop(0.3,m.color);mb.addColorStop(1,m.color+'44');
+      planetCtx.fillStyle=mb;planetCtx.beginPath();planetCtx.arc(mx,my,m.r*depthScale,0,Math.PI*2);planetCtx.fill();
+      if(m.discovered){
+        planetCtx.fillStyle='rgba(255,255,255,0.85)';
+        planetCtx.font='bold '+Math.max(9,m.r*0.65)+'px Jost,sans-serif';
+        planetCtx.textAlign='center';planetCtx.fillText(m.name,mx,my+m.r+12);
+      }
+      planetCtx.restore();
+    }
+  });
+
+  // Planet name glow at bottom
+  planetCtx.save();planetCtx.globalAlpha=0.15+Math.sin(planetT*0.02)*0.05;
+  planetCtx.fillStyle='rgba(180,140,255,1)';
+  planetCtx.font='italic '+(pR*0.18)+'px Cormorant Garamond,serif';
+  planetCtx.textAlign='center';planetCtx.fillText('Nadia',CX,CY+pR*1.4);
+  planetCtx.restore();
+
+  if(document.querySelector('#s-planet.on'))requestAnimationFrame(drawPlanet);
 }
 
 </script>
-<!-- ═══════ BOOK OF YOU ═══════ -->
-<div class="screen" id="s-book">
-  <canvas id="book-canvas"></canvas>
+<!-- ═══════ UNIVERSE ═══════ -->
+<div class="screen" id="s-universe">
+  <canvas id="universe-canvas"></canvas>
+  <div class="world-label">the universe wrote this</div>
+  <div id="universe-msg"></div>
+  <div id="universe-input-wrap">
+    <input id="universe-input" type="text" placeholder="type her name..." maxlength="12" autocomplete="off" oninput="onUniverseType(this.value)" onkeydown="if(event.key==='Enter')triggerUniverse()"/>
+    <button id="universe-go" onclick="triggerUniverse()">send →</button>
+  </div>
+  <button class="world-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ CONFESSION ROOM ═══════ -->
+<div class="screen" id="s-confess">
+  <canvas id="confess-canvas"></canvas>
   <div class="love-ui si">
-    <span class="eyebrow rv" style="color:rgba(180,120,255,0.5);">chapter one</span>
-    <h2 class="big rv" style="color:rgba(210,180,255,0.95);">The Book<br><em style="color:#b060ff;">of You.</em></h2>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(160,80,255,0.5),transparent);"></div>
-    <div id="book-container" class="rv">
-      <div id="book-cover" onclick="openBook()">
-        <div id="book-spine"></div>
-        <div id="book-cover-title">The Story of<br>Nadia</div>
-        <div id="book-cover-sub">written by someone who knows</div>
-      </div>
-      <div id="book-pages" style="display:none;">
-        <div id="book-page">
-          <div id="book-chapter"></div>
-          <div id="book-text"></div>
-        </div>
-        <div id="book-nav">
-          <button class="book-btn" onclick="prevPage()">← prev</button>
-          <button class="book-btn" onclick="nextPage()">next →</button>
-        </div>
-        <div id="book-progress"></div>
-      </div>
+    <span class="eyebrow rv" style="color:rgba(200,130,60,0.5);">in the dark</span>
+    <h2 class="big rv" style="color:rgba(255,200,140,0.95);">Confession<br><em style="color:#ff9040;">Room.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(200,100,40,0.5),transparent);"></div>
+    <p class="sub rv" style="color:rgba(200,160,100,0.6);max-width:340px;">Each candle holds something true. Click one. Let it rise.</p>
+    <div id="confess-candle-wrap" class="rv" onclick="lightNextCandle()">
+      <svg id="confess-svg" viewBox="0 0 80 140" width="60" style="cursor:pointer;filter:drop-shadow(0 0 20px rgba(255,160,60,0.5))">
+        <rect x="30" y="70" width="20" height="65" rx="3" fill="#d4a060"/>
+        <rect x="30" y="70" width="20" height="65" rx="3" fill="url(#cg)" opacity="0.5"/>
+        <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="rgba(0,0,0,0.3)"/><stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+        </linearGradient></defs>
+        <line x1="40" y1="70" x2="40" y2="62" stroke="#333" stroke-width="1.5"/>
+        <ellipse id="conf-flame" cx="40" cy="52" rx="8" ry="12" fill="rgba(255,180,40,0.9)"/>
+        <ellipse cx="40" cy="55" rx="4" ry="7" fill="rgba(255,220,100,0.8)"/>
+        <ellipse cx="40" cy="57" rx="2" ry="4" fill="rgba(255,255,200,0.9)"/>
+      </svg>
+    </div>
+    <div id="confess-current" class="rv"></div>
+  </div>
+  <div id="confess-tap">click the candle to reveal</div>
+  <button class="world-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ SHE DOESNT KNOW ═══════ -->
+<div class="screen" id="s-shedoesnt">
+  <canvas id="shedoesnt-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(200,120,255,0.5);">things she cannot see</span>
+    <h2 class="big rv" style="color:rgba(230,190,255,0.95);">She Doesn&#39;t<br><em style="color:#c060ff;">Know.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(180,80,255,0.5),transparent);"></div>
+    <div id="shedoesnt-orb" class="rv" onclick="nextSheDoesnt()">
+      <span style="font-size:2rem;opacity:0.6;">✦</span>
+    </div>
+    <div id="shedoesnt-text" class="rv">tap the orb</div>
+    <div id="shedoesnt-sub" class="rv"></div>
+    <div id="shedoesnt-count" class="rv"></div>
+  </div>
+  <button class="world-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ FREQUENCY ═══════ -->
+<div class="screen" id="s-frequency">
+  <canvas id="freq-canvas"></canvas>
+  <div id="freq-label">tuning to her frequency</div>
+  <div id="freq-reading"></div>
+  <div id="freq-hz">000.0 Hz</div>
+  <div id="freq-tuning">
+    <input type="range" id="freq-slider" min="0" max="100" value="0" oninput="onFreqSlide(this.value)" onchange="onFreqSlide(this.value)"/>
+  </div>
+  <button class="world-back" onclick="goHub()">← back</button>
+</div>
+
+<!-- ═══════ FOREVER ═══════ -->
+<div class="screen" id="s-forever">
+  <canvas id="forever-canvas"></canvas>
+  <div class="love-ui si">
+    <span class="eyebrow rv" style="color:rgba(160,120,255,0.5);">a vision</span>
+    <h2 class="big rv" style="color:rgba(200,180,255,0.95);">What Forever<br><em style="color:#a060ff;">Looks Like.</em></h2>
+    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(140,80,255,0.5),transparent);"></div>
+    <div class="rv" style="margin-top:0.8rem;">
+      <div id="forever-line"><span id="forever-cursor"></span></div>
+      <div id="forever-progress"></div>
+      <button id="forever-next" onclick="nextForever()">next →</button>
     </div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
 
-<!-- ═══════ MIRROR ═══════ -->
-<div class="screen" id="s-mirror">
-  <canvas id="mirror-canvas"></canvas>
-  <div class="love-ui si">
-    <span class="eyebrow rv" style="color:rgba(140,180,255,0.5);">look closer</span>
-    <h2 class="big rv" style="color:rgba(180,220,255,0.95);">What I See<br><em style="color:#60b0ff;">in You.</em></h2>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(80,160,255,0.5),transparent);"></div>
-    <div id="mirror-frame" class="rv" onclick="nextMirrorLine()">
-      <div id="mirror-shine"></div>
-      <div id="mirror-text">tap the mirror</div>
-      <div id="mirror-sub"></div>
-      <div id="mirror-tap">tap to see more</div>
-    </div>
-  </div>
-  <button class="world-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ PORTRAIT ═══════ -->
-<div class="screen" id="s-portrait">
-  <canvas id="portrait-canvas"></canvas>
-  <div id="portrait-hint">move your mouse · watch her appear</div>
-  <div id="portrait-caption"></div>
-  <div id="portrait-complete">She is<br>breathtaking.</div>
-  <button class="world-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ OPEN WHEN ═══════ -->
-<div class="screen" id="s-openwhen">
-  <canvas id="ow-canvas"></canvas>
-  <div class="love-ui si">
-    <span class="eyebrow rv" style="color:rgba(255,180,80,0.5);">sealed with love</span>
-    <h2 class="big rv" style="color:rgba(255,210,150,0.95);">Open<br><em style="color:#ffb040;">When...</em></h2>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(255,160,60,0.5),transparent);"></div>
-    <div id="ow-shelf" class="rv">
-      <div class="ow-envelope" onclick="openEnvelope(0)">
-        <span class="ow-seal">💛</span>
-        <div><div class="ow-label">Open when you feel sad</div><div class="ow-hint">for the hard days</div></div>
-      </div>
-      <div class="ow-envelope" onclick="openEnvelope(1)">
-        <span class="ow-seal">🌙</span>
-        <div><div class="ow-label">Open when you can't sleep</div><div class="ow-hint">for 3am</div></div>
-      </div>
-      <div class="ow-envelope" onclick="openEnvelope(2)">
-        <span class="ow-seal">🔥</span>
-        <div><div class="ow-label">Open when you're angry</div><div class="ow-hint">it's okay</div></div>
-      </div>
-      <div class="ow-envelope" onclick="openEnvelope(3)">
-        <span class="ow-seal">💜</span>
-        <div><div class="ow-label">Open when you miss me</div><div class="ow-hint">I'm already thinking of you</div></div>
-      </div>
-      <div class="ow-envelope" onclick="openEnvelope(4)">
-        <span class="ow-seal">✨</span>
-        <div><div class="ow-label">Open when you need confidence</div><div class="ow-hint">before something big</div></div>
-      </div>
-      <div class="ow-envelope" onclick="openEnvelope(5)">
-        <span class="ow-seal">❤️</span>
-        <div><div class="ow-label">Open when you feel unloved</div><div class="ow-hint">read this one slowly</div></div>
-      </div>
-    </div>
-  </div>
-  <div id="ow-letter">
-    <div id="ow-paper">
-      <div id="ow-paper-icon"></div>
-      <div id="ow-paper-title"></div>
-      <div id="ow-paper-text"></div>
-      <button id="ow-close" onclick="closeEnvelope()">close</button>
-    </div>
-  </div>
-  <button class="world-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ LETTERS ═══════ -->
-<div class="screen" id="s-letters">
-  <canvas id="letters-canvas"></canvas>
-  <div class="love-ui si">
-    <span class="eyebrow rv" style="color:rgba(255,140,170,0.5);">things I never found the words for</span>
-    <h2 class="big rv" style="color:rgba(255,190,210,0.95);">Letters I<br><em style="color:#ff6090;">Never Sent.</em></h2>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(255,100,150,0.5),transparent);"></div>
-    <div id="letter-display" class="rv">
-      <span id="letter-envelope-anim" onclick="nextLetter()">💌</span>
-      <div id="letter-card">
-        <div id="letter-from"></div>
-        <div id="letter-body"></div>
-        <div id="letter-sign"></div>
-      </div>
-      <div id="letter-nav">
-        <button class="letter-btn" onclick="prevLetter()">← prev</button>
-        <div id="letter-count"></div>
-        <button class="letter-btn" onclick="nextLetter()">next →</button>
-      </div>
-    </div>
-  </div>
-  <button class="world-back" onclick="goHub()">← back</button>
-</div>
-
-<!-- ═══════ LATE NIGHT THOUGHTS ═══════ -->
-<div class="screen" id="s-thoughts">
-  <canvas id="thoughts-canvas"></canvas>
-  <div class="love-ui si">
-    <div id="thoughts-time" class="rv">3:00 AM</div>
-    <div class="divline rv" style="background:linear-gradient(90deg,transparent,rgba(100,100,220,0.4),transparent);margin-top:3rem;"></div>
-    <div id="thoughts-bubble" class="rv">
-      <div id="thoughts-text"></div>
-      <div id="thoughts-attr"></div>
-      <button id="thoughts-next" onclick="nextThought()">another thought →</button>
-    </div>
+<!-- ═══════ HER PLANET ═══════ -->
+<div class="screen" id="s-planet">
+  <canvas id="planet-canvas"></canvas>
+  <div id="planet-trait">drag to rotate · click a moon to discover</div>
+  <div id="planet-info">
+    <div id="planet-name">Nadia</div>
+    <div id="planet-desc"></div>
   </div>
   <button class="world-back" onclick="goHub()">← back</button>
 </div>
