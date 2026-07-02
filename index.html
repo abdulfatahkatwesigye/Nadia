@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>reasons, for nadia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -19,79 +19,91 @@
     --night-deep:#150f1c;
     --star:#ffe9c7;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html,body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;overflow:hidden;height:100%;width:100%;}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;height:100%;width:100%;}
   h1,h2{font-family:'Space Grotesk',sans-serif;font-weight:300;}
-  .screen{position:fixed;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity 0.8s ease;overflow:hidden;}
+  .screen{position:fixed;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity 0.7s ease;}
   .screen.active{opacity:1;pointer-events:auto;}
-  .back-btn{position:absolute;top:22px;left:22px;z-index:50;background:rgba(255,255,255,0.5);border:1px solid rgba(198,95,116,0.25);color:var(--deep-rose);font-family:'Inter';font-size:12px;letter-spacing:0.08em;padding:9px 16px;border-radius:30px;cursor:pointer;backdrop-filter:blur(6px);transition:all 0.3s;touch-action:manipulation;}
-  .back-btn.on-dark{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:var(--star);}
+  .scrollable{overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .fixed-ui{position:fixed;z-index:50;}
+  .back-btn{position:fixed;top:18px;left:18px;z-index:60;background:rgba(255,255,255,0.65);border:1px solid rgba(198,95,116,0.25);color:var(--deep-rose);font-family:'Inter';font-size:12px;letter-spacing:0.06em;padding:10px 16px;border-radius:30px;cursor:pointer;backdrop-filter:blur(6px);transition:all 0.3s;min-height:40px;}
+  .back-btn.on-dark{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:var(--star);}
   .back-btn:hover{transform:translateX(-2px);}
-  .hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-align:center;z-index:5;}
-  .hint.on-dark{color:#a99bb5;}
+  .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;z-index:40;background:rgba(255,255,255,0.5);padding:6px 14px;border-radius:20px;backdrop-filter:blur(4px);}
+  .hint.on-dark{color:#c9b8d4;background:rgba(255,255,255,0.06);}
 
   /* START SCREEN */
-  #start-screen{background:linear-gradient(160deg,var(--cream),var(--blush));display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  #start-screen{background:linear-gradient(160deg,var(--cream),var(--blush));}
   #petals{position:absolute;inset:0;z-index:0;}
-  .start-content{position:relative;z-index:2;text-align:center;padding:20px;}
-  .start-title{font-size:clamp(24px,4.2vw,36px);font-weight:300;color:var(--deep-rose);margin-bottom:8px;}
-  .start-sub{font-size:13px;color:var(--muted);letter-spacing:0.08em;margin-bottom:50px;}
-  .btn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:540px;margin:0 auto;}
-  .opt-btn{position:relative;background:rgba(255,255,255,0.55);border:1px solid rgba(198,95,116,0.2);border-radius:16px;padding:24px 18px;cursor:pointer;overflow:hidden;transition:transform 0.35s ease, border-color 0.35s, background 0.35s;text-align:left;touch-action:manipulation;box-shadow:0 6px 20px rgba(198,95,116,0.08);}
-  .opt-btn:hover{transform:translateY(-4px) scale(1.02);border-color:var(--rose);background:#fff;}
-  .opt-icon{width:100%;height:64px;margin-bottom:14px;}
-  .opt-label{font-family:'Space Grotesk';font-size:15px;color:var(--ink);}
-  .opt-desc{font-size:11px;color:var(--muted);margin-top:4px;}
+  .start-inner{position:relative;z-index:2;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 16px;}
+  .start-title{font-size:clamp(24px,4.2vw,36px);font-weight:300;color:var(--deep-rose);margin-bottom:8px;text-align:center;}
+  .start-sub{font-size:13px;color:var(--muted);letter-spacing:0.06em;margin-bottom:44px;text-align:center;}
+  .btn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;width:100%;max-width:520px;}
+  .opt-btn{position:relative;background:rgba(255,255,255,0.6);border:1px solid rgba(198,95,116,0.2);border-radius:16px;padding:20px 16px;cursor:pointer;overflow:hidden;transition:transform 0.3s ease, border-color 0.3s, background 0.3s;text-align:left;box-shadow:0 6px 20px rgba(198,95,116,0.08);}
+  .opt-btn:hover{transform:translateY(-3px);border-color:var(--rose);background:#fff;}
+  .opt-btn:active{transform:scale(0.98);}
+  .opt-icon{width:100%;height:56px;margin-bottom:12px;}
+  .opt-label{font-family:'Space Grotesk';font-size:14.5px;color:var(--ink);}
+  .opt-desc{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4;}
   .icon-canvas{width:100%;height:100%;}
-  @media (hover:none){ .opt-btn:active{transform:scale(0.98);} }
 
-  /* SECTION 1: ENVELOPE WALL */
-  #env-section{background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 16px;}
-  .env-title{font-size:14px;color:var(--muted);letter-spacing:0.16em;margin-bottom:34px;text-transform:uppercase;}
-  .env-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:560px;}
-  .envelope{position:relative;width:150px;height:100px;cursor:pointer;perspective:600px;touch-action:manipulation;}
-  .env-body{position:absolute;inset:0;background:#fff;border:1px solid var(--blush);border-radius:6px;box-shadow:0 4px 14px rgba(198,95,116,0.12);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);letter-spacing:0.05em;text-align:center;padding:8px;transition:opacity 0.4s;}
-  .env-flap{position:absolute;top:0;left:0;width:100%;height:50%;background:var(--blush);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 0.5s ease;border-radius:6px 6px 0 0;}
-  .envelope.open .env-flap{transform:rotateX(180deg);}
-  .envelope.open .env-body{opacity:0;}
-  .env-paper{position:absolute;top:8px;left:8px;right:8px;bottom:8px;background:#fffaf6;border-radius:4px;display:flex;align-items:center;justify-content:center;padding:10px;font-size:11.5px;line-height:1.5;color:var(--ink);opacity:0;transform:translateY(10px) scale(0.9);transition:all 0.5s ease 0.15s;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.06);}
-  .envelope.open .env-paper{opacity:1;transform:translateY(0) scale(1);z-index:5;}
+  /* ENVELOPE WALL */
+  #env-section{background:var(--cream);}
+  .env-inner{min-height:100%;display:flex;flex-direction:column;align-items:center;padding:80px 16px 70px;}
+  .env-title{font-size:13px;color:var(--muted);letter-spacing:0.14em;margin-bottom:28px;text-transform:uppercase;text-align:center;}
+  .env-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;width:100%;max-width:560px;}
+  .envelope{background:#fff;border:1px solid var(--blush);border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 4px 14px rgba(198,95,116,0.1);transition:box-shadow 0.3s;}
+  .envelope:active{transform:scale(0.98);}
+  .env-head{padding:16px 10px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:0.04em;position:relative;transition:color 0.3s;}
+  .env-head::before{content:'✉';display:block;font-size:16px;color:var(--rose);margin-bottom:6px;}
+  .envelope.open .env-head{color:var(--deep-rose);}
+  .env-paper{max-height:0;opacity:0;overflow:hidden;transition:max-height 0.45s ease, opacity 0.35s ease, padding 0.45s ease;font-size:12.5px;line-height:1.6;color:var(--ink);text-align:center;word-wrap:break-word;}
+  .envelope.open .env-paper{max-height:260px;opacity:1;padding:0 14px 16px;}
 
-  /* SECTION 2: HEARTBEAT METER */
-  #heart-section{background:linear-gradient(160deg,#fff0ec,var(--blush));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;}
-  #heart-svg{width:150px;height:150px;transform-origin:center;filter:drop-shadow(0 0 10px rgba(231,138,149,0.4));}
-  .heart-text{max-width:420px;text-align:center;font-size:16px;color:var(--ink);margin-top:26px;min-height:56px;padding:0 10px;line-height:1.6;opacity:0;transition:opacity 0.5s;}
+  /* HEARTBEAT METER */
+  #heart-section{background:linear-gradient(160deg,#fff0ec,var(--blush));}
+  .heart-inner{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 20px 70px;text-align:center;}
+  #heart-svg{width:130px;height:130px;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(231,138,149,0.4));}
+  .heart-text{max-width:420px;font-size:15.5px;color:var(--ink);margin-top:24px;min-height:50px;padding:0 6px;line-height:1.6;opacity:0;transition:opacity 0.5s;}
   .heart-text.show{opacity:1;}
-  .heart-btn{margin-top:26px;background:var(--deep-rose);color:#fff;border:none;padding:13px 26px;border-radius:30px;font-size:13px;letter-spacing:0.06em;cursor:pointer;font-family:'Inter';transition:transform 0.2s, background 0.3s;touch-action:manipulation;}
+  .heart-btn{margin-top:24px;background:var(--deep-rose);color:#fff;border:none;padding:13px 26px;border-radius:30px;font-size:13px;letter-spacing:0.05em;cursor:pointer;font-family:'Inter';transition:transform 0.2s, background 0.3s;}
   .heart-btn:hover{transform:scale(1.05);background:#b34f63;}
-  .heart-count{font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:0.08em;}
+  .heart-btn:disabled{opacity:0.55;transform:none;}
+  .heart-count{font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:0.06em;}
 
-  /* SECTION 3: PAPER AIRPLANES */
-  #plane-section{background:linear-gradient(180deg,#fdf0e6,var(--cream));overflow:hidden;}
+  /* PAPER AIRPLANES */
+  #plane-section{background:linear-gradient(180deg,#fdf0e6,var(--cream));}
   #plane-canvas{position:absolute;inset:0;width:100%;height:100%;}
-  .plane-tray{position:absolute;bottom:0;left:0;width:100%;padding:18px 16px 22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;z-index:3;max-height:38%;overflow-y:auto;}
-  .caught-note{background:#fff;border:1px solid var(--blush);border-radius:10px;padding:9px 13px;font-size:11.5px;color:var(--ink);max-width:180px;box-shadow:0 3px 10px rgba(198,95,116,0.1);animation:popin 0.4s ease;}
+  .plane-tray{position:absolute;bottom:0;left:0;width:100%;padding:16px 14px 60px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;z-index:3;max-height:42%;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .caught-note{background:#fff;border:1px solid var(--blush);border-radius:10px;padding:9px 13px;font-size:11.5px;color:var(--ink);max-width:170px;box-shadow:0 3px 10px rgba(198,95,116,0.1);animation:popin 0.4s ease;}
   @keyframes popin{from{opacity:0;transform:translateY(10px) scale(0.9);}to{opacity:1;transform:translateY(0) scale(1);}}
 
-  /* SECTION 4: CONSTELLATION */
+  /* CONSTELLATION */
   #star-section{background:radial-gradient(ellipse at 50% 30%,var(--night),var(--night-deep));}
   #star-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:pointer;}
-  .star-msg{position:absolute;top:40px;left:50%;transform:translateX(-50%);text-align:center;font-size:11.5px;color:#c9b8d4;letter-spacing:0.1em;max-width:80%;z-index:5;pointer-events:none;transition:opacity 0.4s;}
+  .star-msg{position:fixed;top:64px;left:50%;transform:translateX(-50%);text-align:center;font-size:11.5px;color:#c9b8d4;letter-spacing:0.08em;max-width:85%;z-index:45;pointer-events:none;transition:opacity 0.4s;padding:0 10px;line-height:1.6;}
 
   @media (max-width:480px){
-    .btn-grid{grid-template-columns:1fr;max-width:300px;}
+    .btn-grid{grid-template-columns:1fr;max-width:280px;}
     .env-grid{grid-template-columns:repeat(2,1fr);}
-    .envelope{width:100%;height:88px;}
-    #heart-svg{width:120px;height:120px;}
-    .heart-text{font-size:14.5px;}
+    .env-inner{padding-top:70px;}
+    .heart-inner{padding-top:70px;}
+    #heart-svg{width:110px;height:110px;}
+    .heart-text{font-size:14px;}
+    .start-inner{padding-top:50px;}
+    .env-head::before{font-size:14px;}
+    .env-paper{font-size:12px;}
+  }
+  @media (max-height:560px){
+    .heart-inner, .env-inner, .start-inner{padding-top:60px;padding-bottom:50px;}
   }
 </style>
 </head>
 <body>
 
-<section id="start-screen" class="screen active">
+<section id="start-screen" class="screen active scrollable">
   <canvas id="petals"></canvas>
-  <div class="start-content">
+  <div class="start-inner">
     <div class="start-title">for nadia</div>
     <div class="start-sub">a few reasons, waiting to be opened</div>
     <div class="btn-grid">
@@ -119,20 +131,24 @@
   </div>
 </section>
 
-<section id="env-section" class="screen">
+<section id="env-section" class="screen scrollable">
   <button class="back-btn" data-back>← back</button>
-  <div class="env-title">tap one open</div>
-  <div class="env-grid" id="env-grid"></div>
+  <div class="env-inner">
+    <div class="env-title">tap one open</div>
+    <div class="env-grid" id="env-grid"></div>
+  </div>
 </section>
 
-<section id="heart-section" class="screen">
+<section id="heart-section" class="screen scrollable">
   <button class="back-btn" data-back>← back</button>
-  <svg id="heart-svg" viewBox="0 0 100 100">
-    <path id="heart-path" d="M50,88 C20,65 4,45 4,28 C4,12 17,2 30,2 C40,2 47,8 50,16 C53,8 60,2 70,2 C83,2 96,12 96,28 C96,45 80,65 50,88 Z" fill="#e78a95"/>
-  </svg>
-  <div class="heart-text" id="heart-text"></div>
-  <button class="heart-btn" id="heart-btn">another reason</button>
-  <div class="heart-count" id="heart-count"></div>
+  <div class="heart-inner">
+    <svg id="heart-svg" viewBox="0 0 100 100">
+      <path id="heart-path" d="M50,88 C20,65 4,45 4,28 C4,12 17,2 30,2 C40,2 47,8 50,16 C53,8 60,2 70,2 C83,2 96,12 96,28 C96,45 80,65 50,88 Z" fill="#e78a95"/>
+    </svg>
+    <div class="heart-text" id="heart-text"></div>
+    <button class="heart-btn" id="heart-btn">another reason</button>
+    <div class="heart-count" id="heart-count"></div>
+  </div>
 </section>
 
 <section id="plane-section" class="screen">
@@ -169,8 +185,10 @@ const REASONS = [
 function shuffled(arr){ return [...arr].sort(()=>Math.random()-0.5); }
 
 function showScreen(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.screen').forEach(s=>{ s.classList.remove('active'); s.scrollTop = 0; });
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.scrollTop = 0;
   window.dispatchEvent(new Event('resize'));
 }
 document.querySelectorAll('.opt-btn').forEach(b=>{
@@ -181,20 +199,20 @@ document.querySelectorAll('[data-back]').forEach(b=>{
 });
 window.addEventListener('orientationchange', ()=>{ setTimeout(()=>window.dispatchEvent(new Event('resize')), 200); });
 
-/* ---------- START SCREEN PETALS ---------- */
+/* START SCREEN PETALS */
 (function(){
   const canvas = document.getElementById('petals');
   const ctx = canvas.getContext('2d');
   let petals=[];
   function resize(){
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    petals = Array.from({length:26},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:3+Math.random()*4,s:0.3+Math.random()*0.5,drift:Math.random()*2-1,rot:Math.random()*360,rs:(Math.random()-0.5)*2}));
+    petals = Array.from({length:22},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:3+Math.random()*4,s:0.3+Math.random()*0.5,drift:Math.random()*2-1,rot:Math.random()*360,rs:(Math.random()-0.5)*2}));
   }
   function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     petals.forEach(p=>{
       ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
-      ctx.fillStyle='rgba(231,138,149,0.35)';
+      ctx.fillStyle='rgba(231,138,149,0.3)';
       ctx.beginPath(); ctx.ellipse(0,0,p.r,p.r*0.6,0,0,Math.PI*2); ctx.fill();
       ctx.restore();
       p.y+=p.s; p.x+=Math.sin(p.y*0.01)*p.drift*0.3; p.rot+=p.rs;
@@ -254,7 +272,7 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
   }
 });
 
-/* ---------- SECTION 1: ENVELOPE WALL ---------- */
+/* ENVELOPE WALL */
 (function(){
   const grid = document.getElementById('env-grid');
   const set = shuffled(REASONS).slice(0,6);
@@ -262,13 +280,13 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
   set.forEach((reason,i)=>{
     const env = document.createElement('div');
     env.className='envelope';
-    env.innerHTML = `<div class="env-body">${labels[i%labels.length]}</div><div class="env-flap"></div><div class="env-paper">${reason}</div>`;
+    env.innerHTML = `<div class="env-head">${labels[i%labels.length]}</div><div class="env-paper">${reason}</div>`;
     env.addEventListener('click', ()=> env.classList.toggle('open'));
     grid.appendChild(env);
   });
 })();
 
-/* ---------- SECTION 2: HEARTBEAT METER ---------- */
+/* HEARTBEAT METER */
 (function(){
   const set = shuffled(REASONS);
   let idx = -1;
@@ -277,9 +295,8 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
   const text = document.getElementById('heart-text');
   const btn = document.getElementById('heart-btn');
   const count = document.getElementById('heart-count');
-  let beat = 1;
   function pulse(){
-    beat = Math.min(1.28, 1 + (idx+1)*0.02 + 0.06);
+    const beat = Math.min(1.28, 1 + (idx+1)*0.02 + 0.06);
     svg.animate([{transform:'scale(1)'},{transform:`scale(${beat})`},{transform:'scale(1)'}],{duration:520,easing:'ease-in-out'});
   }
   btn.addEventListener('click', ()=>{
@@ -291,12 +308,12 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
     const r = 231 + warmth*20, g = 138 - warmth*20, b = 149 - warmth*40;
     path.setAttribute('fill', `rgb(${r},${g},${b})`);
     count.textContent = (idx+1) + ' of ' + set.length + ' reasons';
-    if(idx === set.length-1){ btn.textContent = "that's all of them (for now)"; btn.disabled=true; btn.style.opacity=0.6; }
+    if(idx === set.length-1){ btn.textContent = "that's all of them (for now)"; btn.disabled=true; }
   });
   setInterval(()=>{ if(idx<0){ svg.animate([{transform:'scale(1)'},{transform:'scale(1.05)'},{transform:'scale(1)'}],{duration:900,easing:'ease-in-out'}); } }, 1400);
 })();
 
-/* ---------- SECTION 3: PAPER AIRPLANES ---------- */
+/* PAPER AIRPLANES */
 (function(){
   const canvas = document.getElementById('plane-canvas');
   const ctx = canvas.getContext('2d');
@@ -308,9 +325,9 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
   function spawnPlane(){
     if(poolIdx >= pool.length) return;
     planes.push({
-      x:-40, y: 60+Math.random()*(canvas.height*0.5),
+      x:-40, y: 60+Math.random()*(canvas.height*0.45),
       speed: 0.6+Math.random()*0.5, amp: 15+Math.random()*15, freq: 0.01+Math.random()*0.01,
-      phase: Math.random()*10, reason: pool[poolIdx++], id: Math.random(), caught:false, scale:1
+      phase: Math.random()*10, reason: pool[poolIdx++], caught:false
     });
   }
   function resize(){ canvas.width=section.offsetWidth; canvas.height=section.offsetHeight; }
@@ -348,7 +365,7 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
   resize(); spawnPlane(); spawnPlane(); draw();
 })();
 
-/* ---------- SECTION 4: CONSTELLATION ---------- */
+/* CONSTELLATION */
 (function(){
   const canvas = document.getElementById('star-canvas');
   const ctx = canvas.getContext('2d');
@@ -367,7 +384,7 @@ iconLoop('icon-star',(ctx,w,h,t)=>{
       const r = Math.min(canvas.width,canvas.height)*0.3 * (0.6+Math.random()*0.5);
       stars.push({ x: cx+Math.cos(angle)*r + (Math.random()*40-20), y: cy+Math.sin(angle)*r*0.7 + (Math.random()*40-20), reason: set[i], done:false, tw: Math.random()*10 });
     }
-    bgStars = Array.from({length:80},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:0.6+Math.random()*1,tw:Math.random()*10}));
+    bgStars = Array.from({length:70},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:0.6+Math.random()*1,tw:Math.random()*10}));
   }
   function resize(){ canvas.width=section.offsetWidth; canvas.height=section.offsetHeight; layout(); opened=[]; }
   let t=0;
