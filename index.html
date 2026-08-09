@@ -373,52 +373,6 @@
     line-height:1.5;
   }
 
-  /* ================= PROMISE CARDS ================= */
-  .promise-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(210px, 1fr));
-    gap:22px;
-  }
-  .promise-card{
-    background:var(--glass);
-    border:1px solid var(--glass-border);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    border-radius:22px;
-    padding:28px 22px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(200,120,150,0.12);
-    transition:transform .45s cubic-bezier(.2,.8,.3,1), box-shadow .45s ease, border-color .45s ease;
-  }
-  .promise-card:hover{
-    transform:translateY(-8px) scale(1.02);
-    box-shadow:0 20px 45px rgba(200,120,150,0.28);
-    border-color:rgba(216,181,104,0.6);
-  }
-  .promise-icon{
-    font-size:32px;
-    margin-bottom:12px;
-    display:inline-block;
-    filter:drop-shadow(0 4px 10px rgba(200,120,150,0.3));
-    transition:transform .4s ease;
-  }
-  .promise-card:hover .promise-icon{transform:scale(1.2) rotate(-6deg);}
-  .promise-text{
-    font-family:var(--serif);
-    font-size:16px;
-    font-weight:500;
-    color:var(--ink);
-    line-height:1.5;
-  }
-  .promise-closing{
-    text-align:center;
-    margin-top:50px;
-    font-family:var(--script);
-    font-style:italic;
-    font-size:clamp(19px,3vw,26px);
-    color:var(--pink-deep);
-  }
-
   /* ================= OUR SONG ================= */
   .song-wrap{
     display:flex;
@@ -573,78 +527,7 @@
     100%{opacity:0; transform:translateY(-160px) translateX(30px) rotate(25deg);}
   }
 
-  /* ================= MAGIC BUTTON ================= */
-  #screen-magic .screen-inner{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    min-height:70vh;
-    text-align:center;
-  }
-  .crystal-btn{
-    position:relative;
-    width:210px;
-    height:210px;
-    border-radius:50%;
-    border:none;
-    cursor:pointer;
-    background:
-      radial-gradient(circle at 32% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0) 40%),
-      radial-gradient(circle at 65% 70%, rgba(216,181,104,0.55), transparent 55%),
-      linear-gradient(150deg, var(--pink-soft), var(--pink) 45%, var(--pink-deep) 100%);
-    box-shadow:
-      0 0 40px rgba(232,139,166,0.65),
-      0 0 90px rgba(216,181,104,0.35),
-      0 20px 50px rgba(180,80,110,0.35),
-      inset 0 0 30px rgba(255,255,255,0.5);
-    font-family:var(--serif);
-    font-size:18px;
-    font-weight:600;
-    color:#fff;
-    text-shadow:0 2px 8px rgba(120,40,70,0.4);
-    animation:crystalPulse 3.2s ease-in-out infinite;
-    transition:transform .3s ease;
-    letter-spacing:.5px;
-  }
-  .crystal-btn:hover{transform:scale(1.05);}
-  .crystal-btn:active{transform:scale(.94);}
-  @keyframes crystalPulse{
-    0%,100%{box-shadow:0 0 40px rgba(232,139,166,0.65), 0 0 90px rgba(216,181,104,0.35), 0 20px 50px rgba(180,80,110,0.35), inset 0 0 30px rgba(255,255,255,0.5);}
-    50%{box-shadow:0 0 65px rgba(232,139,166,0.9), 0 0 130px rgba(216,181,104,0.55), 0 20px 60px rgba(180,80,110,0.45), inset 0 0 42px rgba(255,255,255,0.7);}
-  }
-  .crystal-ring{
-    position:absolute;
-    inset:-18px;
-    border-radius:50%;
-    border:1px solid rgba(216,181,104,0.55);
-    animation:ringSpin 12s linear infinite;
-  }
-  .crystal-ring.r2{inset:-34px; border-color:rgba(232,139,166,0.35); animation-duration:18s; animation-direction:reverse;}
-  @keyframes ringSpin{to{transform:rotate(360deg);}}
-  .magic-message{
-    margin-top:42px;
-    max-width:600px;
-    min-height:60px;
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:clamp(19px,3vw,26px);
-    color:var(--pink-deep);
-    opacity:0;
-    transform:translateY(14px) scale(.97);
-    transition:opacity .6s ease, transform .6s ease;
-    text-shadow:0 2px 20px rgba(216,181,104,0.4);
-    padding:0 10px;
-  }
-  .magic-message.show{opacity:1; transform:translateY(0) scale(1);}
-  .magic-hint{
-    margin-top:20px;
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    opacity:.7;
-  }
+  /* ================= FX LAYER (shared celebration burst) ================= */
   .fx-layer{
     position:fixed;
     inset:0;
@@ -664,177 +547,251 @@
     box-shadow:0 0 10px 2px rgba(216,181,104,0.9);
   }
 
-  /* ================= WEDDING DREAMS ================= */
-  .wedding-panel{
+  /* ================= GUESS HOW MUCH I LOVE YOU ================= */
+  .quiz-wrap{
+    width:100%;
+    max-width:560px;
+    margin:0 auto;
+    text-align:center;
+    position:relative;
+    min-height:280px;
+  }
+  .quiz-card{
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-radius:26px;
+    padding:40px 30px;
+    box-shadow:0 18px 40px rgba(200,120,150,0.18);
+  }
+  .quiz-q{
+    font-family:var(--serif);
+    font-size:clamp(19px,2.6vw,24px);
+    color:var(--pink-deep);
+    margin-bottom:26px;
+    font-weight:600;
+  }
+  .quiz-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+  }
+  .quiz-option{
+    padding:13px 26px;
+    border-radius:50px;
+    border:1px solid rgba(216,181,104,0.4);
+    background:rgba(255,255,255,0.5);
+    color:var(--ink);
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+  }
+  .quiz-option:hover{
+    transform:translateY(-3px);
+    background:var(--pink-soft);
+    box-shadow:0 10px 24px rgba(200,120,150,0.3);
+  }
+  .quiz-loading{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    padding:60px 0;
+  }
+  .quiz-loading.show{display:flex;}
+  .quiz-spinner{
+    width:44px;height:44px;
+    border-radius:50%;
+    border:3px solid rgba(216,181,104,0.25);
+    border-top-color:var(--gold-deep);
+    animation:spin 0.9s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .quiz-loading p{
+    font-family:var(--script);
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+  .quiz-result{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding:20px 0;
+  }
+  .quiz-result.show{display:flex;}
+  .quiz-counter{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(48px,10vw,84px);
+    background:linear-gradient(100deg, var(--pink-deep), var(--gold-deep));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:0 4px 30px rgba(216,181,104,0.4);
+  }
+  .quiz-result-text{
+    font-family:var(--script);
+    font-style:italic;
+    font-size:clamp(17px,2.4vw,20px);
+    color:var(--ink-soft);
+    line-height:1.7;
+    max-width:440px;
+  }
+
+  /* ================= STAR MAP ================= */
+  .starmap-panel{
     position:relative;
     border-radius:36px;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7), transparent 40%),
-      radial-gradient(circle at 80% 30%, rgba(216,181,104,0.25), transparent 45%),
-      radial-gradient(circle at 50% 90%, rgba(232,139,166,0.25), transparent 50%),
-      linear-gradient(160deg, rgba(255,255,255,0.55), rgba(255,230,238,0.4));
-    border:1px solid rgba(255,255,255,0.6);
+    background:radial-gradient(ellipse at 30% 20%, #2c2050 0%, #16102e 55%, #0a0718 100%);
     overflow:hidden;
     padding:50px 5vw 60px;
     width:100%;
+    box-shadow:0 30px 70px rgba(50,20,60,0.35);
+    border:1px solid rgba(255,255,255,0.08);
   }
-  .fairy-light{
+  .starmap-panel .eyebrow{color:var(--gold-light);}
+  .starmap-panel .section-title{color:var(--gold-light); text-shadow:0 2px 24px rgba(240,220,166,0.4);}
+  .starmap-panel .section-subtitle{color:#d9cdea;}
+  .star-field{
+    position:relative;
+    width:100%;
+    max-width:400px;
+    aspect-ratio:1/1;
+    margin:20px auto 0;
+  }
+  .star-dot{
     position:absolute;
-    width:6px;height:6px;
+    width:2.5px;
+    height:2.5px;
     border-radius:50%;
-    background:var(--gold-light);
-    box-shadow:0 0 10px 4px rgba(240,220,166,0.9);
-    animation:twinkle 3s ease-in-out infinite;
+    background:#fff;
+    box-shadow:0 0 6px 1px rgba(255,255,255,0.8);
+    animation:starTwinkle 3s ease-in-out infinite;
   }
-  @keyframes twinkle{0%,100%{opacity:.25; transform:scale(.8);}50%{opacity:1; transform:scale(1.3);}}
-  .bloom{
+  @keyframes starTwinkle{0%,100%{opacity:.25; transform:scale(.8);}50%{opacity:1; transform:scale(1.4);}}
+  .star-svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+  .star-svg polyline{fill:none; stroke:var(--gold-light); stroke-width:0.4; stroke-dasharray:2 1.4; opacity:0.75;}
+  .star-svg circle{fill:#fff; filter:drop-shadow(0 0 4px rgba(255,255,255,0.9));}
+  .star-svg circle.hero{fill:var(--gold-light); filter:drop-shadow(0 0 10px rgba(240,220,166,1)); animation:starTwinkle 2.4s ease-in-out infinite;}
+  .star-label{
     position:absolute;
-    border-radius:50%;
-    filter:blur(40px);
-    opacity:.5;
+    left:50%;
+    top:87%;
+    transform:translateX(-50%);
+    font-family:var(--script);
+    font-style:italic;
+    font-size:15px;
+    color:var(--gold-light);
+    text-shadow:0 0 10px rgba(240,220,166,0.7);
+    white-space:nowrap;
   }
-  .dream-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-    gap:24px;
+  .starmap-caption{
+    margin-top:40px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family:var(--script);
+    font-style:italic;
+    font-size:clamp(16px,2.4vw,19px);
+    line-height:1.85;
+    color:#ece3f5;
+    text-align:center;
     position:relative;
     z-index:2;
   }
-  .dream-card{
-    background:rgba(255,255,255,0.55);
-    border:1px solid rgba(255,255,255,0.75);
+
+  /* ================= TRAVEL BUCKET LIST ================= */
+  .travel-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:26px;
+    width:100%;
+  }
+  .postcard{
+    background:var(--glass);
+    border:1px solid var(--glass-border);
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
     border-radius:22px;
-    padding:28px 24px;
-    box-shadow:0 15px 35px rgba(200,150,100,0.15);
-    transition:transform .5s cubic-bezier(.2,.8,.3,1), box-shadow .5s ease;
+    overflow:hidden;
+    box-shadow:0 16px 36px rgba(200,120,150,0.16);
+    transition:transform .45s cubic-bezier(.2,.8,.3,1), box-shadow .45s ease;
   }
-  .dream-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 55px rgba(200,150,100,0.28);
+  .postcard:hover{
+    transform:translateY(-8px) scale(1.015);
+    box-shadow:0 26px 55px rgba(200,120,150,0.3);
   }
-  .dream-icon{font-size:26px; margin-bottom:10px;}
-  .dream-title{
-    font-family:var(--serif);
-    font-size:19px;
-    font-weight:600;
-    color:var(--pink-deep);
-    margin-bottom:8px;
-  }
-  .dream-text{
-    font-family:var(--script);
-    font-size:16.5px;
-    font-style:italic;
-    line-height:1.6;
-    color:var(--ink);
-  }
-  .wedding-closing{
-    text-align:center;
-    margin-top:50px;
-    font-family:var(--script);
-    font-style:italic;
-    font-size:clamp(18px,2.8vw,23px);
-    color:var(--pink-deep);
-    max-width:640px;
-    margin-left:auto;
-    margin-right:auto;
+  .postcard-visual{
     position:relative;
-    z-index:2;
-    line-height:1.7;
-  }
-
-  /* ================= LETTER ================= */
-  .letter-frame{
-    position:relative;
-    max-width:700px;
-    width:100%;
-    margin:0 auto;
-  }
-  .wax-seal{
-    position:absolute;
-    top:-26px;
-    left:50%;
-    transform:translateX(-50%);
-    width:60px;height:60px;
-    border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #e0768f, var(--pink-deep) 60%, #9c3c58 100%);
-    box-shadow:0 8px 20px rgba(160,50,80,0.45), inset 0 -4px 8px rgba(0,0,0,0.25);
+    aspect-ratio:16/10;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:var(--gold-light);
-    font-family:var(--serif);
-    font-size:12px;
-    font-weight:700;
-    cursor:pointer;
-    z-index:5;
-    transition:transform .4s ease;
-    letter-spacing:.5px;
+    font-size:44px;
   }
-  .wax-seal:hover{transform:translateX(-50%) scale(1.08);}
-  .wax-seal.opened{animation:sealBreak .6s ease forwards;}
-  @keyframes sealBreak{
-    0%{transform:translateX(-50%) scale(1);}
-    50%{transform:translateX(-50%) scale(1.3) rotate(15deg);}
-    100%{transform:translateX(-50%) scale(0); opacity:0;}
-  }
-  .paper{
-    margin-top:32px;
-    background:linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), var(--cream);
-    border:1px solid rgba(216,181,104,0.35);
-    border-radius:10px;
-    padding:50px 40px;
-    box-shadow:0 30px 70px rgba(180,120,140,0.25);
-    position:relative;
-    cursor:pointer;
-  }
-  .paper::before{
-    content:'';
+  .postcard-stamp{
     position:absolute;
-    inset:14px;
-    border:1px solid rgba(216,181,104,0.3);
-    border-radius:4px;
-    pointer-events:none;
+    top:12px;
+    right:12px;
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    background:rgba(255,255,255,0.35);
+    border:1.5px dashed rgba(255,255,255,0.7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    color:#fff;
+    backdrop-filter:blur(4px);
   }
-  .paper .salutation{
-    font-family:var(--script);
-    font-size:23px;
-    font-style:italic;
-    color:var(--pink-deep);
-    margin-bottom:18px;
-  }
-  .letter-body{
-    font-family:var(--script);
-    font-size:18px;
-    line-height:1.9;
-    color:var(--ink);
-    white-space:pre-wrap;
-    min-height:100px;
-  }
-  .letter-body .cursor{
+  .postcard-body{padding:22px 22px 26px;}
+  .postcard-tag{
     display:inline-block;
-    width:2px;
-    background:var(--pink-deep);
-    animation:blink 1s steps(2) infinite;
-    margin-left:2px;
-  }
-  @keyframes blink{50%{opacity:0;}}
-  .letter-signature{
-    margin-top:24px;
-    font-family:var(--script);
-    font-size:21px;
-    font-style:italic;
-    color:var(--pink-deep);
-  }
-  .open-letter-hint{
-    text-align:center;
-    margin-top:14px;
-    font-size:12px;
-    letter-spacing:2px;
+    font-size:11px;
+    letter-spacing:1.5px;
     text-transform:uppercase;
+    color:var(--gold-deep);
+    background:rgba(216,181,104,0.15);
+    padding:5px 12px;
+    border-radius:20px;
+    margin-bottom:12px;
+    font-weight:600;
+  }
+  .postcard-name{
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:600;
+    color:var(--pink-deep);
+    margin-bottom:4px;
+  }
+  .postcard-region{
+    font-size:12px;
     color:var(--ink-soft);
-    opacity:.75;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:14px;
+    opacity:.8;
+  }
+  .postcard-caption{
+    font-family:var(--script);
+    font-style:italic;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .travel-closing{
+    text-align:center;
+    margin-top:46px;
+    font-family:var(--script);
+    font-style:italic;
+    font-size:clamp(18px,2.6vw,22px);
+    color:var(--pink-deep);
   }
 
   /* ================= FLOATING MUSIC DOCK (persistent, after entering) ================= */
@@ -906,8 +863,6 @@
   @media (max-width:640px){
     .player-panel{padding:30px 22px;}
     .vinyl{width:160px;height:160px;}
-    .paper{padding:38px 22px;}
-    .crystal-btn{width:180px;height:180px; font-size:15px;}
   }
 </style>
 </head>
@@ -934,53 +889,31 @@
     <h2 class="menu-heading">Welcome, my love</h2>
     <p class="menu-sub">Everything here was made just for you. Tap a heart to begin.</p>
     <div class="menu-grid">
-      <button class="menu-btn" data-target="screen-promises">
-        <div class="m-icon">💗</div>
-        <div class="m-title">Things I'll Never Stop Doing</div>
-        <div class="m-desc">Promises I will keep forever</div>
-      </button>
       <button class="menu-btn" data-target="screen-song">
         <div class="m-icon">🎵</div>
         <div class="m-title">Our Song</div>
         <div class="m-desc">The song my heart remembers you by</div>
       </button>
-      <button class="menu-btn" data-target="screen-magic">
-        <div class="m-icon">✨</div>
-        <div class="m-title">Magic Button</div>
-        <div class="m-desc">A little surprise, made just for you</div>
+      <button class="menu-btn" data-target="screen-quiz">
+        <div class="m-icon">🔮</div>
+        <div class="m-title">Guess How Much I Love You</div>
+        <div class="m-desc">Spoiler: you will not get this right</div>
       </button>
-      <button class="menu-btn" data-target="screen-wedding">
-        <div class="m-icon">💍</div>
-        <div class="m-title">Wedding Dreams</div>
-        <div class="m-desc">The forever I imagine with you</div>
+      <button class="menu-btn" data-target="screen-starmap">
+        <div class="m-icon">🌌</div>
+        <div class="m-title">Star Map</div>
+        <div class="m-desc">The sky, the night everything changed</div>
       </button>
-      <button class="menu-btn" data-target="screen-letter">
-        <div class="m-icon">💌</div>
-        <div class="m-title">Letter To Future You</div>
-        <div class="m-desc">Open whenever your heart needs reminding</div>
+      <button class="menu-btn" data-target="screen-travel">
+        <div class="m-icon">✈️</div>
+        <div class="m-title">Travel Bucket List</div>
+        <div class="m-desc">Six places I want to get lost in with you</div>
       </button>
     </div>
   </div>
 </div>
 
-<!-- ============ 1. THINGS I'LL NEVER STOP DOING ============ -->
-<div class="screen" id="screen-promises">
-  <div class="screen-header">
-    <button class="back-btn" data-target="screen-menu">← Back</button>
-    <span class="crumb">Things I'll Never Stop Doing</span>
-  </div>
-  <div class="screen-inner">
-    <div class="center pop" style="--i:0">
-      <span class="eyebrow">A Living Promise</span>
-      <h2 class="section-title">Things I'll Never Stop Doing</h2>
-      <p class="section-subtitle">My love for you isn't measured in days. It's measured in promises I'll keep forever.</p>
-    </div>
-    <div class="promise-grid" id="promiseGrid"></div>
-    <p class="promise-closing pop" style="--i:14">Forever isn't long enough when it's with you.</p>
-  </div>
-</div>
-
-<!-- ============ 2. OUR SONG ============ -->
+<!-- ============ OUR SONG ============ -->
 <div class="screen" id="screen-song">
   <div class="screen-header">
     <button class="back-btn" data-target="screen-menu">← Back</button>
@@ -1003,7 +936,7 @@
           <div class="sub">Playing softly, just for her</div>
         </div>
         <div class="eq-bars" id="eqBars"><span></span><span></span><span></span><span></span><span></span></div>
-        <a class="spotify-btn" href="https://open.spotify.com/track/1gJA27xiMdENwoAVN7kMlo?si=153b169408f8439d" target="_blank" rel="noopener">
+        <a class="spotify-btn" href="https://open.spotify.com/track/2wrJq5XKLnmhRXHIAf9xBa?si=9a32d4d1beec4bdc" target="_blank" rel="noopener">
           🎵 Listen on Spotify
         </a>
       </div>
@@ -1012,97 +945,89 @@
   </div>
 </div>
 
-<!-- ============ 3. MAGIC BUTTON ============ -->
-<div class="screen" id="screen-magic">
+<!-- ============ GUESS HOW MUCH I LOVE YOU ============ -->
+<div class="screen" id="screen-quiz">
   <div class="screen-header">
     <button class="back-btn" data-target="screen-menu">← Back</button>
-    <span class="crumb">Magic Button</span>
-  </div>
-  <div class="screen-inner">
-    <span class="eyebrow pop" style="--i:0">Just For You</span>
-    <h2 class="section-title pop" style="--i:1">A Little Bit of Magic</h2>
-    <p class="section-subtitle pop" style="--i:2">Tap it. Let it surprise you.</p>
-    <div class="pop" style="--i:3; position:relative;">
-      <div class="crystal-ring"></div>
-      <div class="crystal-ring r2"></div>
-      <button class="crystal-btn" id="magicBtn">✨ Magic Button ✨</button>
-    </div>
-    <p class="magic-message" id="magicMessage"></p>
-    <p class="magic-hint">Click as many times as you like. Every tap is a new little truth.</p>
-  </div>
-</div>
-
-<!-- ============ 4. WEDDING DREAMS ============ -->
-<div class="screen" id="screen-wedding">
-  <div class="screen-header">
-    <button class="back-btn" data-target="screen-menu">← Back</button>
-    <span class="crumb">Wedding Dreams</span>
-  </div>
-  <div class="screen-inner">
-    <div class="wedding-panel pop" style="--i:0" id="weddingPanel">
-      <div class="center">
-        <span class="eyebrow">A Fairytale, With You</span>
-        <h2 class="section-title">Wedding Dreams</h2>
-        <p class="section-subtitle">I don't dream about the wedding. I dream about spending forever with you.</p>
-      </div>
-      <div class="dream-grid">
-        <div class="dream-card">
-          <div class="dream-icon">💍</div>
-          <div class="dream-title">The First Look</div>
-          <div class="dream-text">I imagine seeing you walking towards me, and forgetting how to breathe because of how beautiful you are.</div>
-        </div>
-        <div class="dream-card">
-          <div class="dream-icon">🤍</div>
-          <div class="dream-title">Our Vows</div>
-          <div class="dream-text">I promise to choose you every single day.</div>
-        </div>
-        <div class="dream-card">
-          <div class="dream-icon">🌹</div>
-          <div class="dream-title">The First Dance</div>
-          <div class="dream-text">I hope time slows down while we dance together.</div>
-        </div>
-        <div class="dream-card">
-          <div class="dream-icon">🏡</div>
-          <div class="dream-title">Growing Old</div>
-          <div class="dream-text">My favourite dream is growing old beside you.</div>
-        </div>
-        <div class="dream-card">
-          <div class="dream-icon">👶</div>
-          <div class="dream-title">Our Little Family</div>
-          <div class="dream-text">A home filled with laughter, love, and tiny footsteps.</div>
-        </div>
-        <div class="dream-card">
-          <div class="dream-icon">✨</div>
-          <div class="dream-title">Forever</div>
-          <div class="dream-text">I don't want a perfect life. I just want one where you're always beside me.</div>
-        </div>
-      </div>
-      <p class="wedding-closing">I cannot promise you a life without storms, but I promise you'll never have to face one alone.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ============ 5. LETTER TO FUTURE YOU ============ -->
-<div class="screen" id="screen-letter">
-  <div class="screen-header">
-    <button class="back-btn" data-target="screen-menu">← Back</button>
-    <span class="crumb">Letter To Future You</span>
+    <span class="crumb">Guess How Much I Love You</span>
   </div>
   <div class="screen-inner">
     <div class="center pop" style="--i:0">
-      <span class="eyebrow">Open When You Need It</span>
-      <h2 class="section-title">Letter To Future You</h2>
-      <p class="section-subtitle">Sealed with love. Open it whenever your heart needs reminding.</p>
+      <span class="eyebrow">A Little Game</span>
+      <h2 class="section-title">Guess How Much I Love You</h2>
+      <p class="section-subtitle">Fair warning, there is no correct answer. Pick one anyway.</p>
     </div>
-    <div class="letter-frame pop" style="--i:1">
-      <div class="wax-seal" id="waxSeal">N&amp;A</div>
-      <div class="paper" id="paper">
-        <div class="salutation">My Dearest Nadia,</div>
-        <div class="letter-body" id="letterBody"></div>
-        <div class="letter-signature" id="letterSignature" style="opacity:0;">Forever yours,<br>❤️ Abdulfatah</div>
+    <div class="quiz-wrap pop" style="--i:1">
+      <div class="quiz-card" id="quizQuestion">
+        <div class="quiz-q">If you had to guess, how much do I love you?</div>
+        <div class="quiz-options">
+          <button class="quiz-option">A little</button>
+          <button class="quiz-option">A lot</button>
+          <button class="quiz-option">More than words</button>
+          <button class="quiz-option">To the moon and back</button>
+        </div>
+      </div>
+      <div class="quiz-loading" id="quizLoading">
+        <div class="quiz-spinner"></div>
+        <p>Calculating the real answer...</p>
+      </div>
+      <div class="quiz-result" id="quizResult">
+        <div class="quiz-counter" id="quizCounter">0</div>
+        <p class="quiz-result-text">Wrong. Every answer was too small.<br>The true number is immeasurable, and it grows a little more every single day.</p>
+        <button class="back-btn" id="quizReplay">Ask again</button>
       </div>
     </div>
-    <p class="open-letter-hint" id="letterHint">Tap the seal (or the letter) to open it</p>
+  </div>
+</div>
+
+<!-- ============ STAR MAP ============ -->
+<div class="screen" id="screen-starmap">
+  <div class="screen-header">
+    <button class="back-btn" data-target="screen-menu">← Back</button>
+    <span class="crumb">Star Map</span>
+  </div>
+  <div class="screen-inner">
+    <div class="starmap-panel pop" style="--i:0" id="starmapPanel">
+      <div class="center">
+        <span class="eyebrow">A Sky Just For Us</span>
+        <h2 class="section-title">Star Map</h2>
+        <p class="section-subtitle">The night I stopped believing in coincidence.</p>
+      </div>
+      <div class="star-field" id="starField">
+        <svg class="star-svg" viewBox="0 0 100 100">
+          <polyline points="50,28 34,14 19,19 11,34 17,51 50,79 83,51 89,34 81,19 66,14 50,28" />
+          <circle cx="50" cy="28" r="1.6"></circle>
+          <circle cx="34" cy="14" r="1.4"></circle>
+          <circle cx="19" cy="19" r="1.4"></circle>
+          <circle cx="11" cy="34" r="1.4"></circle>
+          <circle cx="17" cy="51" r="1.4"></circle>
+          <circle class="hero" cx="50" cy="79" r="2.6"></circle>
+          <circle cx="83" cy="51" r="1.4"></circle>
+          <circle cx="89" cy="34" r="1.4"></circle>
+          <circle cx="81" cy="19" r="1.4"></circle>
+          <circle cx="66" cy="14" r="1.4"></circle>
+        </svg>
+        <div class="star-label">Nadia ✦</div>
+      </div>
+      <p class="starmap-caption">Somewhere far from here, on a warm and quiet night, the sky arranged itself like this, every star leaning in, as if it already knew what was about to happen. I looked up once, then I looked at you, and I have not stopped comparing the two since. That brightest one there, I named it after you. I find it first, every single time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRAVEL BUCKET LIST ============ -->
+<div class="screen" id="screen-travel">
+  <div class="screen-header">
+    <button class="back-btn" data-target="screen-menu">← Back</button>
+    <span class="crumb">Travel Bucket List</span>
+  </div>
+  <div class="screen-inner">
+    <div class="center pop" style="--i:0">
+      <span class="eyebrow">Somewhere, Someday</span>
+      <h2 class="section-title">Our Travel Dreams</h2>
+      <p class="section-subtitle">Six places I want to get delightfully lost in, with you.</p>
+    </div>
+    <div class="travel-grid" id="travelGrid"></div>
+    <p class="travel-closing pop" style="--i:7">Pick one. I will start planning immediately.</p>
   </div>
 </div>
 
@@ -1181,7 +1106,7 @@
     if(document.getElementById('spotifyFrame')) return;
     var iframe = document.createElement('iframe');
     iframe.id = 'spotifyFrame';
-    iframe.src = 'https://open.spotify.com/embed/track/1gJA27xiMdENwoAVN7kMlo?utm_source=generator&autoplay=1';
+    iframe.src = 'https://open.spotify.com/embed/track/2wrJq5XKLnmhRXHIAf9xBa?utm_source=generator&autoplay=1';
     iframe.width = '100%';
     iframe.height = '80';
     iframe.style.border = '0';
@@ -1202,55 +1127,35 @@
     setTimeout(function(){ playerPanel2.classList.remove('open'); }, 5000);
   });
 
-  /* ---------------- 1. Promise cards ---------------- */
-  var promises = [
-    {icon:'❤️', text:'Loving you.'},
-    {icon:'🌹', text:'Choosing you.'},
-    {icon:'🤍', text:'Making you laugh.'},
-    {icon:'🥹', text:'Telling you how beautiful you are.'},
-    {icon:'💌', text:'Checking on you.'},
-    {icon:'🤝', text:'Holding your hand through every season.'},
-    {icon:'🌙', text:'Saying goodnight.'},
-    {icon:'🌞', text:'Saying good morning.'},
-    {icon:'💋', text:'Kissing your forehead.'},
-    {icon:'🫂', text:'Being your safe place.'},
-    {icon:'👑', text:'Treating you like my queen.'},
-    {icon:'🏡', text:'Building our future together.'},
-    {icon:'❤️', text:'Falling in love with you again and again.'}
-  ];
-  var grid = document.getElementById('promiseGrid');
-  promises.forEach(function(p, idx){
-    var card = document.createElement('div');
-    card.className = 'promise-card pop';
-    card.style.setProperty('--i', idx+1);
-    card.innerHTML = '<div class="promise-icon">'+p.icon+'</div><div class="promise-text">'+p.text+'</div>';
-    grid.appendChild(card);
-  });
-
-  /* ---------------- 2. Vinyl player (decorative) ---------------- */
+  /* ---------------- Vinyl player (decorative) ---------------- */
   var vinylDisc = document.getElementById('vinylDisc');
   var vinylWrap = document.getElementById('vinylWrap');
   var eqBars = document.getElementById('eqBars');
   var playerPanel = document.getElementById('playerPanel');
   var spinning = false;
 
+  var vinylUserTouched = false;
   function toggleSpin(){
     spinning = !spinning;
     vinylDisc.classList.toggle('playing', spinning);
     vinylWrap.classList.toggle('playing', spinning);
     eqBars.classList.toggle('playing', spinning);
   }
-  vinylDisc.addEventListener('click', toggleSpin);
+  vinylDisc.addEventListener('click', function(){
+    vinylUserTouched = true;
+    toggleSpin();
+  });
 
   var songScreen = document.getElementById('screen-song');
   var songStarted = false;
-  var mo = new MutationObserver(function(){
+  var songMo = new MutationObserver(function(){
     if(songScreen.classList.contains('active') && !songStarted){
       songStarted = true;
-      setTimeout(toggleSpin, 500);
+      // don't override it if she already tapped the vinyl herself in that window
+      setTimeout(function(){ if(!vinylUserTouched) toggleSpin(); }, 500);
     }
   });
-  mo.observe(songScreen, {attributes:true, attributeFilter:['class']});
+  songMo.observe(songScreen, {attributes:true, attributeFilter:['class']});
 
   var noteEmojis = ['♪','♫','♬','🎵'];
   function spawnNote(){
@@ -1265,126 +1170,8 @@
   }
   setInterval(function(){ if(spinning && songScreen.classList.contains('active')) spawnNote(); }, 900);
 
-  /* ---------------- 3. Magic Button ---------------- */
-  var messages = [
-    "I love you more than yesterday.",
-    "You are my favourite person.",
-    "You have the prettiest smile.",
-    "I'd still choose you in every lifetime.",
-    "My heart feels at home with you.",
-    "You make ordinary days magical.",
-    "If I had one wish, I'd spend every tomorrow with you.",
-    "I still smile whenever your name appears.",
-    "You're the best thing that's ever happened to me.",
-    "You're my answered prayer.",
-    "I never get tired of loving you.",
-    "You'll always be my favourite notification.",
-    "You are the reason I believe in forever.",
-    "Loving you feels like the easiest thing I've ever done.",
-    "You are proof that good things exist.",
-    "Every love song makes more sense because of you.",
-    "You are my favourite hello and my hardest goodbye.",
-    "I fall for you a little more every single day.",
-    "You're the calm in every storm.",
-    "My heart chose you and it never once looked back.",
-    "You're not just my love, you're my best friend.",
-    "You make me want to be a better man.",
-    "I could listen to you talk for hours.",
-    "Your laugh is my favourite sound in the world.",
-    "You are worth every mile, every wait, every prayer.",
-    "You are the softest place I've ever landed.",
-    "I never knew peace until I knew you.",
-    "You are my favourite kind of trouble.",
-    "You are the last thought before I sleep and the first when I wake.",
-    "You are so easy to love.",
-    "I am the luckiest man because you exist.",
-    "You make my chaotic world feel gentle.",
-    "You're the love I didn't know I was praying for.",
-    "I would choose this exact love, every single time.",
-    "You are my favourite chapter in this story.",
-    "You are beautiful inside and out, always.",
-    "I love the way your eyes smile before your lips do.",
-    "You are the missing piece I didn't know I needed.",
-    "You feel like sunshine on my worst days.",
-    "You are the reason my heart believes in magic.",
-    "I love you in every version of myself.",
-    "You are my forever kind of love.",
-    "You turn ordinary moments into memories.",
-    "I could write a thousand letters and still not say enough.",
-    "You are my safe place in every storm.",
-    "You are the calm after every chaos.",
-    "I love you louder than my fears.",
-    "You are the softest yes my heart ever gave.",
-    "You are my home, wherever we are.",
-    "I would find you in every lifetime.",
-    "You are the reason love makes sense to me now.",
-    "Your smile could end wars.",
-    "You are my favourite place to be.",
-    "I love you more than words will ever hold.",
-    "You are my sweetest distraction.",
-    "You make my heart feel brand new.",
-    "You are worth every single risk.",
-    "I love you in the quiet moments most.",
-    "You are the poem I never knew how to write.",
-    "You are my miracle in human form.",
-    "I love you beyond logic and beyond reason.",
-    "You are my favourite good morning text.",
-    "You are my favourite goodnight thought.",
-    "You make me believe in happy endings.",
-    "You are the reason I smile at my phone like a fool.",
-    "You are my heart's favourite address.",
-    "I love you more today than I did yesterday, and that's saying a lot.",
-    "You are my dream that came true.",
-    "You are the softest kind of forever.",
-    "I love the way you make me feel like enough.",
-    "You are my favourite reason to stay up late talking.",
-    "You are my favourite kind of butterflies.",
-    "You are proof that soulmates exist.",
-    "I love you with everything that beats inside me.",
-    "You are the sweetest surprise life ever gave me.",
-    "You are my favourite person to grow with.",
-    "I love you not because I need you, but because I choose you.",
-    "You are my safest kind of love.",
-    "You are the warmth I didn't know I was missing.",
-    "You are my favourite forever.",
-    "I love you more than these words can carry.",
-    "You are the reason my heart feels full.",
-    "You are my favourite kind of home.",
-    "You are the love story I never want to end.",
-    "I love you today, tomorrow, and every day after.",
-    "You are my favourite miracle.",
-    "You are the reason I believe in fate.",
-    "You are my heart's quiet favourite.",
-    "I love you in ways I'm still learning to explain.",
-    "You are my favourite kind of forever after.",
-    "You are the softness in my everyday.",
-    "I love you more than you'll ever fully know.",
-    "You are my favourite reason to smile at nothing.",
-    "You are the sweetest part of my every day.",
-    "You are my favourite thing about today.",
-    "I choose you, again and again, without hesitation.",
-    "You are my favourite kind of lucky.",
-    "You are the reason my heart feels so sure.",
-    "You are my forever favourite.",
-    "I love you more than yesterday, and less than tomorrow.",
-    "You are my heart, walking outside my body.",
-    "You are my favourite dream that stayed real.",
-    "You are the reason love feels effortless.",
-    "You are my always."
-  ];
-
-  var magicBtn = document.getElementById('magicBtn');
-  var magicMessage = document.getElementById('magicMessage');
+  /* ---------------- Shared celebration burst (hearts / sparkles / petals) ---------------- */
   var fxLayer = document.getElementById('fxLayer');
-  var lastIdx = -1;
-
-  function randomMessage(){
-    var idx;
-    do { idx = Math.floor(Math.random()*messages.length); } while(idx===lastIdx && messages.length>1);
-    lastIdx = idx;
-    return messages[idx];
-  }
-
   var fxEmojis = ['✨','💖','🌹','⭐','💫','🤍','🌸'];
   function burstFX(){
     var count = 26;
@@ -1419,105 +1206,152 @@
     }
   }
 
-  magicBtn.addEventListener('click', function(){
-    burstFX();
-    magicMessage.classList.remove('show');
-    setTimeout(function(){
-      magicMessage.textContent = randomMessage();
-      magicMessage.classList.add('show');
-    }, 180);
+  /* ---------------- Guess How Much I Love You ---------------- */
+  var quizQuestion = document.getElementById('quizQuestion');
+  var quizLoading = document.getElementById('quizLoading');
+  var quizResult = document.getElementById('quizResult');
+  var quizCounter = document.getElementById('quizCounter');
+  var quizReplay = document.getElementById('quizReplay');
+
+  document.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      quizQuestion.style.display = 'none';
+      quizLoading.classList.add('show');
+      setTimeout(function(){
+        quizLoading.classList.remove('show');
+        quizResult.classList.add('show');
+        animateCounter();
+        burstFX();
+      }, 1300);
+    });
   });
 
-  /* ---------------- 4. Wedding dreams decorative fairy lights ---------------- */
-  var weddingPanel = document.getElementById('weddingPanel');
-  for(var w=0; w<18; w++){
-    var fl = document.createElement('span');
-    fl.className = 'fairy-light';
-    fl.style.left = (Math.random()*100)+'%';
-    fl.style.top = (Math.random()*100)+'%';
-    fl.style.animationDelay = (Math.random()*3)+'s';
-    weddingPanel.appendChild(fl);
-  }
-  var bloomColors = ['rgba(255,255,255,0.8)','rgba(216,181,104,0.35)','rgba(232,139,166,0.35)'];
-  for(var bl=0; bl<5; bl++){
-    var b = document.createElement('span');
-    b.className = 'bloom';
-    var size = 100+Math.random()*160;
-    b.style.width = size+'px';
-    b.style.height = size+'px';
-    b.style.left = (Math.random()*90)+'%';
-    b.style.top = (Math.random()*90)+'%';
-    b.style.background = bloomColors[bl%bloomColors.length];
-    weddingPanel.appendChild(b);
-  }
-
-  /* ---------------- 5. Letter typewriter ---------------- */
-  var letterText = "If you're reading this months, or even years from today...\n\nI hope life has been gentle with you.\nI hope you're smiling.\nI hope you're still chasing your dreams.\nAnd I hope you've never forgotten how deeply you're loved.\n\nThere are thousands of beautiful people in this world.\nYet somehow, my heart chose you.\n\nNot because you were perfect, but because you became my peace.\n\nIf one day life becomes difficult, read these words again.\n\nYou are enough.\nYou are beautiful.\nYou are stronger than you realise.\nYou are loved beyond what words can ever explain.\n\nThank you, for existing.\nFor your smile.\nFor your kindness.\nFor every moment you've unknowingly made my life brighter.\n\nIf I could make one promise to the future, it would be this:\n\nNo matter how much time passes...\nNo matter how old we become...\nNo matter how many grey hairs we have...\nI'll still look at you, like the luckiest man alive.";
-
-  var waxSeal = document.getElementById('waxSeal');
-  var paper = document.getElementById('paper');
-  var letterBody = document.getElementById('letterBody');
-  var letterSignature = document.getElementById('letterSignature');
-  var letterHint = document.getElementById('letterHint');
-  var letterOpened = false;
-  var letterTyping = false;
-  var typeTimer = null;
-
-  function finishLetterInstantly(){
-    if(typeTimer) clearTimeout(typeTimer);
-    letterBody.textContent = letterText;
-    letterSignature.style.transition = 'opacity .6s ease';
-    letterSignature.style.opacity = '1';
-    letterTyping = false;
-  }
-
-  function typeLetter(){
-    letterTyping = true;
-    var i = 0;
-    var cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    letterBody.appendChild(cursor);
-    var speed = 16;
-    function step(){
-      if(!letterTyping) return;
-      if(i < letterText.length){
-        var ch = letterText.charAt(i);
-        var textNode = document.createTextNode(ch);
-        letterBody.insertBefore(textNode, cursor);
-        i++;
-        typeTimer = setTimeout(step, ch === '\n' ? 120 : speed);
+  function animateCounter(){
+    var end = 87342;
+    var duration = 900;
+    var startTime = null;
+    function frame(ts){
+      if(!startTime) startTime = ts;
+      var progress = Math.min((ts-startTime)/duration, 1);
+      var value = Math.floor(progress * end);
+      quizCounter.textContent = value.toLocaleString();
+      if(progress < 1){
+        requestAnimationFrame(frame);
       } else {
-        cursor.remove();
-        letterSignature.style.transition = 'opacity 1.2s ease';
-        letterSignature.style.opacity = '1';
-        letterTyping = false;
+        quizCounter.textContent = '∞';
       }
     }
-    step();
+    requestAnimationFrame(frame);
   }
 
-  function openLetter(){
-    if(letterOpened){
-      if(letterTyping){ finishLetterInstantly(); }
-      return;
-    }
-    letterOpened = true;
-    waxSeal.classList.add('opened');
-    letterHint.style.transition = 'opacity .5s ease';
-    letterHint.style.opacity = '0';
-    setTimeout(typeLetter, 400);
+  function resetQuiz(){
+    quizResult.classList.remove('show');
+    quizLoading.classList.remove('show');
+    quizCounter.textContent = '0';
+    quizQuestion.style.display = '';
   }
+  quizReplay.addEventListener('click', resetQuiz);
 
-  waxSeal.addEventListener('click', function(e){ e.stopPropagation(); openLetter(); });
-  paper.addEventListener('click', openLetter);
-
-  var letterScreen = document.getElementById('screen-letter');
-  var letterMo = new MutationObserver(function(){
-    if(letterScreen.classList.contains('active') && !letterOpened){
-      setTimeout(openLetter, 700);
+  // Show a fresh question every time she opens this section, even if she
+  // previously answered and left without tapping "Ask again".
+  var quizScreen = document.getElementById('screen-quiz');
+  var quizMo = new MutationObserver(function(){
+    if(quizScreen.classList.contains('active')){
+      resetQuiz();
     }
   });
-  letterMo.observe(letterScreen, {attributes:true, attributeFilter:['class']});
+  quizMo.observe(quizScreen, {attributes:true, attributeFilter:['class']});
+
+  /* ---------------- Star Map: scatter ambient background stars ---------------- */
+  var starField = document.getElementById('starField');
+  for(var s=0; s<45; s++){
+    var sd = document.createElement('span');
+    sd.className = 'star-dot';
+    sd.style.left = (Math.random()*100)+'%';
+    sd.style.top = (Math.random()*100)+'%';
+    sd.style.animationDelay = (Math.random()*3)+'s';
+    starField.appendChild(sd);
+  }
+
+  var starmapScreen = document.getElementById('screen-starmap');
+  var starmapCelebrated = false;
+  var starmapMo = new MutationObserver(function(){
+    if(starmapScreen.classList.contains('active') && !starmapCelebrated){
+      starmapCelebrated = true;
+      setTimeout(burstFX, 500);
+    }
+  });
+  starmapMo.observe(starmapScreen, {attributes:true, attributeFilter:['class']});
+
+  /* ---------------- Travel Bucket List ---------------- */
+  var destinations = [
+    {
+      name:'Faroe Islands',
+      region:'Denmark, North Atlantic',
+      tag:'Wild & Quiet',
+      icon:'🏔️',
+      gradient:'linear-gradient(150deg, #6c8a94, #24343c)',
+      caption:'Grass-roof cabins, waterfalls that fall straight into the sea, and a silence so complete you can hear your own heartbeat. I want to get wonderfully lost here with you.'
+    },
+    {
+      name:'Socotra Island',
+      region:'Yemen, Arabian Sea',
+      tag:'Rare & Otherworldly',
+      icon:'🌵',
+      gradient:'linear-gradient(150deg, #d98552, #7a2e1d)',
+      caption:'An island so strange it barely looks like Earth, alien trees, red canyons, and skies full of stars no city could ever compete with. Our own secret planet.'
+    },
+    {
+      name:'Raja Ampat',
+      region:'Indonesia, Coral Triangle',
+      tag:'Wild & Romantic',
+      icon:'🐠',
+      gradient:'linear-gradient(150deg, #2fc6b6, #0b5e63)',
+      caption:'Water so clear it looks unreal, tiny wooden huts on stilts, and the richest reef on the planet just beneath our feet. Mornings here, just us and the tide.'
+    },
+    {
+      name:'Lofoten Islands',
+      region:'Norway, Arctic Circle',
+      tag:'Adventurous & Cozy',
+      icon:'🌌',
+      gradient:'linear-gradient(150deg, #4a3b7a, #10163a)',
+      caption:'Jagged peaks rising straight out of the Arctic sea, and the northern lights dancing above a tiny red cabin. I want to hold you under a sky that is actually on fire.'
+    },
+    {
+      name:'Salar de Uyuni',
+      region:'Bolivia, Andes',
+      tag:'Surreal & Adventurous',
+      icon:'🪞',
+      gradient:'linear-gradient(150deg, #eef6fa, #9db8c9)',
+      caption:'The world’s largest mirror, where the sky and the ground disappear into each other and it feels like we are walking on clouds. I want to lose track of which way is up, with you.'
+    },
+    {
+      name:'Chefchaouen',
+      region:'Morocco, Rif Mountains',
+      tag:'Quiet & Dreamy',
+      icon:'🔵',
+      gradient:'linear-gradient(150deg, #5c8fc0, #1c3b63)',
+      caption:'A whole town painted every shade of blue, quiet cobblestone streets, and doorways made for slow mornings and long conversations. Just us, wandering with nowhere to be.'
+    }
+  ];
+  var travelGrid = document.getElementById('travelGrid');
+  destinations.forEach(function(d, idx){
+    var card = document.createElement('div');
+    card.className = 'postcard pop';
+    card.style.setProperty('--i', idx+1);
+    card.innerHTML =
+      '<div class="postcard-visual" style="background:'+d.gradient+'">' +
+        '<span>'+d.icon+'</span>' +
+        '<span class="postcard-stamp">✈</span>' +
+      '</div>' +
+      '<div class="postcard-body">' +
+        '<span class="postcard-tag">'+d.tag+'</span>' +
+        '<div class="postcard-name">'+d.name+'</div>' +
+        '<div class="postcard-region">'+d.region+'</div>' +
+        '<p class="postcard-caption">'+d.caption+'</p>' +
+      '</div>';
+    travelGrid.appendChild(card);
+  });
 
 })();
 </script>
